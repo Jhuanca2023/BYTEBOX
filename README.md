@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# BYTEBOX-WEB
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ByteBOX es una empresa internacional líder en la comercialización de accesorios y equipos tecnológicos de alta calidad. Con una fuerte presencia global y un compromiso con la innovación, ByteBOX se dedica a proporcionar soluciones tecnológicas avanzadas que mejoran la vida de las personas y las empresas.
 
-Currently, two official plugins are available:
+Este repositorio corresponde al desarrollo de la web informativa de ByteBOX, construido con React + Vite + TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Estructura del Proyecto
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── assets/
+│   ├── css/         # Estilos globales o utilidades
+│   ├── js/          # Scripts globales (si se requieren)
+│   ├── images/      # Imágenes del sitio
+│   └── fonts/       # Fuentes locales (si se usan)
+│
+├── components/
+│   ├── common/         # Componentes reutilizables (Navbar, Footer, Layout)
+│   ├── Onboarding/     # Sección Onboarding
+│   ├── Offboarding/    # Sección Offboarding
+│   ├── Storage/        # Sección Almacenaje
+│   ├── Platform/       # Sección Plataforma
+│   ├── Buyback/        # Sección Recompra
+│   ├── Hardware/       # Sección Hardware
+│   ├── Testimonials/   # Sección Testimonios
+│   └── Contact/        # Sección Contacto
+│
+├── hooks/              # Custom hooks de React
+├── styles/             # Variables, resets, sistema de grillas
+│   ├── variables.css
+│   ├── grid.css
+│   ├── base.css
+│   └── normalize.css
+├── utils/              # Funciones utilitarias y helpers
+├── App.tsx             # Estructura principal (header, main, footer)
+├── main.tsx            # Entrada de la app
+├── index.css           # Estilos globales
+└── vite-env.d.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologías base
+- **React + Vite** para el desarrollo frontend
+- **TypeScript** para tipado estricto
+- **CSS3** (estilos base y utilidades)
+- **Bootstrap 5** para estilos y componentes UI
+- **Estructura mobile-first y responsive**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Organización y buenas prácticas
+- Cada sección principal tiene su propia carpeta de componentes.
+- Los estilos globales y utilitarios están centralizados en `src/styles/` y `src/assets/css/`.
+- Los assets (imágenes, fuentes, scripts) están organizados en subcarpetas dentro de `src/assets/`.
+- Hooks y utilidades reutilizables tienen su propio espacio.
+- El código está preparado para ser escalable y fácil de mantener.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Cronograma técnico sugerido
+1. **Semana 1:** Maquetación base, estructura HTML semántica, responsive, menú de navegación, organización de carpetas y estilos globales.
+2. **Semana 2:** Funcionalidad visual (animaciones, sliders, tabs, scroll suave, efectos JS).
+3. **Semana 3:** Optimización, accesibilidad, SEO básico, lazy load de imágenes, formulario de contacto y pruebas finales.
+
+---
