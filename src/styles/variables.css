@@ -1,0 +1,6 @@
+/* Variables globales de colores, tipografías, etc. */
+:root {
+  --color-primary: #0052cc;
+  --color-secondary: #ffb300;
+  --font-main: 'Inter', Arial, sans-serif;
+} 
