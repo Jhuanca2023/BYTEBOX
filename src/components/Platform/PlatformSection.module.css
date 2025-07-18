@@ -17,6 +17,7 @@
   font-weight: 400;
   letter-spacing: 0.04em;
   z-index: 1;
+  -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
   width: max-content;

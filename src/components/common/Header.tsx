@@ -10,7 +10,6 @@ const menuItems = [
       { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding' },
       { label: 'Offboarding y retiro de equipos', anchor: '#offboarding' },
       
-      
     ],
   },
   {
@@ -99,7 +98,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
         <div className="header-actions">
-          <select className="lang-select" defaultValue="ESP">
+          <select className="lang-select" defaultValue="ESP" title="Idioma">
             <option value="ESP">ESP</option>
             <option value="ENG">ENG</option>
           </select>
