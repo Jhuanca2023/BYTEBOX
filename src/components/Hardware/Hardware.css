@@ -43,7 +43,7 @@
   min-width: 220px;
   max-width: 300px;
   width: 100%;
-  height: 320px;
+  height: 380px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -56,8 +56,8 @@
 .hardware-card-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #bfc9d1;
-  background: rgba(35,35,35,0.18);
+  color: #ffffffd5;
+  background: rgba(186, 184, 184, 0);
   width: 100%;
   text-align: center;
   padding: 24px 0 18px 0;

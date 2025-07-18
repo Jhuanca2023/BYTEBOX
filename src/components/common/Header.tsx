@@ -1,38 +1,47 @@
 import React, { useState } from 'react';
 
+// Propuesta profesional de submenús
 const menuItems = [
   {
     label: 'Soluciones',
     anchor: '#soluciones',
     dropdown: [
-      { label: 'Gestión de Activos de TI', anchor: '#almacenaje' },
-      { label: 'Adquisición de TI y Onboarding', anchor: '#onboarding' },
-      { label: 'Recuperación y Offboarding de Equipos', anchor: '#offboarding' },
+      { label: 'Gestión de activos IT', anchor: '#onboarding' },
+      { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding' },
+      { label: 'Offboarding y retiro de equipos', anchor: '#offboarding' },
+      
+      
     ],
   },
   {
     label: 'Plataforma',
     anchor: '#plataforma',
     dropdown: [
-      { label: 'Plataforma', anchor: '#plataforma' },
-      { label: 'Demo', anchor: '#demo' },
+      { label: 'Plataforma centralizada', anchor: '#platform' },
+      { label: 'Coordina una demo', anchor: '#contacto' },
+      
     ],
   },
   {
     label: 'Socios',
     anchor: '#socios',
     dropdown: [
-      { label: 'Partners', anchor: '#partners' },
-      { label: 'Afíliate', anchor: '#afiliate' },
+      { label: 'Programa de partners', anchor: '#partners' },
+      { label: 'Beneficios para aliados', anchor: '#beneficios' },
+      { label: 'Casos de éxito', anchor: '#casos' },
+      { label: 'Únete como socio', anchor: '#unete' },
     ],
   },
   {
     label: 'Recursos',
     anchor: '#recursos',
     dropdown: [
-      { label: 'Blog', anchor: '#blog' },
-      { label: 'Testimonios', anchor: '#testimonios' },
-      { label: 'Contacto', anchor: '#contacto' },
+      { label: 'Blog y noticias', anchor: '#blog' },
+      { label: 'Casos de estudio', anchor: '#casos' },
+      { label: 'Guías y tutoriales', anchor: '#guias' },
+      { label: 'Preguntas frecuentes (FAQ)', anchor: '#faq' },
+      { label: 'Soporte técnico', anchor: '#soporte' },
+      { label: 'Sobre nosotros', anchor: '#nosotros', external: true },
     ],
   },
 ];
@@ -48,6 +57,11 @@ const scrollToContact = (e: React.MouseEvent) => {
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+  // Manejo para mobile: click abre/cierra
+  const handleDropdownClick = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
   return (
     <header className="main-header bubble-header">
       <div className="bubble-header-inner">
@@ -62,12 +76,21 @@ const Header: React.FC = () => {
                 className={item.dropdown ? 'has-dropdown' : ''}
                 onMouseEnter={() => setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
+                onClick={() => handleDropdownClick(item.label)}
               >
-                <a href={item.anchor}>{item.label}</a>
+                <a href={item.anchor}>{item.label} {item.dropdown && <span className="arrow">▼</span>}</a>
                 {item.dropdown && openDropdown === item.label && (
-                  <ul className="dropdown">
+                  <ul className="submenu-simple">
+                    {/* Flecha superior */}
+                    <div className="dropdown-arrow" />
                     {item.dropdown.map((sub) => (
-                      <li key={sub.label}><a href={sub.anchor}>{sub.label}</a></li>
+                      <li key={sub.label}>
+                        {sub.external ? (
+                          <a href={sub.anchor} target="_blank" rel="noopener noreferrer">{sub.label}</a>
+                        ) : (
+                          <a href={sub.anchor}>{sub.label}</a>
+                        )}
+                      </li>
                     ))}
                   </ul>
                 )}

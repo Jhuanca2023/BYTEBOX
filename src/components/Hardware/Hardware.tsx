@@ -3,30 +3,30 @@ import './Hardware.css';
 
 const hardwareItems = [
   {
-    title: 'Laptops',
-    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F285x348%2Fee9b5d9213%2Ftoolkit1.png&w=640&q=75&dpl=dpl_ARampRW6Uj1ptwEUDBzwHYM7tdVw',
+    title: 'Conectividad Global',
+    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
   },
   {
-    title: 'Auriculares',
-    img: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=600&q=80',
+    title: 'Experiencia Personalizada',
+    img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
   },
   {
-    title: 'Monitores',
-    img: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+    title: 'Innovación & Creatividad',
+    img: 'https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=800&q=80',
   },
   {
-    title: 'Accesorios',
-    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F284x346%2Fd1fb85c58e%2Ftoolkitcard4.png&w=640&q=75&dpl=dpl_ARampRW6Uj1ptwEUDBzwHYM7tdVw',
+    title: 'Calidad y Confianza',
+    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
 const Hardware = () => (
   <section id="hardware" className="hardware-section">
     <h2 className="hardware-title">
-      Hardware <span className="light">universal</span> <span className="bold">a medida</span>
+    BYTEBOX<span className="light">Tecnología que une</span> <span className="bold">sin límites</span>
     </h2>
     <p className="hardware-subtitle">
-      A diferencia de los catálogos tradicionales, no nos limitamos a opciones predefinidas. Nuestro enfoque se trata de flexibilidad, asegurando que obtengas exactamente lo que imaginas para tu fuerza laboral global.
+    Llevamos accesorios y equipos tecnológicos de alta calidad a más personas. Diseñamos soluciones que potencian conectividad, productividad y entretenimiento — con foco en las necesidades de América Latina
     </p>
     <div className="hardware-grid">
       {hardwareItems.map((item) => (

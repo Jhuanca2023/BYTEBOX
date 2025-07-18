@@ -21,7 +21,7 @@ const Hero = () => (
       <button className="hero-cta" onClick={scrollToContact}>Cotiza</button>
     </div>
     <div className="hero-image">
-      <img src="https://www.tecspal.com/images/hero/mask.webp" alt="Hero Bytebox" />
+      <img src="#" alt="Hero Bytebox" />
     </div>
     
   </section>
