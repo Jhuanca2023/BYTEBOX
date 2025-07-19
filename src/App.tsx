@@ -13,6 +13,8 @@ import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/common/Footer';
 import PlatformSection from './components/Platform/PlatformSection';
+import Alianzas from './components/Alianzas';
+import UltimasEntradas from './components/UltimasEntradas';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Routes>
         <Route path="/sobre-nosotros" element={<SobreNosotros />} />
         <Route path="/nuestra-marca" element={<NuestraMarca />} />
+        <Route path="/alianzas" element={<Alianzas />} />
+        <Route path="/ultimas-entradas" element={<UltimasEntradas />} />
         <Route path="/" element={
           <>
             <Header />

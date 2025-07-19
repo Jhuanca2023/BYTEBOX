@@ -1,0 +1,242 @@
+.alianzasMain {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.alianzasTitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.alianzasTitleHighlight {
+  color: #7a8fa6;
+  font-weight: 700;
+}
+
+.alianzasDesc {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 32px auto;
+  font-size: 1.15rem;
+}
+
+.alianzasCards {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.alianzasCard {
+  width: 280px;
+  min-height: 380px;
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  position: relative;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: #232323;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.alianzasOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  z-index: 2;
+  padding: 32px 24px;
+}
+
+.alianzasCardTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.alianzasCardDesc {
+  font-size: 1.08rem;
+  margin: 0;
+  text-align: center;
+}
+
+.alianzasBtn {
+  background: #7a8fa6;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 16px 48px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+
+.alianzasBtn:hover {
+  background: #5a6e86;
+}
+
+.partnersSection {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partnersTitle {
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.partnersTitleHighlight {
+  color: #7a8fa6;
+  font-weight: 700;
+}
+
+.partnersDesc {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 32px auto;
+  font-size: 1.1rem;
+}
+
+.partnersGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.partnerCard {
+  background: #d1cdcd6b;
+  border-radius: 28px;
+  border: 6px solid #ededed;
+  width: 400px;
+  min-height: 446px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+  margin-bottom: 32px;
+  position: relative;
+  padding: 0 0 32px 0;
+}
+
+.partnerLogoBox {
+  width: 100%;
+  height: 212px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 18px;
+  margin: 5px 0 0 0;
+}
+.partnerLogo {
+  width: 300px;
+  height: 62px;
+  object-fit: contain;
+  display: block;
+}
+
+.partnerContent {
+  width: 100%;
+  max-height: 198px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 24px;
+  margin-top: 12px;
+}
+
+.partnerName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #232323;
+  margin-bottom: 2px;
+}
+
+.partnerNameHighlight {
+  color: #7a8fa6;
+  font-weight: 700;
+}
+
+.partnerDesc {
+  font-size: 1rem;
+  color: #7D7D7D;
+  text-align: left;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.partnerBtn {
+  position: absolute;
+  bottom: -30px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7a8fa6 60%, #232323 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.partnerBtn svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  z-index: 10;
+}
+
+.partnerBtn:hover {
+  background: linear-gradient(135deg, #232323 60%, #7a8fa6 100%);
+}
+
+@media (max-width: 900px) {
+  .partnersGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .partnerCard {
+    width: 95vw;
+    min-width: 0;
+    max-width: 420px;
+  }
+  .partnerBtn {
+    right: 24px;
+  }
+} 
