@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Hardware.css';
 
 const hardwareItems = [
@@ -38,4 +38,4 @@ const Hardware = () => (
   </section>
 );
 
-export default Hardware; 
+export default Hardware;
