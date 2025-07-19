@@ -42,13 +42,13 @@ const partners = [
     logo: 'https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg', // Puedes cambiar el logo por el de Falabella si lo tienes
     name: <>Fala<span className={styles.partnerNameHighlight}>bella</span></>,
     desc: 'Falabella es una de las principales empresas de retail en Latinoamérica, ofreciendo soluciones innovadoras y una amplia gama de productos y servicios para sus clientes y partners.',
-    url: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.falabella.com.pe%2Ffalabella-pe%2Fseller%2FBytebox%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaeLsZTVSYPTQR4JQ-XecOTd0zh31f3ZeYqdJe8cGGHzQIO7QQdTqXQlSH7pDQ_aem_ljyvNrZWCWgKJNFFc2tEag&e=AT1yIsvKDbWr7kxLk0EMRLtdSVKUkb9AByHReMXzmiyCgUEkG9jGHWUOO78E0hxnVgI0SnlIXD2yJhbM8iY_D_a5Rwcn80qxRD8xc3QBFWlVHduaTpGO2eo',
+    url: 'https://www.falabella.com.pe/falabella-pe/seller/Bytebox',
   },
   {
     logo: 'https://coolboxpe.vtexassets.com/assets/vtex.file-manager-graphql/images/d9ae27f0-f2b8-458f-b527-38489a24308e___b42588992c82b8e11076b72bf89bf427.svg',
     name: <>Cool<span className={styles.partnerNameHighlight}>box</span></>,
     desc: 'Coolbox es líder en tecnología y gadgets, brindando productos de última generación y experiencias únicas para empresas y consumidores en toda la región.',
-    url: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.coolbox.pe%2Fbytebox%3Fmap%3DsellerName%26fbclid%3DPAZXh0bgNhZW0CMTEAAafAXWCw4wksNKHCbRsZ8aQcI_pYH6PC4qFZTofapbS9aAvuDMCEHYiBNrrV-g_aem_r8qd5JcJKmmyjEY8-1ZLuQ&e=AT1d-KlAKm_kX_DRcn7JmT6kcB5GIKpu_h5_dChmP3QVi-6yJMeneVdOjjY00nGppvijwKNC-4OH2YCEvE8lw3OnfQDRfiy3AyflQnVmcKOE_49DTTJriY8',
+    url: 'https://www.coolbox.pe/bytebox?map=sellerName',
   },
 ];
 

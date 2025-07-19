@@ -23,22 +23,13 @@ const SobreNosotros = () => (
     {/* HERO SECTION */}
     <section className="hero-section">
       <div className="hero-content">
-        <h1 className="hero-title">Sobre Bytebox</h1>
-        <p className="hero-description">
-          Somos una empresa internacional líder en tecnología, conectando personas y empresas a través de soluciones innovadoras, seguras y eficientes. ¡Impulsamos el futuro digital!
+        <h1>Conoce nuestro <span className="hero-highlight">propósito</span></h1>
+        <p>
+          Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
         </p>
-        <ul className="hero-features">
-          <li>🚀 Innovación</li>
-          <li>🌎 Alcance global</li>
-          <li>🤝 Atención personalizada</li>
-          <li>🔒 Seguridad</li>
-        </ul>
-        <button className="hero-cta-button" onClick={scrollToContact}>
-          Contáctanos
-        </button>
       </div>
       <div className="hero-image">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Equipo Bytebox" />
+        <img src="#" alt="Equipo Bytebox" />
       </div>
     </section>
 
