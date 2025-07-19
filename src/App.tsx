@@ -1,3 +1,6 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SobreNosotros from './components/SobreNosotros/SobreNosotros';
+import NuestraMarca from './components/NuestraMarca/NuestraMarca';
 import Header from './components/common/Header';
 import Hero from './components/common/Hero';
 import Onboarding from './components/Onboarding/Onboarding';
@@ -13,27 +16,35 @@ import PlatformSection from './components/Platform/PlatformSection';
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <section className="solutions-section">
-          <h2>Soluciones eficientes<br />para <strong>productividad global</strong></h2>
-          <div className="solutions-grid">
-            <Onboarding />
-            <Offboarding />
-            <Storage />
-            <Platform />
-            <Buyback />
-          </div>
-        </section>
-        <Hardware />
-        <PlatformSection />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+        <Route path="/nuestra-marca" element={<NuestraMarca />} />
+        <Route path="/" element={
+          <>
+            <Header />
+            <main>
+              <Hero />
+              <section className="solutions-section">
+                <h2>Soluciones eficientes<br />para <strong>productividad global</strong></h2>
+                <div className="solutions-grid">
+                  <Onboarding />
+                  <Offboarding />
+                  <Storage />
+                  <Platform />
+                  <Buyback />
+                </div>
+              </section>
+              <Hardware />
+              <PlatformSection />
+              <Testimonials />
+              <Contact />
+            </main>
+            <Footer />
+          </>
+        } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

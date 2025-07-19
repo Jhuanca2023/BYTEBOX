@@ -22,13 +22,13 @@ const menuItems = [
     ],
   },
   {
-    label: 'Socios',
-    anchor: '#socios',
+    label: 'Nosotros',
+    anchor: '/sobre-nosotros',
     dropdown: [
-      { label: 'Programa de partners', anchor: '#partners' },
-      { label: 'Beneficios para aliados', anchor: '#beneficios' },
-      { label: 'Casos de éxito', anchor: '#casos' },
-      { label: 'Únete como socio', anchor: '#unete' },
+      { label: 'Sobre nosotros', anchor: '/sobre-nosotros' },
+      { label: 'Nuestra Marca', anchor: '/nuestra-marca' },
+      { label: 'Casos de éxito', anchor: '#testimonios' },
+      { label: 'Únete como socio', anchor: '#contacto' },
     ],
   },
   {

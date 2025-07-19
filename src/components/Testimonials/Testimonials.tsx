@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Testimonials.css';
 
 const testimonials = [
   {
-    text: '“Trabajar con Tecspal ha sido un placer. Su comunicación fluida, rápida respuesta y actitud empática nos han facilitado la gestión de equipos globales y offboardings. Gracias a su apoyo, podemos trabajar cómodamente con colaboradores de todo el mundo”.',
-    name: 'Valentina Ribas',
-    role: 'Office Manager en Blend',
-    logo: 'https://www.tecspal.com/_next/image?url=%2Fassets%2Flogos%2Fblend.png&w=64&q=75',
+    text: '“En Bytebox encontramos un aliado estratégico para la gestión de hardware global. Su servicio es rápido, seguro y confiable.”',
+    name: 'Andrés Aguilar',
+    role: 'IT Manager en Zemoga',
+    logo: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
-    text: '“Trabajamos con Tecspal en dos ocasiones y la experiencia fue excelente. Valoramos la rapidez, eficiencia en las entregas y precios razonables. Como empresa de IT que contrata internacionalmente, confiamos en Tecspal por su compromiso y confiabilidad. Esperamos seguir colaborando”.',
-    name: 'Sabrina Ustinelli',
-    role: 'Office Assistant en Tryolabs',
-    logo: 'https://www.tecspal.com/_next/image?url=%2Fassets%2Flogos%2Ftryolabs.png&w=64&q=75',
+    text: '“Nuestro proyecto de renovación de computadoras fue un éxito gracias a Bytebox, que optimizó logística y costos. ¡Excelente servicio!”',
+    name: 'Marcelo Bevegni',
+    role: 'Gerente de Tecnología en Tarmac',
+    logo: 'https://randomuser.me/api/portraits/men/44.jpg',
   },
   {
-    text: '“Fuimos uno de sus primeros clientes y desde entonces han demostrado ser un gran aliado, ayudándonos a optimizar nuestros procesos y brindando una experiencia impecable a nuestro equipo.”',
-    name: 'Florencia Da Rosa',
-    role: 'HR Manager en Prometeo',
-    logo: 'https://www.tecspal.com/_next/image?url=%2Fassets%2Flogos%2Fprometeo.png&w=64&q=75',
+    text: '“Bytebox es un socio confiable y eficiente para las necesidades de hardware de equipos remotos. Altamente recomendados.”',
+    name: 'Rebecca Salazar',
+    role: 'Recursos Humanos en Stateside',
+    logo: 'https://randomuser.me/api/portraits/women/65.jpg',
   },
 ];
 
@@ -36,13 +36,15 @@ const Testimonials = () => {
   return (
     <section id="testimonios" className="testimonials-section">
       <h2 className="testimonials-title">
-        <span className="bold">Testi</span><span className="light">monios</span> de <span className="brand">Bytebox</span>
+        <span className="bold">Testi</span><span className="light">monios</span> <span className="brand">de Bytebox</span>
       </h2>
       <p className="testimonials-subtitle">
         En Bytebox, nuestro enfoque siempre está en el cliente. Queremos ser un socio de confianza en el proceso de expansión global de tu empresa.
       </p>
       <div className="testimonials-slider">
-        <button className="slider-arrow left" onClick={prev} aria-label="Anterior">&#8592;</button>
+        <button className="slider-arrow left" onClick={prev} aria-label="Anterior">
+          <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="19" fill="#f5f7f9"/><path d="M22.5 27l-6-8 6-8" stroke="#b0bec5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
+        </button>
         {visible.map((t, i) => (
           <div className="testimonial-card" key={i}>
             <p className="testimonial-text"><em>{t.text}</em></p>
@@ -55,10 +57,12 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
-        <button className="slider-arrow right" onClick={next} aria-label="Siguiente">&#8594;</button>
+        <button className="slider-arrow right" onClick={next} aria-label="Siguiente">
+          <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="19" fill="#f5f7f9"/><path d="M15.5 11l6 8-6 8" stroke="#b0bec5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
+        </button>
       </div>
     </section>
   );
 };
 
-export default Testimonials; 
+export default Testimonials;

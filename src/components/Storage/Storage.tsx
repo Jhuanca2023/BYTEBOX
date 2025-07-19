@@ -3,7 +3,7 @@
 const Storage = () => (
   <section id="almacenaje" className="solution-card">
     <h3>Almacenaje</h3>
-    <p>Almacena tus equipos de forma segura. Nuestras soluciones mantienen tus activos protegidos y listos para ser reutilizados, ahorrando dinero y optimizando recursos.</p>
+    <p> Ofrecemos almacenamiento seguro y optimizado, protegiendo tus dispositivos y garantizando su disponibilidad para reutilización o actualización, reduciendo gastos innecesarios.</p>
     <span className="solution-number">03</span>
   </section>
 );
