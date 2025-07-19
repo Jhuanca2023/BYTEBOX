@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './PlatformSection.module.css';
 import MacbookMockup from './MacbookMockup';
 import PlatformCircleSteps from './PlatformCircleSteps';

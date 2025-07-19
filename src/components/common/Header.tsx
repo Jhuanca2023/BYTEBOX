@@ -61,7 +61,9 @@ const Header: React.FC = () => {
     <header className="main-header bubble-header">
       <div className="bubble-header-inner">
         <div className="logo">
-          <span>bytebox</span>
+          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <span>bytebox</span>
+          </a>
         </div>
         <nav className="main-nav">
           <ul>
