@@ -17,8 +17,7 @@ const menuItems = [
     anchor: '#plataforma',
     dropdown: [
       { label: 'Plataforma centralizada', anchor: '#platform' },
-      { label: 'Coordina una demo', anchor: '#contacto' },
-      
+      { label: 'Alianzas', anchor: '/alianzas' },
     ],
   },
   {
@@ -36,11 +35,8 @@ const menuItems = [
     anchor: '#recursos',
     dropdown: [
       { label: 'Blog y noticias', anchor: '#blog' },
-      { label: 'Casos de estudio', anchor: '#casos' },
-      { label: 'Guías y tutoriales', anchor: '#guias' },
-      { label: 'Preguntas frecuentes (FAQ)', anchor: '#faq' },
-      { label: 'Soporte técnico', anchor: '#soporte' },
-      { label: 'Sobre nosotros', anchor: '#nosotros', external: true },
+      { label: 'Últimas entradas', anchor: '/ultimas-entradas' },
+      
     ],
   },
 ];
@@ -97,13 +93,11 @@ const Header: React.FC = () => {
             ))}
           </ul>
         </nav>
-        <div className="header-actions">
+        <div style={{ marginLeft: 'auto' }}>
           <select className="lang-select" defaultValue="ESP" title="Idioma">
             <option value="ESP">ESP</option>
             <option value="ENG">ENG</option>
           </select>
-          <button className="cta-btn" onClick={scrollToContact}>Cotiza</button>
-          <button className="login-btn">Inicia sesión</button>
         </div>
       </div>
     </header>

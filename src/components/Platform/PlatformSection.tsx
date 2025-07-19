@@ -85,7 +85,7 @@ const PlatformSection = () => {
         <div className={styles.laptopCol}>
           <MacbookMockup>
             {/* imagen  dentro de la laptop */}
-            <img src="/src/assets/images/platform-demo.png" alt="Demo plataforma" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px'}} />
+            <img src="/src/assets/images/plataforma.png" alt="Demo plataforma" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px'}} />
           </MacbookMockup>
         </div>
       </div>
