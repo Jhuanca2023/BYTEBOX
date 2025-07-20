@@ -70,21 +70,103 @@
                         "longitud": -77.9503
                     },
                     "distritos": [
-                        {"id": "010301", "nombre": "Bagua Grande"},
-                        {"id": "010302", "nombre": "Cajaruro"},
-                        {"id": "010303", "nombre": "Cumba"},
-                        {"id": "010304", "nombre": "El Milagro"},
-                        {"id": "010305", "nombre": "Florida"},
-                        {"id": "010306", "nombre": "Jamalca"},
-                        {"id": "010307", "nombre": "Lonya Grande"},
-                        {"id": "010308", "nombre": "Yamon"},
-                        {"id": "010309", "nombre": "Ricardo Palma"},
-                        {"id": "010310", "nombre": "Rosario"},
-                        {"id": "010311", "nombre": "San Francisco de Yeso"},
-                        {"id": "010312", "nombre": "San Jerónimo"},
-                        {"id": "010313", "nombre": "San Juan de Lopecancha"},
-                        {"id": "010314", "nombre": "Santa Catalina"},
-                        {"id": "010315", "nombre": "Santo Tomas"}
+                        {"id": "010301", "nombre": "Luya"},
+                        {"id": "010302", "nombre": "Camporredondo"},
+                        {"id": "010303", "nombre": "Cocabamba"},
+                        {"id": "010304", "nombre": "Colcamar"},
+                        {"id": "010305", "nombre": "Conila"},
+                        {"id": "010306", "nombre": "Inguilpata"},
+                        {"id": "010307", "nombre": "Lamud"},
+                        {"id": "010308", "nombre": "Longuita"},
+                        {"id": "010309", "nombre": "Lonya Chico"},
+                        {"id": "010310", "nombre": "Luya Viejo"},
+                        {"id": "010311", "nombre": "María"},
+                        {"id": "010312", "nombre": "Ocalli"},
+                        {"id": "010313", "nombre": "Ocumal"},
+                        {"id": "010314", "nombre": "Pisuquia"},
+                        {"id": "010315", "nombre": "Providencia"},
+                        {"id": "010316", "nombre": "San Cristóbal"},
+                        {"id": "010317", "nombre": "San Francisco del Yeso"},
+                        {"id": "010318", "nombre": "San Jerónimo"},
+                        {"id": "010319", "nombre": "San Juan de Lopecancha"},
+                        {"id": "010320", "nombre": "Santa Catalina"},
+                        {"id": "010321", "nombre": "Santo Tomas"},
+                        {"id": "010322", "nombre": "Tingo"},
+                        {"id": "010323", "nombre": "Trita"}
+                    ]
+                },
+                {
+                    "id": "0104",
+                    "nombre": "Bongara",
+                    "coordenadas": {
+                        "latitud": -5.7333,
+                        "longitud": -77.9167
+                    },
+                    "distritos": [
+                        {"id": "010401", "nombre": "Jumbilla"},
+                        {"id": "010402", "nombre": "Chisquilla"},
+                        {"id": "010403", "nombre": "Churuja"},
+                        {"id": "010404", "nombre": "Corosha"},
+                        {"id": "010405", "nombre": "Cuispes"},
+                        {"id": "010406", "nombre": "Florida"},
+                        {"id": "010407", "nombre": "Jazan"},
+                        {"id": "010408", "nombre": "Recta"},
+                        {"id": "010409", "nombre": "San Carlos"},
+                        {"id": "010410", "nombre": "Shipasbamba"},
+                        {"id": "010411", "nombre": "Valera"},
+                        {"id": "010412", "nombre": "Yambrasbamba"}
+                    ]
+                },
+                {
+                    "id": "0105",
+                    "nombre": "Condorcanqui",
+                    "coordenadas": {
+                        "latitud": -4.6500,
+                        "longitud": -78.4167
+                    },
+                    "distritos": [
+                        {"id": "010501", "nombre": "Nieva"},
+                        {"id": "010502", "nombre": "El Cenepa"},
+                        {"id": "010503", "nombre": "Río Santiago"}
+                    ]
+                },
+                {
+                    "id": "0106",
+                    "nombre": "Rodriguez de Mendoza",
+                    "coordenadas": {
+                        "latitud": -6.3833,
+                        "longitud": -77.4833
+                    },
+                    "distritos": [
+                        {"id": "010601", "nombre": "San Nicolás"},
+                        {"id": "010602", "nombre": "Chirimoto"},
+                        {"id": "010603", "nombre": "Cochamal"},
+                        {"id": "010604", "nombre": "Huambo"},
+                        {"id": "010605", "nombre": "Limabamba"},
+                        {"id": "010606", "nombre": "Longar"},
+                        {"id": "010607", "nombre": "Mariscal Benavides"},
+                        {"id": "010608", "nombre": "Milpuc"},
+                        {"id": "010609", "nombre": "Omia"},
+                        {"id": "010610", "nombre": "Santa Rosa"},
+                        {"id": "010611", "nombre": "Totora"},
+                        {"id": "010612", "nombre": "Vista Alegre"}
+                    ]
+                },
+                {
+                    "id": "0107",
+                    "nombre": "Utcubamba",
+                    "coordenadas": {
+                        "latitud": -5.9167,
+                        "longitud": -78.5167
+                    },
+                    "distritos": [
+                        {"id": "010701", "nombre": "Bagua Grande"},
+                        {"id": "010702", "nombre": "Cajaruro"},
+                        {"id": "010703", "nombre": "Cumba"},
+                        {"id": "010704", "nombre": "El Milagro"},
+                        {"id": "010705", "nombre": "Jamalca"},
+                        {"id": "010706", "nombre": "Lonya Grande"},
+                        {"id": "010707", "nombre": "Yamon"}
                     ]
                 }
             ]
@@ -144,19 +226,325 @@
                         "longitud": -77.4647
                     },
                     "distritos": [
-                        {"id": "020301", "nombre": "Aquia"},
-                        {"id": "020302", "nombre": "Cajacay"},
-                        {"id": "020303", "nombre": "Carhuaz"},
-                        {"id": "020304", "nombre": "Huallanca"},
-                        {"id": "020305", "nombre": "Huasta"},
-                        {"id": "020306", "nombre": "Huayllacayan"},
-                        {"id": "020307", "nombre": "Marcarani"},
-                        {"id": "020308", "nombre": "Musga"},
-                        {"id": "020309", "nombre": "Pomabamba"},
-                        {"id": "020310", "nombre": "Sacsamarca"},
-                        {"id": "020311", "nombre": "Sihuas"},
-                        {"id": "020312", "nombre": "Thomas"},
-                        {"id": "020313", "nombre": "Tupe"}
+                        {"id": "020301", "nombre": "Llamellin"},
+                        {"id": "020302", "nombre": "Aczo"},
+                        {"id": "020303", "nombre": "Chaccho"},
+                        {"id": "020304", "nombre": "Chingas"},
+                        {"id": "020305", "nombre": "Mirgas"},
+                        {"id": "020306", "nombre": "San Juan de Rontoy"}
+                    ]
+                },
+                {
+                    "id": "0204",
+                    "nombre": "Asunción",
+                    "coordenadas": {
+                        "latitud": -9.3333,
+                        "longitud": -77.7833
+                    },
+                    "distritos": [
+                        {"id": "020401", "nombre": "Chacas"},
+                        {"id": "020402", "nombre": "Acochaca"}
+                    ]
+                },
+                {
+                    "id": "0205",
+                    "nombre": "Bolognesi",
+                    "coordenadas": {
+                        "latitud": -10.1333,
+                        "longitud": -77.1833
+                    },
+                    "distritos": [
+                        {"id": "020501", "nombre": "Chiquian"},
+                        {"id": "020502", "nombre": "Abelardo Pardo Lezameta"},
+                        {"id": "020503", "nombre": "Antonio Raymondi"},
+                        {"id": "020504", "nombre": "Aquia"},
+                        {"id": "020505", "nombre": "Cajacay"},
+                        {"id": "020506", "nombre": "Canis"},
+                        {"id": "020507", "nombre": "Colquioc"},
+                        {"id": "020508", "nombre": "Huallanca"},
+                        {"id": "020509", "nombre": "Huasta"},
+                        {"id": "020510", "nombre": "Huayllacayan"},
+                        {"id": "020511", "nombre": "La Primavera"},
+                        {"id": "020512", "nombre": "Mangas"},
+                        {"id": "020513", "nombre": "Pacllon"},
+                        {"id": "020514", "nombre": "San Miguel de Corpanqui"},
+                        {"id": "020515", "nombre": "Ticllos"}
+                    ]
+                },
+                {
+                    "id": "0206",
+                    "nombre": "Carhuaz",
+                    "coordenadas": {
+                        "latitud": -9.2833,
+                        "longitud": -77.6167
+                    },
+                    "distritos": [
+                        {"id": "020601", "nombre": "Carhuaz"},
+                        {"id": "020602", "nombre": "Acopampa"},
+                        {"id": "020603", "nombre": "Amashca"},
+                        {"id": "020604", "nombre": "Anta"},
+                        {"id": "020605", "nombre": "Ataquero"},
+                        {"id": "020606", "nombre": "Marcara"},
+                        {"id": "020607", "nombre": "Pariahuanca"},
+                        {"id": "020608", "nombre": "San Miguel de Aco"},
+                        {"id": "020609", "nombre": "Shilla"},
+                        {"id": "020610", "nombre": "Tinco"},
+                        {"id": "020611", "nombre": "Yungar"}
+                    ]
+                },
+                {
+                    "id": "0207",
+                    "nombre": "Carlos Fermín Fitzcarrald",
+                    "coordenadas": {
+                        "latitud": -8.9167,
+                        "longitud": -77.3167
+                    },
+                    "distritos": [
+                        {"id": "020701", "nombre": "San Luis"},
+                        {"id": "020702", "nombre": "San Nicolás"},
+                        {"id": "020703", "nombre": "Yauya"}
+                    ]
+                },
+                {
+                    "id": "0208",
+                    "nombre": "Casma",
+                    "coordenadas": {
+                        "latitud": -9.4667,
+                        "longitud": -78.3000
+                    },
+                    "distritos": [
+                        {"id": "020801", "nombre": "Casma"},
+                        {"id": "020802", "nombre": "Buena Vista Alta"},
+                        {"id": "020803", "nombre": "Comandante Noel"},
+                        {"id": "020804", "nombre": "Yautan"}
+                    ]
+                },
+                {
+                    "id": "0209",
+                    "nombre": "Corongo",
+                    "coordenadas": {
+                        "latitud": -8.5667,
+                        "longitud": -77.8833
+                    },
+                    "distritos": [
+                        {"id": "020901", "nombre": "Corongo"},
+                        {"id": "020902", "nombre": "Aco"},
+                        {"id": "020903", "nombre": "Bambas"},
+                        {"id": "020904", "nombre": "Cusca"},
+                        {"id": "020905", "nombre": "La Pampa"},
+                        {"id": "020906", "nombre": "Yanac"},
+                        {"id": "020907", "nombre": "Yupan"}
+                    ]
+                },
+                {
+                    "id": "0210",
+                    "nombre": "Huari",
+                    "coordenadas": {
+                        "latitud": -9.3333,
+                        "longitud": -77.1667
+                    },
+                    "distritos": [
+                        {"id": "021001", "nombre": "Huari"},
+                        {"id": "021002", "nombre": "Anra"},
+                        {"id": "021003", "nombre": "Cajay"},
+                        {"id": "021004", "nombre": "Chavin de Huantar"},
+                        {"id": "021005", "nombre": "Huacachi"},
+                        {"id": "021006", "nombre": "Huacchis"},
+                        {"id": "021007", "nombre": "Huachis"},
+                        {"id": "021008", "nombre": "Huantar"},
+                        {"id": "021009", "nombre": "Masin"},
+                        {"id": "021010", "nombre": "Paucas"},
+                        {"id": "021011", "nombre": "Ponto"},
+                        {"id": "021012", "nombre": "Rahuapampa"},
+                        {"id": "021013", "nombre": "Rapayan"},
+                        {"id": "021014", "nombre": "San Marcos"},
+                        {"id": "021015", "nombre": "San Pedro de Chana"},
+                        {"id": "021016", "nombre": "Uco"}
+                    ]
+                },
+                {
+                    "id": "0211",
+                    "nombre": "Huarmey",
+                    "coordenadas": {
+                        "latitud": -10.0667,
+                        "longitud": -78.1500
+                    },
+                    "distritos": [
+                        {"id": "021101", "nombre": "Huarmey"},
+                        {"id": "021102", "nombre": "Cochapeti"},
+                        {"id": "021103", "nombre": "Culebras"},
+                        {"id": "021104", "nombre": "Huayan"},
+                        {"id": "021105", "nombre": "Malvas"}
+                    ]
+                },
+                {
+                    "id": "0212",
+                    "nombre": "Huaylas",
+                    "coordenadas": {
+                        "latitud": -8.9500,
+                        "longitud": -77.8833
+                    },
+                    "distritos": [
+                        {"id": "021201", "nombre": "Caraz"},
+                        {"id": "021202", "nombre": "Huallanca"},
+                        {"id": "021203", "nombre": "Huata"},
+                        {"id": "021204", "nombre": "Huaylas"},
+                        {"id": "021205", "nombre": "Mato"},
+                        {"id": "021206", "nombre": "Pamparomas"},
+                        {"id": "021207", "nombre": "Pueblo Libre"},
+                        {"id": "021208", "nombre": "Santa Cruz"},
+                        {"id": "021209", "nombre": "Santo Toribio"},
+                        {"id": "021210", "nombre": "Yuracmarca"}
+                    ]
+                },
+                {
+                    "id": "0213",
+                    "nombre": "Mariscal Luzuriaga",
+                    "coordenadas": {
+                        "latitud": -8.8333,
+                        "longitud": -77.5833
+                    },
+                    "distritos": [
+                        {"id": "021301", "nombre": "Piscobamba"},
+                        {"id": "021302", "nombre": "Casca"},
+                        {"id": "021303", "nombre": "Eleazar Guzman Barron"},
+                        {"id": "021304", "nombre": "Fidel Olivas Escudero"},
+                        {"id": "021305", "nombre": "Llama"},
+                        {"id": "021306", "nombre": "Llumpa"},
+                        {"id": "021307", "nombre": "Lucma"},
+                        {"id": "021308", "nombre": "Musga"}
+                    ]
+                },
+                {
+                    "id": "0214",
+                    "nombre": "Ocros",
+                    "coordenadas": {
+                        "latitud": -10.4000,
+                        "longitud": -77.4000
+                    },
+                    "distritos": [
+                        {"id": "021401", "nombre": "Ocros"},
+                        {"id": "021402", "nombre": "Acas"},
+                        {"id": "021403", "nombre": "Cajamarquilla"},
+                        {"id": "021404", "nombre": "Carhuapampa"},
+                        {"id": "021405", "nombre": "Cochas"},
+                        {"id": "021406", "nombre": "Congas"},
+                        {"id": "021407", "nombre": "Llipa"},
+                        {"id": "021408", "nombre": "San Cristobal de Rajan"},
+                        {"id": "021409", "nombre": "San Pedro"},
+                        {"id": "021410", "nombre": "Santiago de Chilcas"}
+                    ]
+                },
+                {
+                    "id": "0215",
+                    "nombre": "Pallasca",
+                    "coordenadas": {
+                        "latitud": -8.3833,
+                        "longitud": -78.0167
+                    },
+                    "distritos": [
+                        {"id": "021501", "nombre": "Cabana"},
+                        {"id": "021502", "nombre": "Bolognesi"},
+                        {"id": "021503", "nombre": "Conchucos"},
+                        {"id": "021504", "nombre": "Huacaschuque"},
+                        {"id": "021505", "nombre": "Huandoval"},
+                        {"id": "021506", "nombre": "Lacabamba"},
+                        {"id": "021507", "nombre": "Llapo"},
+                        {"id": "021508", "nombre": "Pallasca"},
+                        {"id": "021509", "nombre": "Pampas"},
+                        {"id": "021510", "nombre": "Santa Rosa"},
+                        {"id": "021511", "nombre": "Tauca"}
+                    ]
+                },
+                {
+                    "id": "0216",
+                    "nombre": "Pomabamba",
+                    "coordenadas": {
+                        "latitud": -8.8167,
+                        "longitud": -77.4667
+                    },
+                    "distritos": [
+                        {"id": "021601", "nombre": "Pomabamba"},
+                        {"id": "021602", "nombre": "Huayllan"},
+                        {"id": "021603", "nombre": "Parobamba"},
+                        {"id": "021604", "nombre": "Quinuabamba"}
+                    ]
+                },
+                {
+                    "id": "0217",
+                    "nombre": "Recuay",
+                    "coordenadas": {
+                        "latitud": -9.7167,
+                        "longitud": -77.4500
+                    },
+                    "distritos": [
+                        {"id": "021701", "nombre": "Recuay"},
+                        {"id": "021702", "nombre": "Catac"},
+                        {"id": "021703", "nombre": "Cotaparaco"},
+                        {"id": "021704", "nombre": "Huayllapampa"},
+                        {"id": "021705", "nombre": "Llacllin"},
+                        {"id": "021706", "nombre": "Marca"},
+                        {"id": "021707", "nombre": "Pampas Chico"},
+                        {"id": "021708", "nombre": "Pararin"},
+                        {"id": "021709", "nombre": "Tapacocha"},
+                        {"id": "021710", "nombre": "Ticapampa"}
+                    ]
+                },
+                {
+                    "id": "0218",
+                    "nombre": "Santa",
+                    "coordenadas": {
+                        "latitud": -8.9833,
+                        "longitud": -78.6167
+                    },
+                    "distritos": [
+                        {"id": "021801", "nombre": "Chimbote"},
+                        {"id": "021802", "nombre": "Caceres del Peru"},
+                        {"id": "021803", "nombre": "Coishco"},
+                        {"id": "021804", "nombre": "Macate"},
+                        {"id": "021805", "nombre": "Moro"},
+                        {"id": "021806", "nombre": "Nepeña"},
+                        {"id": "021807", "nombre": "Samanco"},
+                        {"id": "021808", "nombre": "Santa"},
+                        {"id": "021809", "nombre": "Nuevo Chimbote"}
+                    ]
+                },
+                {
+                    "id": "0219",
+                    "nombre": "Sihuas",
+                    "coordenadas": {
+                        "latitud": -8.5667,
+                        "longitud": -77.6500
+                    },
+                    "distritos": [
+                        {"id": "021901", "nombre": "Sihuas"},
+                        {"id": "021902", "nombre": "Acobamba"},
+                        {"id": "021903", "nombre": "Alfonso Ugarte"},
+                        {"id": "021904", "nombre": "Cashapampa"},
+                        {"id": "021905", "nombre": "Chingalpo"},
+                        {"id": "021906", "nombre": "Huayllabamba"},
+                        {"id": "021907", "nombre": "Quiches"},
+                        {"id": "021908", "nombre": "Ragash"},
+                        {"id": "021909", "nombre": "San Juan"},
+                        {"id": "021910", "nombre": "Sicsibamba"}
+                    ]
+                },
+                {
+                    "id": "0220",
+                    "nombre": "Yungay",
+                    "coordenadas": {
+                        "latitud": -9.1333,
+                        "longitud": -77.7500
+                    },
+                    "distritos": [
+                        {"id": "022001", "nombre": "Yungay"},
+                        {"id": "022002", "nombre": "Cascapara"},
+                        {"id": "022003", "nombre": "Mancos"},
+                        {"id": "022004", "nombre": "Matacoto"},
+                        {"id": "022005", "nombre": "Quillo"},
+                        {"id": "022006", "nombre": "Ranrahirca"},
+                        {"id": "022007", "nombre": "Shupluy"},
+                        {"id": "022008", "nombre": "Yanama"}
                     ]
                 }
             ]
@@ -214,7 +602,110 @@
                         {"id": "030215", "nombre": "Santa María de Chicmo"},
                         {"id": "030216", "nombre": "Talavera"},
                         {"id": "030217", "nombre": "Tumay Huaraca"},
-                        {"id": "030218", "nombre": "Turpo"}
+                        {"id": "030218", "nombre": "Turpo"},
+                        {"id": "030219", "nombre": "Kaquiabamba"}
+                    ]
+                },
+                {
+                    "id": "0303",
+                    "nombre": "Antabamba",
+                    "coordenadas": {
+                        "latitud": -14.3667,
+                        "longitud": -72.8833
+                    },
+                    "distritos": [
+                        {"id": "030301", "nombre": "Antabamba"},
+                        {"id": "030302", "nombre": "El Oro"},
+                        {"id": "030303", "nombre": "Huaquirca"},
+                        {"id": "030304", "nombre": "Juan Espinoza Medrano"},
+                        {"id": "030305", "nombre": "Oropesa"},
+                        {"id": "030306", "nombre": "Pachaconas"},
+                        {"id": "030307", "nombre": "Sabaino"}
+                    ]
+                },
+                {
+                    "id": "0304",
+                    "nombre": "Aymaraes",
+                    "coordenadas": {
+                        "latitud": -14.2000,
+                        "longitud": -73.3000
+                    },
+                    "distritos": [
+                        {"id": "030401", "nombre": "Chalhuanca"},
+                        {"id": "030402", "nombre": "Capaya"},
+                        {"id": "030403", "nombre": "Caraybamba"},
+                        {"id": "030404", "nombre": "Chapimarca"},
+                        {"id": "030405", "nombre": "Colcabamba"},
+                        {"id": "030406", "nombre": "Cotaruse"},
+                        {"id": "030407", "nombre": "Huayllo"},
+                        {"id": "030408", "nombre": "Justo Apu Sahuaraura"},
+                        {"id": "030409", "nombre": "Lucre"},
+                        {"id": "030410", "nombre": "Pocohuanca"},
+                        {"id": "030411", "nombre": "San Juan de Chacña"},
+                        {"id": "030412", "nombre": "Sañayca"},
+                        {"id": "030413", "nombre": "Soraya"},
+                        {"id": "030414", "nombre": "Tapairihua"},
+                        {"id": "030415", "nombre": "Tintay"},
+                        {"id": "030416", "nombre": "Toraya"},
+                        {"id": "030417", "nombre": "Yanaca"}
+                    ]
+                },
+                {
+                    "id": "0305",
+                    "nombre": "Cotabambas",
+                    "coordenadas": {
+                        "latitud": -13.9333,
+                        "longitud": -72.3000
+                    },
+                    "distritos": [
+                        {"id": "030501", "nombre": "Tambobamba"},
+                        {"id": "030502", "nombre": "Cotabambas"},
+                        {"id": "030503", "nombre": "Coyllurqui"},
+                        {"id": "030504", "nombre": "Haquira"},
+                        {"id": "030505", "nombre": "Mara"},
+                        {"id": "030506", "nombre": "Challhuahuacho"}
+                    ]
+                },
+                {
+                    "id": "0306",
+                    "nombre": "Chincheros",
+                    "coordenadas": {
+                        "latitud": -13.5000,
+                        "longitud": -73.6167
+                    },
+                    "distritos": [
+                        {"id": "030601", "nombre": "Chincheros"},
+                        {"id": "030602", "nombre": "Anco Huallo"},
+                        {"id": "030603", "nombre": "Cocharcas"},
+                        {"id": "030604", "nombre": "Huaccana"},
+                        {"id": "030605", "nombre": "Ocobamba"},
+                        {"id": "030606", "nombre": "Ongoy"},
+                        {"id": "030607", "nombre": "Uranmarca"},
+                        {"id": "030608", "nombre": "Ranracancha"}
+                    ]
+                },
+                {
+                    "id": "0307",
+                    "nombre": "Grau",
+                    "coordenadas": {
+                        "latitud": -14.1333,
+                        "longitud": -72.6167
+                    },
+                    "distritos": [
+                        {"id": "030701", "nombre": "Chuquibambilla"},
+                        {"id": "030702", "nombre": "Curpahuasi"},
+                        {"id": "030703", "nombre": "Gamarra"},
+                        {"id": "030704", "nombre": "Huayllati"},
+                        {"id": "030705", "nombre": "Mamara"},
+                        {"id": "030706", "nombre": "Micaela Bastidas"},
+                        {"id": "030707", "nombre": "Pataypampa"},
+                        {"id": "030708", "nombre": "Progreso"},
+                        {"id": "030709", "nombre": "San Antonio"},
+                        {"id": "030710", "nombre": "Santa Rosa"},
+                        {"id": "030711", "nombre": "Turpay"},
+                        {"id": "030712", "nombre": "Vilcabamba"},
+                        {"id": "030713", "nombre": "Virundo"},
+                        {"id": "030714", "nombre": "Curasco"}
                     ]
                 }
             ]
@@ -272,11 +763,111 @@
                         {"id": "040202", "nombre": "José María Quimper"},
                         {"id": "040203", "nombre": "Mariano Nicolás Valcárcel"},
                         {"id": "040204", "nombre": "Miguel Iglesias"},
-                        {"id": "040205", "nombre": "Potoni"},
+                        {"id": "040205", "nombre": "Ocoña"},
                         {"id": "040206", "nombre": "Quilca"},
-                        {"id": "040207", "nombre": "Samán"},
-                        {"id": "040208", "nombre": "San Clemente"},
-                        {"id": "040209", "nombre": "Santa Rosa"}
+                        {"id": "040207", "nombre": "Samuel Pastor"}
+                    ]
+                },
+                {
+                    "id": "0403",
+                    "nombre": "Caravelí",
+                    "coordenadas": {
+                        "latitud": -15.7667,
+                        "longitud": -73.3667
+                    },
+                    "distritos": [
+                        {"id": "040301", "nombre": "Caravelí"},
+                        {"id": "040302", "nombre": "Acarí"},
+                        {"id": "040303", "nombre": "Atico"},
+                        {"id": "040304", "nombre": "Atiquipa"},
+                        {"id": "040305", "nombre": "Bella Unión"},
+                        {"id": "040306", "nombre": "Cahuacho"},
+                        {"id": "040307", "nombre": "Chala"},
+                        {"id": "040308", "nombre": "Chaparra"},
+                        {"id": "040309", "nombre": "Huanuhuanu"},
+                        {"id": "040310", "nombre": "Jaqui"},
+                        {"id": "040311", "nombre": "Lomas"},
+                        {"id": "040312", "nombre": "Quicacha"},
+                        {"id": "040313", "nombre": "Yauca"}
+                    ]
+                },
+                {
+                    "id": "0404",
+                    "nombre": "Castilla",
+                    "coordenadas": {
+                        "latitud": -15.2167,
+                        "longitud": -72.2167
+                    },
+                    "distritos": [
+                        {"id": "040401", "nombre": "Aplao"},
+                        {"id": "040402", "nombre": "Andagua"},
+                        {"id": "040403", "nombre": "Ayo"},
+                        {"id": "040404", "nombre": "Chachas"},
+                        {"id": "040405", "nombre": "Chilcaymarca"},
+                        {"id": "040406", "nombre": "Choco"},
+                        {"id": "040407", "nombre": "Huancarqui"},
+                        {"id": "040408", "nombre": "Machaguay"},
+                        {"id": "040409", "nombre": "Orcopampa"},
+                        {"id": "040410", "nombre": "Pampacolca"},
+                        {"id": "040411", "nombre": "Tipan"},
+                        {"id": "040412", "nombre": "Uñon"},
+                        {"id": "040413", "nombre": "Uraca"},
+                        {"id": "040414", "nombre": "Viraco"}
+                    ]
+                },
+                {
+                    "id": "0405",
+                    "nombre": "Condesuyos",
+                    "coordenadas": {
+                        "latitud": -15.7833,
+                        "longitud": -72.6333
+                    },
+                    "distritos": [
+                        {"id": "040501", "nombre": "Chuquibamba"},
+                        {"id": "040502", "nombre": "Andaray"},
+                        {"id": "040503", "nombre": "Cayarani"},
+                        {"id": "040504", "nombre": "Chichas"},
+                        {"id": "040505", "nombre": "Iray"},
+                        {"id": "040506", "nombre": "Río Grande"},
+                        {"id": "040507", "nombre": "Salamanca"},
+                        {"id": "040508", "nombre": "Yanaquihua"}
+                    ]
+                },
+                {
+                    "id": "0406",
+                    "nombre": "Islay",
+                    "coordenadas": {
+                        "latitud": -17.0167,
+                        "longitud": -71.9167
+                    },
+                    "distritos": [
+                        {"id": "040601", "nombre": "Mollendo"},
+                        {"id": "040602", "nombre": "Cocachacra"},
+                        {"id": "040603", "nombre": "Dean Valdivia"},
+                        {"id": "040604", "nombre": "Islay"},
+                        {"id": "040605", "nombre": "Mejia"},
+                        {"id": "040606", "nombre": "Punta de Bombón"}
+                    ]
+                },
+                {
+                    "id": "0407",
+                    "nombre": "La Unión",
+                    "coordenadas": {
+                        "latitud": -15.0333,
+                        "longitud": -72.8500
+                    },
+                    "distritos": [
+                        {"id": "040701", "nombre": "Cotahuasi"},
+                        {"id": "040702", "nombre": "Alca"},
+                        {"id": "040703", "nombre": "Charcana"},
+                        {"id": "040704", "nombre": "Huaynacotas"},
+                        {"id": "040705", "nombre": "Pampamarca"},
+                        {"id": "040706", "nombre": "Puyca"},
+                        {"id": "040707", "nombre": "Quechualla"},
+                        {"id": "040708", "nombre": "Sayla"},
+                        {"id": "040709", "nombre": "Tauria"},
+                        {"id": "040710", "nombre": "Tomepampa"},
+                        {"id": "040711", "nombre": "Toro"}
                     ]
                 }
             ]
@@ -328,6 +919,186 @@
                         {"id": "050205", "nombre": "Paras"},
                         {"id": "050206", "nombre": "Totos"}
                     ]
+                },
+                {
+                    "id": "0503",
+                    "nombre": "Huanca Sancos",
+                    "coordenadas": {
+                        "latitud": -13.9167,
+                        "longitud": -74.3333
+                    },
+                    "distritos": [
+                        {"id": "050301", "nombre": "Sancos"},
+                        {"id": "050302", "nombre": "Carapo"},
+                        {"id": "050303", "nombre": "Sacsamarca"},
+                        {"id": "050304", "nombre": "Santiago de Lucanamarca"}
+                    ]
+                },
+                {
+                    "id": "0504",
+                    "nombre": "Huanta",
+                    "coordenadas": {
+                        "latitud": -12.9333,
+                        "longitud": -74.2500
+                    },
+                    "distritos": [
+                        {"id": "050401", "nombre": "Huanta"},
+                        {"id": "050402", "nombre": "Ayahuanco"},
+                        {"id": "050403", "nombre": "Huamanguilla"},
+                        {"id": "050404", "nombre": "Iguain"},
+                        {"id": "050405", "nombre": "Luricocha"},
+                        {"id": "050406", "nombre": "Santillana"},
+                        {"id": "050407", "nombre": "Sivia"},
+                        {"id": "050408", "nombre": "Llochegua"}
+                    ]
+                },
+                {
+                    "id": "0505",
+                    "nombre": "La Mar",
+                    "coordenadas": {
+                        "latitud": -12.8333,
+                        "longitud": -73.9167
+                    },
+                    "distritos": [
+                        {"id": "050501", "nombre": "San Miguel"},
+                        {"id": "050502", "nombre": "Anco"},
+                        {"id": "050503", "nombre": "Ayna"},
+                        {"id": "050504", "nombre": "Chilcas"},
+                        {"id": "050505", "nombre": "Chungui"},
+                        {"id": "050506", "nombre": "Luis Carranza"},
+                        {"id": "050507", "nombre": "Santa Rosa"},
+                        {"id": "050508", "nombre": "Tambo"}
+                    ]
+                },
+                {
+                    "id": "0506",
+                    "nombre": "Lucanas",
+                    "coordenadas": {
+                        "latitud": -14.6167,
+                        "longitud": -74.2500
+                    },
+                    "distritos": [
+                        {"id": "050601", "nombre": "Puquio"},
+                        {"id": "050602", "nombre": "Aucara"},
+                        {"id": "050603", "nombre": "Cabana"},
+                        {"id": "050604", "nombre": "Carmen Salcedo"},
+                        {"id": "050605", "nombre": "Chaviña"},
+                        {"id": "050606", "nombre": "Chipao"},
+                        {"id": "050607", "nombre": "Huac-Huas"},
+                        {"id": "050608", "nombre": "Laramate"},
+                        {"id": "050609", "nombre": "Leoncio Prado"},
+                        {"id": "050610", "nombre": "Llauta"},
+                        {"id": "050611", "nombre": "Lucanas"},
+                        {"id": "050612", "nombre": "Ocaña"},
+                        {"id": "050613", "nombre": "Otoca"},
+                        {"id": "050614", "nombre": "Saisa"},
+                        {"id": "050615", "nombre": "San Cristóbal"},
+                        {"id": "050616", "nombre": "San Juan"},
+                        {"id": "050617", "nombre": "San Pedro"},
+                        {"id": "050618", "nombre": "San Pedro de Palco"},
+                        {"id": "050619", "nombre": "Sancos"},
+                        {"id": "050620", "nombre": "Santa Ana de Huaycahuacho"},
+                        {"id": "050621", "nombre": "Santa Lucia"}
+                    ]
+                },
+                {
+                    "id": "0507",
+                    "nombre": "Parinacochas",
+                    "coordenadas": {
+                        "latitud": -15.2000,
+                        "longitud": -73.9667
+                    },
+                    "distritos": [
+                        {"id": "050701", "nombre": "Coracora"},
+                        {"id": "050702", "nombre": "Chumpi"},
+                        {"id": "050703", "nombre": "Coronel Castañeda"},
+                        {"id": "050704", "nombre": "Pacapausa"},
+                        {"id": "050705", "nombre": "Pullo"},
+                        {"id": "050706", "nombre": "Puyusca"},
+                        {"id": "050707", "nombre": "San Francisco de Ravacayco"},
+                        {"id": "050708", "nombre": "Upahuacho"}
+                    ]
+                },
+                {
+                    "id": "0508",
+                    "nombre": "Páucar del Sara Sara",
+                    "coordenadas": {
+                        "latitud": -15.1333,
+                        "longitud": -73.5000
+                    },
+                    "distritos": [
+                        {"id": "050801", "nombre": "Pausa"},
+                        {"id": "050802", "nombre": "Colta"},
+                        {"id": "050803", "nombre": "Corculla"},
+                        {"id": "050804", "nombre": "Lampa"},
+                        {"id": "050805", "nombre": "Marcabamba"},
+                        {"id": "050806", "nombre": "Oyolo"},
+                        {"id": "050807", "nombre": "Pararca"},
+                        {"id": "050808", "nombre": "San Javier de Alpabamba"},
+                        {"id": "050809", "nombre": "San José de Ushua"},
+                        {"id": "050810", "nombre": "Sara Sara"}
+                    ]
+                },
+                {
+                    "id": "0509",
+                    "nombre": "Sucre",
+                    "coordenadas": {
+                        "latitud": -14.0333,
+                        "longitud": -73.7500
+                    },
+                    "distritos": [
+                        {"id": "050901", "nombre": "Querobamba"},
+                        {"id": "050902", "nombre": "Belén"},
+                        {"id": "050903", "nombre": "Chalcos"},
+                        {"id": "050904", "nombre": "Chilcayoc"},
+                        {"id": "050905", "nombre": "Huacaña"},
+                        {"id": "050906", "nombre": "Morcolla"},
+                        {"id": "050907", "nombre": "Paico"},
+                        {"id": "050908", "nombre": "San Pedro de Larcay"},
+                        {"id": "050909", "nombre": "San Salvador de Quije"},
+                        {"id": "050910", "nombre": "Santiago de Paucaray"},
+                        {"id": "050911", "nombre": "Soras"}
+                    ]
+                },
+                {
+                    "id": "0510",
+                    "nombre": "Víctor Fajardo",
+                    "coordenadas": {
+                        "latitud": -13.7833,
+                        "longitud": -74.3000
+                    },
+                    "distritos": [
+                        {"id": "051001", "nombre": "Huancapi"},
+                        {"id": "051002", "nombre": "Alcamenca"},
+                        {"id": "051003", "nombre": "Apongo"},
+                        {"id": "051004", "nombre": "Asquipata"},
+                        {"id": "051005", "nombre": "Canaria"},
+                        {"id": "051006", "nombre": "Cayara"},
+                        {"id": "051007", "nombre": "Colca"},
+                        {"id": "051008", "nombre": "Huamanquiquia"},
+                        {"id": "051009", "nombre": "Huancaraylla"},
+                        {"id": "051010", "nombre": "Huaya"},
+                        {"id": "051011", "nombre": "Sarhua"},
+                        {"id": "051012", "nombre": "Vilcanchos"}
+                    ]
+                },
+                {
+                    "id": "0511",
+                    "nombre": "Vilcas Huamán",
+                    "coordenadas": {
+                        "latitud": -13.6500,
+                        "longitud": -73.9500
+                    },
+                    "distritos": [
+                        {"id": "051101", "nombre": "Vilcas Huamán"},
+                        {"id": "051102", "nombre": "Accomarca"},
+                        {"id": "051103", "nombre": "Carhuanca"},
+                        {"id": "051104", "nombre": "Concepción"},
+                        {"id": "051105", "nombre": "Huambalpa"},
+                        {"id": "051106", "nombre": "Independencia"},
+                        {"id": "051107", "nombre": "Saurama"},
+                        {"id": "051108", "nombre": "Vischongo"}
+                    ]
                 }
             ]
         },
@@ -373,7 +1144,7 @@
                     },
                     "distritos": [
                         {"id": "060201", "nombre": "Chota"},
-                        {"id": "060202", "nombre": "Anga"},
+                        {"id": "060202", "nombre": "Anguia"},
                         {"id": "060203", "nombre": "Chadin"},
                         {"id": "060204", "nombre": "Chiguirip"},
                         {"id": "060205", "nombre": "Chimban"},
@@ -382,14 +1153,223 @@
                         {"id": "060208", "nombre": "Conchan"},
                         {"id": "060209", "nombre": "Huambos"},
                         {"id": "060210", "nombre": "Lajas"},
-                        {"id": "060211", "nombre": "Llipa"},
+                        {"id": "060211", "nombre": "Llama"},
                         {"id": "060212", "nombre": "Miracosta"},
-                        {"id": "060213", "nombre": "Mollepampa"},
-                        {"id": "060214", "nombre": "Moyobamba"},
-                        {"id": "060215", "nombre": "Pataypampa"},
-                        {"id": "060216", "nombre": "Piamonte"},
-                        {"id": "060217", "nombre": "Quilman"},
-                        {"id": "060218", "nombre": "Uchiza"}
+                        {"id": "060213", "nombre": "Paccha"},
+                        {"id": "060214", "nombre": "Pion"},
+                        {"id": "060215", "nombre": "Querocoto"},
+                        {"id": "060216", "nombre": "San Juan de Licupis"},
+                        {"id": "060217", "nombre": "Tacabamba"},
+                        {"id": "060218", "nombre": "Tocmoche"}
+                    ]
+                },
+                {
+                    "id": "0603",
+                    "nombre": "Contumazá",
+                    "coordenadas": {
+                        "latitud": -7.3500,
+                        "longitud": -78.8167
+                    },
+                    "distritos": [
+                        {"id": "060301", "nombre": "Contumazá"},
+                        {"id": "060302", "nombre": "Chilete"},
+                        {"id": "060303", "nombre": "Cupisnique"},
+                        {"id": "060304", "nombre": "Guzmango"},
+                        {"id": "060305", "nombre": "San Benito"},
+                        {"id": "060306", "nombre": "Santa Cruz de Toledo"},
+                        {"id": "060307", "nombre": "Tantarica"},
+                        {"id": "060308", "nombre": "Yonan"}
+                    ]
+                },
+                {
+                    "id": "0604",
+                    "nombre": "Cutervo",
+                    "coordenadas": {
+                        "latitud": -6.3833,
+                        "longitud": -78.8167
+                    },
+                    "distritos": [
+                        {"id": "060401", "nombre": "Cutervo"},
+                        {"id": "060402", "nombre": "Callayuc"},
+                        {"id": "060403", "nombre": "Choros"},
+                        {"id": "060404", "nombre": "Cujillo"},
+                        {"id": "060405", "nombre": "La Ramada"},
+                        {"id": "060406", "nombre": "Pimpingos"},
+                        {"id": "060407", "nombre": "Querocotillo"},
+                        {"id": "060408", "nombre": "San Andrés de Cutervo"},
+                        {"id": "060409", "nombre": "San Juan de Cutervo"},
+                        {"id": "060410", "nombre": "San Luis de Lucma"},
+                        {"id": "060411", "nombre": "Santa Cruz"},
+                        {"id": "060412", "nombre": "Santo Domingo de la Capilla"},
+                        {"id": "060413", "nombre": "Santo Tomás"},
+                        {"id": "060414", "nombre": "Socota"},
+                        {"id": "060415", "nombre": "Toribio Casanova"}
+                    ]
+                },
+                {
+                    "id": "0605",
+                    "nombre": "Hualgayoc",
+                    "coordenadas": {
+                        "latitud": -6.7667,
+                        "longitud": -78.6167
+                    },
+                    "distritos": [
+                        {"id": "060501", "nombre": "Bambamarca"},
+                        {"id": "060502", "nombre": "Chugur"},
+                        {"id": "060503", "nombre": "Hualgayoc"}
+                    ]
+                },
+                {
+                    "id": "0606",
+                    "nombre": "Jaén",
+                    "coordenadas": {
+                        "latitud": -5.7083,
+                        "longitud": -78.8083
+                    },
+                    "distritos": [
+                        {"id": "060601", "nombre": "Jaén"},
+                        {"id": "060602", "nombre": "Bellavista"},
+                        {"id": "060603", "nombre": "Chontali"},
+                        {"id": "060604", "nombre": "Colasay"},
+                        {"id": "060605", "nombre": "Huabal"},
+                        {"id": "060606", "nombre": "Las Pirias"},
+                        {"id": "060607", "nombre": "Pomahuaca"},
+                        {"id": "060608", "nombre": "Pucara"},
+                        {"id": "060609", "nombre": "Sallique"},
+                        {"id": "060610", "nombre": "San Felipe"},
+                        {"id": "060611", "nombre": "San José del Alto"},
+                        {"id": "060612", "nombre": "Santa Rosa"}
+                    ]
+                },
+                {
+                    "id": "0607",
+                    "nombre": "San Ignacio",
+                    "coordenadas": {
+                        "latitud": -5.1500,
+                        "longitud": -78.9833
+                    },
+                    "distritos": [
+                        {"id": "060701", "nombre": "San Ignacio"},
+                        {"id": "060702", "nombre": "Chirinos"},
+                        {"id": "060703", "nombre": "Huarango"},
+                        {"id": "060704", "nombre": "La Coipa"},
+                        {"id": "060705", "nombre": "Namballe"},
+                        {"id": "060706", "nombre": "San José de Lourdes"},
+                        {"id": "060707", "nombre": "Tabaconas"}
+                    ]
+                },
+                {
+                    "id": "0608",
+                    "nombre": "San Marcos",
+                    "coordenadas": {
+                        "latitud": -7.3333,
+                        "longitud": -78.1667
+                    },
+                    "distritos": [
+                        {"id": "060801", "nombre": "Pedro Gálvez"},
+                        {"id": "060802", "nombre": "Chancay"},
+                        {"id": "060803", "nombre": "Eduardo Villanueva"},
+                        {"id": "060804", "nombre": "Gregorio Pita"},
+                        {"id": "060805", "nombre": "Ichocan"},
+                        {"id": "060806", "nombre": "José Manuel Quiroz"},
+                        {"id": "060807", "nombre": "José Sabogal"}
+                    ]
+                },
+                {
+                    "id": "0609",
+                    "nombre": "San Miguel",
+                    "coordenadas": {
+                        "latitud": -7.0000,
+                        "longitud": -78.8500
+                    },
+                    "distritos": [
+                        {"id": "060901", "nombre": "San Miguel"},
+                        {"id": "060902", "nombre": "Bolívar"},
+                        {"id": "060903", "nombre": "Calquis"},
+                        {"id": "060904", "nombre": "Catilluc"},
+                        {"id": "060905", "nombre": "El Prado"},
+                        {"id": "060906", "nombre": "La Florida"},
+                        {"id": "060907", "nombre": "Llapa"},
+                        {"id": "060908", "nombre": "Nanchoc"},
+                        {"id": "060909", "nombre": "Niepos"},
+                        {"id": "060910", "nombre": "San Gregorio"},
+                        {"id": "060911", "nombre": "San Silvestre de Cochan"},
+                        {"id": "060912", "nombre": "Tongod"},
+                        {"id": "060913", "nombre": "Unión Agua Blanca"}
+                    ]
+                },
+                {
+                    "id": "0610",
+                    "nombre": "San Pablo",
+                    "coordenadas": {
+                        "latitud": -7.1333,
+                        "longitud": -78.8167
+                    },
+                    "distritos": [
+                        {"id": "061001", "nombre": "San Pablo"},
+                        {"id": "061002", "nombre": "San Bernardino"},
+                        {"id": "061003", "nombre": "San Luis"},
+                        {"id": "061004", "nombre": "Tumbaden"}
+                    ]
+                },
+                {
+                    "id": "0611",
+                    "nombre": "Santa Cruz",
+                    "coordenadas": {
+                        "latitud": -6.6167,
+                        "longitud": -78.9500
+                    },
+                    "distritos": [
+                        {"id": "061101", "nombre": "Santa Cruz"},
+                        {"id": "061102", "nombre": "Andabamba"},
+                        {"id": "061103", "nombre": "Catache"},
+                        {"id": "061104", "nombre": "Chancaybaños"},
+                        {"id": "061105", "nombre": "La Esperanza"},
+                        {"id": "061106", "nombre": "Ninabamba"},
+                        {"id": "061107", "nombre": "Pulan"},
+                        {"id": "061108", "nombre": "Saucepampa"},
+                        {"id": "061109", "nombre": "Sexi"},
+                        {"id": "061110", "nombre": "Uticyacu"},
+                        {"id": "061111", "nombre": "Yauyucan"}
+                    ]
+                },
+                {
+                    "id": "0612",
+                    "nombre": "Celendín",
+                    "coordenadas": {
+                        "latitud": -6.8667,
+                        "longitud": -78.1500
+                    },
+                    "distritos": [
+                        {"id": "061201", "nombre": "Celendín"},
+                        {"id": "061202", "nombre": "Chumuch"},
+                        {"id": "061203", "nombre": "Cortegana"},
+                        {"id": "061204", "nombre": "Huasmin"},
+                        {"id": "061205", "nombre": "Jorge Chávez"},
+                        {"id": "061206", "nombre": "José Gálvez"},
+                        {"id": "061207", "nombre": "Miguel Iglesias"},
+                        {"id": "061208", "nombre": "Oxamarca"},
+                        {"id": "061209", "nombre": "Sorochuco"},
+                        {"id": "061210", "nombre": "Sucre"},
+                        {"id": "061211", "nombre": "Utco"},
+                        {"id": "061212", "nombre": "La Libertad de Pallan"}
+                    ]
+                },
+                {
+                    "id": "0613",
+                    "nombre": "San Ignacio",
+                    "coordenadas": {
+                        "latitud": -5.1500,
+                        "longitud": -78.9833
+                    },
+                    "distritos": [
+                        {"id": "061301", "nombre": "San Ignacio"},
+                        {"id": "061302", "nombre": "Chirinos"},
+                        {"id": "061303", "nombre": "Huarango"},
+                        {"id": "061304", "nombre": "La Coipa"},
+                        {"id": "061305", "nombre": "Namballe"},
+                        {"id": "061306", "nombre": "San José de Lourdes"},
+                        {"id": "061307", "nombre": "Tabaconas"}
                     ]
                 }
             ]
@@ -436,9 +1416,214 @@
                         {"id": "070204", "nombre": "Mosoc Llacta"},
                         {"id": "070205", "nombre": "Pomacanchi"},
                         {"id": "070206", "nombre": "Rondocan"},
-                        {"id": "070207", "nombre": "Sangarara"},
-                        {"id": "070208", "nombre": "Espinar"},
-                        {"id": "070209", "nombre": "Cayna"}
+                        {"id": "070207", "nombre": "Sangarara"}
+                    ]
+                },
+                {
+                    "id": "0703",
+                    "nombre": "Anta",
+                    "coordenadas": {
+                        "latitud": -13.4667,
+                        "longitud": -72.1500
+                    },
+                    "distritos": [
+                        {"id": "070301", "nombre": "Anta"},
+                        {"id": "070302", "nombre": "Ancahuasi"},
+                        {"id": "070303", "nombre": "Cachimayo"},
+                        {"id": "070304", "nombre": "Chinchaypujio"},
+                        {"id": "070305", "nombre": "Huarocondo"},
+                        {"id": "070306", "nombre": "Limatambo"},
+                        {"id": "070307", "nombre": "Mollepata"},
+                        {"id": "070308", "nombre": "Pucyura"},
+                        {"id": "070309", "nombre": "Zurite"}
+                    ]
+                },
+                {
+                    "id": "0704",
+                    "nombre": "Calca",
+                    "coordenadas": {
+                        "latitud": -13.3167,
+                        "longitud": -71.9500
+                    },
+                    "distritos": [
+                        {"id": "070401", "nombre": "Calca"},
+                        {"id": "070402", "nombre": "Coya"},
+                        {"id": "070403", "nombre": "Lamay"},
+                        {"id": "070404", "nombre": "Lares"},
+                        {"id": "070405", "nombre": "Pisac"},
+                        {"id": "070406", "nombre": "San Salvador"},
+                        {"id": "070407", "nombre": "Taray"},
+                        {"id": "070408", "nombre": "Yanatile"}
+                    ]
+                },
+                {
+                    "id": "0705",
+                    "nombre": "Canas",
+                    "coordenadas": {
+                        "latitud": -14.5167,
+                        "longitud": -71.4167
+                    },
+                    "distritos": [
+                        {"id": "070501", "nombre": "Yanaoca"},
+                        {"id": "070502", "nombre": "Checca"},
+                        {"id": "070503", "nombre": "Kunturkanki"},
+                        {"id": "070504", "nombre": "Langui"},
+                        {"id": "070505", "nombre": "Layo"},
+                        {"id": "070506", "nombre": "Pampamarca"},
+                        {"id": "070507", "nombre": "Quehue"},
+                        {"id": "070508", "nombre": "Tupac Amaru"}
+                    ]
+                },
+                {
+                    "id": "0706",
+                    "nombre": "Canchis",
+                    "coordenadas": {
+                        "latitud": -14.1333,
+                        "longitud": -71.3500
+                    },
+                    "distritos": [
+                        {"id": "070601", "nombre": "Sicuani"},
+                        {"id": "070602", "nombre": "Checacupe"},
+                        {"id": "070603", "nombre": "Combapata"},
+                        {"id": "070604", "nombre": "Marangani"},
+                        {"id": "070605", "nombre": "Pitumarca"},
+                        {"id": "070606", "nombre": "San Pablo"},
+                        {"id": "070607", "nombre": "San Pedro"},
+                        {"id": "070608", "nombre": "Tinta"}
+                    ]
+                },
+                {
+                    "id": "0707",
+                    "nombre": "Chumbivilcas",
+                    "coordenadas": {
+                        "latitud": -14.8000,
+                        "longitud": -72.0333
+                    },
+                    "distritos": [
+                        {"id": "070701", "nombre": "Santo Tomás"},
+                        {"id": "070702", "nombre": "Capacmarca"},
+                        {"id": "070703", "nombre": "Chamaca"},
+                        {"id": "070704", "nombre": "Colquemarca"},
+                        {"id": "070705", "nombre": "Livitaca"},
+                        {"id": "070706", "nombre": "Llusco"},
+                        {"id": "070707", "nombre": "Quiñota"},
+                        {"id": "070708", "nombre": "Velille"}
+                    ]
+                },
+                {
+                    "id": "0708",
+                    "nombre": "Espinar",
+                    "coordenadas": {
+                        "latitud": -14.8000,
+                        "longitud": -71.4000
+                    },
+                    "distritos": [
+                        {"id": "070801", "nombre": "Espinar"},
+                        {"id": "070802", "nombre": "Condoroma"},
+                        {"id": "070803", "nombre": "Coporaque"},
+                        {"id": "070804", "nombre": "Occoruro"},
+                        {"id": "070805", "nombre": "Pallpata"},
+                        {"id": "070806", "nombre": "Pichigua"},
+                        {"id": "070807", "nombre": "Suyckutambo"},
+                        {"id": "070808", "nombre": "Alto Pichigua"}
+                    ]
+                },
+                {
+                    "id": "0709",
+                    "nombre": "La Convención",
+                    "coordenadas": {
+                        "latitud": -12.8833,
+                        "longitud": -72.7000
+                    },
+                    "distritos": [
+                        {"id": "070901", "nombre": "Santa Ana"},
+                        {"id": "070902", "nombre": "Echarati"},
+                        {"id": "070903", "nombre": "Huayopata"},
+                        {"id": "070904", "nombre": "Maranura"},
+                        {"id": "070905", "nombre": "Ocobamba"},
+                        {"id": "070906", "nombre": "Quellouno"},
+                        {"id": "070907", "nombre": "Kimbiri"},
+                        {"id": "070908", "nombre": "Santa Teresa"},
+                        {"id": "070909", "nombre": "Vilcabamba"},
+                        {"id": "070910", "nombre": "Pichari"},
+                        {"id": "070911", "nombre": "Inkawasi"},
+                        {"id": "070912", "nombre": "Villa Virgen"},
+                        {"id": "070913", "nombre": "Villa Kintiarina"},
+                        {"id": "070914", "nombre": "Megantoni"}
+                    ]
+                },
+                {
+                    "id": "0710",
+                    "nombre": "Paruro",
+                    "coordenadas": {
+                        "latitud": -13.7667,
+                        "longitud": -71.8500
+                    },
+                    "distritos": [
+                        {"id": "071001", "nombre": "Paruro"},
+                        {"id": "071002", "nombre": "Accha"},
+                        {"id": "071003", "nombre": "Ccapi"},
+                        {"id": "071004", "nombre": "Colcha"},
+                        {"id": "071005", "nombre": "Huanoquite"},
+                        {"id": "071006", "nombre": "Omacha"},
+                        {"id": "071007", "nombre": "Paccaritambo"},
+                        {"id": "071008", "nombre": "Pillpinto"},
+                        {"id": "071009", "nombre": "Yaurisque"}
+                    ]
+                },
+                {
+                    "id": "0711",
+                    "nombre": "Paucartambo",
+                    "coordenadas": {
+                        "latitud": -13.3167,
+                        "longitud": -71.5833
+                    },
+                    "distritos": [
+                        {"id": "071101", "nombre": "Paucartambo"},
+                        {"id": "071102", "nombre": "Caicay"},
+                        {"id": "071103", "nombre": "Challabamba"},
+                        {"id": "071104", "nombre": "Colquepata"},
+                        {"id": "071105", "nombre": "Huancarani"},
+                        {"id": "071106", "nombre": "Kosñipata"}
+                    ]
+                },
+                {
+                    "id": "0712",
+                    "nombre": "Quispicanchi",
+                    "coordenadas": {
+                        "latitud": -13.6667,
+                        "longitud": -71.4167
+                    },
+                    "distritos": [
+                        {"id": "071201", "nombre": "Urcos"},
+                        {"id": "071202", "nombre": "Andahuaylillas"},
+                        {"id": "071203", "nombre": "Camanti"},
+                        {"id": "071204", "nombre": "Ccarhuayo"},
+                        {"id": "071205", "nombre": "Ccatca"},
+                        {"id": "071206", "nombre": "Cusipata"},
+                        {"id": "071207", "nombre": "Huaro"},
+                        {"id": "071208", "nombre": "Lucre"},
+                        {"id": "071209", "nombre": "Marcapata"},
+                        {"id": "071210", "nombre": "Ocongate"},
+                        {"id": "071211", "nombre": "Oropesa"},
+                        {"id": "071212", "nombre": "Quiquijana"}
+                    ]
+                },
+                {
+                    "id": "0713",
+                    "nombre": "Urubamba",
+                    "coordenadas": {
+                        "latitud": -13.3000,
+                        "longitud": -72.1167
+                    },
+                    "distritos": [
+                        {"id": "071301", "nombre": "Urubamba"},
+                        {"id": "071302", "nombre": "Chinchero"},
+                        {"id": "071303", "nombre": "Huayllabamba"},
+                        {"id": "071304", "nombre": "Machupicchu"},
+                        {"id": "071305", "nombre": "Maras"},
+                        {"id": "071306", "nombre": "Ollantaytambo"},
+                        {"id": "071307", "nombre": "Yucay"}
                     ]
                 }
             ]
@@ -492,27 +1677,128 @@
                         {"id": "080201", "nombre": "Acobamba"},
                         {"id": "080202", "nombre": "Andabamba"},
                         {"id": "080203", "nombre": "Anta"},
-                        {"id": "080204", "nombre": "Ataura"},
-                        {"id": "080205", "nombre": "Caceres del Perú"},
-                        {"id": "080206", "nombre": "Cajamarquilla"},
-                        {"id": "080207", "nombre": "Canquella"},
-                        {"id": "080208", "nombre": "Cayara"},
-                        {"id": "080209", "nombre": "Colcabamba"},
-                        {"id": "080210", "nombre": "Conayca"},
-                        {"id": "080211", "nombre": "Huacha"},
-                        {"id": "080212", "nombre": "Huaqui"},
-                        {"id": "080213", "nombre": "Lucanas"},
-                        {"id": "080214", "nombre": "Ongoy"},
-                        {"id": "080215", "nombre": "Paucar"},
-                        {"id": "080216", "nombre": "Pomacocha"},
-                        {"id": "080217", "nombre": "San Francisco de Asis"},
-                        {"id": "080218", "nombre": "San Isidro"},
-                        {"id": "080219", "nombre": "Santiago de Chocorvos"},
-                        {"id": "080220", "nombre": "Santo Domingo de Guzmán"},
-                        {"id": "080221", "nombre": "Uchuraccay"},
-                        {"id": "080222", "nombre": "Urpay"},
-                        {"id": "080223", "nombre": "Lumbreras"},
-                        {"id": "080224", "nombre": "Viques"}
+                        {"id": "080204", "nombre": "Caja"},
+                        {"id": "080205", "nombre": "Marcas"},
+                        {"id": "080206", "nombre": "Paucara"},
+                        {"id": "080207", "nombre": "Pomacocha"},
+                        {"id": "080208", "nombre": "Rosario"}
+                    ]
+                },
+                {
+                    "id": "0803",
+                    "nombre": "Angaraes",
+                    "coordenadas": {
+                        "latitud": -12.9833,
+                        "longitud": -74.4667
+                    },
+                    "distritos": [
+                        {"id": "080301", "nombre": "Lircay"},
+                        {"id": "080302", "nombre": "Anchonga"},
+                        {"id": "080303", "nombre": "Callanmarca"},
+                        {"id": "080304", "nombre": "Ccochaccasa"},
+                        {"id": "080305", "nombre": "Chincho"},
+                        {"id": "080306", "nombre": "Congalla"},
+                        {"id": "080307", "nombre": "Huanca-Huanca"},
+                        {"id": "080308", "nombre": "Huayllay Grande"},
+                        {"id": "080309", "nombre": "Julcamarca"},
+                        {"id": "080310", "nombre": "San Antonio de Antaparco"},
+                        {"id": "080311", "nombre": "Santo Tomás de Pata"},
+                        {"id": "080312", "nombre": "Secclla"}
+                    ]
+                },
+                {
+                    "id": "0804",
+                    "nombre": "Castrovirreyna",
+                    "coordenadas": {
+                        "latitud": -13.2833,
+                        "longitud": -75.3167
+                    },
+                    "distritos": [
+                        {"id": "080401", "nombre": "Castrovirreyna"},
+                        {"id": "080402", "nombre": "Arma"},
+                        {"id": "080403", "nombre": "Aurahua"},
+                        {"id": "080404", "nombre": "Capillas"},
+                        {"id": "080405", "nombre": "Chupamarca"},
+                        {"id": "080406", "nombre": "Cocas"},
+                        {"id": "080407", "nombre": "Huachos"},
+                        {"id": "080408", "nombre": "Huamatambo"},
+                        {"id": "080409", "nombre": "Mollepampa"},
+                        {"id": "080410", "nombre": "San Juan"},
+                        {"id": "080411", "nombre": "Santa Ana"},
+                        {"id": "080412", "nombre": "Tantara"},
+                        {"id": "080413", "nombre": "Ticrapo"}
+                    ]
+                },
+                {
+                    "id": "0805",
+                    "nombre": "Churcampa",
+                    "coordenadas": {
+                        "latitud": -12.7333,
+                        "longitud": -74.3833
+                    },
+                    "distritos": [
+                        {"id": "080501", "nombre": "Churcampa"},
+                        {"id": "080502", "nombre": "Anco"},
+                        {"id": "080503", "nombre": "Chinchihuasi"},
+                        {"id": "080504", "nombre": "El Carmen"},
+                        {"id": "080505", "nombre": "La Merced"},
+                        {"id": "080506", "nombre": "Locroja"},
+                        {"id": "080507", "nombre": "Paucarbamba"},
+                        {"id": "080508", "nombre": "San Miguel de Mayocc"},
+                        {"id": "080509", "nombre": "San Pedro de Coris"},
+                        {"id": "080510", "nombre": "Pachamarca"}
+                    ]
+                },
+                {
+                    "id": "0806",
+                    "nombre": "Huaytará",
+                    "coordenadas": {
+                        "latitud": -13.6167,
+                        "longitud": -75.3500
+                    },
+                    "distritos": [
+                        {"id": "080601", "nombre": "Huaytará"},
+                        {"id": "080602", "nombre": "Ayavi"},
+                        {"id": "080603", "nombre": "Córdova"},
+                        {"id": "080604", "nombre": "Huayacundo Arma"},
+                        {"id": "080605", "nombre": "Laramarca"},
+                        {"id": "080606", "nombre": "Ocoyo"},
+                        {"id": "080607", "nombre": "Pilpichaca"},
+                        {"id": "080608", "nombre": "Querco"},
+                        {"id": "080609", "nombre": "Quito-Arma"},
+                        {"id": "080610", "nombre": "San Antonio de Cusicancha"},
+                        {"id": "080611", "nombre": "San Francisco de Sangayaico"},
+                        {"id": "080612", "nombre": "San Isidro"},
+                        {"id": "080613", "nombre": "Santiago de Chocorvos"},
+                        {"id": "080614", "nombre": "Santiago de Quirahuara"},
+                        {"id": "080615", "nombre": "Santo Domingo de Capillas"},
+                        {"id": "080616", "nombre": "Tambo"}
+                    ]
+                },
+                {
+                    "id": "0807",
+                    "nombre": "Tayacaja",
+                    "coordenadas": {
+                        "latitud": -12.4000,
+                        "longitud": -74.6333
+                    },
+                    "distritos": [
+                        {"id": "080701", "nombre": "Pampas"},
+                        {"id": "080702", "nombre": "Acostambo"},
+                        {"id": "080703", "nombre": "Acraquia"},
+                        {"id": "080704", "nombre": "Ahuaycha"},
+                        {"id": "080705", "nombre": "Colcabamba"},
+                        {"id": "080706", "nombre": "Daniel Hernández"},
+                        {"id": "080707", "nombre": "Huachocolpa"},
+                        {"id": "080708", "nombre": "Huaribamba"},
+                        {"id": "080709", "nombre": "Ñahuimpuquio"},
+                        {"id": "080710", "nombre": "Pazos"},
+                        {"id": "080711", "nombre": "Quishuar"},
+                        {"id": "080712", "nombre": "Salcabamba"},
+                        {"id": "080713", "nombre": "Salcahuasi"},
+                        {"id": "080714", "nombre": "San Marcos de Rocchac"},
+                        {"id": "080715", "nombre": "Surcubamba"},
+                        {"id": "080716", "nombre": "Tintay Puncu"}
                     ]
                 }
             ]
@@ -564,6 +1850,158 @@
                         {"id": "090209", "nombre": "Tomay Kichwa"},
                         {"id": "090210", "nombre": "Vivanco"}
                     ]
+                },
+                {
+                    "id": "0903",
+                    "nombre": "Bolognesi",
+                    "coordenadas": {
+                        "latitud": -10.1500,
+                        "longitud": -76.8167
+                    },
+                    "distritos": [
+                        {"id": "090301", "nombre": "La Unión"},
+                        {"id": "090302", "nombre": "Chaupimarca"},
+                        {"id": "090303", "nombre": "Conchamarca"},
+                        {"id": "090304", "nombre": "Huacaybamba"},
+                        {"id": "090305", "nombre": "La Esperanza"},
+                        {"id": "090306", "nombre": "Llata"},
+                        {"id": "090307", "nombre": "Margos"},
+                        {"id": "090308", "nombre": "Pacllón"},
+                        {"id": "090309", "nombre": "Puños"},
+                        {"id": "090310", "nombre": "Quivilla"},
+                        {"id": "090311", "nombre": "Ripán"},
+                        {"id": "090312", "nombre": "Singa"}
+                    ]
+                },
+                {
+                    "id": "0904",
+                    "nombre": "Dos de Mayo",
+                    "coordenadas": {
+                        "latitud": -9.9500,
+                        "longitud": -76.7333
+                    },
+                    "distritos": [
+                        {"id": "090401", "nombre": "La Unión"},
+                        {"id": "090402", "nombre": "Chuquis"},
+                        {"id": "090403", "nombre": "Marías"},
+                        {"id": "090404", "nombre": "Pachas"},
+                        {"id": "090405", "nombre": "Quivilla"},
+                        {"id": "090406", "nombre": "Ripán"},
+                        {"id": "090407", "nombre": "Shunqui"},
+                        {"id": "090408", "nombre": "Sillapata"},
+                        {"id": "090409", "nombre": "Yanas"}
+                    ]
+                },
+                {
+                    "id": "0905",
+                    "nombre": "Huacaybamba",
+                    "coordenadas": {
+                        "latitud": -8.6167,
+                        "longitud": -77.0500
+                    },
+                    "distritos": [
+                        {"id": "090501", "nombre": "Huacaybamba"},
+                        {"id": "090502", "nombre": "Canchabamba"},
+                        {"id": "090503", "nombre": "Cochabamba"},
+                        {"id": "090504", "nombre": "Pinra"}
+                    ]
+                },
+                {
+                    "id": "0906",
+                    "nombre": "Huamalíes",
+                    "coordenadas": {
+                        "latitud": -9.2833,
+                        "longitud": -76.7667
+                    },
+                    "distritos": [
+                        {"id": "090601", "nombre": "Llata"},
+                        {"id": "090602", "nombre": "Arancay"},
+                        {"id": "090603", "nombre": "Chavín de Pariarca"},
+                        {"id": "090604", "nombre": "Jacas Grande"},
+                        {"id": "090605", "nombre": "Jircan"},
+                        {"id": "090606", "nombre": "Miraflores"},
+                        {"id": "090607", "nombre": "Monzón"},
+                        {"id": "090608", "nombre": "Punchao"},
+                        {"id": "090609", "nombre": "Puños"},
+                        {"id": "090610", "nombre": "Singa"},
+                        {"id": "090611", "nombre": "Tantamayo"}
+                    ]
+                },
+                {
+                    "id": "0907",
+                    "nombre": "Leoncio Prado",
+                    "coordenadas": {
+                        "latitud": -9.2944,
+                        "longitud": -75.9972
+                    },
+                    "distritos": [
+                        {"id": "090701", "nombre": "Rupa-Rupa"},
+                        {"id": "090702", "nombre": "Daniel Alomía Robles"},
+                        {"id": "090703", "nombre": "Hermilio Valdizán"},
+                        {"id": "090704", "nombre": "José Crespo y Castillo"},
+                        {"id": "090705", "nombre": "Luyando"},
+                        {"id": "090706", "nombre": "Mariano Damaso Beraun"}
+                    ]
+                },
+                {
+                    "id": "0908",
+                    "nombre": "Marañón",
+                    "coordenadas": {
+                        "latitud": -9.0333,
+                        "longitud": -77.2667
+                    },
+                    "distritos": [
+                        {"id": "090801", "nombre": "Huacrachuco"},
+                        {"id": "090802", "nombre": "Cholon"},
+                        {"id": "090803", "nombre": "San Buenaventura"}
+                    ]
+                },
+                {
+                    "id": "0909",
+                    "nombre": "Pachitea",
+                    "coordenadas": {
+                        "latitud": -9.7000,
+                        "longitud": -75.8167
+                    },
+                    "distritos": [
+                        {"id": "090901", "nombre": "Panao"},
+                        {"id": "090902", "nombre": "Chaglla"},
+                        {"id": "090903", "nombre": "Molino"},
+                        {"id": "090904", "nombre": "Umari"}
+                    ]
+                },
+                {
+                    "id": "0910",
+                    "nombre": "Puerto Inca",
+                    "coordenadas": {
+                        "latitud": -9.3833,
+                        "longitud": -74.9667
+                    },
+                    "distritos": [
+                        {"id": "091001", "nombre": "Puerto Inca"},
+                        {"id": "091002", "nombre": "Codo del Pozuzo"},
+                        {"id": "091003", "nombre": "Honoria"},
+                        {"id": "091004", "nombre": "Tournavista"},
+                        {"id": "091005", "nombre": "Yuyapichis"}
+                    ]
+                },
+                {
+                    "id": "0911",
+                    "nombre": "Yarowilca",
+                    "coordenadas": {
+                        "latitud": -9.6833,
+                        "longitud": -76.7500
+                    },
+                    "distritos": [
+                        {"id": "091101", "nombre": "Chavinillo"},
+                        {"id": "091102", "nombre": "Cahuac"},
+                        {"id": "091103", "nombre": "Chacabamba"},
+                        {"id": "091104", "nombre": "Aparicio Pomares"},
+                        {"id": "091105", "nombre": "Jacas Chico"},
+                        {"id": "091106", "nombre": "Obas"},
+                        {"id": "091107", "nombre": "Pampamarca"},
+                        {"id": "091108", "nombre": "Choras"}
+                    ]
                 }
             ]
         },
@@ -612,6 +2050,54 @@
                         {"id": "100207", "nombre": "Pueblo Nuevo"},
                         {"id": "100208", "nombre": "Sunampe"},
                         {"id": "100209", "nombre": "Tambo de Mora"}
+                    ]
+                },
+                {
+                    "id": "1003",
+                    "nombre": "Nazca",
+                    "coordenadas": {
+                        "latitud": -14.8308,
+                        "longitud": -74.9386
+                    },
+                    "distritos": [
+                        {"id": "100301", "nombre": "Nazca"},
+                        {"id": "100302", "nombre": "Changuillo"},
+                        {"id": "100303", "nombre": "El Ingenio"},
+                        {"id": "100304", "nombre": "Marcona"},
+                        {"id": "100305", "nombre": "Vista Alegre"}
+                    ]
+                },
+                {
+                    "id": "1004",
+                    "nombre": "Palpa",
+                    "coordenadas": {
+                        "latitud": -14.5333,
+                        "longitud": -75.1833
+                    },
+                    "distritos": [
+                        {"id": "100401", "nombre": "Palpa"},
+                        {"id": "100402", "nombre": "Llipata"},
+                        {"id": "100403", "nombre": "Río Grande"},
+                        {"id": "100404", "nombre": "Santa Cruz"},
+                        {"id": "100405", "nombre": "Tibillo"}
+                    ]
+                },
+                {
+                    "id": "1005",
+                    "nombre": "Pisco",
+                    "coordenadas": {
+                        "latitud": -13.7097,
+                        "longitud": -76.2056
+                    },
+                    "distritos": [
+                        {"id": "100501", "nombre": "Pisco"},
+                        {"id": "100502", "nombre": "Huancano"},
+                        {"id": "100503", "nombre": "Humay"},
+                        {"id": "100504", "nombre": "Independencia"},
+                        {"id": "100505", "nombre": "Paracas"},
+                        {"id": "100506", "nombre": "San Andrés"},
+                        {"id": "100507", "nombre": "San Clemente"},
+                        {"id": "100508", "nombre": "Tupac Amaru Inca"}
                     ]
                 }
             ]
@@ -670,16 +2156,170 @@
                     "distritos": [
                         {"id": "110201", "nombre": "Chupaca"},
                         {"id": "110202", "nombre": "Ahuac"},
-                        {"id": "110203", "nombre": "Chongos"},
+                        {"id": "110203", "nombre": "Chongos Bajo"},
                         {"id": "110204", "nombre": "Huachac"},
                         {"id": "110205", "nombre": "Huamancaca Chico"},
-                        {"id": "110206", "nombre": "San Juan de Ichuña"},
-                        {"id": "110207", "nombre": "San Juan de Jauja"},
-                        {"id": "110208", "nombre": "San Pedro de Pilas"},
-                        {"id": "110209", "nombre": "San Pedro de Queros"},
-                        {"id": "110210", "nombre": "San Pedro de Casta"},
-                        {"id": "110211", "nombre": "Santa Rosa de Quives"},
-                        {"id": "110212", "nombre": "Sumana"}
+                        {"id": "110206", "nombre": "San Juan de Yscos"},
+                        {"id": "110207", "nombre": "San Juan de Jarpa"},
+                        {"id": "110208", "nombre": "Tres de Diciembre"},
+                        {"id": "110209", "nombre": "Yanacancha"}
+                    ]
+                },
+                {
+                    "id": "1103",
+                    "nombre": "Concepción",
+                    "coordenadas": {
+                        "latitud": -11.9167,
+                        "longitud": -75.3167
+                    },
+                    "distritos": [
+                        {"id": "110301", "nombre": "Concepción"},
+                        {"id": "110302", "nombre": "Aco"},
+                        {"id": "110303", "nombre": "Andamarca"},
+                        {"id": "110304", "nombre": "Chambara"},
+                        {"id": "110305", "nombre": "Cochas"},
+                        {"id": "110306", "nombre": "Comas"},
+                        {"id": "110307", "nombre": "Heroínas Toledo"},
+                        {"id": "110308", "nombre": "Manzanares"},
+                        {"id": "110309", "nombre": "Mariscal Castilla"},
+                        {"id": "110310", "nombre": "Matahuasi"},
+                        {"id": "110311", "nombre": "Mito"},
+                        {"id": "110312", "nombre": "Nueve de Julio"},
+                        {"id": "110313", "nombre": "Orcotuna"},
+                        {"id": "110314", "nombre": "San José de Quero"},
+                        {"id": "110315", "nombre": "Santa Rosa de Ocopa"}
+                    ]
+                },
+                {
+                    "id": "1104",
+                    "nombre": "Chanchamayo",
+                    "coordenadas": {
+                        "latitud": -11.0500,
+                        "longitud": -75.3167
+                    },
+                    "distritos": [
+                        {"id": "110401", "nombre": "Chanchamayo"},
+                        {"id": "110402", "nombre": "Perené"},
+                        {"id": "110403", "nombre": "Pichanaki"},
+                        {"id": "110404", "nombre": "San Luis de Shuaro"},
+                        {"id": "110405", "nombre": "San Ramón"},
+                        {"id": "110406", "nombre": "Vitoc"}
+                    ]
+                },
+                {
+                    "id": "1105",
+                    "nombre": "Jauja",
+                    "coordenadas": {
+                        "latitud": -11.7833,
+                        "longitud": -75.5000
+                    },
+                    "distritos": [
+                        {"id": "110501", "nombre": "Jauja"},
+                        {"id": "110502", "nombre": "Acolla"},
+                        {"id": "110503", "nombre": "Apata"},
+                        {"id": "110504", "nombre": "Ataura"},
+                        {"id": "110505", "nombre": "Canchayllo"},
+                        {"id": "110506", "nombre": "Curicaca"},
+                        {"id": "110507", "nombre": "El Mantaro"},
+                        {"id": "110508", "nombre": "Huamali"},
+                        {"id": "110509", "nombre": "Huaripampa"},
+                        {"id": "110510", "nombre": "Huertas"},
+                        {"id": "110511", "nombre": "Janjaillo"},
+                        {"id": "110512", "nombre": "Julcán"},
+                        {"id": "110513", "nombre": "Leonor Ordóñez"},
+                        {"id": "110514", "nombre": "Llocllapampa"},
+                        {"id": "110515", "nombre": "Marco"},
+                        {"id": "110516", "nombre": "Masma"},
+                        {"id": "110517", "nombre": "Masma Chicche"},
+                        {"id": "110518", "nombre": "Molinos"},
+                        {"id": "110519", "nombre": "Monobamba"},
+                        {"id": "110520", "nombre": "Muqui"},
+                        {"id": "110521", "nombre": "Muquiyauyo"},
+                        {"id": "110522", "nombre": "Paca"},
+                        {"id": "110523", "nombre": "Paccha"},
+                        {"id": "110524", "nombre": "Pancan"},
+                        {"id": "110525", "nombre": "Parco"},
+                        {"id": "110526", "nombre": "Pomacancha"},
+                        {"id": "110527", "nombre": "Ricran"},
+                        {"id": "110528", "nombre": "San Lorenzo"},
+                        {"id": "110529", "nombre": "San Pedro de Chunan"},
+                        {"id": "110530", "nombre": "Sausa"},
+                        {"id": "110531", "nombre": "Sincos"},
+                        {"id": "110532", "nombre": "Tunan Marca"},
+                        {"id": "110533", "nombre": "Yauli"},
+                        {"id": "110534", "nombre": "Yauyos"}
+                    ]
+                },
+                {
+                    "id": "1106",
+                    "nombre": "Junín",
+                    "coordenadas": {
+                        "latitud": -11.1583,
+                        "longitud": -75.9833
+                    },
+                    "distritos": [
+                        {"id": "110601", "nombre": "Junín"},
+                        {"id": "110602", "nombre": "Carhuamayo"},
+                        {"id": "110603", "nombre": "Ondores"},
+                        {"id": "110604", "nombre": "Ulcumayo"}
+                    ]
+                },
+                {
+                    "id": "1107",
+                    "nombre": "Satipo",
+                    "coordenadas": {
+                        "latitud": -11.2522,
+                        "longitud": -74.6386
+                    },
+                    "distritos": [
+                        {"id": "110701", "nombre": "Satipo"},
+                        {"id": "110702", "nombre": "Coviriali"},
+                        {"id": "110703", "nombre": "Llaylla"},
+                        {"id": "110704", "nombre": "Mazamari"},
+                        {"id": "110705", "nombre": "Pampa Hermosa"},
+                        {"id": "110706", "nombre": "Pangoa"},
+                        {"id": "110707", "nombre": "Río Negro"},
+                        {"id": "110708", "nombre": "Río Tambo"},
+                        {"id": "110709", "nombre": "Vizcatan del Ene"}
+                    ]
+                },
+                {
+                    "id": "1108",
+                    "nombre": "Tarma",
+                    "coordenadas": {
+                        "latitud": -11.4189,
+                        "longitud": -75.6867
+                    },
+                    "distritos": [
+                        {"id": "110801", "nombre": "Tarma"},
+                        {"id": "110802", "nombre": "Acobamba"},
+                        {"id": "110803", "nombre": "Huaricolca"},
+                        {"id": "110804", "nombre": "Huasahuasi"},
+                        {"id": "110805", "nombre": "La Unión"},
+                        {"id": "110806", "nombre": "Palca"},
+                        {"id": "110807", "nombre": "Palcamayo"},
+                        {"id": "110808", "nombre": "San Pedro de Cajas"},
+                        {"id": "110809", "nombre": "Tapo"}
+                    ]
+                },
+                {
+                    "id": "1109",
+                    "nombre": "Yauli",
+                    "coordenadas": {
+                        "latitud": -11.6667,
+                        "longitud": -76.0833
+                    },
+                    "distritos": [
+                        {"id": "110901", "nombre": "La Oroya"},
+                        {"id": "110902", "nombre": "Chacapalpa"},
+                        {"id": "110903", "nombre": "Huay-Huay"},
+                        {"id": "110904", "nombre": "Marcapomacocha"},
+                        {"id": "110905", "nombre": "Morococha"},
+                        {"id": "110906", "nombre": "Paccha"},
+                        {"id": "110907", "nombre": "Santa Barbara de Carhuacayan"},
+                        {"id": "110908", "nombre": "Santa Rosa de Sacco"},
+                        {"id": "110909", "nombre": "Suitucancha"},
+                        {"id": "110910", "nombre": "Yauli"}
                     ]
                 }
             ]
@@ -726,13 +2366,174 @@
                         {"id": "120202", "nombre": "Casa Grande"},
                         {"id": "120203", "nombre": "Chicama"},
                         {"id": "120204", "nombre": "Chocope"},
-                        {"id": "120205", "nombre": "Máncora"},
-                        {"id": "120206", "nombre": "Nueva Arica"},
-                        {"id": "120207", "nombre": "Santiago de Cao"},
-                        {"id": "120208", "nombre": "Ubinas"},
-                        {"id": "120209", "nombre": "Chicama"},
-                        {"id": "120210", "nombre": "Máncora"},
-                        {"id": "120211", "nombre": "San Pedro de Lloc"}
+                        {"id": "120205", "nombre": "Magdalena de Cao"},
+                        {"id": "120206", "nombre": "Paiján"},
+                        {"id": "120207", "nombre": "Rázuri"},
+                        {"id": "120208", "nombre": "Santiago de Cao"}
+                    ]
+                },
+                {
+                    "id": "1203",
+                    "nombre": "Bolívar",
+                    "coordenadas": {
+                        "latitud": -7.1500,
+                        "longitud": -77.7000
+                    },
+                    "distritos": [
+                        {"id": "120301", "nombre": "Bolívar"},
+                        {"id": "120302", "nombre": "Bambamarca"},
+                        {"id": "120303", "nombre": "Condormarca"},
+                        {"id": "120304", "nombre": "Longotea"},
+                        {"id": "120305", "nombre": "Uchumarca"},
+                        {"id": "120306", "nombre": "Ucuncha"}
+                    ]
+                },
+                {
+                    "id": "1204",
+                    "nombre": "Chepén",
+                    "coordenadas": {
+                        "latitud": -7.2253,
+                        "longitud": -79.4278
+                    },
+                    "distritos": [
+                        {"id": "120401", "nombre": "Chepén"},
+                        {"id": "120402", "nombre": "Pacanga"},
+                        {"id": "120403", "nombre": "Pueblo Nuevo"}
+                    ]
+                },
+                {
+                    "id": "1205",
+                    "nombre": "Julcán",
+                    "coordenadas": {
+                        "latitud": -8.0500,
+                        "longitud": -78.4833
+                    },
+                    "distritos": [
+                        {"id": "120501", "nombre": "Julcán"},
+                        {"id": "120502", "nombre": "Calamarca"},
+                        {"id": "120503", "nombre": "Carabamba"},
+                        {"id": "120504", "nombre": "Huaso"}
+                    ]
+                },
+                {
+                    "id": "1206",
+                    "nombre": "Otuzco",
+                    "coordenadas": {
+                        "latitud": -7.9039,
+                        "longitud": -78.5700
+                    },
+                    "distritos": [
+                        {"id": "120601", "nombre": "Otuzco"},
+                        {"id": "120602", "nombre": "Agallpampa"},
+                        {"id": "120603", "nombre": "Charat"},
+                        {"id": "120604", "nombre": "Huaranchal"},
+                        {"id": "120605", "nombre": "La Cuesta"},
+                        {"id": "120606", "nombre": "Mache"},
+                        {"id": "120607", "nombre": "Paranday"},
+                        {"id": "120608", "nombre": "Salpo"},
+                        {"id": "120609", "nombre": "Sinsicap"},
+                        {"id": "120610", "nombre": "Usquil"}
+                    ]
+                },
+                {
+                    "id": "1207",
+                    "nombre": "Pacasmayo",
+                    "coordenadas": {
+                        "latitud": -7.4006,
+                        "longitud": -79.5714
+                    },
+                    "distritos": [
+                        {"id": "120701", "nombre": "San Pedro de Lloc"},
+                        {"id": "120702", "nombre": "Guadalupe"},
+                        {"id": "120703", "nombre": "Jequetepeque"},
+                        {"id": "120704", "nombre": "Pacasmayo"},
+                        {"id": "120705", "nombre": "San José"}
+                    ]
+                },
+                {
+                    "id": "1208",
+                    "nombre": "Pataz",
+                    "coordenadas": {
+                        "latitud": -8.1333,
+                        "longitud": -77.5000
+                    },
+                    "distritos": [
+                        {"id": "120801", "nombre": "Tayabamba"},
+                        {"id": "120802", "nombre": "Buldibuyo"},
+                        {"id": "120803", "nombre": "Chillia"},
+                        {"id": "120804", "nombre": "Huancaspata"},
+                        {"id": "120805", "nombre": "Huaylillas"},
+                        {"id": "120806", "nombre": "Huayo"},
+                        {"id": "120807", "nombre": "Ongón"},
+                        {"id": "120808", "nombre": "Parcoy"},
+                        {"id": "120809", "nombre": "Pataz"},
+                        {"id": "120810", "nombre": "Pías"},
+                        {"id": "120811", "nombre": "Santiago de Challas"},
+                        {"id": "120812", "nombre": "Taurija"},
+                        {"id": "120813", "nombre": "Urpay"}
+                    ]
+                },
+                {
+                    "id": "1209",
+                    "nombre": "Sánchez Carrión",
+                    "coordenadas": {
+                        "latitud": -8.1167,
+                        "longitud": -78.1500
+                    },
+                    "distritos": [
+                        {"id": "120901", "nombre": "Huamachuco"},
+                        {"id": "120902", "nombre": "Chugay"},
+                        {"id": "120903", "nombre": "Cochorco"},
+                        {"id": "120904", "nombre": "Curgos"},
+                        {"id": "120905", "nombre": "Marcabal"},
+                        {"id": "120906", "nombre": "Sanagoran"},
+                        {"id": "120907", "nombre": "Sarin"},
+                        {"id": "120908", "nombre": "Sartimbamba"}
+                    ]
+                },
+                {
+                    "id": "1210",
+                    "nombre": "Santiago de Chuco",
+                    "coordenadas": {
+                        "latitud": -8.1500,
+                        "longitud": -78.1833
+                    },
+                    "distritos": [
+                        {"id": "121001", "nombre": "Santiago de Chuco"},
+                        {"id": "121002", "nombre": "Angasmarca"},
+                        {"id": "121003", "nombre": "Cachicadan"},
+                        {"id": "121004", "nombre": "Mollebamba"},
+                        {"id": "121005", "nombre": "Mollepata"},
+                        {"id": "121006", "nombre": "Quiruvilca"},
+                        {"id": "121007", "nombre": "Santa Cruz de Chuca"},
+                        {"id": "121008", "nombre": "Sitabamba"}
+                    ]
+                },
+                {
+                    "id": "1211",
+                    "nombre": "Gran Chimú",
+                    "coordenadas": {
+                        "latitud": -7.6833,
+                        "longitud": -78.8500
+                    },
+                    "distritos": [
+                        {"id": "121101", "nombre": "Cascas"},
+                        {"id": "121102", "nombre": "Lucma"},
+                        {"id": "121103", "nombre": "Marmot"},
+                        {"id": "121104", "nombre": "Sayapullo"}
+                    ]
+                },
+                {
+                    "id": "1212",
+                    "nombre": "Virú",
+                    "coordenadas": {
+                        "latitud": -8.4167,
+                        "longitud": -78.7500
+                    },
+                    "distritos": [
+                        {"id": "121201", "nombre": "Virú"},
+                        {"id": "121202", "nombre": "Chao"},
+                        {"id": "121203", "nombre": "Guadalupito"}
                     ]
                 }
             ]
@@ -781,13 +2582,31 @@
                         {"id": "130201", "nombre": "Ferreñafe"},
                         {"id": "130202", "nombre": "Cañaris"},
                         {"id": "130203", "nombre": "Incahuasi"},
-                        {"id": "130204", "nombre": "José Leonardo Ortiz"},
-                        {"id": "130205", "nombre": "Lobitos"},
-                        {"id": "130206", "nombre": "Marcavelica"},
-                        {"id": "130207", "nombre": "Pimentel"},
-                        {"id": "130208", "nombre": "Pomalca"},
-                        {"id": "130209", "nombre": "Monsefú"},
-                        {"id": "130210", "nombre": "San José"}
+                        {"id": "130204", "nombre": "Manuel Antonio Mesones Muro"},
+                        {"id": "130205", "nombre": "Pitipo"},
+                        {"id": "130206", "nombre": "Pueblo Nuevo"}
+                    ]
+                },
+                {
+                    "id": "1303",
+                    "nombre": "Lambayeque",
+                    "coordenadas": {
+                        "latitud": -6.7022,
+                        "longitud": -79.9056
+                    },
+                    "distritos": [
+                        {"id": "130301", "nombre": "Lambayeque"},
+                        {"id": "130302", "nombre": "Chóchope"},
+                        {"id": "130303", "nombre": "Illimo"},
+                        {"id": "130304", "nombre": "Jayanca"},
+                        {"id": "130305", "nombre": "Mochumi"},
+                        {"id": "130306", "nombre": "Mórrope"},
+                        {"id": "130307", "nombre": "Motupe"},
+                        {"id": "130308", "nombre": "Olmos"},
+                        {"id": "130309", "nombre": "Pacora"},
+                        {"id": "130310", "nombre": "Salas"},
+                        {"id": "130311", "nombre": "San José"},
+                        {"id": "130312", "nombre": "Túcume"}
                     ]
                 }
             ]
@@ -839,7 +2658,239 @@
                         {"id": "140129", "nombre": "Santiago de Surco"},
                         {"id": "140130", "nombre": "Surquillo"},
                         {"id": "140131", "nombre": "Villa El Salvador"},
-                        {"id": "140132", "nombre": "Villa María del Triunfo"}
+                        {"id": "140132", "nombre": "Villa María del Triunfo"},
+                        {"id": "140133", "nombre": "Jesús María"},
+                        {"id": "140134", "nombre": "Los Olivos"},
+                        {"id": "140135", "nombre": "Puente Piedra"},
+                        {"id": "140136", "nombre": "Rímac"},
+                        {"id": "140137", "nombre": "San Anita"},
+                        {"id": "140138", "nombre": "Santa María del Mar"},
+                        {"id": "140139", "nombre": "Independencia"},
+                        {"id": "140140", "nombre": "El Agustino"},
+                        {"id": "140141", "nombre": "Cieneguilla"},
+                        {"id": "140142", "nombre": "Lurigancho"},
+                        {"id": "140143", "nombre": "Punta Hermosa"},
+                        {"id": "140144", "nombre": "Punta Negra"},
+                        {"id": "140145", "nombre": "San Bartolo"},
+                        {"id": "140146", "nombre": "Santa Rosa"}
+                    ]
+                },
+                {
+                    "id": "1402",
+                    "nombre": "Barranca",
+                    "coordenadas": {
+                        "latitud": -10.7500,
+                        "longitud": -77.7667
+                    },
+                    "distritos": [
+                        {"id": "140201", "nombre": "Barranca"},
+                        {"id": "140202", "nombre": "Paramonga"},
+                        {"id": "140203", "nombre": "Pativilca"},
+                        {"id": "140204", "nombre": "Supe"},
+                        {"id": "140205", "nombre": "Supe Puerto"}
+                    ]
+                },
+                {
+                    "id": "1403",
+                    "nombre": "Cajatambo",
+                    "coordenadas": {
+                        "latitud": -10.4667,
+                        "longitud": -76.9833
+                    },
+                    "distritos": [
+                        {"id": "140301", "nombre": "Cajatambo"},
+                        {"id": "140302", "nombre": "Copa"},
+                        {"id": "140303", "nombre": "Gorgor"},
+                        {"id": "140304", "nombre": "Huancapon"},
+                        {"id": "140305", "nombre": "Manas"}
+                    ]
+                },
+                {
+                    "id": "1404",
+                    "nombre": "Canta",
+                    "coordenadas": {
+                        "latitud": -11.4667,
+                        "longitud": -76.6167
+                    },
+                    "distritos": [
+                        {"id": "140401", "nombre": "Canta"},
+                        {"id": "140402", "nombre": "Arahuay"},
+                        {"id": "140403", "nombre": "Huamantanga"},
+                        {"id": "140404", "nombre": "Huaros"},
+                        {"id": "140405", "nombre": "Lachaqui"},
+                        {"id": "140406", "nombre": "San Buenaventura"},
+                        {"id": "140407", "nombre": "Santa Rosa de Quives"}
+                    ]
+                },
+                {
+                    "id": "1405",
+                    "nombre": "Cañete",
+                    "coordenadas": {
+                        "latitud": -13.0833,
+                        "longitud": -76.3833
+                    },
+                    "distritos": [
+                        {"id": "140501", "nombre": "San Vicente de Cañete"},
+                        {"id": "140502", "nombre": "Asia"},
+                        {"id": "140503", "nombre": "Calango"},
+                        {"id": "140504", "nombre": "Cerro Azul"},
+                        {"id": "140505", "nombre": "Chilca"},
+                        {"id": "140506", "nombre": "Coayllo"},
+                        {"id": "140507", "nombre": "Imperial"},
+                        {"id": "140508", "nombre": "Lunahuana"},
+                        {"id": "140509", "nombre": "Mala"},
+                        {"id": "140510", "nombre": "Nuevo Imperial"},
+                        {"id": "140511", "nombre": "Pacaran"},
+                        {"id": "140512", "nombre": "Quilmana"},
+                        {"id": "140513", "nombre": "San Antonio"},
+                        {"id": "140514", "nombre": "San Luis"},
+                        {"id": "140515", "nombre": "Santa Cruz de Flores"},
+                        {"id": "140516", "nombre": "Zuñiga"}
+                    ]
+                },
+                {
+                    "id": "1406",
+                    "nombre": "Huaral",
+                    "coordenadas": {
+                        "latitud": -11.5000,
+                        "longitud": -77.2167
+                    },
+                    "distritos": [
+                        {"id": "140601", "nombre": "Huaral"},
+                        {"id": "140602", "nombre": "Atavillos Alto"},
+                        {"id": "140603", "nombre": "Atavillos Bajo"},
+                        {"id": "140604", "nombre": "Aucallama"},
+                        {"id": "140605", "nombre": "Chancay"},
+                        {"id": "140606", "nombre": "Ihuari"},
+                        {"id": "140607", "nombre": "Lampian"},
+                        {"id": "140608", "nombre": "Pacaraos"},
+                        {"id": "140609", "nombre": "San Miguel de Acos"},
+                        {"id": "140610", "nombre": "Santa Cruz de Andamarca"},
+                        {"id": "140611", "nombre": "Sumbilca"},
+                        {"id": "140612", "nombre": "Veintisiete de Noviembre"}
+                    ]
+                },
+                {
+                    "id": "1407",
+                    "nombre": "Huarochirí",
+                    "coordenadas": {
+                        "latitud": -11.9167,
+                        "longitud": -76.2333
+                    },
+                    "distritos": [
+                        {"id": "140701", "nombre": "Matucana"},
+                        {"id": "140702", "nombre": "Antioquia"},
+                        {"id": "140703", "nombre": "Callahuanca"},
+                        {"id": "140704", "nombre": "Carampoma"},
+                        {"id": "140705", "nombre": "Chicla"},
+                        {"id": "140706", "nombre": "Cuenca"},
+                        {"id": "140707", "nombre": "Huachupampa"},
+                        {"id": "140708", "nombre": "Huanza"},
+                        {"id": "140709", "nombre": "Huarochiri"},
+                        {"id": "140710", "nombre": "Lahuaytambo"},
+                        {"id": "140711", "nombre": "Langa"},
+                        {"id": "140712", "nombre": "Laraos"},
+                        {"id": "140713", "nombre": "Mariatana"},
+                        {"id": "140714", "nombre": "Ricardo Palma"},
+                        {"id": "140715", "nombre": "San Andres de Tupicocha"},
+                        {"id": "140716", "nombre": "San Antonio"},
+                        {"id": "140717", "nombre": "San Bartolome"},
+                        {"id": "140718", "nombre": "San Damian"},
+                        {"id": "140719", "nombre": "San Juan de Iris"},
+                        {"id": "140720", "nombre": "San Juan de Tantaranche"},
+                        {"id": "140721", "nombre": "San Lorenzo de Quinti"},
+                        {"id": "140722", "nombre": "San Mateo"},
+                        {"id": "140723", "nombre": "San Mateo de Otao"},
+                        {"id": "140724", "nombre": "San Pedro de Casta"},
+                        {"id": "140725", "nombre": "San Pedro de Huancayre"},
+                        {"id": "140726", "nombre": "Sangallaya"},
+                        {"id": "140727", "nombre": "Santa Cruz de Cocachacra"},
+                        {"id": "140728", "nombre": "Santa Eulalia"},
+                        {"id": "140729", "nombre": "Santiago de Anchucaya"},
+                        {"id": "140730", "nombre": "Santiago de Tuna"},
+                        {"id": "140731", "nombre": "Santo Domingo de los Olleros"},
+                        {"id": "140732", "nombre": "Surco"}
+                    ]
+                },
+                {
+                    "id": "1408",
+                    "nombre": "Huaura",
+                    "coordenadas": {
+                        "latitud": -11.0667,
+                        "longitud": -77.6000
+                    },
+                    "distritos": [
+                        {"id": "140801", "nombre": "Huacho"},
+                        {"id": "140802", "nombre": "Ambar"},
+                        {"id": "140803", "nombre": "Caleta de Carquin"},
+                        {"id": "140804", "nombre": "Checras"},
+                        {"id": "140805", "nombre": "Hualmay"},
+                        {"id": "140806", "nombre": "Huaura"},
+                        {"id": "140807", "nombre": "Leoncio Prado"},
+                        {"id": "140808", "nombre": "Paccho"},
+                        {"id": "140809", "nombre": "Santa Leonor"},
+                        {"id": "140810", "nombre": "Santa Maria"},
+                        {"id": "140811", "nombre": "Sayan"},
+                        {"id": "140812", "nombre": "Vegueta"}
+                    ]
+                },
+                {
+                    "id": "1409",
+                    "nombre": "Oyón",
+                    "coordenadas": {
+                        "latitud": -10.6667,
+                        "longitud": -76.7667
+                    },
+                    "distritos": [
+                        {"id": "140901", "nombre": "Oyon"},
+                        {"id": "140902", "nombre": "Andajes"},
+                        {"id": "140903", "nombre": "Caujul"},
+                        {"id": "140904", "nombre": "Cochamarca"},
+                        {"id": "140905", "nombre": "Navan"},
+                        {"id": "140906", "nombre": "Pachangara"}
+                    ]
+                },
+                {
+                    "id": "1410",
+                    "nombre": "Yauyos",
+                    "coordenadas": {
+                        "latitud": -12.4667,
+                        "longitud": -75.9167
+                    },
+                    "distritos": [
+                        {"id": "141001", "nombre": "Yauyos"},
+                        {"id": "141002", "nombre": "Alis"},
+                        {"id": "141003", "nombre": "Ayauca"},
+                        {"id": "141004", "nombre": "Ayaviri"},
+                        {"id": "141005", "nombre": "Azangaro"},
+                        {"id": "141006", "nombre": "Cacra"},
+                        {"id": "141007", "nombre": "Carania"},
+                        {"id": "141008", "nombre": "Catahuasi"},
+                        {"id": "141009", "nombre": "Chocos"},
+                        {"id": "141010", "nombre": "Cochas"},
+                        {"id": "141011", "nombre": "Colonia"},
+                        {"id": "141012", "nombre": "Hongos"},
+                        {"id": "141013", "nombre": "Huampara"},
+                        {"id": "141014", "nombre": "Huancaya"},
+                        {"id": "141015", "nombre": "Huangascar"},
+                        {"id": "141016", "nombre": "Huantan"},
+                        {"id": "141017", "nombre": "Huañec"},
+                        {"id": "141018", "nombre": "Laraos"},
+                        {"id": "141019", "nombre": "Lincha"},
+                        {"id": "141020", "nombre": "Madean"},
+                        {"id": "141021", "nombre": "Miraflores"},
+                        {"id": "141022", "nombre": "Omas"},
+                        {"id": "141023", "nombre": "Putinza"},
+                        {"id": "141024", "nombre": "Quinches"},
+                        {"id": "141025", "nombre": "Quinocay"},
+                        {"id": "141026", "nombre": "San Joaquin"},
+                        {"id": "141027", "nombre": "San Pedro de Pilas"},
+                        {"id": "141028", "nombre": "Tanta"},
+                        {"id": "141029", "nombre": "Tauripampa"},
+                        {"id": "141030", "nombre": "Tomas"},
+                        {"id": "141031", "nombre": "Tupe"},
+                        {"id": "141032", "nombre": "Viñac"},
+                        {"id": "141033", "nombre": "Vitis"}
                     ]
                 }
             ]
@@ -878,12 +2929,108 @@
                         "longitud": -76.1130
                     },
                     "distritos": [
-                        {"id": "150201", "nombre": "Fernando Lores"},
-                        {"id": "150202", "nombre": "Indiana"},
-                        {"id": "150203", "nombre": "Las Amazonas"},
-                        {"id": "150204", "nombre": "Yurimaguas"},
-                        {"id": "150205", "nombre": "Uchiza"},
-                        {"id": "150206", "nombre": "Tinajones"}
+                        {"id": "150201", "nombre": "Yurimaguas"},
+                        {"id": "150202", "nombre": "Balsapuerto"},
+                        {"id": "150203", "nombre": "Jeberos"},
+                        {"id": "150204", "nombre": "Lagunas"},
+                        {"id": "150205", "nombre": "Santa Cruz"},
+                        {"id": "150206", "nombre": "Teniente César López Rojas"}
+                    ]
+                },
+                {
+                    "id": "1503",
+                    "nombre": "Datem del Marañón",
+                    "coordenadas": {
+                        "latitud": -4.5000,
+                        "longitud": -76.7500
+                    },
+                    "distritos": [
+                        {"id": "150301", "nombre": "Barranca"},
+                        {"id": "150302", "nombre": "Cahuapanas"},
+                        {"id": "150303", "nombre": "Manseriche"},
+                        {"id": "150304", "nombre": "Morona"},
+                        {"id": "150305", "nombre": "Pastaza"},
+                        {"id": "150306", "nombre": "Andoas"}
+                    ]
+                },
+                {
+                    "id": "1504",
+                    "nombre": "Loreto",
+                    "coordenadas": {
+                        "latitud": -2.5000,
+                        "longitud": -75.0000
+                    },
+                    "distritos": [
+                        {"id": "150401", "nombre": "Nauta"},
+                        {"id": "150402", "nombre": "Parinari"},
+                        {"id": "150403", "nombre": "Tigre"},
+                        {"id": "150404", "nombre": "Trompeteros"},
+                        {"id": "150405", "nombre": "Urarinas"}
+                    ]
+                },
+                {
+                    "id": "1505",
+                    "nombre": "Mariscal Ramón Castilla",
+                    "coordenadas": {
+                        "latitud": -4.2333,
+                        "longitud": -69.9400
+                    },
+                    "distritos": [
+                        {"id": "150501", "nombre": "Ramón Castilla"},
+                        {"id": "150502", "nombre": "Pebas"},
+                        {"id": "150503", "nombre": "Yavari"},
+                        {"id": "150504", "nombre": "San Pablo"}
+                    ]
+                },
+                {
+                    "id": "1506",
+                    "nombre": "Requena",
+                    "coordenadas": {
+                        "latitud": -5.0500,
+                        "longitud": -73.8500
+                    },
+                    "distritos": [
+                        {"id": "150601", "nombre": "Requena"},
+                        {"id": "150602", "nombre": "Alto Tapiche"},
+                        {"id": "150603", "nombre": "Capelo"},
+                        {"id": "150604", "nombre": "Emilio San Martín"},
+                        {"id": "150605", "nombre": "Maquia"},
+                        {"id": "150606", "nombre": "Puinahua"},
+                        {"id": "150607", "nombre": "Saquena"},
+                        {"id": "150608", "nombre": "Soplin"},
+                        {"id": "150609", "nombre": "Tapiche"},
+                        {"id": "150610", "nombre": "Jenaro Herrera"},
+                        {"id": "150611", "nombre": "Yaquerana"}
+                    ]
+                },
+                {
+                    "id": "1507",
+                    "nombre": "Ucayali",
+                    "coordenadas": {
+                        "latitud": -6.0500,
+                        "longitud": -75.1667
+                    },
+                    "distritos": [
+                        {"id": "150701", "nombre": "Contamana"},
+                        {"id": "150702", "nombre": "Inahuaya"},
+                        {"id": "150703", "nombre": "Padre Márquez"},
+                        {"id": "150704", "nombre": "Pampa Hermosa"},
+                        {"id": "150705", "nombre": "Sarayacu"},
+                        {"id": "150706", "nombre": "Vargas Guerra"}
+                    ]
+                },
+                {
+                    "id": "1508",
+                    "nombre": "Putumayo",
+                    "coordenadas": {
+                        "latitud": -2.9333,
+                        "longitud": -74.7667
+                    },
+                    "distritos": [
+                        {"id": "150801", "nombre": "Putumayo"},
+                        {"id": "150802", "nombre": "Rosa Panduro"},
+                        {"id": "150803", "nombre": "Teniente Manuel Clavero"},
+                        {"id": "150804", "nombre": "Yaguas"}
                     ]
                 }
             ]
@@ -924,13 +3071,22 @@
                     },
                     "distritos": [
                         {"id": "160201", "nombre": "Manú"},
-                        {"id": "160202", "nombre": "Iranduba"},
-                        {"id": "160203", "nombre": "Las Piedras"},
-                        {"id": "160204", "nombre": "Mazán"},
-                        {"id": "160205", "nombre": "Pichanaki"},
-                        {"id": "160206", "nombre": "Puerto Maldonado"},
-                        {"id": "160207", "nombre": "Serranías"},
-                        {"id": "160208", "nombre": "Yurimaguas"}
+                        {"id": "160202", "nombre": "Fitzcarrald"},
+                        {"id": "160203", "nombre": "Madre de Dios"},
+                        {"id": "160204", "nombre": "Huepetuhe"}
+                    ]
+                },
+                {
+                    "id": "1603",
+                    "nombre": "Tahuamanu",
+                    "coordenadas": {
+                        "latitud": -11.3500,
+                        "longitud": -69.1833
+                    },
+                    "distritos": [
+                        {"id": "160301", "nombre": "Iñapari"},
+                        {"id": "160302", "nombre": "Iberia"},
+                        {"id": "160303", "nombre": "Tahuamanu"}
                     ]
                 }
             ]
@@ -979,10 +3135,25 @@
                         {"id": "170203", "nombre": "Coalaque"},
                         {"id": "170204", "nombre": "Ichuña"},
                         {"id": "170205", "nombre": "La Capilla"},
-                        {"id": "170206", "nombre": "Mollendo"},
-                        {"id": "170207", "nombre": "Quinistaquillas"},
-                        {"id": "170208", "nombre": "Sebastián Nieto"},
-                        {"id": "170209", "nombre": "Yunga"}
+                        {"id": "170206", "nombre": "Lloque"},
+                        {"id": "170207", "nombre": "Matalaque"},
+                        {"id": "170208", "nombre": "Puquina"},
+                        {"id": "170209", "nombre": "Quinistaquillas"},
+                        {"id": "170210", "nombre": "Ubinas"},
+                        {"id": "170211", "nombre": "Yunga"}
+                    ]
+                },
+                {
+                    "id": "1703",
+                    "nombre": "Ilo",
+                    "coordenadas": {
+                        "latitud": -17.6389,
+                        "longitud": -71.3375
+                    },
+                    "distritos": [
+                        {"id": "170301", "nombre": "Ilo"},
+                        {"id": "170302", "nombre": "El Algarrobal"},
+                        {"id": "170303", "nombre": "Pacocha"}
                     ]
                 }
             ]
@@ -1023,11 +3194,30 @@
                     "distritos": [
                         {"id": "180201", "nombre": "Yanahuanca"},
                         {"id": "180202", "nombre": "Chacayan"},
-                        {"id": "180203", "nombre": "Jivia"},
-                        {"id": "180204", "nombre": "Miraflores"},
-                        {"id": "180205", "nombre": "Pachas"},
-                        {"id": "180206", "nombre": "Sivia"},
-                        {"id": "180207", "nombre": "Villa Rica"}
+                        {"id": "180203", "nombre": "Goyllarisquizga"},
+                        {"id": "180204", "nombre": "Paucar"},
+                        {"id": "180205", "nombre": "San Pedro de Pillao"},
+                        {"id": "180206", "nombre": "Santa Ana de Tusi"},
+                        {"id": "180207", "nombre": "Tapuc"},
+                        {"id": "180208", "nombre": "Vilcabamba"}
+                    ]
+                },
+                {
+                    "id": "1803",
+                    "nombre": "Oxapampa",
+                    "coordenadas": {
+                        "latitud": -10.5833,
+                        "longitud": -75.4000
+                    },
+                    "distritos": [
+                        {"id": "180301", "nombre": "Oxapampa"},
+                        {"id": "180302", "nombre": "Chontabamba"},
+                        {"id": "180303", "nombre": "Huancabamba"},
+                        {"id": "180304", "nombre": "Palcazu"},
+                        {"id": "180305", "nombre": "Pozuzo"},
+                        {"id": "180306", "nombre": "Puerto Bermúdez"},
+                        {"id": "180307", "nombre": "Villa Rica"},
+                        {"id": "180308", "nombre": "Constitución"}
                     ]
                 }
             ]
@@ -1078,8 +3268,112 @@
                         {"id": "190207", "nombre": "Paimas"},
                         {"id": "190208", "nombre": "Sapillica"},
                         {"id": "190209", "nombre": "Sicchez"},
-                        {"id": "190210", "nombre": "Suyo"},
-                        {"id": "190211", "nombre": "Tambo Grande"}
+                        {"id": "190210", "nombre": "Suyo"}
+                    ]
+                },
+                {
+                    "id": "1903",
+                    "nombre": "Huancabamba",
+                    "coordenadas": {
+                        "latitud": -5.2389,
+                        "longitud": -79.4667
+                    },
+                    "distritos": [
+                        {"id": "190301", "nombre": "Huancabamba"},
+                        {"id": "190302", "nombre": "Canchaque"},
+                        {"id": "190303", "nombre": "El Carmen de la Frontera"},
+                        {"id": "190304", "nombre": "Huarmaca"},
+                        {"id": "190305", "nombre": "Lalaquiz"},
+                        {"id": "190306", "nombre": "San Miguel de El Faique"},
+                        {"id": "190307", "nombre": "Sóndor"},
+                        {"id": "190308", "nombre": "Sondorillo"}
+                    ]
+                },
+                {
+                    "id": "1904",
+                    "nombre": "Morropón",
+                    "coordenadas": {
+                        "latitud": -5.1833,
+                        "longitud": -80.0167
+                    },
+                    "distritos": [
+                        {"id": "190401", "nombre": "Chulucanas"},
+                        {"id": "190402", "nombre": "Buenos Aires"},
+                        {"id": "190403", "nombre": "Chalaco"},
+                        {"id": "190404", "nombre": "La Matanza"},
+                        {"id": "190405", "nombre": "Morropón"},
+                        {"id": "190406", "nombre": "Salitral"},
+                        {"id": "190407", "nombre": "San Juan de Bigote"},
+                        {"id": "190408", "nombre": "Santa Catalina de Mossa"},
+                        {"id": "190409", "nombre": "Santo Domingo"},
+                        {"id": "190410", "nombre": "Yamango"}
+                    ]
+                },
+                {
+                    "id": "1905",
+                    "nombre": "Paita",
+                    "coordenadas": {
+                        "latitud": -5.0892,
+                        "longitud": -81.1144
+                    },
+                    "distritos": [
+                        {"id": "190501", "nombre": "Paita"},
+                        {"id": "190502", "nombre": "Amotape"},
+                        {"id": "190503", "nombre": "Arenal"},
+                        {"id": "190504", "nombre": "Colan"},
+                        {"id": "190505", "nombre": "La Huaca"},
+                        {"id": "190506", "nombre": "Tamarindo"},
+                        {"id": "190507", "nombre": "Vichayal"}
+                    ]
+                },
+                {
+                    "id": "1906",
+                    "nombre": "Sullana",
+                    "coordenadas": {
+                        "latitud": -4.9069,
+                        "longitud": -80.6856
+                    },
+                    "distritos": [
+                        {"id": "190601", "nombre": "Sullana"},
+                        {"id": "190602", "nombre": "Bellavista"},
+                        {"id": "190603", "nombre": "Ignacio Escudero"},
+                        {"id": "190604", "nombre": "Lancones"},
+                        {"id": "190605", "nombre": "Marcavelica"},
+                        {"id": "190606", "nombre": "Miguel Checa"},
+                        {"id": "190607", "nombre": "Querecotillo"},
+                        {"id": "190608", "nombre": "Salitral"}
+                    ]
+                },
+                {
+                    "id": "1907",
+                    "nombre": "Talara",
+                    "coordenadas": {
+                        "latitud": -4.5772,
+                        "longitud": -81.2719
+                    },
+                    "distritos": [
+                        {"id": "190701", "nombre": "Pariñas"},
+                        {"id": "190702", "nombre": "El Alto"},
+                        {"id": "190703", "nombre": "La Brea"},
+                        {"id": "190704", "nombre": "Lobitos"},
+                        {"id": "190705", "nombre": "Los Órganos"},
+                        {"id": "190706", "nombre": "Máncora"}
+                    ]
+                },
+                {
+                    "id": "1908",
+                    "nombre": "Sechura",
+                    "coordenadas": {
+                        "latitud": -5.5572,
+                        "longitud": -80.8222
+                    },
+                    "distritos": [
+                        {"id": "190801", "nombre": "Sechura"},
+                        {"id": "190802", "nombre": "Bellavista de la Unión"},
+                        {"id": "190803", "nombre": "Bernal"},
+                        {"id": "190804", "nombre": "Cristo Nos Valga"},
+                        {"id": "190805", "nombre": "Vice"},
+                        {"id": "190806", "nombre": "Rinconada Llicuar"}
                     ]
                 }
             ]
@@ -1387,20 +3681,155 @@
                 },
                 {
                     "id": "2102",
-                    "nombre": "El Dorado",
+                    "nombre": "Bellavista",
                     "coordenadas": {
-                        "latitud": -6.7372,
-                        "longitud": -76.7750
+                        "latitud": -7.0556,
+                        "longitud": -76.5911
                     },
                     "distritos": [
-                        {"id": "210201", "nombre": "Berlín"},
-                        {"id": "210202", "nombre": "Ignacio Merino"},
-                        {"id": "210203", "nombre": "Padre Abad"},
-                        {"id": "210204", "nombre": "Santa Rosa"},
-                        {"id": "210205", "nombre": "Yurimaguas"},
-                        {"id": "210206", "nombre": "Chazuta"},
-                        {"id": "210207", "nombre": "Pachiza"},
-                        {"id": "210208", "nombre": "San Martín"}
+                        {"id": "210201", "nombre": "Bellavista"},
+                        {"id": "210202", "nombre": "Alto Biavo"},
+                        {"id": "210203", "nombre": "Bajo Biavo"},
+                        {"id": "210204", "nombre": "Huallaga"},
+                        {"id": "210205", "nombre": "San Pablo"},
+                        {"id": "210206", "nombre": "San Rafael"}
+                    ]
+                },
+                {
+                    "id": "2103",
+                    "nombre": "El Dorado",
+                    "coordenadas": {
+                        "latitud": -6.5000,
+                        "longitud": -76.7500
+                    },
+                    "distritos": [
+                        {"id": "210301", "nombre": "San José de Sisa"},
+                        {"id": "210302", "nombre": "Agua Blanca"},
+                        {"id": "210303", "nombre": "San Martín"},
+                        {"id": "210304", "nombre": "Santa Rosa"},
+                        {"id": "210305", "nombre": "Shatoja"}
+                    ]
+                },
+                {
+                    "id": "2104",
+                    "nombre": "Huallaga",
+                    "coordenadas": {
+                        "latitud": -6.9167,
+                        "longitud": -76.5833
+                    },
+                    "distritos": [
+                        {"id": "210401", "nombre": "Saposoa"},
+                        {"id": "210402", "nombre": "Alto Saposoa"},
+                        {"id": "210403", "nombre": "El Eslabón"},
+                        {"id": "210404", "nombre": "Piscoyacu"},
+                        {"id": "210405", "nombre": "Sacanche"},
+                        {"id": "210406", "nombre": "Tingo de Saposoa"}
+                    ]
+                },
+                {
+                    "id": "2105",
+                    "nombre": "Lamas",
+                    "coordenadas": {
+                        "latitud": -6.4167,
+                        "longitud": -76.5167
+                    },
+                    "distritos": [
+                        {"id": "210501", "nombre": "Lamas"},
+                        {"id": "210502", "nombre": "Alonso de Alvarado"},
+                        {"id": "210503", "nombre": "Barranquita"},
+                        {"id": "210504", "nombre": "Caynarachi"},
+                        {"id": "210505", "nombre": "Cuñumbuqui"},
+                        {"id": "210506", "nombre": "Pinto Recodo"},
+                        {"id": "210507", "nombre": "Rumisapa"},
+                        {"id": "210508", "nombre": "San Roque de Cumbaza"},
+                        {"id": "210509", "nombre": "Shanao"},
+                        {"id": "210510", "nombre": "Tabalosos"},
+                        {"id": "210511", "nombre": "Zapatero"}
+                    ]
+                },
+                {
+                    "id": "2106",
+                    "nombre": "Mariscal Cáceres",
+                    "coordenadas": {
+                        "latitud": -8.5500,
+                        "longitud": -76.2833
+                    },
+                    "distritos": [
+                        {"id": "210601", "nombre": "Juanjuí"},
+                        {"id": "210602", "nombre": "Campanilla"},
+                        {"id": "210603", "nombre": "Huicungo"},
+                        {"id": "210604", "nombre": "Pachiza"},
+                        {"id": "210605", "nombre": "Pajarillo"}
+                    ]
+                },
+                {
+                    "id": "2107",
+                    "nombre": "Moyobamba",
+                    "coordenadas": {
+                        "latitud": -6.0342,
+                        "longitud": -76.9711
+                    },
+                    "distritos": [
+                        {"id": "210701", "nombre": "Moyobamba"},
+                        {"id": "210702", "nombre": "Calzada"},
+                        {"id": "210703", "nombre": "Habana"},
+                        {"id": "210704", "nombre": "Jepelacio"},
+                        {"id": "210705", "nombre": "Soritor"},
+                        {"id": "210706", "nombre": "Yantalo"}
+                    ]
+                },
+                {
+                    "id": "2108",
+                    "nombre": "Picota",
+                    "coordenadas": {
+                        "latitud": -6.9167,
+                        "longitud": -76.3333
+                    },
+                    "distritos": [
+                        {"id": "210801", "nombre": "Picota"},
+                        {"id": "210802", "nombre": "Buenos Aires"},
+                        {"id": "210803", "nombre": "Caspisapa"},
+                        {"id": "210804", "nombre": "Pilluana"},
+                        {"id": "210805", "nombre": "Pucacaca"},
+                        {"id": "210806", "nombre": "San Cristóbal"},
+                        {"id": "210807", "nombre": "San Hilarión"},
+                        {"id": "210808", "nombre": "Shamboyacu"},
+                        {"id": "210809", "nombre": "Tingo de Ponasa"},
+                        {"id": "210810", "nombre": "Tres Unidos"}
+                    ]
+                },
+                {
+                    "id": "2109",
+                    "nombre": "Rioja",
+                    "coordenadas": {
+                        "latitud": -6.0611,
+                        "longitud": -77.1711
+                    },
+                    "distritos": [
+                        {"id": "210901", "nombre": "Rioja"},
+                        {"id": "210902", "nombre": "Awajun"},
+                        {"id": "210903", "nombre": "Elías Soplin Vargas"},
+                        {"id": "210904", "nombre": "Nueva Cajamarca"},
+                        {"id": "210905", "nombre": "Pardo Miguel"},
+                        {"id": "210906", "nombre": "Posic"},
+                        {"id": "210907", "nombre": "San Fernando"},
+                        {"id": "210908", "nombre": "Yorongos"},
+                        {"id": "210909", "nombre": "Yuracyacu"}
+                    ]
+                },
+                {
+                    "id": "2110",
+                    "nombre": "Tocache",
+                    "coordenadas": {
+                        "latitud": -8.1833,
+                        "longitud": -76.5167
+                    },
+                    "distritos": [
+                        {"id": "211001", "nombre": "Tocache"},
+                        {"id": "211002", "nombre": "Nuevo Progreso"},
+                        {"id": "211003", "nombre": "Polvora"},
+                        {"id": "211004", "nombre": "Shunte"},
+                        {"id": "211005", "nombre": "Uchiza"}
                     ]
                 }
             ]
@@ -1439,20 +3868,49 @@
                 },
                 {
                     "id": "2202",
+                    "nombre": "Candarave",
+                    "coordenadas": {
+                        "latitud": -17.2667,
+                        "longitud": -70.2500
+                    },
+                    "distritos": [
+                        {"id": "220201", "nombre": "Candarave"},
+                        {"id": "220202", "nombre": "Cairani"},
+                        {"id": "220203", "nombre": "Camilaca"},
+                        {"id": "220204", "nombre": "Curibaya"},
+                        {"id": "220205", "nombre": "Huanuara"},
+                        {"id": "220206", "nombre": "Quilahuani"}
+                    ]
+                },
+                {
+                    "id": "2203",
+                    "nombre": "Jorge Basadre",
+                    "coordenadas": {
+                        "latitud": -17.8000,
+                        "longitud": -70.5833
+                    },
+                    "distritos": [
+                        {"id": "220301", "nombre": "Locumba"},
+                        {"id": "220302", "nombre": "Ilabaya"},
+                        {"id": "220303", "nombre": "Ite"}
+                    ]
+                },
+                {
+                    "id": "2204",
                     "nombre": "Tarata",
                     "coordenadas": {
                         "latitud": -17.4747,
                         "longitud": -70.0336
                     },
                     "distritos": [
-                        {"id": "220201", "nombre": "Tarata"},
-                        {"id": "220202", "nombre": "Alto De La Alianza"},
-                        {"id": "220203", "nombre": "Camilaca"},
-                        {"id": "220204", "nombre": "Candarave"},
-                        {"id": "220205", "nombre": "Incatamarca"},
-                        {"id": "220206", "nombre": "Ite"},
-                        {"id": "220207", "nombre": "Sitajara"},
-                        {"id": "220208", "nombre": "Tacna"}
+                        {"id": "220401", "nombre": "Tarata"},
+                        {"id": "220402", "nombre": "Héroes Albarracín"},
+                        {"id": "220403", "nombre": "Estique"},
+                        {"id": "220404", "nombre": "Estique-Pampa"},
+                        {"id": "220405", "nombre": "Sitajara"},
+                        {"id": "220406", "nombre": "Susapaya"},
+                        {"id": "220407", "nombre": "Tarucachi"},
+                        {"id": "220408", "nombre": "Ticaco"}
                     ]
                 }
             ]
@@ -1491,11 +3949,23 @@
                         "longitud": -80.7333
                     },
                     "distritos": [
-                        {"id": "230201", "nombre": "Zarumilla"},
-                        {"id": "230202", "nombre": "Zorritos"},
-                        {"id": "230203", "nombre": "Canoas"},
-                        {"id": "230204", "nombre": "Tabonal"},
-                        {"id": "230205", "nombre": "Zaruma"}
+                        {"id": "230201", "nombre": "Zorritos"},
+                        {"id": "230202", "nombre": "Casitas"},
+                        {"id": "230203", "nombre": "Canoas de Punta Sal"}
+                    ]
+                },
+                {
+                    "id": "2303",
+                    "nombre": "Zarumilla",
+                    "coordenadas": {
+                        "latitud": -3.5000,
+                        "longitud": -80.2833
+                    },
+                    "distritos": [
+                        {"id": "230301", "nombre": "Zarumilla"},
+                        {"id": "230302", "nombre": "Aguas Verdes"},
+                        {"id": "230303", "nombre": "Matapalo"},
+                        {"id": "230304", "nombre": "Papayal"}
                     ]
                 }
             ]
@@ -1535,17 +4005,35 @@
                         "longitud": -73.7539
                     },
                     "distritos": [
-                        {"id": "240201", "nombre": "Atalaya"},
-                        {"id": "240202", "nombre": "Bella Vista"},
-                        {"id": "240203", "nombre": "Carmen de Amazonas"},
-                        {"id": "240204", "nombre": "Curimana"},
-                        {"id": "240205", "nombre": "Dos de Mayo"},
-                        {"id": "240206", "nombre": "Humaita"},
-                        {"id": "240207", "nombre": "Inahuaya"},
-                        {"id": "240208", "nombre": "Padre Cocha"},
-                        {"id": "240209", "nombre": "Puerto Bermúdez"},
-                        {"id": "240210", "nombre": "Puerto Inca"},
-                        {"id": "240211", "nombre": "Teniente Cesar Lopez Roca"}
+                        {"id": "240201", "nombre": "Raymondi"},
+                        {"id": "240202", "nombre": "Sepahua"},
+                        {"id": "240203", "nombre": "Tahuania"},
+                        {"id": "240204", "nombre": "Yurúa"}
+                    ]
+                },
+                {
+                    "id": "2403",
+                    "nombre": "Padre Abad",
+                    "coordenadas": {
+                        "latitud": -8.3833,
+                        "longitud": -75.5167
+                    },
+                    "distritos": [
+                        {"id": "240301", "nombre": "Padre Abad"},
+                        {"id": "240302", "nombre": "Irazola"},
+                        {"id": "240303", "nombre": "Curimana"},
+                        {"id": "240304", "nombre": "Neshuya"}
+                    ]
+                },
+                {
+                    "id": "2404",
+                    "nombre": "Purús",
+                    "coordenadas": {
+                        "latitud": -9.7833,
+                        "longitud": -70.7333
+                    },
+                    "distritos": [
+                        {"id": "240401", "nombre": "Purús"}
                     ]
                 }
             ]
