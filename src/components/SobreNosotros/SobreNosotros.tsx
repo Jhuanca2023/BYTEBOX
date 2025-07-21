@@ -2,6 +2,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
 
+
 const equipo = [
   { nombre: 'María González', rol: 'CEO & Fundadora', img: 'https://randomuser.me/api/portraits/women/44.jpg' },
   { nombre: 'Juan Pérez', rol: 'CTO', img: 'https://randomuser.me/api/portraits/men/32.jpg' },
@@ -9,12 +10,7 @@ const equipo = [
   { nombre: 'Carlos Ruiz', rol: 'CMO', img: 'https://randomuser.me/api/portraits/men/45.jpg' },
 ];
 
-const scrollToContact = () => {
-  const contactSection = document.getElementById('contacto');
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+
 
 const SobreNosotros = () => (
   <>
@@ -23,23 +19,12 @@ const SobreNosotros = () => (
     {/* HERO SECTION */}
     <section className="hero-section">
       <div className="hero-content">
-        <h1 className="hero-title">Sobre Bytebox</h1>
-        <p className="hero-description">
-          Somos una empresa internacional líder en tecnología, conectando personas y empresas a través de soluciones innovadoras, seguras y eficientes. ¡Impulsamos el futuro digital!
+        <h1>Conoce nuestro <span className="hero-highlight"><br/>propósito</span></h1>
+        <p>
+          Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
         </p>
-        <ul className="hero-features">
-          <li>🚀 Innovación</li>
-          <li>🌎 Alcance global</li>
-          <li>🤝 Atención personalizada</li>
-          <li>🔒 Seguridad</li>
-        </ul>
-        <button className="hero-cta-button" onClick={scrollToContact}>
-          Contáctanos
-        </button>
       </div>
-      <div className="hero-image">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Equipo Bytebox" />
-      </div>
+      
     </section>
 
     {/* LOGOS ANIMADOS */}
@@ -65,7 +50,7 @@ const SobreNosotros = () => (
       {/* Nuestra Historia */}
       <section className="content-section">
         <div className="content-image">
-          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80" alt="Historia Bytebox" />
+          <img src="/logoB.png" alt="Historia Bytebox"/>
         </div>
         <div className="content-text">
           <h2 className="content-title">Nuestra Historia</h2>
@@ -84,14 +69,14 @@ const SobreNosotros = () => (
           </p>
         </div>
         <div className="content-image">
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Misión Bytebox" />
+          <img src="#" alt="Misión Bytebox" />
         </div>
       </section>
 
       {/* Conectividad Global */}
       <section className="content-section">
         <div className="content-image">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Conectividad Global" />
+          <img src="#" alt="Conectividad Global" />
         </div>
         <div className="content-text">
           <h2 className="content-title">Conectividad Global</h2>

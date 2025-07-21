@@ -1,3 +1,4 @@
+import logoFooter from '../../assets/images/logo/Blanco/Logo_Horizontal_Blanco.png';
 
 
 const Footer = () => (
@@ -22,7 +23,9 @@ const Footer = () => (
     </div>
     <div className="footer-inner">
       <div className="footer-left">
-        <div className="footer-logo">bytebox</div>
+        <div className="footer-logo">
+          <img src={logoFooter} alt="Logo Bytebox" style={{ height: '38px', width: 'auto' }} />
+        </div>
         <div className="footer-links-row">
           <div className="footer-col links-col">
             <h4>Soluciones</h4>

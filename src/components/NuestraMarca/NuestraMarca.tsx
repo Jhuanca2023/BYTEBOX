@@ -9,20 +9,12 @@ const NuestraMarca = () => (
     {/* HERO SECTION */}
     <section className="hero-section">
       <div className="hero-content">
-        <h1 className="hero-title">Nuestra Marca</h1>
-        <p className="hero-description">
-          Bytebox es sinónimo de confianza, innovación y tecnología de vanguardia. Nuestra marca representa la pasión por conectar personas y empresas a través de soluciones tecnológicas que marcan la diferencia.
+        <h1>Nuestra <span className="hero-highlight">esencia</span></h1>
+        <p>
+          Innovación, confianza y tecnología para potenciar tu <br />crecimiento.
         </p>
-        <ul className="hero-features">
-          <li>💡 Creatividad</li>
-          <li>🌍 Presencia global</li>
-          <li>🤝 Cercanía</li>
-          <li>🏆 Calidad</li>
-        </ul>
       </div>
-      <div className="hero-image">
-        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80" alt="Marca Bytebox" />
-      </div>
+     
     </section>
 
     {/* SECCIONES PRINCIPALES */}
