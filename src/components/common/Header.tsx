@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LogoHorizontal from '../../assets/images/logo/Blanco/Logo_Horizontal_Blanco.png';
+import './Header.css';
 
 // Propuesta profesional de submenús
 const menuItems = [
@@ -41,14 +43,6 @@ const menuItems = [
   },
 ];
 
-const scrollToContact = (e: React.MouseEvent) => {
-  e.preventDefault();
-  const contactSection = document.getElementById('contacto');
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -62,7 +56,11 @@ const Header: React.FC = () => {
       <div className="bubble-header-inner">
         <div className="logo">
           <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <span>bytebox</span>
+            <img
+              src={LogoHorizontal}
+              alt="Logo Bytebox"
+              style={{ position: 'sticky', height: 44, maxWidth: 200, objectFit: 'contain', display: 'block', marginTop: '10px'}}
+            />
           </a>
         </div>
         <nav className="main-nav">
