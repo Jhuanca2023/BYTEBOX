@@ -804,15 +804,15 @@ section {
 /* FOOTER TECSPAL */
 .footer-tecspal {
   background: #232323;
-  border-radius: 56px;
+  border-radius: 35px;
   margin: 64px auto 64px auto;
-  max-width: 1400px;
+  max-width: 1290px;
   box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18);
   padding: 0;
   overflow: visible;
   position: relative;
 }
-/* Footer estructura tipo Tecspal */
+/* Footer estructura*/
 .footer-inner {
   display: flex;
   flex-wrap: nowrap;
@@ -839,8 +839,10 @@ section {
 .footer-links-row {
   display: flex;
   flex-direction: row;
-  gap: 64px;
+  gap: 32px;
   width: 100%;
+  max-width: 700px;
+  margin-right: 0;
 }
 .footer-col.links-col,
 .footer-col.discover-col,
@@ -894,8 +896,10 @@ section {
   min-width: 260px;
   max-width: 400px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 0;
+  margin-left: 0;
 }
 .newsletter-box {
   background: linear-gradient(135deg, #232323 80%, #232b33 120%);
