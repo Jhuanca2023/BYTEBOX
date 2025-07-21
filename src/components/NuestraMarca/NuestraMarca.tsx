@@ -11,12 +11,10 @@ const NuestraMarca = () => (
       <div className="hero-content">
         <h1>Nuestra <span className="hero-highlight">esencia</span></h1>
         <p>
-          Innovación, confianza y tecnología para potenciar tu crecimiento.
+          Innovación, confianza y tecnología para potenciar tu <br />crecimiento.
         </p>
       </div>
-      <div className="hero-image">
-        <img src="#" alt="Marca Bytebox" />
-      </div>
+     
     </section>
 
     {/* SECCIONES PRINCIPALES */}

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // Propuesta profesional de submenús
 const menuItems = [
@@ -51,10 +53,25 @@ const scrollToContact = (e: React.MouseEvent) => {
 
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Manejo para mobile: click abre/cierra
   const handleDropdownClick = (label: string) => {
     setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  // Handler para anchors que deben ir a la página principal
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, anchor: string) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.querySelector(anchor);
+      if (el) {
+        (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/', { state: { scrollTo: anchor } });
+    }
   };
 
   return (
@@ -62,7 +79,11 @@ const Header: React.FC = () => {
       <div className="bubble-header-inner">
         <div className="logo">
           <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <span>bytebox</span>
+            <img
+              src={logo}
+              alt="Logo Bytebox"
+              className="logo-img-header"
+            />
           </a>
         </div>
         <nav className="main-nav">
@@ -84,6 +105,8 @@ const Header: React.FC = () => {
                       <li key={sub.label}>
                         {sub.external ? (
                           <a href={sub.anchor} target="_blank" rel="noopener noreferrer">{sub.label}</a>
+                        ) : sub.anchor.startsWith('#') ? (
+                          <a href={sub.anchor} onClick={e => handleAnchorClick(e, sub.anchor)}>{sub.label}</a>
                         ) : (
                           <a href={sub.anchor}>{sub.label}</a>
                         )}
