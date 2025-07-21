@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../../assets/images/logo/Versión Principal/Logo_Horizontal_VersiónPrincipal.png';
 
 // Propuesta profesional de submenús
 const menuItems = [
@@ -62,7 +63,11 @@ const Header: React.FC = () => {
       <div className="bubble-header-inner">
         <div className="logo">
           <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <span>bytebox</span>
+            <img
+              src={logo}
+              alt="Logo Bytebox"
+              className="logo-img-header"
+            />
           </a>
         </div>
         <nav className="main-nav">

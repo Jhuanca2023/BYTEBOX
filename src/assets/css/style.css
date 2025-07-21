@@ -1211,3 +1211,11 @@ section {
 .bubble-header .main-nav .submenu-simple li:last-child a {
   border-bottom: none;
 }
+
+/* img logo*/
+.logo-img-header {
+  height: 25px;
+  max-width: 190px;
+  width: auto;
+  margin-top: -8px;
+}
