@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-// Propuesta profesional de submenús
 const menuItems = [
   {
     label: 'Soluciones',
@@ -11,7 +10,6 @@ const menuItems = [
       { label: 'Gestión de activos IT', anchor: '#onboarding' },
       { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding' },
       { label: 'Offboarding y retiro de equipos', anchor: '#offboarding' },
-      
     ],
   },
   {
@@ -38,31 +36,29 @@ const menuItems = [
     dropdown: [
       { label: 'Blog y noticias', anchor: '#blog' },
       { label: 'Últimas entradas', anchor: '/ultimas-entradas' },
-      
     ],
   },
 ];
 
-const scrollToContact = (e: React.MouseEvent) => {
-  e.preventDefault();
-  const contactSection = document.getElementById('contacto');
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Manejo para mobile: click abre/cierra
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setOpenDropdown(null);
+  }, [location.pathname]);
+
   const handleDropdownClick = (label: string) => {
     setOpenDropdown(openDropdown === label ? null : label);
   };
 
-  // Handler para anchors que deben ir a la página principal
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, anchor: string) => {
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    anchor: string
+  ) => {
     e.preventDefault();
     if (location.pathname === '/') {
       const el = document.querySelector(anchor);
@@ -86,20 +82,30 @@ const Header: React.FC = () => {
             />
           </a>
         </div>
-        <nav className="main-nav">
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', gap: 12 }}>
+          <button
+            className={`menu-toggle${mobileMenuOpen ? ' menu-toggle-fixed' : ''}`}
+            aria-label="Abrir menú"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="menu-icon" />
+          </button>
+        </div>
+        <nav className={`main-nav ${mobileMenuOpen ? 'open' : ''}`}>
           <ul>
             {menuItems.map((item) => (
               <li
                 key={item.label}
                 className={item.dropdown ? 'has-dropdown' : ''}
-                onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
-                onClick={() => handleDropdownClick(item.label)}
+                onMouseEnter={() => !mobileMenuOpen && setOpenDropdown(item.label)}
+                onMouseLeave={() => !mobileMenuOpen && setOpenDropdown(null)}
+                onClick={() => mobileMenuOpen && handleDropdownClick(item.label)}
               >
-                <a href={item.anchor}>{item.label} {item.dropdown && <span className="arrow">▼</span>}</a>
+                <a href={item.anchor}>
+                  {item.label} {item.dropdown && <span className="arrow">▼</span>}
+                </a>
                 {item.dropdown && openDropdown === item.label && (
                   <ul className="submenu-simple">
-                    {/* Flecha superior */}
                     <div className="dropdown-arrow" />
                     {item.dropdown.map((sub) => (
                       <li key={sub.label}>
@@ -118,15 +124,9 @@ const Header: React.FC = () => {
             ))}
           </ul>
         </nav>
-        <div style={{ marginLeft: 'auto' }}>
-          <select className="lang-select" defaultValue="ESP" title="Idioma">
-            <option value="ESP">ESP</option>
-            <option value="ENG">ENG</option>
-          </select>
-        </div>
       </div>
     </header>
   );
 };
 
-export default Header; 
+export default Header;
