@@ -12,15 +12,18 @@ const radius = 90;
 const centerX = 120;
 const centerY = 110;
 
-const angles = [
-  -Math.PI / 2, 
-  -Math.PI / 6, 
-  Math.PI / 6, 
-  Math.PI / 2, 
-  Math.PI * 5 / 6, 
-  Math.PI * 7 / 6, 
-  Math.PI * 3 / 2 
-];
+// ...existing code...
+// Elimina esto:
+// const angles = [
+//   -Math.PI / 2, 
+//   -Math.PI / 6, 
+//   Math.PI / 6, 
+//   Math.PI / 2, 
+//   Math.PI * 5 / 6, 
+//   Math.PI * 7 / 6, 
+//   Math.PI * 3 / 2 
+// ];
+// ...existing code...
 
 const PlatformCircleSteps: React.FC<Props> = ({ rotationIdx, steps, onSelectStep }) => {
   
@@ -39,7 +42,7 @@ const PlatformCircleSteps: React.FC<Props> = ({ rotationIdx, steps, onSelectStep
         />
         
         <g style={{ transformOrigin: `${centerX}px ${centerY}px`, transform: `rotate(${rotation}deg)`, transition: 'transform 0.5s cubic-bezier(.7,0,.3,1)' }}>
-          {steps.map((step, idx) => {
+          {steps.map((_, idx) => {
             
             const angle = -Math.PI / 2 + (idx * Math.PI / (total - 1));
             
