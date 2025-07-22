@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './common/Header';
 import Hero from './common/Hero';
 import Footer from './common/Footer';
-import imgAccesorios from '../assets/images/accesorios.png';
-import imgEarth from '../assets/images/image.png';
+import imgbannertarg from '../assets/images/bannertarg.png';
+import imgstiker from '../assets/images/stiker.png';
 import imgCaja from '../assets/images/imagecaja.png';
 import imgLap from '../assets/images/imageLap.png';
 import styles from './Alianzas.module.css';
@@ -14,13 +14,13 @@ const cards = [
   {
     title: 'Amplíe su alcance',
     desc: 'Acceda a clientes de todo el mundo sin barreras logísticas',
-    img: imgAccesorios,
+    img: imgbannertarg,
     dark: true,
   },
   {
     title: 'Aumente sus ingresos',
     desc: 'Intégrese en nuestra plataforma y añada valor con sus servicios',
-    img: imgEarth,
+    img: imgstiker,
     dark: false,
   },
   {
