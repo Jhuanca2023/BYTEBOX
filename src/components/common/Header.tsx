@@ -7,7 +7,7 @@ const menuItems = [
     label: 'Soluciones',
     anchor: '#soluciones',
     dropdown: [
-      { label: 'Gestión de activos IT', anchor: '#onboarding' },
+      { label: 'Gestión de activos IT', anchor: '#onboarding', },
       { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding' },
       { label: 'Offboarding y retiro de equipos', anchor: '#offboarding' },
     ],
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                     <div className="dropdown-arrow" />
                     {item.dropdown.map((sub) => (
                       <li key={sub.label}>
-                        {sub.external ? (
+                        {sub.anchor.startsWith('#') ? (
                           <a href={sub.anchor} target="_blank" rel="noopener noreferrer">{sub.label}</a>
                         ) : sub.anchor.startsWith('#') ? (
                           <a href={sub.anchor} onClick={e => handleAnchorClick(e, sub.anchor)}>{sub.label}</a>
