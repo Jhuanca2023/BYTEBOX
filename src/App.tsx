@@ -15,6 +15,7 @@ import Footer from './components/common/Footer';
 import PlatformSection from './components/Platform/PlatformSection';
 import Alianzas from './components/Alianzas';
 import UltimasEntradas from './components/UltimasEntradas';
+import WorldStats from './components/Platform/WorldStats';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               </section>
               <Hardware />
               <PlatformSection />
+              <WorldStats />
               <Testimonials />
               <Contact />
             </main>
