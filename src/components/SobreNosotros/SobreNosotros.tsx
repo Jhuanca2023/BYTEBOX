@@ -50,7 +50,7 @@ const SobreNosotros = () => (
       {/* Nuestra Historia */}
       <section className="content-section">
         <div className="content-image">
-          <img src="/logoB.png" alt="Historia Bytebox"/>
+          <img src="https://imgs.search.brave.com/4647C1EAqmzYaPkOBDPcbvdjFUsxFisYVCvZ4NMbqw4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMz/MTM1MDAwOC9lcy9m/b3RvL2VxdWlwby1k/ZS1uZWdvY2lvcy1x/dWUtdHJhYmFqYS1l/bi11bmEtY29tcHV0/YWRvcmEtcG9ydCVD/MyVBMXRpbC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9UlZo/MmFPTGE1elNBUTdX/UWExYm1nWkNwSHNF/SEN1STZ2dWVEWWZD/UUN0RT0" alt="Historia Bytebox"/>
         </div>
         <div className="content-text">
           <h2 className="content-title">Nuestra Historia</h2>
@@ -69,14 +69,14 @@ const SobreNosotros = () => (
           </p>
         </div>
         <div className="content-image">
-          <img src="#" alt="Misión Bytebox" />
+          <img src="https://imgs.search.brave.com/VdwwyyoiTP1s8D8zLyYoubIBijhrx2-m0dmPV-925M8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9tb2Rlcm5hLWNv/bXVuaWNhY2lvbi1j/cmVhdGl2YS1yZWQt/aW50ZXJuZXQtY29u/ZWN0YW4tY2l1ZGFk/LWludGVsaWdlbnRl/XzMxOTY1LTE1MDEy/LmpwZz9zZW10PWFp/c19pdGVtc19ib29z/dGVkJnc9NzQw" alt="Misión Bytebox" />
         </div>
       </section>
 
       {/* Conectividad Global */}
       <section className="content-section">
         <div className="content-image">
-          <img src="#" alt="Conectividad Global" />
+          <img src="https://imgs.search.brave.com/w2Yltj9xCJvzanrnWnU_EyDt8tOfMl6XSJJcDpSOOuY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTIy/NTU4NTYzMS9lcy9m/b3RvL3RvcnJlLWRl/LWNvbXVuaWNhY2lv/bmVzLTVnLWNvbi1o/b21icmUtdXNhbmRv/LWVsLXRlbCVDMyVB/OWZvbm8tbSVDMyVC/M3ZpbC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9d0dHcTBs/NDVKMXduQnNCQVln/QTdTMDhyOXBQaGs0/RTVleTlVZXVZeEhV/Yz0" alt="Conectividad Global" />
         </div>
         <div className="content-text">
           <h2 className="content-title">Conectividad Global</h2>
