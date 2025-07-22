@@ -4,11 +4,11 @@ import './Hardware.css';
 const hardwareItems = [
   {
     title: 'Conectividad Global',
-    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
+    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F285x348%2Fee9b5d9213%2Ftoolkit1.png&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
   },
   {
     title: 'Experiencia Personalizada',
-    img: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F284x346%2Fd1fb85c58e%2Ftoolkitcard4.png&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
   },
   {
     title: 'Innovación & Creatividad',
@@ -16,9 +16,10 @@ const hardwareItems = [
   },
   {
     title: 'Calidad y Confianza',
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F1080x1080%2Fee283aaeec%2Fh390-usb-csf_1080x.webp&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
   },
 ];
+
 
 const Hardware = () => (
   <section id="hardware" className="hardware-section">
