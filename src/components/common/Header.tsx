@@ -7,35 +7,35 @@ const menuItems = [
     label: 'Soluciones',
     anchor: '#soluciones',
     dropdown: [
-      { label: 'Gestión de activos IT', anchor: '#onboarding', },
-      { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding' },
-      { label: 'Offboarding y retiro de equipos', anchor: '#offboarding' },
+      { label: 'Gestión de activos IT', anchor: '#onboarding', external: false },
+      { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding', external: false },
+      { label: 'Offboarding y retiro de equipos', anchor: '#offboarding', external: false },
     ],
   },
   {
     label: 'Plataforma',
     anchor: '#plataforma',
     dropdown: [
-      { label: 'Plataforma centralizada', anchor: '#platform' },
-      { label: 'Alianzas', anchor: '/alianzas' },
+      { label: 'Plataforma centralizada', anchor: '#platform', external: false },
+      { label: 'Alianzas', anchor: '/alianzas', external: false },
     ],
   },
   {
     label: 'Nosotros',
     anchor: '/sobre-nosotros',
     dropdown: [
-      { label: 'Sobre nosotros', anchor: '/sobre-nosotros' },
-      { label: 'Nuestra Marca', anchor: '/nuestra-marca' },
-      { label: 'Casos de éxito', anchor: '#testimonios' },
-      { label: 'Únete como socio', anchor: '#contacto' },
+      { label: 'Sobre nosotros', anchor: '/sobre-nosotros', external: false },
+      { label: 'Nuestra Marca', anchor: '/nuestra-marca', external: false },
+      { label: 'Casos de éxito', anchor: '#testimonios', external: false },
+      { label: 'Únete como socio', anchor: '#contacto', external: false },
     ],
   },
   {
     label: 'Recursos',
     anchor: '#recursos',
     dropdown: [
-      { label: 'Blog y noticias', anchor: '#blog' },
-      { label: 'Últimas entradas', anchor: '/ultimas-entradas' },
+      { label: 'Blog y noticias', anchor: '#blog', external: false },
+      { label: 'Últimas entradas', anchor: '/ultimas-entradas', external: false },
     ],
   },
 ];
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                     <div className="dropdown-arrow" />
                     {item.dropdown.map((sub) => (
                       <li key={sub.label}>
-                        {sub.anchor.startsWith('#') ? (
+                        {sub.external ? (
                           <a href={sub.anchor} target="_blank" rel="noopener noreferrer">{sub.label}</a>
                         ) : sub.anchor.startsWith('#') ? (
                           <a href={sub.anchor} onClick={e => handleAnchorClick(e, sub.anchor)}>{sub.label}</a>
