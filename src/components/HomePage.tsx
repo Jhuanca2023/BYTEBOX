@@ -14,10 +14,7 @@ import Testimonials from './Testimonials/Testimonials';
 import Contact from './Contact/Contact';
 import Footer from './common/Footer';
 
-import SolutionImage from './SolutionImage';
 
-const img1 = 'https://distritech.com/cdn/shop/articles/taras-shypka-iFSvn82XfGo-unsplash.jpg?v=1723125455';
-=======
 
 
 type LocationState = {
@@ -48,8 +45,7 @@ const HomePage = () => {
             <Onboarding />
             <Offboarding />
 
-            <SolutionImage img={img1} alt="Trabajo remoto" />
-=======
+
 
             <Storage />
             <Platform />
