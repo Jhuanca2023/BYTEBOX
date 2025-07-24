@@ -1,5 +1,6 @@
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import Products from '../Products/Products';
 import './NuestraMarca.css';
 
 const NuestraMarca = () => (
@@ -46,6 +47,9 @@ const NuestraMarca = () => (
         </div>
       </section>
     </main>
+
+    {/* PRODUCTOS DESTACADOS */}
+    <Products />
     
     <Footer />
   </>

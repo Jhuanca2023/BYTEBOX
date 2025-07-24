@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import NuestraMarca from './components/NuestraMarca/NuestraMarca';
 import Header from './components/common/Header';
