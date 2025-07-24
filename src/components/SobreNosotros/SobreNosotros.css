@@ -11,6 +11,9 @@
   border-radius: 0;
   overflow: hidden;
 }
+.hero-section.sobre-nosotros-hero-bg {
+  background: url('/src/assets/images/image.png') center center/cover no-repeat;
+}
 
 .hero-content {
   max-width: 700px;
@@ -299,4 +302,11 @@
     min-width: 150px;
     max-width: 180px;
   }
+} 
+
+.sobre-nosotros-hero-bg {
+  background-image: url('/src/assets/images/image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 } 

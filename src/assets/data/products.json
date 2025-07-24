@@ -1,0 +1,166 @@
+{
+  "topProducts": [
+    {
+      "id": 1,
+      "title": "Audífonos con cancelación de ruido Sony WH-1000XM5",
+      "description": "Adquiere los audífonos ideales para tus oídos. Este tipo de auriculares te ofrecen unas almohadillas acolchadas que cubren tus oídos, perfectas para una escucha prolongada.",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/277257-1600-1600?v=638218412074930000&width=1600&height=1600&aspect=true",
+      "reviews": [
+        {
+          "name": "Carlos Mendoza",
+          "time": "hace 2 meses",
+          "rating": 5,
+          "comment": "Carga súper rápida, diseño elegante y queda perfecto en mi escritorio."
+        },
+        {
+          "name": "María Rodríguez",
+          "time": "hace 1 mes",
+          "rating": 4,
+          "comment": "Excelente velocidad de carga, pero podría ser un poco más grande para celulares grandes."
+        },
+        {
+          "name": "David Pinto",
+          "time": "hace 3 semanas",
+          "rating": 5,
+          "comment": "Perfecto para mi oficina. Carga varios dispositivos rápidamente."
+        }
+      ],
+      "url": "https://www.coolbox.pe/audifonos-cancelacion-ruido-sony-wh-1000xm5-24h-wh1000xm5-bmuc/p"
+    },
+    {
+      "id": 2,
+      "title": "Parlante Bluetooth JBL Charge 6 con Auracast 40W",
+      "description": "Diseño duradero con estilo JBL: El JBL Charge 6 mantiene su diseño cilíndrico icónico con mejoras notables en materiales sostenibles y acabados modernos.",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/450464-1200-1200?v=638827541295600000&width=1200&height=1200&aspect=true",
+      "reviews": [
+        {
+          "name": "Sofía Benítez",
+          "time": "hace 1 mes",
+          "rating": 5,
+          "comment": "Bloquea las distracciones perfectamente, calidad de sonido excelente y muy cómodos. Vale cada sol invertido."
+        },
+        {
+          "name": "Alejandro Torres",
+          "time": "hace 2 semanas",
+          "rating": 5,
+          "comment": "Increíble cancelación de ruido. Perfecto para mi viaje diario al trabajo."
+        },
+        {
+          "name": "Lucia Chang",
+          "time": "hace 1 semana",
+          "rating": 4,
+          "comment": "Excelente calidad de sonido y muy cómodos para sesiones largas de música."
+        }
+      ],
+      "url": "https://www.coolbox.pe/parlante-bluetooth-jbl-charge-6-con-auracast-45w-jblcharge6bluam/p"
+    },
+    {
+      "id": 3,
+      "title": "Airpods (4ta Gen) resistente al agua IP54, duración máx.",
+      "description": "Take your music anywhere.",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/398598-1200-1200?v=638662942131100000&width=1200&height=1200&aspect=true",
+      "reviews": [
+        {
+          "name": "Luis Huaranca",
+          "time": "hace 3 semanas",
+          "rating": 5,
+          "comment": "Portátil, calidad de sonido impresionante, excelente duración de batería. Perfecto para actividades al aire libre o en casa."
+        },
+        {
+          "name": "Emma Villanueva",
+          "time": "hace 2 semanas",
+          "rating": 5,
+          "comment": "Me encanta la portabilidad y la calidad de sonido. ¡Perfecto para ir a la playa!"
+        },
+        {
+          "name": "Carlos Méndez",
+          "time": "hace 1 semana",
+          "rating": 4,
+          "comment": "Excelente parlante por el precio. La batería dura muchísimo tiempo."
+        }
+      ],
+      "url": "https://www.coolbox.pe/audifonos-bt-tws-apple-airpods-4ta-gen-30h-mxp63am-a/p"
+    },
+    {
+      "id": 4,
+      "title": "Apple Watch Ultra 2 49mm",
+      "description": "Track your fitness and stay connected.",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/455215-1200-1200?v=638838962336230000&width=1200&height=1200&aspect=true",
+      "reviews": [
+        {
+          "name": "Sara Jiménez",
+          "time": "hace 1 mes",
+          "rating": 5,
+          "comment": "Increíbles funciones de seguimiento físico y excelente duración de batería. ¡Me encantan las notificaciones!"
+        },
+        {
+          "name": "Miguel Dávila",
+          "time": "hace 2 semanas",
+          "rating": 4,
+          "comment": "Excelente reloj para entrenamientos. El seguimiento GPS es muy preciso."
+        },
+        {
+          "name": "Ana García",
+          "time": "hace 1 semana",
+          "rating": 5,
+          "comment": "Perfecto para mis carreras diarias y el monitor de frecuencia cardíaca es súper exacto."
+        }
+      ],
+      "url": "https://www.coolbox.pe/apple-watch-ultra-2-49mm-negro-mx4p3be-a/p"
+    },
+    {
+      "id": 5,
+      "title": "Amazon Echo Dot 5ta generación",
+      "description": "Parlante inteligente Amazon Echo Dot 5ta generación, control de voz, Alexa, Wi-Fi, bluetooth, sensor de temperatura y movimiento, azul",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/245500-1200-1200?v=638079276906900000&width=1200&height=1200&aspect=true",
+      "reviews": [
+        {
+          "name": "Javier Quispe",
+          "time": "hace 3 semanas",
+          "rating": 5,
+          "comment": "Precisión increíble y la iluminación RGB es impresionante. Perfecto para gaming competitivo."
+        },
+        {
+          "name": "Raquel León",
+          "time": "hace 2 semanas",
+          "rating": 4,
+          "comment": "Excelente mouse, muy responsivo. El software para personalización es fácil de usar."
+        },
+        {
+          "name": "Tomás Andrade",
+          "time": "hace 1 semana",
+          "rating": 5,
+          "comment": "El mejor mouse gamer que he usado. Las configuraciones de DPI son perfectas para juegos FPS."
+        }
+      ],
+      "url": "https://www.coolbox.pe/parlante-inteligente-amazon-echo-dot-5ta-gen-reloj-b0bf2htjhj/p"
+    },
+    {
+      "id": 6,
+      "title": "Audífonos bluetooth in ear Sony",
+      "description": "Audífonos bluetooth in ear Sony WI-C100 IPX4, micrófono incorporado, máx. 25 horas, control de volumen, taupe",
+      "image": "https://coolboxpe.vtexassets.com/arquivos/ids/277271-1200-1200?v=638218421478030000&width=1200&height=1200&aspect=true",
+      "reviews": [
+        {
+          "name": "Christian Martínez",
+          "time": "hace 1 mes",
+          "rating": 5,
+          "comment": "Experiencia de tipeo increíble. Los switches mecánicos se sienten fabulosos y la calidad de construcción es de primera."
+        },
+        {
+          "name": "Jessica Bravo",
+          "time": "hace 2 semanas",
+          "rating": 4,
+          "comment": "Excelente teclado para programar. La respuesta táctil ayuda mucho en sesiones largas de código."
+        },
+        {
+          "name": "Ryan Torres",
+          "time": "hace 1 semana",
+          "rating": 5,
+          "comment": "Perfecto para gaming y escribir. La retroiluminación RGB es hermosa y personalizable."
+        }
+      ],
+      "url": "https://www.coolbox.pe/audifono-bluetooth-in-ear-sony-wi-c100-25h-wi-c100-czuc/p"
+    }
+  ]
+}

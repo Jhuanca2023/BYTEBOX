@@ -1,0 +1,18 @@
+.buyback-cta-btn {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  background: linear-gradient(90deg, #2ad1df 0%, #22a0b8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(42, 193, 219, 0.2);
+  transition: background 0.2s;
+}
+.buyback-cta-btn:hover {
+  background: linear-gradient(90deg, #22a0b8 0%, #2ad1df 100%);
+} 

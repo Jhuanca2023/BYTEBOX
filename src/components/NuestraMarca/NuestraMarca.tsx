@@ -1,5 +1,6 @@
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import Products from '../Products/Products';
 import './NuestraMarca.css';
 
 const NuestraMarca = () => (
@@ -7,14 +8,11 @@ const NuestraMarca = () => (
     <Header />
     
     {/* HERO SECTION */}
-    <section className="hero-section">
+    <section className="hero-section nuestra-marca-hero-bg">
       <div className="hero-content">
-        <h1>Nuestra <span className="hero-highlight">esencia</span></h1>
-        <p>
-          Innovación, confianza y tecnología para potenciar tu <br />crecimiento.
-        </p>
+        <h1>Nuestra Marca</h1>
+        <p>Innovación, confianza y tecnología para potenciar tu crecimiento.</p>
       </div>
-     
     </section>
 
     {/* SECCIONES PRINCIPALES */}
@@ -46,6 +44,9 @@ const NuestraMarca = () => (
         </div>
       </section>
     </main>
+
+    {/* PRODUCTOS DESTACADOS */}
+    <Products />
     
     <Footer />
   </>
