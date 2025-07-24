@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0rem 0 2rem 0;
+  
   position: relative;
+  background: ( #f8f9fa 0%, #ffffff 100%);
 }
 
 .globeCol {
@@ -20,12 +21,13 @@
   aspect-ratio: 1/1;
   height: auto;
   border-radius: 50%;
-  overflow: hidden;
-  background-color: #fff;
+  overflow: visible;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  position: relative;
 }
 
 .globeImg {
@@ -34,17 +36,300 @@
   object-fit: cover;
   border-radius: 50%;
   display: block;
+  z-index: 1;
 }
 
+/* Tiempo de entrega - Superior derecha */
+.deliveryTime {
+  position: absolute;
+  top: 12%;
+  right: 10%;
+  text-align: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.deliveryNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1;
+}
+
+.deliveryText {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+}
+
+/* Sección de talentos - Centro izquierda */
+.talentsSection {
+  position: absolute;
+  top: 30%;
+  left: 17%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.149);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 280px;
+}
+
+.talentsText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.avatarsContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: -8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.moreCount {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-left: -8px;
+  border: 3px solid #fff;
+}
+
+.experienceBtn {
+  background: #0000007a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.experienceBtn:hover {
+  background: #26899d8b;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* Texto "Elevando equipos" - Inferior izquierda */
+.elevatingText {
+  position: absolute;
+  bottom: 25%;
+  left: 8%;
+  z-index: 10;
+}
+
+.elevatingText h3 {
+  font-size: 2.9rem;
+  font-weight: 400;
+  color: #2b73a3;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.equiposText {
+  color: #2a9ab3a3;
+  font-weight: 300;
+}
+
+.mundoText {
+  color: #2a9ab3a3;
+  font-weight: 300;
+}
+
+/* Estadísticas - Parte inferior */
+.statsContainer {
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+  display: flex;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.statItem {
+  text-align: left;
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0.25rem 0 0 0;
+  font-weight: 500;
+}
+
+/* Banderas - Parte derecha */
+.flagsContainer {
+  position: absolute;
+  top: 45%;
+  right: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.flag {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón Países - Inferior derecha */
+.countriesBtn {
+  position: absolute;
+  bottom: 15%;
+  right: 12%;
+  z-index: 10;
+}
+
+.countriesButton {
+  background: #0000007a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.countriesButton:hover {
+  background: #26899d8b;
+  transform: translateY(-2px);
+}
+
+.arrowIcon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
 @media (max-width: 900px) {
   .globeContainer {
-    max-width: 100vw;
-    width: 100vw;
+    max-width: 90vw;
+    width: 90vw;
+  }
+  
+  .deliveryTime {
+    top: 5%;
+    right: 5%;
+    padding: 0.75rem;
+  }
+  
+  .talentsSection {
+    top: 30%;
+    left: 5%;
+    padding: 1rem;
+    max-width: 220px;
+  }
+  
+  .elevatingText h3 {
+    font-size: 1.8rem;
+  }
+  
+  .statsContainer {
+    bottom: 5%;
+    left: 5%;
+    gap: 1.5rem;
+  }
+  
+  .flagsContainer {
+    right: 8%;
+  }
+  
+  .countriesBtn {
+    bottom: 10%;
+    right: 8%;
   }
 }
+
 @media (max-width: 600px) {
   .globeContainer {
-    max-width: 100vw;
-    width: 100vw;
+    max-width: 95vw;
+    width: 95vw;
   }
-} 
+  
+  .deliveryNumber {
+    font-size: 2rem;
+  }
+  
+  .deliveryText {
+    font-size: 0.8rem;
+  }
+  
+  .talentsText {
+    font-size: 0.9rem;
+  }
+  
+  .elevatingText h3 {
+    font-size: 1.5rem;
+  }
+  
+  .statsContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .statNumber {
+    font-size: 1.5rem;
+  }
+  
+  .flag {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+}
