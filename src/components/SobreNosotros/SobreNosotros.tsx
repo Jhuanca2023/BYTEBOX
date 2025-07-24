@@ -17,14 +17,11 @@ const SobreNosotros = () => (
     <Header />
     
     {/* HERO SECTION */}
-    <section className="hero-section">
+    <section className="hero-section sobre-nosotros-hero-bg">
       <div className="hero-content">
-        <h1>Conoce nuestro <span className="hero-highlight"><br/>propósito</span></h1>
-        <p>
-          Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
-        </p>
+        <h1>Sobre Nosotros</h1>
+        <p>Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.</p>
       </div>
-      
     </section>
 
     {/* LOGOS ANIMADOS */}
