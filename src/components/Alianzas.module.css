@@ -240,3 +240,10 @@
     right: 24px;
   }
 } 
+
+.alianzas-hero-bg {
+  background-image: url('/src/assets/images/bannertarg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} 

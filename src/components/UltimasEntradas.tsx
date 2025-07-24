@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './common/Header';
-import Hero from './common/Hero';
+
 import Footer from './common/Footer';
 import './UltimasEntradas.css';
 import imgLaptop from '../assets/images/imageLap.png';
@@ -40,7 +40,12 @@ const UltimasEntradas = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <section className="hero-section ultimas-entradas-hero-bg">
+        <div className="hero-content">
+          <h1>Últimas Entradas</h1>
+          <p>Explora las novedades, casos de éxito y tendencias de Bytebox.</p>
+        </div>
+      </section>
       {/* Sección de temas/empresas */}
       <section className="ultimas-entradas-section">
         <h2 className="ultimas-entradas-title">

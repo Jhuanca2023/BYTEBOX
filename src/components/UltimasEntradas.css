@@ -116,4 +116,11 @@
 
 .ultimas-entradas-main-content {
   text-align: center;
+}
+
+.ultimas-entradas-hero-bg {
+  background-image: url('/src/assets/images/fbbanner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 } 

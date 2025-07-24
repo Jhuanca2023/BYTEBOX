@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './common/Header';
-import Hero from './common/Hero';
+
 import Footer from './common/Footer';
 import imgbannertarg from '../assets/images/bannertarg.png';
 import imgstiker from '../assets/images/stiker.png';
@@ -64,7 +64,12 @@ const Alianzas = () => {
   return (
     <>
       <Header />
-      <Hero />
+      <section className={`hero-section ${styles['alianzas-hero-bg']}`}>
+    <div className="hero-content">
+      <h1>Alianzas estratégicas</h1>
+      <p>Conecta tu empresa con los mejores partners y expande tu alcance global.</p>
+    </div>
+  </section>
       <main className={styles.alianzasMain}>
         <h2 className={styles.alianzasTitle}>
           ¿Por qué asociarse con <span className={styles.alianzasTitleHighlight}>BYTEBOX</span>?
