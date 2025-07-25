@@ -34,7 +34,6 @@ const menuItems = [
     label: 'Recursos',
     anchor: '#recursos',
     dropdown: [
-      { label: 'Blog y noticias', anchor: '#blog', external: false },
       { label: 'Últimas entradas', anchor: '/ultimas-entradas', external: false },
     ],
   },
