@@ -101,8 +101,8 @@ const Alianzas = () => {
           Conozca a nuestros <span className={styles.partnersTitleHighlight}>Partners</span>
         </h2>
         <p className={styles.partnersDesc}>
-          Encuentre un Partner Tecspal con la solución o servicios que necesita.<br />
-          Trabaje con expertos especializados en resolver los problemas de su negocio.
+          Encuentre un Partner Bytebox con la solución o servicios que necesita.<br />
+          Trabaje con expertos especializados en resolver los problemas.
         </p>
         <div className={styles.partnersGrid}>
           {partners.map((p, i) => (
