@@ -10,7 +10,7 @@ const SobreNosotros = () => (
     {/* HERO SECTION */}
     <section className="hero-section sobre-nosotros-hero-bg">
       <div className="hero-content">
-        <h1>Sobre Nosotros</h1>
+        <h1>Conoce <span className="hero-highlight">nuestra historia</span></h1>
         <p>Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.</p>
       </div>
     </section>
