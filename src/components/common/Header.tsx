@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FaLaptop, FaLaptopCode, FaLaptopHouse, FaServer, FaHandshake, FaInfoCircle, FaPaintBrush, FaChartLine, FaFileAlt } from 'react-icons/fa';
 
 const menuItems = [
   {
     label: 'Soluciones',
     anchor: '#soluciones',
     dropdown: [
-      { label: 'Gestión de activos IT', anchor: '#onboarding', external: false },
-      { label: 'Adquisicion de TI y Onboarding', anchor: '#onboarding', external: false },
-      { label: 'Offboarding y retiro de equipos', anchor: '#offboarding', external: false },
+      { label: 'Gestión de activos IT', icon: <FaLaptop />, anchor: '#onboarding', external: false },
+      { label: 'Adquisicion de TI y Onboarding', icon: <FaLaptopCode />, anchor: '#onboarding', external: false },
+      { label: 'Offboarding y retiro de equipos', icon: <FaLaptopHouse />, anchor: '#offboarding', external: false },
     ],
   },
   {
     label: 'Plataforma',
     anchor: '#plataforma',
     dropdown: [
-      { label: 'Plataforma centralizada', anchor: '#platform', external: false },
-      { label: 'Alianzas', anchor: '/alianzas', external: false },
+      { label: 'Plataforma centralizada', icon: <FaServer />, anchor: '#platform', external: false },
+      { label: 'Alianzas', icon: <FaHandshake />, anchor: '/alianzas', external: false },
     ],
   },
   {
     label: 'Nosotros',
     anchor: '/sobre-nosotros',
     dropdown: [
-      { label: 'Sobre nosotros', anchor: '/sobre-nosotros', external: false },
-      { label: 'Nuestra Marca', anchor: '/nuestra-marca', external: false },
-      { label: 'Casos de éxito', anchor: '#testimonios', external: false },
-      { label: 'Únete como socio', anchor: '#contacto', external: false },
+      { label: 'Sobre nosotros', icon: <FaInfoCircle />, anchor: '/sobre-nosotros', external: false },
+      { label: 'Nuestra Marca', icon: <FaPaintBrush />, anchor: '/nuestra-marca', external: false },
+      { label: 'Casos de éxito', icon: <FaChartLine />, anchor: '#testimonios', external: false },
+      { label: 'Únete como socio', icon: <FaHandshake />, anchor: '#contacto', external: false },
     ],
   },
   {
     label: 'Recursos',
     anchor: '#recursos',
     dropdown: [
-      { label: 'Últimas entradas', anchor: '/ultimas-entradas', external: false },
+      { label: 'Últimas entradas', icon: <FaFileAlt />, anchor: '/ultimas-entradas', external: false },
     ],
   },
 ];
@@ -54,18 +55,24 @@ const Header: React.FC = () => {
     setOpenDropdown(openDropdown === label ? null : label);
   };
 
-  const handleAnchorClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    anchor: string
-  ) => {
-    e.preventDefault();
-    if (location.pathname === '/') {
-      const el = document.querySelector(anchor);
-      if (el) {
-        (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string, isAnchor: boolean = false) => {
+    if (isAnchor) {
+      e.preventDefault();
+      if (location.pathname === '/') {
+        const el = document.querySelector(path);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate('/', { state: { scrollTo: path } });
       }
     } else {
-      navigate('/', { state: { scrollTo: anchor } });
+      // Regular navigation
+      if (path.startsWith('http')) {
+        window.open(path, '_blank');
+      } else {
+        navigate(path);
+      }
     }
   };
 
@@ -106,15 +113,22 @@ const Header: React.FC = () => {
                 {item.dropdown && openDropdown === item.label && (
                   <ul className="submenu-simple">
                     <div className="dropdown-arrow" />
-                    {item.dropdown.map((sub) => (
-                      <li key={sub.label}>
-                        {sub.external ? (
-                          <a href={sub.anchor} target="_blank" rel="noopener noreferrer">{sub.label}</a>
-                        ) : sub.anchor.startsWith('#') ? (
-                          <a href={sub.anchor} onClick={e => handleAnchorClick(e, sub.anchor)}>{sub.label}</a>
-                        ) : (
-                          <a href={sub.anchor}>{sub.label}</a>
-                        )}
+                    {item.dropdown.map((subItem) => (
+                      <li key={subItem.label}>
+                        <a
+                          href={subItem.anchor}
+                          onClick={(e) => {
+                            if (subItem.external) return;
+                            const isAnchor = subItem.anchor.startsWith('#');
+                            handleNavigation(e, subItem.anchor, isAnchor);
+                          }}
+                          target={subItem.external ? '_blank' : '_self'}
+                          rel={subItem.external ? 'noopener noreferrer' : ''}
+                          className="dropdown-item"
+                        >
+                          <span className="dropdown-icon">{subItem.icon}</span>
+                          <span className="dropdown-text">{subItem.label}</span>
+                        </a>
                       </li>
                     ))}
                   </ul>

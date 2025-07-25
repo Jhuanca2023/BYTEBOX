@@ -65,11 +65,12 @@ const Alianzas = () => {
     <>
       <Header />
       <section className={`hero-section ${styles['alianzas-hero-bg']}`}>
-    <div className="hero-content">
-      <h1>Alianzas estratégicas</h1>
-      <p>Conecta tu empresa con los mejores partners y expande tu alcance global.</p>
-    </div>
-  </section>
+        <div className="hero-content">
+          <h1>Alianzas<br /><span className="hero-highlight">estratégicas</span></h1>
+          <p>Conecta tu empresa con los mejores partners y expande tu alcance global.</p>
+          <button className="hero-cta" onClick={scrollToContact}>Sé nuestro partner</button>
+        </div>
+      </section>
       <main className={styles.alianzasMain}>
         <h2 className={styles.alianzasTitle}>
           ¿Por qué asociarse con <span className={styles.alianzasTitleHighlight}>BYTEBOX</span>?

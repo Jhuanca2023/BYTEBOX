@@ -42,7 +42,7 @@ const UltimasEntradas = () => {
       <Header />
       <section className="hero-section ultimas-entradas-hero-bg">
         <div className="hero-content">
-          <h1>Últimas Entradas</h1>
+          <h1>Últimas <span className="hero-highlight">entradas</span></h1>
           <p>Explora las novedades, casos de éxito y tendencias de Bytebox.</p>
         </div>
       </section>

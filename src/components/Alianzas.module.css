@@ -12,11 +12,14 @@
   font-weight: 400;
   margin-bottom: 8px;
   text-align: center;
+  color: #1B1B1B; /* dark primary text */
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .alianzasTitleHighlight {
-  color: #7a8fa6;
+  color: #46d1f0; /* brand accent */
   font-weight: 700;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .alianzasDesc {
@@ -24,6 +27,8 @@
   text-align: center;
   margin: 0 auto 32px auto;
   font-size: 1.15rem;
+  color: #1B1B1B;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .alianzasCards {
@@ -73,6 +78,8 @@
   font-weight: 700;
   margin-bottom: 12px;
   text-align: center;
+  color: #FFFFFF;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .alianzasCardDesc {
@@ -82,7 +89,7 @@
 }
 
 .alianzasBtn {
-  background: #7a8fa6;
+  background: #46d1f0;
   color: #fff;
   border: none;
   border-radius: 32px;
@@ -96,7 +103,7 @@
 }
 
 .alianzasBtn:hover {
-  background: #5a6e86;
+  background: #3bbbe0;
 }
 
 .partnersSection {
@@ -111,11 +118,14 @@
   font-weight: 400;
   text-align: center;
   margin-bottom: 8px;
+  color: #1B1B1B;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .partnersTitleHighlight {
-  color: #7a8fa6;
+  color: #46d1f0;
   font-weight: 700;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .partnersDesc {
@@ -123,6 +133,8 @@
   text-align: center;
   margin: 0 auto 32px auto;
   font-size: 1.1rem;
+  color: #1B1B1B;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .partnersGrid {
@@ -157,6 +169,7 @@
   border-radius: 18px;
   margin: 5px 0 0 0;
 }
+
 .partnerLogo {
   width: 300px;
   height: 62px;
@@ -183,8 +196,9 @@
 }
 
 .partnerNameHighlight {
-  color: #7a8fa6;
+  color: #46d1f0;
   font-weight: 700;
+  font-family: "Calibri", "Helvetica", "Arial", sans-serif;
 }
 
 .partnerDesc {
@@ -203,7 +217,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7a8fa6 60%, #232323 100%);
+  background: linear-gradient(135deg, #46d1f0 60%, #232323 100%);
   border: none;
   display: flex;
   align-items: center;
@@ -222,7 +236,7 @@
 }
 
 .partnerBtn:hover {
-  background: linear-gradient(135deg, #232323 60%, #7a8fa6 100%);
+  background: linear-gradient(135deg, #46d1f0 0%, #0088A8 100%);
 }
 
 @media (max-width: 900px) {

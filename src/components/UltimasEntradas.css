@@ -1,6 +1,7 @@
 /* Estilos para UltimasEntradas */
 
 .ultimas-entradas-section {
+  width: 100vw;
   margin: 48px 0 0 0;
   display: flex;
   flex-direction: column;
@@ -119,7 +120,7 @@
 }
 
 .ultimas-entradas-hero-bg {
-  background-image: url('/src/assets/images/fbbanner.png');
+  background-image: url('/src/assets/images/entradas.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

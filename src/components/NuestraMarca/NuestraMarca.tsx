@@ -10,7 +10,7 @@ const NuestraMarca = () => (
     {/* HERO SECTION */}
     <section className="hero-section nuestra-marca-hero-bg">
       <div className="hero-content">
-        <h1>Nuestra Marca</h1>
+        <h1>Descubre <span className="hero-highlight">nuestra esencia</span></h1>
         <p>Innovación, confianza y tecnología para potenciar tu crecimiento.</p>
       </div>
     </section>
