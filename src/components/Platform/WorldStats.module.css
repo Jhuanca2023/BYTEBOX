@@ -1,11 +1,31 @@
+/* Animaciones */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clase base para elementos animados */
+.animateIn {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
 .worldStatsSection {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   position: relative;
   background: ( #f8f9fa 0%, #ffffff 100%);
+  overflow: hidden;
 }
 
 .globeCol {
@@ -46,10 +66,18 @@
   right: 10%;
   text-align: center;
   z-index: 10;
-  background: rgba(255, 255, 255, 0);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.deliveryTime.animateIn {
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .deliveryNumber {
@@ -73,11 +101,19 @@
   top: 30%;
   left: 17%;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.149);
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  max-width: 280px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.8rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.3s ease-out;
+}
+
+.talentsSection.animateIn {
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .talentsText {
@@ -152,6 +188,14 @@
   bottom: 25%;
   left: 8%;
   z-index: 10;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.3s ease-out;
+}
+
+.elevatingText.animateIn {
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .elevatingText h3 {
@@ -212,6 +256,14 @@
   z-index: 10;
   width: 300px;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.3s ease-out;
+}
+
+.flagsContainer.animateIn {
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .flag {
@@ -251,6 +303,14 @@
   bottom: 15%;
   right: 12%;
   z-index: 10;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.3s ease-out;
+}
+
+.countriesBtn.animateIn {
+  animation: slideInFromTop 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
 }
 
 .countriesButton {

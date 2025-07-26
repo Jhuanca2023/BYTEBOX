@@ -1,20 +1,117 @@
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './WorldStats.module.css';
 
+type CountsType = {
+  onboardings: number;
+  clients: number;
+  countries: number;
+};
+
+type StatItem = {
+  id: number;
+  icon: React.ReactNode;
+  number: number;
+  label: keyof CountsType;
+  displayLabel: string;
+  suffix?: string;
+};
+
 const WorldStats = () => {
+  const [animated, setAnimated] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const [counts, setCounts] = useState<CountsType>({
+    onboardings: 0,
+    clients: 0,
+    countries: 0
+  });
+
+  const stats: StatItem[] = [
+    { id: 1, icon: <i className="fas fa-globe-americas" />, number: 4500, label: 'onboardings', displayLabel: 'Onboardings exitosos', suffix: '+' },
+    { id: 2, icon: <i className="fas fa-user-tie" />, number: 200, label: 'clients', displayLabel: 'Clientes satisfechos', suffix: '+' },
+    { id: 3, icon: <i className="fas fa-building" />, number: 130, label: 'countries', displayLabel: 'Países operativos' },
+  ];
+
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  // Función para animar los contadores
+  const animateCounters = () => {
+    if (animated) return;
+    
+    setAnimated(true);
+    
+    const duration = 2000; // Duración de la animación en ms
+    const startTime = performance.now();
+    
+    const animate = (currentTime: number) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      
+      setCounts({
+        onboardings: Math.floor(progress * 4500),
+        clients: Math.floor(progress * 200),
+        countries: Math.floor(progress * 130)
+      });
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  };
+
+  // Efecto para animar cuando la sección es visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Función para formatear números con separadores de miles
+  const formatNumber = (num: number): string => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
+  // Función para obtener el retraso de animación basado en el índice
+  const getAnimationDelay = (index: number) => ({
+    '--delay': `${index * 0.1}s`
+  } as React.CSSProperties);
+
   return (
-    <section className={`container-fluid ${styles.worldStatsSection} py-5 position-relative`}>
+    <section 
+      ref={sectionRef}
+      className={`container-fluid ${styles.worldStatsSection} py-5 position-relative`}>
       <div className="row justify-content-center align-items-center position-relative">
         <div className={`col-12 col-lg-10 position-relative d-flex justify-content-center align-items-center ${styles.globeCol}`} style={{height: 'auto', maxWidth: '1000px'}}>
           <div className={`w-100 h-100 position-relative ${styles.globeContainer}`} style={{background: 'none', borderRadius: '50%'}}>
             
             {/* Texto "3.5 días" en la parte superior derecha */}
-            <div className={styles.deliveryTime}>
+            <div className={`${styles.deliveryTime} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(0)}>
               <h2 className={styles.deliveryNumber}>3.5 días</h2>
               <p className={styles.deliveryText}>Tiempo de entrega promedio</p>
             </div>
 
             {/* Sección de talentos con avatares en el centro-izquierda */}
-            <div className={styles.talentsSection}>
+            <div className={`${styles.talentsSection} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(1)}>
               <p className={styles.talentsText}>4500+ Talentos creciendo con Bytebox</p>
               <div className={styles.avatarsContainer}>
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Person 1" className={styles.avatar} />
@@ -30,29 +127,29 @@ const WorldStats = () => {
             </div>
 
             {/* Texto "Elevando equipos" en la parte inferior izquierda */}
-            <div className={styles.elevatingText}>
+            <div className={`${styles.elevatingText} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(2)}>
               <h3>Elevando <span className={styles.equiposText}>equipos</span></h3>
               <h3>en todo el <span className={styles.mundoText}>mundo</span></h3>
             </div>
 
             {/* Estadísticas en la parte inferior */}
-            <div className={styles.statsContainer}>
-              <div className={styles.statItem}>
-                <h4 className={styles.statNumber}>4500+</h4>
-                <p className={styles.statLabel}>Onboardings exitosos</p>
-              </div>
-              <div className={styles.statItem}>
-                <h4 className={styles.statNumber}>200+</h4>
-                <p className={styles.statLabel}>Clientes satisfechos</p>
-              </div>
-              <div className={styles.statItem}>
-                <h4 className={styles.statNumber}>130+</h4>
-                <p className={styles.statLabel}>Países operativos</p>
-              </div>
+            <div className={styles.statsContainer} ref={statsRef}>
+              {stats.map((stat) => (
+                <div key={stat.id} className={`stat-item ${styles.statItem}`}>
+                  <div className="stat-icon">{stat.icon}</div>
+                  <div className="stat-content">
+                    <h4 className="stat-number">
+                      {formatNumber(counts[stat.label])}
+                      {stat.suffix || ''}
+                    </h4>
+                    <p className="stat-label">{stat.displayLabel}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Banderas de países en la parte derecha */}
-            <div className={styles.flagsContainer}>
+            <div className={`${styles.flagsContainer} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(3)}>
               <div className={styles.flag}>
                 <img src="https://a-us.storyblok.com/f/1018731/512x512/0d0a9c902a/chile.png" alt="Chile" className={styles.flagImg} />
               </div>
@@ -98,7 +195,7 @@ const WorldStats = () => {
             </div>
 
             {/* Botón "Países" en la parte inferior derecha */}
-            <div className={styles.countriesBtn}>
+            <div className={`${styles.countriesBtn} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(4)}>
               <button className={styles.countriesButton}>
                 Países
                 <span className={styles.arrowIcon}>↗</span>
