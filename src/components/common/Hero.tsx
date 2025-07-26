@@ -10,7 +10,7 @@ const scrollToContact = (e: React.MouseEvent) => {
 
 const Hero = () => {
   return (
-    <section className="hero-section">
+    <section className="hero-section home-hero">
       <div className="hero-content">
         <h1>Impulsa tu Frontera'<br />
           <span className="hero-highlight">Equipa tu talento global</span>
