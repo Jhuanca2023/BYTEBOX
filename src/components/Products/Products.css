@@ -2,6 +2,7 @@
   padding: 4rem 0;
   background-color: #f8f9fa;
   width: 100%;
+  overflow: hidden;
 }
 
 .section-title {
@@ -9,8 +10,16 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  color: #333;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #000 50%, #46d1f0 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .top-products {
@@ -28,17 +37,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2rem;
 }
 
 .carousel-container {
   display: flex;
   gap: 2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  max-width: 100%;
+  width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 1rem 0;
+  scroll-padding: 0 2rem;
+}
+
+.carousel-container > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .carousel-container::-webkit-scrollbar {

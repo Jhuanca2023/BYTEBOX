@@ -107,7 +107,13 @@ const Header: React.FC = () => {
                 onMouseLeave={() => !mobileMenuOpen && setOpenDropdown(null)}
                 onClick={() => mobileMenuOpen && handleDropdownClick(item.label)}
               >
-                <a href={item.anchor}>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDropdownClick(item.label);
+                  }}
+                >
                   {item.label} {item.dropdown && <span className="arrow">▼</span>}
                 </a>
                 {item.dropdown && openDropdown === item.label && (

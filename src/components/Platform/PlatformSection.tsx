@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './PlatformSection.module.css';
 import MacbookMockup from './MacbookMockup';
 import PlatformCircleSteps from './PlatformCircleSteps';
@@ -25,8 +25,32 @@ const steps = [
 const PlatformSection = () => {
 
   const [rotationIdx, setRotationIdx] = useState(2); 
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  
+  // Efecto para animar la sección al hacer scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const getActiveStep = () => ((rotationIdx % steps.length) + steps.length) % steps.length;
 
   const handleArrow = (dir: 'up' | 'down') => {
@@ -46,7 +70,11 @@ const PlatformSection = () => {
   const activeStep = getActiveStep();
 
   return (
-    <section className={styles.platformSection} id="platform">
+    <section 
+      ref={sectionRef}
+      className={`${styles.platformSection} ${isVisible ? styles.visible : ''}`} 
+      id="platform"
+    >
       <h2 className={styles.bgTitle}>OUR PLATFORM</h2>
       <div className={styles.contentWrapper} style={{alignItems: 'center'}}> {/* Centrado vertical */}
         <div className={styles.circleCol} style={{ position: 'relative', minWidth: 320, maxWidth: 340, display: 'flex', alignItems: 'center', height: 400, justifyContent: 'center' }}>
