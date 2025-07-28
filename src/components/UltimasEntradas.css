@@ -13,10 +13,13 @@
   font-weight: 400;
   text-align: center;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .ultimas-entradas-title-highlight {
-  color: #7a8fa6;
+  color: #46d1f0;
   font-weight: 700;
 }
 
@@ -38,16 +41,32 @@
   color: #232323;
   cursor: pointer;
   min-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.ultimas-entradas-btn.active,
+.ultimas-entradas-btn:hover {
+  background: #46d1f0;
+  border-color: #46d1f0;
+  color: white;
 }
 
 .ultimas-entradas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 32px;
   margin: 32px 0 32px 0;
   justify-content: center;
   width: 100%;
   max-width: 1100px;
+}
+
+/* Asegurar que las tarjetas mantengan un ancho consistente */
+.ultimas-entradas-card {
+  max-width: 400px; /* Ajusta este valor según sea necesario */
+  margin: 0 auto; /* Centrar la tarjeta cuando hay pocas */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .ultimas-entradas-card {
@@ -80,7 +99,7 @@
 }
 
 .ultimas-entradas-card-title-highlight {
-  color: #7a8fa6;
+  color: #46d1f0;
   font-weight: 400;
 }
 
@@ -97,15 +116,21 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #263040;
+  background: #46d1f0;
   color: #fff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  box-shadow: 0 2px 8px #0002;
+  box-shadow: 0 2px 8px rgba(70, 209, 240, 0.3);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ultimas-entradas-card-arrow:hover {
+  background: #3ab9d6;
+  transform: translateX(4px);
 }
 
 .ultimas-entradas-main {

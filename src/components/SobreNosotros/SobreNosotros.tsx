@@ -1,6 +1,7 @@
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
+import conectividadImg from '../../assets/images/conectividad.png';
 
 
 const SobreNosotros = () => (
@@ -111,7 +112,7 @@ const SobreNosotros = () => (
                   <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Team" className="author-img" />
                   <div className="author-info">
                     <span className="author-name">Carlos M.</span>
-                    <span className="author-role">Ingeniero</span>
+                    <span className="author-role">Cliente</span>
                   </div>
                 </div>
               </div>
@@ -138,7 +139,7 @@ const SobreNosotros = () => (
                   <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Team" className="author-img" />
                   <div className="author-info">
                     <span className="author-name">Ana L.</span>
-                    <span className="author-role">Ingeniera</span>
+                    <span className="author-role">Patrocinadora</span>
                   </div>
                 </div>
               </div>
@@ -158,7 +159,8 @@ const SobreNosotros = () => (
         <section className="feature-card">
           <div className="card-content-wrapper">
             <div className="card-image">
-              <img src="https://cdn.create.vista.com/api/media/medium/607338686/stock-photo-full-length-stylish-interracial-couple-standing-trendy-autumnal-outfits-grey?token=" alt="Conectividad" className="feature-img" />
+              <img src={conectividadImg} alt="Conectividad" className="feature-img" />
+
               <div className="card-badge curious">
                 <span className="badge-icon">🔍</span>
                 <span className="badge-text">CURIOUS</span>
@@ -180,7 +182,7 @@ const SobreNosotros = () => (
                   <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Team" className="author-img" />
                   <div className="author-info">
                     <span className="author-name">Miguel R.</span>
-                    <span className="author-role">Director</span>
+                    <span className="author-role">Socio</span>
                   </div>
                 </div>
               </div>
