@@ -145,7 +145,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/src/assets/images/image.png');
+  background-image: url('/src/assets/images/empress.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -185,20 +185,26 @@ footer {
 }
 
 .hero-cta {
-  background: #000000b0;
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 32px;
   padding: 16px 48px;
   font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .hero-cta:hover {
-  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
 }
+
 .hero-image {
   position: relative;
   z-index: 2;
@@ -340,19 +346,24 @@ footer {
 }
 
 .cta-btn {
-  background: var(--color-primary);
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 24px;
-  padding: 8px 28px;
+  padding: 10px 32px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .cta-btn:hover {
-  background: #1bb0c7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
 }
 
 .login-btn {
@@ -587,8 +598,8 @@ footer {
   cursor: pointer;
 }
 .bubble-header .cta-btn {
-  background: linear-gradient(90deg, #2ad1df 0%, #6a8ca8 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 32px;
   padding: 10px 38px;
@@ -596,11 +607,17 @@ footer {
   font-weight: 700;
   cursor: pointer;
   margin-right: 8px;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 .bubble-header .cta-btn:hover {
-  background: #fff;
-  color: #2ad1df;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
+  color: white;
 }
 .bubble-header .login-btn {
   background: transparent;
@@ -802,19 +819,23 @@ section {
   resize: none;
 }
 .contact-form button {
-  background: linear-gradient(90deg, #2ad1df 0%, #6a8ca8 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 24px;
-  padding: 10px 28px;
+  padding: 12px 32px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .contact-form button:hover {
-  background: #fff;
-  color: #2ad1df;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
 }
 .contact-info {
   text-align: left;
@@ -1045,8 +1066,8 @@ section {
 }
 .newsletter-form button {
   width: 100%;
-  background: linear-gradient(90deg, #232323 0%, #2ad1df 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 18px;
   padding: 14px 0;
@@ -1057,11 +1078,17 @@ section {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: background 0.2s;
 }
 .newsletter-form button:hover {
-  background: #2ad1df;
-  color: #232323;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
+  color: white;
 }
 .footer-copy {
   text-align: center;

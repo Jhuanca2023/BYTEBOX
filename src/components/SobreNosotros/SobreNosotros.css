@@ -51,15 +51,24 @@
 
 .hero-cta-button {
   margin-top: 24px;
-  background: linear-gradient(90deg, #2ad1df 0%, #6a8ca8 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
   border: none;
   border-radius: 32px;
   padding: 16px 48px;
   font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 12px 0 rgba(40,60,80,0.10);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
 }
 
 .hero-image {
