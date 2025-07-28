@@ -10,6 +10,11 @@
   --color-light: #F8F9FA;  /* Gris muy claro */
   --color-text: #2D3436;  /* Texto principal */
   --color-text-light: #636E72;  /* Texto secundario */
+  
+  /* Variables para las tarjetas */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== SECCIÓN DE VALORES MODERNOS ===== */
@@ -50,20 +55,36 @@
 }
 
 .title-gradient {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(90deg, #1B1B1B 0%, #1B1B1B 50%, #46d1f0 50%, #46d1f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
+}
+
+.title-gradient:hover {
+  background-position: 0 0;
 }
 
 .modern-subtitle {
-  font-size: 1.3rem;
-  color: rgba(27, 27, 27, 0.8);
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto 30px;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.modern-subtitle:hover {
+  background-position: 100% 0;
 }
 
 .values-grid {
@@ -74,19 +95,19 @@
 }
 
 .value-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 20px;
-  padding: 40px 30px;
+  padding: 30px 20px;
   text-align: center;
   position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
   cursor: pointer;
-  border-top: 2px solid rgba(255, 255, 255, 0.5);
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--color-text);
 }
 
 .value-card::before {
@@ -105,8 +126,8 @@
 }
 
 .value-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
 }
 
 .card-icon {
@@ -128,8 +149,12 @@
 }
 
 .value-card:hover .icon-circle {
-  transform: rotate(360deg) scale(1.1);
-  box-shadow: 0 15px 40px rgba(0, 162, 200, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-card:hover .product-image {
+  transform: scale(1.05);
 }
 
 /* Tarjeta 1 - Púrpura */
@@ -159,26 +184,35 @@
 .card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1B1B1B;
-  margin-bottom: 15px;
+  margin: 20px 0 15px;
+  color: var(--color-text);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 
 .card-description {
-  color: rgba(27, 27, 27, 0.7);
-  line-height: 1.6;
   font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  opacity: 0.9;
 }
 
 .card-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .value-card:hover .card-glow {
@@ -219,11 +253,41 @@
 
 .mission-visual {
   position: relative;
-  height: 400px;
+  height: 500px;
   display: flex;
   z-index: 1;
   align-items: center;
   justify-content: center;
+  overflow: visible;
+}
+
+.headphone-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.floating-headphone {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(20px) scale(0.95);
+}
+
+.floating-headphone.active {
+  opacity: 1;
+  animation: float 6s ease-in-out infinite;
+  transform: translateY(0) scale(1);
 }
 
 .floating-elements {
@@ -235,8 +299,9 @@
 .floating-circle {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(45deg, rgba(0, 162, 200, 0.3), rgba(58, 57, 147, 0.3));
-  animation: float 6s ease-in-out infinite;
+  background: linear-gradient(45deg, rgba(0, 162, 200, 0.2), rgba(70, 209, 240, 0.2));
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.7;
 }
 
 .circle-1 {
@@ -265,10 +330,28 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px) rotate(180deg);
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes float-3d {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateY(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(0deg);
   }
 }
 
@@ -305,17 +388,41 @@
 }
 
 .mission-title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-  line-height: 1.2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  position: relative;
+  display: block;
+}
+
+.mission-title .text-black {
+  color: #1B1B1B;
+}
+
+.mission-title .text-gray {
+  color: #46d1f0;
+}
+
+.mission-title .text-blue {
+  color: #46d1f0;
+  font-weight: 700;
 }
 
 .title-highlight {
-  background: linear-gradient(45deg, #00A2C8, #1B1B1B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #000000;
+  display: inline-block;
+  position: relative;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1B1B1B 0%, #46d1f0 100%);
 }
 
 .mission-description {
@@ -339,10 +446,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(45deg, #00A2C8, #1B1B1B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #000000;
   margin-bottom: 5px;
 }
 
@@ -495,7 +599,7 @@
 }
 
 .nuestra-marca-hero-bg {
-  background-image: url('/src/assets/images/imagetar.png');
+  background-image: url('/src/assets/images/image.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

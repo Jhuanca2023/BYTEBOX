@@ -1,0 +1,98 @@
+.recent-entries {
+  padding: 0;
+  margin: 4rem 0;
+  background: none;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.recent-entries h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0 auto 2rem auto;
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  background: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+  will-change: transform;
+  padding-left: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+  background: none;
+}
+
+.carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2rem)); /* Move by the width of one set of images */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recent-entries h2 {
+    font-size: 2rem;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .carousel-track {
+    gap: 1rem;
+    padding: 1rem 0;
+    animation-duration: 25s;
+  }
+  
+  .carousel-slide {
+    width: 200px;
+  }
+}

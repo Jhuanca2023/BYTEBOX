@@ -1,0 +1,125 @@
+{
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/files/Auriculares-Aureus-VSG-Negro-1.png?v=1739535263",
+      "alt": "Auriculares Aureus VSG Negro"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/products/VSGEnigmaPNGdeperfil.png?v=1681167685",
+      "alt": "VSG Enigma"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/products/Atlas-01.png?v=1659913626",
+      "alt": "Tarvos"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/products/Eris-01.png?v=1659911689",
+      "alt": "Eris"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/products/Kuiper-01-Featured.png?v=1659911735",
+      "alt": "Kuiper"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0279/1886/0403/products/Omkara-4.png?v=1659916039",
+      "alt": "Omkara"
+    }
+  ],
+  "alianzasImages": [
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/products/103006575_1.jpg?v=1631716498&width=800",
+      "alt": "Producto Alianza 1"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/840056180161_1.jpg?v=1719437697&width=800",
+      "alt": "Producto Alianza 2"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/LamboHeadsetHuracanNoctisimage2.jpg?v=1719850760&width=800",
+      "alt": "Producto Alianza 3"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/702311945_1.jpg?v=1697126206&width=800",
+      "alt": "Producto Alianza 4"
+    }
+  ],
+  
+  "cards": [
+    {
+      "title": "Amplíe su alcance",
+      "desc": "Acceda a clientes de todo el mundo sin barreras logísticas",
+      "dark": true
+    },
+    {
+      "title": "Aumente sus ingresos",
+      "desc": "Intégrese en nuestra plataforma y añada valor con sus servicios",
+      "dark": false
+    },
+    {
+      "title": "Amplíe su empresa",
+      "desc": "Crezca con una solución de confianza que agiliza la gestión del hardware para empresas de todos los tamaños",
+      "dark": true
+    },
+    {
+      "title": "Conectar con empresas líderes",
+      "desc": "Trabaja con empresas tecnológicas, fintechs y organizaciones multinacionales que buscan soluciones eficientes y sostenibles",
+      "dark": false
+    }
+  ],
+  
+  "partners": [
+    {
+      "logo": "https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg",
+      "name": "Falabella",
+      "nameHighlight": "bella",
+      "desc": "Falabella es una de las principales empresas de retail en Latinoamérica, ofreciendo soluciones innovadoras y una amplia gama de productos y servicios para sus clientes y partners.",
+      "url": "https://www.falabella.com.pe/falabella-pe/seller/Bytebox"
+    },
+    {
+      "logo": "https://coolboxpe.vtexassets.com/assets/vtex.file-manager-graphql/images/d9ae27f0-f2b8-458f-b527-38489a24308e___b42588992c82b8e11076b72bf89bf427.svg",
+      "name": "Coolbox",
+      "nameHighlight": "box",
+      "desc": "Coolbox es líder en tecnología y gadgets, brindando productos de última generación y experiencias únicas para empresas y consumidores en toda la región.",
+      "url": "https://www.coolbox.pe/bytebox?map=sellerName"
+    }
+  ],
+  
+  "recentEntries": [
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/702312636_0.jpg?v=1695914850&width=800",
+      "alt": "Producto 1"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/products/840056143043_1.jpg?v=1674753885&width=800",
+      "alt": "Producto 2"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/6_2d783fef-d665-46d7-808a-aa27da01f68a.png?v=1690045683&width=800",
+      "alt": "Producto 3"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/764451680500_1.png?v=1708620702&width=800",
+      "alt": "Producto 4"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/840390313959_1.jpg?v=1742866555&width=800",
+      "alt": "Producto 5"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/840390300003_2.jpg?v=1719507022&width=1200",
+      "alt": "Producto 6"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/products/Cam_58876b07-d7a4-443b-b9d4-85d8bb1bbbc7.jpg?v=1663704264&width=800",
+      "alt": "Producto 7"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/products/840056154568_1.jpg?v=1658962182&width=800",
+      "alt": "Producto 8"
+    },
+    {
+      "url": "https://vptrends.com.pe/cdn/shop/files/WhatsAppImage2024-09-20at11.53.13AM_5b24afc1-9543-4099-9d27-5a1b65c7e21c.jpg?v=1726851624&width=1000",
+      "alt": "Producto 9"
+    }
+  ]
+}

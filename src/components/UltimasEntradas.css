@@ -32,23 +32,43 @@
 }
 
 .ultimas-entradas-btn {
-  border: 1.5px solid #232323;
+  border: none;
   border-radius: 32px;
   padding: 16px 48px;
   font-size: 1.15rem;
   font-weight: 500;
-  background: #fff;
-  color: #232323;
+  color: white;
   cursor: pointer;
   min-width: 180px;
   transition: all 0.3s ease;
+  background: linear-gradient(90deg, #46d1f0 0%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ultimas-entradas-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #000000 0%, #46d1f0 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.ultimas-entradas-btn:hover::before {
+  opacity: 1;
 }
 
 .ultimas-entradas-btn.active,
 .ultimas-entradas-btn:hover {
-  background: #46d1f0;
-  border-color: #46d1f0;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ultimas-entradas-grid {
@@ -145,7 +165,7 @@
 }
 
 .ultimas-entradas-hero-bg {
-  background-image: url('/src/assets/fonts/ultimas.png');
+  background-image: url('/src/assets/images/ultimas1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

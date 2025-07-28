@@ -1,0 +1,24 @@
+{
+  "icons": [
+    {
+      "id": "innovation",
+      "title": "Innovación Constante",
+      "imageUrl": "https://m.media-amazon.com/images/I/81vdjJI9GgL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+      "id": "commitment",
+      "title": "Compromiso Total",
+      "imageUrl": "https://m.media-amazon.com/images/I/41dpSu7ZaDL._SR480,440_.jpg"
+    },
+    {
+      "id": "global",
+      "title": "Alcance Global",
+      "imageUrl": "https://m.media-amazon.com/images/I/71zu1br+iKL._AC_SY450_.jpg"
+    },
+    {
+      "id": "quality",
+      "title": "Calidad Garantizada",
+      "imageUrl": "https://m.media-amazon.com/images/I/31ZeDeMAN0L._SX355_.jpg"
+    }
+  ]
+}

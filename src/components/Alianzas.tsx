@@ -1,56 +1,24 @@
 import React from 'react';
 import Header from './common/Header';
-
 import Footer from './common/Footer';
-import imgbannertarg from '../assets/images/bannertarg.png';
-import imgstiker from '../assets/images/stiker.png';
-import imgCaja from '../assets/images/imagecaja.png';
-import imgLap from '../assets/images/imageLap.png';
 import styles from './Alianzas.module.css';
-
 import Contact from './Contact/Contact';
+import productImagesData from '../assets/data/productImages.json';
 
-const cards = [
-  {
-    title: 'Amplíe su alcance',
-    desc: 'Acceda a clientes de todo el mundo sin barreras logísticas',
-    img: imgbannertarg,
-    dark: true,
-  },
-  {
-    title: 'Aumente sus ingresos',
-    desc: 'Intégrese en nuestra plataforma y añada valor con sus servicios',
-    img: imgstiker,
-    dark: false,
-  },
-  {
-    title: 'Amplíe su empresa',
-    desc: 'Crezca con una solución de confianza que agiliza la gestión del hardware para empresas de todos los tamaños',
-    img: imgCaja,
-    dark: true,
-  },
-  {
-    title: 'Conectar con empresas líderes',
-    desc: 'Trabaja con empresas tecnológicas, fintechs y organizaciones multinacionales que buscan soluciones eficientes y sostenibles',
-    img: imgLap,
-    dark: false,
-  },
-];
+// Datos de las tarjetas y partners importados desde el archivo JSON
+const { cards: cardsData, partners: partnersData, alianzasImages } = productImagesData;
 
-const partners = [
-  {
-    logo: 'https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg', // Puedes cambiar el logo por el de Falabella si lo tienes
-    name: <>Fala<span className={styles.partnerNameHighlight}>bella</span></>,
-    desc: 'Falabella es una de las principales empresas de retail en Latinoamérica, ofreciendo soluciones innovadoras y una amplia gama de productos y servicios para sus clientes y partners.',
-    url: 'https://www.falabella.com.pe/falabella-pe/seller/Bytebox',
-  },
-  {
-    logo: 'https://coolboxpe.vtexassets.com/assets/vtex.file-manager-graphql/images/d9ae27f0-f2b8-458f-b527-38489a24308e___b42588992c82b8e11076b72bf89bf427.svg',
-    name: <>Cool<span className={styles.partnerNameHighlight}>box</span></>,
-    desc: 'Coolbox es líder en tecnología y gadgets, brindando productos de última generación y experiencias únicas para empresas y consumidores en toda la región.',
-    url: 'https://www.coolbox.pe/bytebox?map=sellerName',
-  },
-];
+// Combinar los datos de las tarjetas con las imágenes correspondientes
+const cards = cardsData.map((card, index) => ({
+  ...card,
+  img: alianzasImages[index].url
+}));
+
+// Mapear los datos de los partners para incluir el JSX del nombre resaltado
+const partners = partnersData.map(partner => ({
+  ...partner,
+  name: <>{partner.name.replace(partner.nameHighlight, '')}<span className={styles.partnerNameHighlight}>{partner.nameHighlight}</span></>
+}));
 
 const Alianzas = () => {
   // Handler para scroll suave al formulario de contacto
@@ -112,7 +80,9 @@ const Alianzas = () => {
                 <img src={p.logo} alt={typeof p.name === 'string' ? p.name : 'Logo partner'} className={styles.partnerLogo} />
               </div>
               <div className={styles.partnerContent}>
-                <div className={styles.partnerName}>{p.name}</div>
+                <div className={styles.partnerName}>
+                {p.name}
+              </div>
                 <div className={styles.partnerDesc}>{p.desc}</div>
               </div>
               <a
