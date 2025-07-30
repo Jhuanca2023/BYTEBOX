@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 
 const scrollToContact = (e: React.MouseEvent) => {
   e.preventDefault();
-  const contactSection = document.getElementById('contact');
+  const contactSection = document.getElementById('contacto');
   if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
+    // Desplazamiento suave al hacer clic en el botón Cotiza
+    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
@@ -51,12 +52,12 @@ const Hero = () => {
       }
     });
 
-    // Añadir evento de scroll
+   
     window.addEventListener('scroll', animateOnScroll);
-    // Ejecutar una vez al cargar
+   
     animateOnScroll();
 
-    // Limpiar el event listener al desmontar
+    
     return () => window.removeEventListener('scroll', animateOnScroll);
   }, []);
 

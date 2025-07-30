@@ -1,0 +1,24 @@
+{
+  "steps": [
+    {
+      "title": "Centraliza tu gestión",
+      "desc": "Controla todo tu hardware desde un solo lugar.",
+      "image": "/src/assets/images/app.png"
+    },
+    {
+      "title": "Solicita en segundos",
+      "desc": "Pide equipos y servicios de forma instantánea.",
+      "image": "/src/assets/images/solicitar.png"
+    },
+    {
+      "title": "Entrega global rápida",
+      "desc": "Recibe y gestiona envíos en más de 120 países.",
+      "image": "/src/assets/images/pltentrega.png"
+    },
+    {
+      "title": "Optimiza y renueva",
+      "desc": "Recupera valor y mantén tu tecnología actualizada.",
+      "image": "/src/assets/images/colbox.png"
+    }
+  ]
+}

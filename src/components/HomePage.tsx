@@ -14,40 +14,8 @@ import WorldStats from './Platform/WorldStats';
 import Testimonials from './Testimonials/Testimonials';
 import Contact from './Contact/Contact';
 import Footer from './common/Footer';
-import styled from 'styled-components';
-
-const WhatsAppButton = styled.a`
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #25d366;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-    color: #FFF;
-  }
-  
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    bottom: 20px;
-    right: 20px;
-  }
-`;
+import SolutionsMobile from './SolutionsMobile/SolutionsMobile';
+import './HomePage.css';
 
 type LocationState = {
   scrollTo?: string;
@@ -73,7 +41,12 @@ const HomePage = () => {
         <Hero />
         <section className="solutions-section">
           <h2>Soluciones eficientes<br />para <strong>productividad global</strong></h2>
-          <div className="solutions-grid">
+          
+          {/* Mobile Version */}
+          <SolutionsMobile />
+          
+          {/* Desktop Version */}
+          <div className="solutions-desktop">
             <Onboarding />
             <Offboarding />
             <Storage />
@@ -88,14 +61,15 @@ const HomePage = () => {
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton 
+      <a 
         href="https://wa.link/hso7p4" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Chatea con nosotros por WhatsApp"
+        className="whatsapp-button"
       >
         <FaWhatsapp />
-      </WhatsAppButton>
+      </a>
     </>
   );
 };
