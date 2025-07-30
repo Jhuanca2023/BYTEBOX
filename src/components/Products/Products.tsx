@@ -5,6 +5,8 @@ import './Products.css';
 
 const STARS_COUNT = 5;
 const DEFAULT_CARD_WIDTH = 450; // Ancho predeterminado de la tarjeta en píxeles
+const TRANSITION_DURATION = 500; // Duración de la transición en ms
+const SCROLL_THRESHOLD = 0.5; // Umbral para el scroll del carrusel
 
 const Products: React.FC = () => {
   const [selectedReview, setSelectedReview] = useState<{ [key: number]: number }>({});
@@ -15,7 +17,9 @@ const Products: React.FC = () => {
   
   const totalSlides = products.length;
   const loopProducts = React.useMemo(() => {
-    if (products.length === 0) return [];
+    if (products.length === 0) {
+      return [];
+    }
     return [...products, ...products, ...products];
   }, [products]);
   
@@ -24,27 +28,41 @@ const Products: React.FC = () => {
   // Obtener el ancho del ítem incluyendo el gap
   const getItemWidth = useCallback((): { itemWidth: number; gapPx: number } => {
     const carousel = carouselRef.current;
-    if (!carousel) return { itemWidth: DEFAULT_CARD_WIDTH, gapPx: 32 };
+    if (!carousel) {
+      return { itemWidth: DEFAULT_CARD_WIDTH, gapPx: 32 };
+    }
     
     const style = window.getComputedStyle(carousel);
     const gap = style.getPropertyValue('gap') || '2rem';
-    const gapPx = gap.includes('rem')
-      ? parseFloat(gap) * parseFloat(getComputedStyle(document.documentElement).fontSize)
-      : parseFloat(gap);
+    let gapPx;
+    if (gap.includes('rem')) {
+      gapPx = parseFloat(gap) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    } else {
+      gapPx = parseFloat(gap);
+    }
     
     // Usar el primer producto como referencia para el ancho
     const firstCard = carousel.querySelector('.product-card') as HTMLElement;
-    const itemWidth = firstCard ? firstCard.offsetWidth : DEFAULT_CARD_WIDTH;
+    let itemWidth;
+    if (firstCard) {
+      itemWidth = firstCard.offsetWidth;
+    } else {
+      itemWidth = DEFAULT_CARD_WIDTH;
+    }
     
     return { itemWidth, gapPx };
   }, []);
 
   // Función para ir a un slide específico
   const goToSlide = useCallback((slideIdx: number, behavior: ScrollBehavior = 'smooth') => {
-    if (isTransitioning || totalSlides === 0) return;
+    if (isTransitioning || totalSlides === 0) {
+      return;
+    }
     
     const carousel = carouselRef.current;
-    if (!carousel) return;
+    if (!carousel) {
+      return;
+    }
     
     setIsTransitioning(true);
     
@@ -63,8 +81,7 @@ const Products: React.FC = () => {
     
     // Restablecer el estado de transición después de la animación
     if (behavior === 'smooth') {
-      const transitionDuration = behavior === 'smooth' ? 500 : 0;
-      setTimeout(() => setIsTransitioning(false), transitionDuration);
+      setTimeout(() => setIsTransitioning(false), TRANSITION_DURATION);
     } else {
       setIsTransitioning(false);
     }
@@ -72,41 +89,51 @@ const Products: React.FC = () => {
 
   // Manejadores de navegación
   const handlePrev = useCallback(() => {
-    if (isTransitioning) return;
+    if (isTransitioning) {
+      return;
+    }
     const newIndex = (activeIndex - 1 + totalSlides) % totalSlides;
     goToSlide(newIndex);
   }, [activeIndex, goToSlide, isTransitioning, totalSlides]);
   
   const handleNext = useCallback(() => {
-    if (isTransitioning) return;
+    if (isTransitioning) {
+      return;
+    }
     const newIndex = (activeIndex + 1) % totalSlides;
     goToSlide(newIndex);
   }, [activeIndex, goToSlide, isTransitioning, totalSlides]);
 
   // Navegación por dots
   const handleDot = useCallback((idx: number) => {
-    if (isTransitioning || idx === activeIndex) return;
+    if (isTransitioning || idx === activeIndex) {
+      return;
+    }
     goToSlide(idx);
   }, [activeIndex, goToSlide, isTransitioning]);
 
   // Efecto para manejar el scroll y el loop infinito del carrusel
   useEffect(() => {
     const carousel = carouselRef.current;
-    if (!carousel || !products.length) return;
+    if (!carousel || !products.length) {
+      return;
+    }
     
     let rafId: number | null = null;
-    let isScrolling = false;
+    const isScrolling = false;
     
     // Función para verificar si necesitamos hacer un salto para el loop infinito
     const checkAndHandleLoop = () => {
-      if (isTransitioning || !carousel) return false;
+      if (isTransitioning || !carousel) {
+        return false;
+      }
       
       const { itemWidth, gapPx } = getItemWidth();
       const itemWithGap = itemWidth + gapPx;
       const scrollPosition = carousel.scrollLeft;
       
       // Si estamos muy cerca del inicio (primer bloque duplicado)
-      if (scrollPosition <= itemWithGap * 0.5) {
+      if (scrollPosition <= itemWithGap * SCROLL_THRESHOLD) {
         const targetIndex = totalSlides - 1;
         carousel.scrollTo({
           left: (realStart + targetIndex) * itemWithGap,
@@ -117,7 +144,7 @@ const Products: React.FC = () => {
       
       // Si estamos muy cerca del final (último bloque duplicado)
       const maxValidScroll = (realStart + totalSlides) * itemWithGap;
-      if (scrollPosition >= maxValidScroll - itemWithGap * 0.5) {
+      if (scrollPosition >= maxValidScroll - itemWithGap * SCROLL_THRESHOLD) {
         carousel.scrollTo({
           left: realStart * itemWithGap,
           behavior: 'auto'
@@ -130,17 +157,25 @@ const Products: React.FC = () => {
     
     // Manejador de scroll para actualizar el índice activo
     const handleScroll = () => {
-      if (isTransitioning || isScrolling) return;
+      if (isTransitioning || isScrolling) {
+        return;
+      }
       
       // Cancelar cualquier animación de scroll pendiente
-      if (rafId) cancelAnimationFrame(rafId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
       
       // Usar requestAnimationFrame para un mejor rendimiento
       rafId = requestAnimationFrame(() => {
-        if (!carousel) return;
+        if (!carousel) {
+          return;
+        }
         
         // Verificar primero si necesitamos hacer un salto de bucle
-        if (checkAndHandleLoop()) return;
+        if (checkAndHandleLoop()) {
+          return;
+        }
         
         const { itemWidth, gapPx } = getItemWidth();
         const itemWithGap = itemWidth + gapPx;
@@ -180,7 +215,9 @@ const Products: React.FC = () => {
     
     // Limpieza
     return () => {
-      if (rafId) cancelAnimationFrame(rafId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
       carousel.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
@@ -188,20 +225,29 @@ const Products: React.FC = () => {
 
   // Función para obtener las reseñas de un producto, asegurando que siempre sea un array
   const getReviews = useCallback((product: Product): Review[] => {
-    return Array.isArray(product.reviews) ? product.reviews : [];
+    if (Array.isArray(product.reviews)) {
+      return product.reviews;
+    }
+    return [];
   }, []);
 
   // Renderizar estrellas de calificación
   const renderStars = useCallback((rating: number) => (
-    Array.from({ length: STARS_COUNT }, (_, index) => (
-      <span 
-        key={`star-${index}`} 
-        className={`star ${index < rating ? 'filled' : ''}`}
-        aria-hidden="true"
-      >
-        ★
-      </span>
-    ))
+    Array.from({ length: STARS_COUNT }, (_, index) => {
+      let starClass = 'star';
+      if (index < rating) {
+        starClass = 'star filled';
+      }
+      return (
+        <span 
+          key={`star-${index}`} 
+          className={starClass}
+          aria-hidden="true"
+        >
+          ★
+        </span>
+      );
+    })
   ), []);
 
   // Abrir enlace del producto en una nueva pestaña
@@ -220,7 +266,12 @@ const Products: React.FC = () => {
   const previousReview = useCallback((productId: number, totalReviews: number) => {
     setSelectedReview(prev => {
       const currentIndex = prev[productId] || 0;
-      const newIndex = currentIndex === 0 ? totalReviews - 1 : currentIndex - 1;
+      let newIndex;
+      if (currentIndex === 0) {
+        newIndex = totalReviews - 1;
+      } else {
+        newIndex = currentIndex - 1;
+      }
       return {
         ...prev,
         [productId]: newIndex
@@ -249,104 +300,115 @@ const Products: React.FC = () => {
             <span>Productos</span> <span className="highlight">destacados</span>
           </h2>
           <div className="carousel-wrapper">
-            <button className="carousel-arrow left" aria-label="Anterior" onClick={handlePrev} tabIndex={0}>
+            <button className="carousel-arrow left" aria-label="Anterior" onClick={handlePrev}>
               ‹
             </button>
             <div
               className="carousel-container"
               id="products-carousel"
               ref={carouselRef}
-              role="region"
-              aria-roledescription="Carrusel"
               aria-label="Productos destacados"
             >
               <div className="carousel-spacer" aria-hidden="true"></div>
-              {loopProducts.map((product: Product, idx) => (
-                <div
-                  key={`${product.id}-${idx}`}
-                  className="product-card"
-                  tabIndex={0}
-                  aria-label={`Producto ${((idx % totalSlides) + 1)} de ${totalSlides}`}
-                >
-                  <div className="product-content">
-                    <div className="product-info">
-                      <h3 className="product-title">{product.title}</h3>
-                      <p className="product-description">{product.description}</p>
-                      <button
-                        className="btn-view-product"
-                        onClick={() => handleViewProduct(product.url)}
-                        aria-label={`Ver producto ${product.title}`}
-                      >
-                        Ver Producto
-                      </button>
-                      {getReviews(product).length > 0 && (
-                        <div className="product-reviews">
-                          <div className="reviews-header">
-                            <h4>Reviews ({getReviews(product).length})</h4>
-                            {getReviews(product).length > 1 && (
-                              <div className="review-navigation">
-                                <button
-                                  className="review-nav-btn"
-                                  onClick={() => previousReview(product.id, getReviews(product).length)}
-                                  aria-label="Review anterior"
-                                >
-                                  ‹
-                                </button>
-                                <span className="review-counter">
-                                  {((selectedReview[product.id] || 0) + 1)} / {getReviews(product).length}
-                                </span>
-                                <button
-                                  className="review-nav-btn"
-                                  onClick={() => nextReview(product.id, getReviews(product).length)}
-                                  aria-label="Siguiente review"
-                                >
-                                  ›
-                                </button>
-                              </div>
-                            )}
-                          </div>
-                          <div className="review-carousel">
-                            {getReviews(product).map((review: Review, index: number) => {
-                              const isActive = index === (selectedReview[product.id] || 0);
-                              return (
-                                <div
-                                  key={`review-${product.id}-${index}`}
-                                  className={`review-item ${isActive ? 'active' : ''}`}
-                                >
-                                  <div className="review-header">
-                                    <span className="reviewer-name">{review.name}</span>
-                                    <span className="review-time">{review.time}</span>
-                                  </div>
-                                  <div className="review-rating">
-                                    {renderStars(review.rating)}
-                                  </div>
-                                  <p className="review-comment">{review.comment}</p>
+              {loopProducts.map((product: Product, idx) => {
+                const productIndex = ((idx % totalSlides) + 1);
+                const isRealProduct = idx >= realStart && idx < realStart + totalSlides;
+                let loadingType: 'eager' | 'lazy';
+                if (isRealProduct) {
+                  loadingType = 'eager';
+                } else {
+                  loadingType = 'lazy';
+                }
+                
+                return (
+                  <div
+                    key={`product-${product.id}-${idx}`}
+                    className="product-card"
+                    aria-label={`Producto ${productIndex} de ${totalSlides}`}
+                  >
+                    <div className="product-content">
+                      <div className="product-info">
+                        <h3 className="product-title">{product.title}</h3>
+                        <p className="product-description">{product.description}</p>
+                        <button
+                          className="btn-view-product"
+                          onClick={() => handleViewProduct(product.url)}
+                          aria-label={`Ver producto ${product.title}`}
+                        >
+                          Ver Producto
+                        </button>
+                        {getReviews(product).length > 0 && (
+                          <div className="product-reviews">
+                            <div className="reviews-header">
+                              <h4>Reviews ({getReviews(product).length})</h4>
+                              {getReviews(product).length > 1 && (
+                                <div className="review-navigation">
+                                  <button
+                                    className="review-nav-btn"
+                                    onClick={() => previousReview(product.id, getReviews(product).length)}
+                                    aria-label="Review anterior"
+                                  >
+                                    ‹
+                                  </button>
+                                  <span className="review-counter">
+                                    {((selectedReview[product.id] || 0) + 1)} / {getReviews(product).length}
+                                  </span>
+                                  <button
+                                    className="review-nav-btn"
+                                    onClick={() => nextReview(product.id, getReviews(product).length)}
+                                    aria-label="Siguiente review"
+                                  >
+                                    ›
+                                  </button>
                                 </div>
-                              );
-                            })}
+                              )}
+                            </div>
+                            <div className="review-carousel">
+                              {getReviews(product).map((review: Review, index: number) => {
+                                const isActive = index === (selectedReview[product.id] || 0);
+                                let reviewItemClass = 'review-item';
+                                if (isActive) {
+                                  reviewItemClass = 'review-item active';
+                                }
+                                return (
+                                  <div
+                                    key={`review-${product.id}-${review.name}-${index}`}
+                                    className={reviewItemClass}
+                                  >
+                                    <div className="review-header">
+                                      <span className="reviewer-name">{review.name}</span>
+                                      <span className="review-time">{review.time}</span>
+                                    </div>
+                                    <div className="review-rating">
+                                      {renderStars(review.rating)}
+                                    </div>
+                                    <p className="review-comment">{review.comment}</p>
+                                  </div>
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
-                      )}
-                    </div>
-                    <div className="product-image">
-                      <img src={product.image} alt={product.title} loading={idx < realStart || idx >= realStart + totalSlides ? 'lazy' : 'eager'} />
+                        )}
+                      </div>
+                      <div className="product-image">
+                        <img src={product.image} alt={product.title} loading={loadingType} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
               <div className="carousel-spacer" aria-hidden="true"></div>
             </div>
-            <button className="carousel-arrow right" aria-label="Siguiente" onClick={handleNext} tabIndex={0}>
+            <button className="carousel-arrow right" aria-label="Siguiente" onClick={handleNext}>
               ›
             </button>
             <div className="carousel-dots" role="tablist" aria-label="Paginación de productos">
-              {products.map((_, idx) => (
+              {products.map((product, idx) => (
                 <button
-                  key={idx}
+                  key={`dot-${product.id}-${idx}`}
                   className={`carousel-dot${activeIndex === idx ? ' active' : ''}`}
                   aria-label={`Ir al producto ${idx + 1}`}
                   aria-selected={activeIndex === idx}
-                  tabIndex={0}
                   onClick={() => handleDot(idx)}
                   role="tab"
                 />
