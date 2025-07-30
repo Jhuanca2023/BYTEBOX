@@ -2,88 +2,105 @@ import React from 'react';
 import styles from './PlatformSection.module.css';
 
 interface Props {
-  rotationIdx: number;
-  setRotationIdx: (idx: number) => void;
-  steps: { title: string; desc: string }[];
-  onSelectStep: (idx: number) => void;
+  currentStep: number;
+  totalSteps: number;
+  onStepUp: () => void;
+  onStepDown: () => void;
+  canGoUp: boolean;
+  canGoDown: boolean;
 }
 
 const radius = 90;
 const centerX = 120;
 const centerY = 110;
 
-// ...existing code...
-// Elimina esto:
-// const angles = [
-//   -Math.PI / 2, 
-//   -Math.PI / 6, 
-//   Math.PI / 6, 
-//   Math.PI / 2, 
-//   Math.PI * 5 / 6, 
-//   Math.PI * 7 / 6, 
-//   Math.PI * 3 / 2 
-// ];
-// ...existing code...
-
-const PlatformCircleSteps: React.FC<Props> = ({ rotationIdx, steps, onSelectStep }) => {
+const PlatformCircleSteps: React.FC<Props> = ({
+  currentStep,
+  totalSteps,
+  onStepUp,
+  onStepDown,
+  canGoUp,
+  canGoDown
+}) => {
   
-  const rotation = (rotationIdx - 2) * 90; 
-  const total = steps.length;
+  // Calcular la rotación basada en el paso actual
+  const rotation = -90 + (currentStep * (180 / (totalSteps - 1)));
 
   return (
-    <div className={styles.circleStepsWrapper} style={{ display: 'flex', alignItems: 'center' }}>
-      <svg width={260} height={220} className={styles.circleSvg} style={{ flexShrink: 0 }}>
-        {/* Semicírculo derecho fijo */}
-        <path
-          d={`M ${centerX} ${centerY - radius} A ${radius} ${radius} 0 0 1 ${centerX} ${centerY + radius}`}
-          fill="none"
-          stroke="#AAB6BD"
-          strokeWidth={1}
-        />
-        
-        <g style={{ transformOrigin: `${centerX}px ${centerY}px`, transform: `rotate(${rotation}deg)`, transition: 'transform 0.5s cubic-bezier(.7,0,.3,1)' }}>
-          {steps.map((_, idx) => {
+    <div className={styles.circleStepsWrapper} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className={styles.circleContainer}>
+        <svg width={260} height={220} className={styles.circleSvg}>
+          {/* Semicírculo derecho fijo */}
+          <path
+            d={`M ${centerX} ${centerY - radius} A ${radius} ${radius} 0 0 1 ${centerX} ${centerY + radius}`}
+            fill="none"
+            stroke="#AAB6BD"
+            strokeWidth={1}
+          />
+          
+          {/* Números en el semicírculo */}
+          {[...Array(totalSteps)].map((_, idx) => {
+            const angle = -90 + (idx * (180 / (totalSteps - 1)));
+            const rad = (angle * Math.PI) / 180;
+            const isActive = idx === currentStep;
+            const isVisible = angle >= -90 && angle <= 90;
             
-            const angle = -Math.PI / 2 + (idx * Math.PI / (total - 1));
+            if (!isVisible) return null;
             
-            const visualAngle = angle + (rotation * Math.PI / 180);
-            
-            const isVisible = visualAngle >= -Math.PI / 2 && visualAngle <= Math.PI / 2;
-           
-            const isActive = Math.abs(visualAngle) < 0.01;
-            let opacity = isVisible ? (isActive ? 1 : 0.7) : 0;
             return (
               <g
                 key={idx}
                 style={{
-                  cursor: isVisible ? 'pointer' : 'default',
-                  opacity,
-                  transition: 'opacity 0.4s cubic-bezier(.7,0,.3,1)'
+                  cursor: 'pointer',
+                  opacity: isActive ? 1 : 0.6,
+                  transition: 'opacity 0.3s ease'
                 }}
-                onClick={() => isVisible && onSelectStep(idx)}
+                onClick={() => {
+                  if (idx < currentStep && canGoUp) onStepUp();
+                  else if (idx > currentStep && canGoDown) onStepDown();
+                }}
               >
                 <circle
-                  cx={centerX + radius * Math.cos(angle)}
-                  cy={centerY + radius * Math.sin(angle)}
+                  cx={centerX + radius * Math.cos(rad)}
+                  cy={centerY + radius * Math.sin(rad)}
                   r={isActive ? 8 : 6}
-                  fill={isActive ? '#455A64' : '#AAB6BD'}
+                  fill={isActive ? '#00B4D8' : '#AAB6BD'}
                   style={{ transition: 'all 0.2s' }}
                 />
                 <text
-                  x={centerX + radius * Math.cos(angle) + 18}
-                  y={centerY + radius * Math.sin(angle) + 10}
+                  x={centerX + (radius + 15) * Math.cos(rad)}
+                  y={centerY + 5 + (radius + 15) * Math.sin(rad)}
                   fontSize={32}
-                  fill={isActive ? '#455A64' : '#AAB6BD'}
+                  fill={isActive ? '#00B4D8' : '#AAB6BD'}
                   fontWeight={isActive ? 700 : 400}
-                  style={{ userSelect: 'none', transition: 'all 0.2s' }}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  style={{ 
+                    userSelect: 'none', 
+                    transition: 'all 0.2s',
+                    fontSize: isActive ? '2rem' : '1.5rem',
+                    fontWeight: isActive ? 'bold' : 'normal'
+                  }}
                 >
                   {`0${idx + 1}`}
                 </text>
               </g>
             );
           })}
-        </g>
-      </svg>
+          
+          {/* Línea indicadora */}
+          <line
+            x1={centerX}
+            y1={centerY}
+            x2={centerX + radius * Math.cos((rotation * Math.PI) / 180)}
+            y2={centerY + radius * Math.sin((rotation * Math.PI) / 180)}
+            stroke="#00B4D8"
+            strokeWidth={2}
+            strokeDasharray="4 2"
+            style={{ transition: 'all 0.5s cubic-bezier(.7,0,.3,1)' }}
+          />
+        </svg>
+      </div>
     </div>
   );
 };
