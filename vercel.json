@@ -35,7 +35,7 @@
       "dest": "/sitemap.xml"
     },
     {
-      "src": "^/.*",
+      "src": "^/(.*)",
       "dest": "/index.html"
     }
   ]

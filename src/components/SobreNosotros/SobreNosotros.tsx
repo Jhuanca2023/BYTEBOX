@@ -11,18 +11,24 @@ const SobreNosotros = () => (
     {/* HERO SECTION */}
     <section className="hero-section sobre-nosotros-hero-bg">
       <div className="hero-content">
-        <h1>Conoce <span className="hero-highlight">nuestra historia</span></h1>
-        <p>Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.</p>
+        <h1 data-aos="fade-up" data-aos-duration="800">
+          Conoce <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">nuestra historia</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
+        </p>
       </div>
     </section>
 
     {/* LOGOS ANIMADOS - CARRUSEL MODERNO */}
     <section className="logos-section">
       <div className="logos-content">
-        <h2 className="logos-title">
-          Marcas que <span className="brand">confían en nosotros</span>
+        <h2 className="logos-title" data-aos="fade-up" data-aos-duration="800">
+          Marcas que <span className="brand" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">confían en nosotros</span>
         </h2>
-        <p className="logos-subtitle">Distribuidores oficiales de las mejores marcas tecnológicas del mundo</p>
+        <p className="logos-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          Distribuidores oficiales de las mejores marcas tecnológicas del mundo
+        </p>
         
         <div className="logos-carousel">
           <div className="logos-track">

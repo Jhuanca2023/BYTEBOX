@@ -27,8 +27,12 @@ const NuestraMarca = () => {
     {/* HERO SECTION */}
     <section className="hero-section nuestra-marca-hero-bg">
       <div className="hero-content">
-        <h1>Descubre <span className="hero-highlight">nuestra esencia</span></h1>
-        <p>Innovación, confianza y tecnología para potenciar tu crecimiento.</p>
+        <h1 data-aos="fade-up" data-aos-duration="800">
+          Descubre <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">nuestra esencia</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          Innovación, confianza y tecnología para potenciar tu crecimiento.
+        </p>
       </div>
     </section>
 
@@ -38,13 +42,13 @@ const NuestraMarca = () => {
       <section className="modern-values-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="modern-title">
+            <h2 className="modern-title" data-aos="fade-up" data-aos-duration="800">
               <span className="title-gradient">Nuestra Esencia</span>
             </h2>
-            <p className="modern-subtitle">
-              <span className="text-black">Transformamos</span>{' '}
-              <span className="text-gray">el futuro</span>{' '}
-              <span className="text-blue">digital</span>
+            <p className="modern-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <span className="text-black" data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">Transformamos</span>{' '}
+              <span className="text-gray" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">el futuro</span>{' '}
+              <span className="text-blue" data-aos="fade-left" data-aos-duration="600" data-aos-delay="500">digital</span>
             </p>
           </div>
           
