@@ -11,19 +11,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
-    rollupOptions: {
-      input: {
-        main: 'index.html'
-      }
-    }
-  },
-  resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: '/src'
-      }
-    ]
+    sourcemap: true
   }
 })
