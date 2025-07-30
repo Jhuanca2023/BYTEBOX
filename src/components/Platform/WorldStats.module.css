@@ -1,4 +1,13 @@
 /* Animaciones */
+@keyframes rotateGlobe {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes slideInFromTop {
   from {
     opacity: 0;
@@ -57,6 +66,10 @@
   border-radius: 50%;
   display: block;
   z-index: 1;
+  animation: rotateGlobe 60s linear infinite; /* Rotación lenta y continua */
+  transform-origin: center center; /* Asegura que la rotación sea alrededor del centro */
+  will-change: transform; /* Optimización de rendimiento */
+  transition: transform 0.3s ease; /* Transición suave para cualquier cambio */
 }
 
 /* Tiempo de entrega - Superior derecha */
@@ -224,6 +237,85 @@
   display: flex;
   gap: 2rem;
   z-index: 10;
+}
+
+/* Estilos para móviles y tablets */
+@media (max-width: 991.98px) {
+  .worldStatsSection {
+    padding: 4rem 0 2rem;
+    position: relative;
+    min-height: auto;
+  }
+
+  .globeCol {
+    order: 1;
+    position: relative;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .globeContainer {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .statsContainer {
+    position: static;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .statItem {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
+  }
+
+  .flagsContainer {
+    position: static;
+    order: 3;
+    opacity: 1;
+    transform: none;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 1rem;
+    max-width: 400px;
+    gap: 0.5rem;
+  }
+
+  .flag {
+    width: 40px;
+    height: 40px;
+    margin: 0.25rem;
+  }
+
+  .flagImg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Ocultar elementos que no son necesarios en móvil */
+  .deliveryTime,
+  .talentsSection,
+  .elevatingText,
+  .countriesBtn {
+    display: none;
+  }
 }
 
 .statItem {
