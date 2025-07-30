@@ -82,10 +82,36 @@
   align-items: flex-start;
   width: 400px;
   margin-right: 0;
-  margin-left: -80px; /* Mueve solo el círculo a la izquierda */
+  margin-left: -120px;
   padding: 0 20px 0 0;
   z-index: 2;
-  transform: translateX(-50px); /* Ajuste adicional de posición */
+  transform: translateX(-290px);
+  
+  /* Ajustes responsivos */
+  @media (max-width: 1600px) {
+    transform: translateX(-200px);
+    margin-left: -80px;
+  }
+  
+  @media (max-width: 1400px) {
+    transform: translateX(-150px);
+    margin-left: -50px;
+  }
+  
+  @media (max-width: 1200px) {
+    transform: translateX(-100px);
+    margin-left: 0;
+    width: 350px;
+  }
+  
+  @media (max-width: 992px) {
+    transform: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 15px;
+    align-items: center;
+  }
 }
 
 .circleStepsWrapper {
@@ -191,8 +217,8 @@
 }
 
 .arrowBtn {
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
+  background: #f0f7ff; /* Fondo azul muy suave */
+  border: 2px solid #4a90e2; /* Borde azul */
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 50%;
@@ -202,27 +228,29 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
 }
 
 .arrowBtn:hover:not(:disabled) {
-  background: #e9ecef;
-  border-color: #dee2e6;
+  background: #e1f0ff; /* Azul un poco más oscuro al pasar el ratón */
+  border-color: #3a7bc8;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
 
 .arrowBtn:disabled {
   cursor: not-allowed;
   opacity: 0.4;
-  background: #f8f9fa;
-  border-color: #e9ecef;
+  background: #f0f7ff;
+  border-color: #4a90e2;
 }
 
 .arrowBtn svg {
   width: 20px;
   height: 20px;
   transition: transform 0.2s ease;
+  color: #2c7be5; /* Color azul para las flechas */
+  stroke-width: 2;
 }
 
 .arrowBtn:active:not(:disabled) svg {
@@ -234,12 +262,33 @@
   min-width: 340px;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; /* Cambiado a flex-start */
+  justify-content: flex-start;
   margin-right: 0;
   margin-left: 0;
   position: relative;
   z-index: 1;
-  transform: translateX(-40px); /* Mueve la laptop a la izquierda */
+  transform: translateX(-40px); /* Mueve la laptop a la izquierda en desktop */
+  
+  /* Ajustes para tablets */
+  @media (max-width: 1200px) {
+    transform: translateX(-20px);
+    justify-content: center;
+  }
+  
+  /* Ajustes para móviles */
+  @media (max-width: 992px) {
+    transform: none;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Ajustes para móviles pequeños */
+  @media (max-width: 576px) {
+    padding: 0 10px;
+  }
 }
 
 .macbookWrapper {
