@@ -56,14 +56,32 @@ const UltimasEntradas = () => {
       <Header />
       <section className="hero-section ultimas-entradas-hero-bg">
         <div className="hero-content">
-          <h1>Explora <span className="hero-highlight">nuestra marca</span></h1>
-          <p>Explora las novedades, casos de éxito y tendencias de Bytebox.</p>
+          <h1 data-aos="fade-up" data-aos-duration="800">
+            Explora <span 
+              className="hero-highlight" 
+              data-aos="fade-up" 
+              data-aos-duration="800" 
+              data-aos-delay="200"
+            >
+              nuestra marca
+            </span>
+          </h1>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            Explora las novedades, casos de éxito y tendencias de Bytebox.
+          </p>
         </div>
       </section>
       {/* Sección de temas/empresas */}
       <section className="ultimas-entradas-section">
-        <h2 className="ultimas-entradas-title">
-          Explora nuestra <span className="ultimas-entradas-title-highlight">marca</span>
+        <h2 className="ultimas-entradas-title" data-aos="fade-up" data-aos-duration="800">
+          Explora nuestra <span 
+            className="ultimas-entradas-title-highlight"
+            data-aos="fade-up" 
+            data-aos-duration="800" 
+            data-aos-delay="200"
+          >
+            marca
+          </span>
         </h2>
         <div className="ultimas-entradas-buttons">
           <button 

@@ -34,16 +34,41 @@ const Alianzas = () => {
       <Header />
       <section className={`hero-section ${styles['alianzas-hero-bg']}`}>
         <div className="hero-content">
-          <h1>Alianzas<br /><span className="hero-highlight">estratégicas</span></h1>
-          <p>Conecta tu empresa con los mejores partners y expande tu alcance global.</p>
-          <button className="hero-cta" onClick={scrollToContact}>Sé nuestro partner</button>
+          <h1 data-aos="fade-up" data-aos-duration="800">
+            Alianzas<br />
+            <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">estratégicas</span>
+          </h1>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            Conecta tu empresa con los mejores partners y expande tu alcance global.
+          </p>
+          <button 
+            className="hero-cta" 
+            onClick={scrollToContact}
+            data-aos="fade-up" 
+            data-aos-duration="800" 
+            data-aos-delay="400"
+          >
+            Sé nuestro partner
+          </button>
         </div>
       </section>
       <main className={styles.alianzasMain}>
-        <h2 className={styles.alianzasTitle}>
-          ¿Por qué asociarse con <span className={styles.alianzasTitleHighlight}>BYTEBOX</span>?
+        <h2 className={styles.alianzasTitle} data-aos="fade-up" data-aos-duration="800">
+          ¿Por qué asociarse con <span 
+            className={styles.alianzasTitleHighlight} 
+            data-aos="fade-up" 
+            data-aos-duration="800" 
+            data-aos-delay="200"
+          >
+            BYTEBOX
+          </span>?
         </h2>
-        <p className={styles.alianzasDesc}>
+        <p 
+          className={styles.alianzasDesc}
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          data-aos-delay="300"
+        >
           Asociarse con Bytebox significa formar parte de una red global que simplifica la adquisición, gestión y reutilización de hardware para empresas de más de 120 países. Como socio, usted puede:
         </p>
         <div className={styles.alianzasCards}>
