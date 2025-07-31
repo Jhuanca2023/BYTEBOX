@@ -66,10 +66,10 @@
   border-radius: 50%;
   display: block;
   z-index: 1;
-  animation: rotateGlobe 60s linear infinite; /* Rotación lenta y continua */
-  transform-origin: center center; /* Asegura que la rotación sea alrededor del centro */
-  will-change: transform; /* Optimización de rendimiento */
-  transition: transform 0.3s ease; /* Transición suave para cualquier cambio */
+  /* Se ha eliminado la animación de rotación */
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.3s ease;
 }
 
 /* Tiempo de entrega - Superior derecha */
