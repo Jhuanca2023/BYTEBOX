@@ -5,7 +5,32 @@ import PlatformCircleSteps from './PlatformCircleSteps';
 import platformSteps from '../../assets/data/platformSteps.json';
 import type { StepData } from '../../interfaces/StepData';
 
-const { steps } = platformSteps as { steps: StepData[] };
+// Función auxiliar para obtener la URL correcta de las imágenes en producción
+const getImageUrl = (imagePath: string) => {
+  try {
+    // Extraer solo el nombre del archivo de la ruta
+    const imageName = imagePath.split('/').pop();
+    
+    // En producción, las imágenes están en /assets/images/
+    if (import.meta.env.PROD) {
+      return `./assets/images/${imageName}`;
+    }
+    
+    // En desarrollo, usa la ruta relativa
+    return imagePath;
+  } catch (e) {
+    console.error('Error al cargar la imagen:', e);
+    return '';
+  }
+};
+
+// Procesar los pasos para incluir las URLs correctas de las imágenes
+const processedSteps = platformSteps.steps.map(step => ({
+  ...step,
+  image: getImageUrl(step.image)
+}));
+
+const steps = processedSteps as StepData[];
 
 const PlatformSection = () => {
   const [currentStep, setCurrentStep] = useState(0);
