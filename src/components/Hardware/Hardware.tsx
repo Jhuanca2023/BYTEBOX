@@ -1,25 +1,5 @@
-
 import './Hardware.css';
-
-const hardwareItems = [
-  {
-    title: 'Conectividad Global',
-    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F285x348%2Fee9b5d9213%2Ftoolkit1.png&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
-  },
-  {
-    title: 'Experiencia Personalizada',
-    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F284x346%2Fd1fb85c58e%2Ftoolkitcard4.png&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
-  },
-  {
-    title: 'Innovación & Creatividad',
-    img: 'https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    title: 'Calidad y Confianza',
-    img: 'https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F1080x1080%2Fee283aaeec%2Fh390-usb-csf_1080x.webp&w=640&q=75&dpl=dpl_DpVc2yCtiK8yQ2qiHqPSjcE9YSR4',
-  },
-];
-
+import hardwareItems from '../../assets/data/hardwareItems.json';
 
 const Hardware = () => (
   <section id="hardware" className="hardware-section">

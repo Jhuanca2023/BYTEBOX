@@ -2,35 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './PlatformSection.module.css';
 import MacbookMockup from './MacbookMockup';
 import PlatformCircleSteps from './PlatformCircleSteps';
+import platformSteps from '../../assets/data/platformSteps.json';
+import type { StepData } from '../../interfaces/StepData';
 
-interface StepData {
-  title: string;
-  desc: string;
-  image: string;
-}
-
-const steps: StepData[] = [
-  {
-    title: 'Centraliza tu gestión',
-    desc: 'Controla todo tu hardware desde un solo lugar.',
-    image: '/src/assets/images/app.png'
-  },
-  {
-    title: 'Solicita en segundos',
-    desc: 'Pide equipos y servicios de forma instantánea.',
-    image: '/src/assets/images/solicitar.png'
-  },
-  {
-    title: 'Entrega global rápida',
-    desc: 'Recibe y gestiona envíos en más de 120 países.',
-    image: '/src/assets/images/pltentrega.png'
-  },
-  {
-    title: 'Optimiza y renueva',
-    desc: 'Recupera valor y mantén tu tecnología actualizada.',
-    image: '/src/assets/images/colbox.png'
-  }
-];
+const { steps } = platformSteps as { steps: StepData[] };
 
 const PlatformSection = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -95,7 +70,7 @@ const PlatformSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      id="plataforma" 
+      id="OUR_PLATFORM" 
       className={`${styles.platformSection} ${isVisible ? styles.visible : ''}`}
     >
       <h2 className={styles.bgTitle}>OUR PLATFORM</h2>

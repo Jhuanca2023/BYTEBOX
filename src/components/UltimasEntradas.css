@@ -23,52 +23,100 @@
   font-weight: 700;
 }
 
+/* Estilos base para desktop */
 .ultimas-entradas-buttons {
   display: flex;
-  gap: 32px;
-  margin: 32px 0 32px 0;
+  gap: 16px;
+  margin: 32px auto;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Estilos para móvil y tablet */
+@media (max-width: 1200px) {
+  .ultimas-entradas-buttons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 16px 16px 16px;
+    margin: 32px 0;
+    max-width: 100%;
+  }
+  
+  .ultimas-entradas-buttons::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Ocultar scrollbar en Chrome, Safari y Opera */
+.ultimas-entradas-buttons::-webkit-scrollbar {
+  display: none;
 }
 
 .ultimas-entradas-btn {
-  border: none;
+  border: 2px solid #000000;
   border-radius: 32px;
-  padding: 16px 48px;
-  font-size: 1.15rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   font-weight: 500;
-  color: white;
+  color: #000000;
+  background: transparent;
   cursor: pointer;
-  min-width: 180px;
+  min-width: 140px;
   transition: all 0.3s ease;
-  background: linear-gradient(90deg, #46d1f0 0%, #000000 100%);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  white-space: nowrap;
+  text-align: center;
 }
 
-.ultimas-entradas-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #000000 0%, #46d1f0 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.ultimas-entradas-btn:hover::before {
-  opacity: 1;
-}
-
-.ultimas-entradas-btn.active,
 .ultimas-entradas-btn:hover {
-  color: white;
+  background-color: #46d1f0;
+  border-color: #46d1f0;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ultimas-entradas-btn.active {
+  background-color: #46d1f0;
+  border-color: #46d1f0;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+  .ultimas-entradas-buttons {
+    gap: 12px;
+  }
+  
+  .ultimas-entradas-btn {
+    min-width: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .ultimas-entradas-buttons {
+    gap: 8px;
+    padding: 0 16px 12px 16px;
+  }
+  
+  .ultimas-entradas-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
 }
 
 .ultimas-entradas-grid {
@@ -93,11 +141,14 @@
   background: #fff;
   border-radius: 24px;
   box-shadow: 0 2px 16px #0001;
-  padding: 0;
+  padding: 0 0 24px 0;
   display: flex;
   flex-direction: column;
   min-height: 370px;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .ultimas-entradas-card-img {
@@ -129,28 +180,19 @@
   margin-bottom: 12px;
 }
 
-.ultimas-entradas-card-arrow {
-  position: absolute;
-  bottom: 18px;
-  right: 24px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #46d1f0;
-  color: #fff;
-  border: none;
+/* Estilos para tarjetas clickeables */
+.ultimas-entradas-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  box-shadow: 0 2px 8px rgba(70, 209, 240, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  height: 100%;
 }
 
-.ultimas-entradas-card-arrow:hover {
-  background: #3ab9d6;
-  transform: translateX(4px);
+.ultimas-entradas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .ultimas-entradas-main {

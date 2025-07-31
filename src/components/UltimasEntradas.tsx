@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './common/Header';
 import Footer from './common/Footer';
 import { cards, extraCards, type FilterType } from '../interfaces/ultimasEntradas.types';
@@ -7,7 +8,7 @@ import './UltimasEntradas.css';
 import './UltimasEntradas/Carousel.css';
 
 // Importar imágenes
-import imgLaptop from '../assets/images/imageLap.png';
+import imgiphone from '../assets/images/seller.png';
 import imgFalabella from '../assets/images/falabe.png';
 import imgPlataforma from '../assets/images/plataforma.png';
 import imgAccesorios from '../assets/images/accesorios.png';
@@ -15,7 +16,7 @@ import imgEarth from '../assets/images/image.png';
 import imgDesk from '../assets/images/imagepapel.png';
 
 const imageMap: Record<string, string> = {
-  'imageLap.png': imgLaptop,
+  'seller.png': imgiphone,
   'falabe.png': imgFalabella,
   'plataforma.png': imgPlataforma,
   'accesorios.png': imgAccesorios,
@@ -111,23 +112,49 @@ const UltimasEntradas = () => {
         </div>
         <div className="ultimas-entradas-grid">
           {[...filteredCards, ...filteredExtraCards].map((card, idx) => (
-            <div className="ultimas-entradas-card" key={`card-${idx}`}>
-              <img 
-                src={card.img} 
-                alt={card.alt} 
-                className="ultimas-entradas-card-img" 
-                loading="lazy"
-              />
-              <div className="ultimas-entradas-card-content">
-                <div className="ultimas-entradas-card-title">
-                  {card.title} <span className="ultimas-entradas-card-title-highlight">{card.highlight}</span>
+            card.link.startsWith('/') ? (
+              <Link 
+                to={card.link} 
+                className="ultimas-entradas-card" 
+                key={`card-${idx}`}
+                aria-label={`Ver ${card.title} ${card.highlight}`}
+              >
+                <img 
+                  src={card.img} 
+                  alt={card.alt} 
+                  className="ultimas-entradas-card-img" 
+                  loading="lazy"
+                />
+                <div className="ultimas-entradas-card-content">
+                  <div className="ultimas-entradas-card-title">
+                    {card.title} <span className="ultimas-entradas-card-title-highlight">{card.highlight}</span>
+                  </div>
+                  <div className="ultimas-entradas-card-desc">{card.desc}</div>
                 </div>
-                <div className="ultimas-entradas-card-desc">{card.desc}</div>
-              </div>
-              <button className="ultimas-entradas-card-arrow">
-                <span>→</span>
-              </button>
-            </div>
+              </Link>
+            ) : (
+              <a 
+                href={card.link} 
+                className="ultimas-entradas-card"
+                key={`card-${idx}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver ${card.title} ${card.highlight}`}
+              >
+                <img 
+                  src={card.img} 
+                  alt={card.alt} 
+                  className="ultimas-entradas-card-img" 
+                  loading="lazy"
+                />
+                <div className="ultimas-entradas-card-content">
+                  <div className="ultimas-entradas-card-title">
+                    {card.title} <span className="ultimas-entradas-card-title-highlight">{card.highlight}</span>
+                  </div>
+                  <div className="ultimas-entradas-card-desc">{card.desc}</div>
+                </div>
+              </a>
+            )
           ))}
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', margin: '24px 0' }}>
