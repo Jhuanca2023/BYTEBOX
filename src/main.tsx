@@ -3,15 +3,42 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 
-// Importar estilos de animaciones
+// Importar estilos de AOS
 import 'aos/dist/aos.css';
+// Importar estilos de Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Importar scripts de animación
 import AOS from 'aos';
-import { initSwipers } from './assets/js/swiper.min';
+// Importar Swiper
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Inicializar Swiper
+declare global {
+  interface Window { mySwiper: any; }
+}
+
+const initSwipers = () => {
+  // Inicializar cualquier swiper que necesites
+  if (document.querySelector('.mySwiper')) {
+    window.mySwiper = new Swiper('.mySwiper', {
+      modules: [Navigation, Pagination],
+      // Opciones del swiper
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+};
 
 // Componente wrapper para inicializar animaciones
 const AppWithAnimations = () => {
