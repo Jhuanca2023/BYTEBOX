@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { SEO } from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import Products from '../Products/Products';
@@ -7,6 +8,7 @@ import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';
 
 const NuestraMarca = () => {
+  // Configuración de SEO para la página Nuestra Marca
   const { images: productImages } = productImagesData;
   const { icons: valueIcons } = valueIconsData;
 
@@ -21,8 +23,14 @@ const NuestraMarca = () => {
   }, [productImages]);
 
   return (
-  <>
-    <Header />
+    <>
+      <SEO 
+        title="Nuestra Marca - ByteBOX | Innovación y Calidad en Tecnología"
+        description="Descubre la esencia de ByteBOX: innovación, calidad y compromiso. Conoce nuestra misión, visión y valores que nos impulsan a ofrecerte la mejor tecnología."
+        keywords="marca ByteBOX, innovación tecnológica, calidad en tecnología, misión y visión, valores corporativos, historia de la empresa"
+        canonicalUrl="https://bytebox.com/nuestra-marca"
+      />
+      <Header />
     
     {/* HERO SECTION */}
     <section className="hero-section nuestra-marca-hero-bg">
@@ -57,24 +65,58 @@ const NuestraMarca = () => {
               <div 
                 key={icon.id}
                 className={`value-card card-${index + 1}`}
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay={`${index * 100}`}
+                data-aos-once="true"
               >
-                <div className="card-icon">
+                <div 
+                  className="card-icon"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay={`${index * 100 + 200}`}
+                  data-aos-once="true"
+                >
                   <div className="icon-circle">
                     <img 
                       src={icon.imageUrl} 
                       alt={icon.title}
                       className="product-image"
+                      data-aos="zoom-in"
+                      data-aos-duration="600"
+                      data-aos-delay={`${index * 100 + 300}`}
+                      data-aos-once="true"
                     />
                   </div>
                 </div>
-                <h3 className="card-title">{icon.title}</h3>
-                <p className="card-description">
+                <h3 
+                  className="card-title"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={`${index * 100 + 100}`}
+                  data-aos-once="true"
+                >
+                  {icon.title}
+                </h3>
+                <p 
+                  className="card-description"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={`${index * 100 + 150}`}
+                  data-aos-once="true"
+                >
                   {icon.title === 'Innovación Constante' && 'Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas'}
                   {icon.title === 'Compromiso Total' && 'Cada proyecto es único, cada cliente es prioritario, cada solución es perfecta'}
                   {icon.title === 'Alcance Global' && 'Presencia mundial con enfoque local, conectando culturas y mercados'}
                   {icon.title === 'Calidad Garantizada' && 'Excelencia en cada detalle, calidad que se ve y se siente en cada producto'}
                 </p>
-                <div className="card-glow"></div>
+                <div 
+                  className="card-glow"
+                  data-aos="fade-in"
+                  data-aos-duration="800"
+                  data-aos-delay={`${index * 100 + 200}`}
+                  data-aos-once="true"
+                ></div>
               </div>
             ))}
           </div>
@@ -103,35 +145,101 @@ const NuestraMarca = () => {
               </div>
             </div>
             
-            <div className="mission-text">
-              <h2 className="mission-title">
-                <span className="text-black">Transformamos</span>{' '}
-                <span className="text-gray">el futuro</span>{' '}
-                <span className="text-blue">digital</span>
+            <div 
+              className="mission-text"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-once="true"
+            >
+              <h2 
+                className="mission-title"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-once="true"
+              >
+                <span 
+                  className="text-black"
+                  data-aos="fade-right"
+                  data-aos-duration="600"
+                  data-aos-delay="100"
+                  data-aos-once="true"
+                >
+                  Transformamos
+                </span>{' '}
+                <span 
+                  className="text-gray"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay="200"
+                  data-aos-once="true"
+                >
+                  el futuro
+                </span>{' '}
+                <span 
+                  className="text-blue"
+                  data-aos="fade-left"
+                  data-aos-duration="600"
+                  data-aos-delay="300"
+                  data-aos-once="true"
+                >
+                  digital
+                </span>
               </h2>
-              <p className="mission-description">
+              
+              <p 
+                className="mission-description"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="200"
+                data-aos-once="true"
+              >
                 En ByteBox, somos líderes en la distribución de productos tecnológicos y accesorios 
                 de vanguardia. Cada producto que ofrecemos está cuidadosamente seleccionado para 
                 brindar la mejor calidad, innovación y rendimiento que impulse el éxito de 
                 nuestros clientes.
               </p>
               
-              <div className="stats-row">
-                <div className="stat-item">
-                  <span className="stat-number">5000+</span>
-                  <span className="stat-label">Productos Vendidos</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">98%</span>
-                  <span className="stat-label">Satisfacción Cliente</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">24/7</span>
-                  <span className="stat-label">Soporte Premium</span>
-                </div>
+              <div 
+                className="stats-row"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="300"
+                data-aos-once="true"
+              >
+                {[
+                  { number: '5000+', label: 'Productos Vendidos' },
+                  { number: '98%', label: 'Satisfacción Cliente' },
+                  { number: '24/7', label: 'Soporte Premium' }
+                ].map((stat, index) => (
+                  <div 
+                    key={index}
+                    className="stat-item"
+                    data-aos="zoom-in"
+                    data-aos-duration="600"
+                    data-aos-delay={`${300 + (index * 100)}`}
+                    data-aos-once="true"
+                  >
+                    <span 
+                      className="stat-number"
+                      data-aos="count-up"
+                      data-aos-duration="1000"
+                      data-aos-delay={`${400 + (index * 100)}`}
+                      data-aos-once="true"
+                    >
+                      {stat.number}
+                    </span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
               </div>
               
-              <button className="cta-button">
+              <button 
+                className="cta-button"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="600"
+                data-aos-once="true"
+              >
                 <span>Explora Nuestros Productos</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

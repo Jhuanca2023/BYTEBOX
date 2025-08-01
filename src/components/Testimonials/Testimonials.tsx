@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SEO } from '../SEO';
 import './Testimonials.css';
 import testimonials from '../../assets/data/testimonials.json';
 
@@ -15,6 +16,12 @@ const Testimonials = () => {
 
   return (
     <section id="testimonios" className="testimonials-section">
+      <SEO 
+        title="Testimonios - ByteBOX | Opiniones de Nuestros Clientes"
+        description="Descubre lo que dicen nuestros clientes sobre ByteBOX. Lee testimonios reales de personas que han confiado en nuestros productos y servicios tecnológicos."
+        keywords="testimonios de clientes, opiniones de usuarios, reseñas de productos, experiencias con ByteBOX, clientes satisfechos, valoraciones"
+        canonicalUrl="https://bytebox.com/testimonios"
+      />
       <h2 className="testimonials-title">
         <span className="bold">Testi</span><span className="light">monios</span> <span className="brand">de Bytebox</span>
       </h2>

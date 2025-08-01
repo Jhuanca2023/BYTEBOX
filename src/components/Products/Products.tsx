@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { SEO } from '../SEO';
 import productsData from '../../assets/data/products.json';
 import type { Review, Product } from '../../interfaces';
 import './Products.css';
@@ -9,6 +10,7 @@ const TRANSITION_DURATION = 500; // Duración de la transición en ms
 const SCROLL_THRESHOLD = 0.5; // Umbral para el scroll del carrusel
 
 const Products: React.FC = () => {
+  // Configuración de SEO para la página de Productos
   const [selectedReview, setSelectedReview] = useState<{ [key: number]: number }>({});
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -294,6 +296,12 @@ const Products: React.FC = () => {
 
   return (
     <div className="products-section">
+      <SEO 
+        title="Productos - ByteBOX | Soluciones Tecnológicas Innovadoras"
+        description="Descubre nuestra gama de productos tecnológicos en ByteBOX. Ofrecemos las mejores soluciones en accesorios y equipos tecnológicos de última generación."
+        keywords="productos tecnológicos, accesorios de tecnología, equipos electrónicos, tecnología de punta, ofertas de tecnología, dispositivos electrónicos"
+        canonicalUrl="https://bytebox.com/productos"
+      />
       <div className="container">
         <section className="top-products" aria-label="Productos destacados">
           <h2 className="section-title">
