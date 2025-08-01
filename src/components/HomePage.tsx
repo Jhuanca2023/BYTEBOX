@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { SEO } from './SEO';
 import Header from './common/Header';
 import Hero from './common/Hero';
 import Onboarding from './Onboarding/Onboarding';
@@ -23,6 +24,8 @@ type LocationState = {
 
 const HomePage = () => {
   const location = useLocation();
+  
+  // Configuración de SEO para la página de inicio
 
   useEffect(() => {
     const state = location.state as LocationState;
@@ -36,17 +39,27 @@ const HomePage = () => {
 
   return (
     <>
+      <SEO 
+        title="ByteBOX - Soluciones Tecnológicas Integrales"
+        description="Descubre soluciones tecnológicas innovadoras en ByteBOX. Ofrecemos servicios de almacenamiento, plataformas tecnológicas, recompra de equipos y más para potenciar tu negocio."
+        keywords="soluciones tecnológicas, almacenamiento en la nube, recompra de equipos, plataforma tecnológica, hardware sostenible, transformación digital, tecnología empresarial, innovación tecnológica"
+        canonicalUrl="https://bytebox.com"
+      />
       <Header />
       <main>
         <Hero />
-        <section className="solutions-section">
-          <h2>Soluciones eficientes<br />para <strong>productividad global</strong></h2>
+        <section className="solutions-section py-5" data-aos="fade-up">
+          <h2 className="mb-4" data-aos="fade-up" data-aos-delay="100">
+            Soluciones eficientes<br />para <strong>productividad global</strong>
+          </h2>
           
           {/* Mobile Version */}
-          <SolutionsMobile />
+          <div data-aos="fade-up" data-aos-delay="200">
+            <SolutionsMobile />
+          </div>
           
           {/* Desktop Version */}
-          <div className="solutions-desktop">
+          <div className="solutions-desktop" data-aos="fade-up" data-aos-delay="200">
             <Onboarding />
             <Offboarding />
             <Storage />
@@ -54,11 +67,26 @@ const HomePage = () => {
             <Buyback />
           </div>
         </section>
-        <Hardware />
-        <PlatformSection />
-        <WorldStats />
-        <Testimonials />
-        <Contact />
+        
+        <div data-aos="fade-up">
+          <Hardware />
+        </div>
+        
+        <div data-aos="fade-up">
+          <PlatformSection />
+        </div>
+        
+        <div data-aos="fade-up">
+          <WorldStats />
+        </div>
+        
+        <div data-aos="fade-up">
+          <Testimonials />
+        </div>
+        
+        <div data-aos="fade-up">
+          <Contact />
+        </div>
       </main>
       <Footer />
       <a 

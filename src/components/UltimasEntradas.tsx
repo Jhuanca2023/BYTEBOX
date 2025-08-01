@@ -71,105 +71,177 @@ const UltimasEntradas = () => {
       </section>
       {/* Sección de temas/empresas */}
       <section className="ultimas-entradas-section">
-        <h2 className="ultimas-entradas-title" data-aos="fade-up" data-aos-duration="800">
-          Explora nuestra <span 
+        <h2 
+          className="ultimas-entradas-title" 
+          data-aos="fade-up" 
+          data-aos-duration="800"
+        >
+          Explora nuestra{' '}
+          <span 
             className="ultimas-entradas-title-highlight"
             data-aos="fade-up" 
             data-aos-duration="800" 
-            data-aos-delay="200"
+            data-aos-delay="100"
+            data-aos-anchor=".ultimas-entradas-title"
           >
             marca
           </span>
         </h2>
-        <div className="ultimas-entradas-buttons">
-          <button 
-            className={`ultimas-entradas-btn ${activeFilter === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('all')}
-          >
-            Todos
-          </button>
-          <button 
-            className={`ultimas-entradas-btn ${activeFilter === 'servicios' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('servicios')}
-          >
-            Servicios
-          </button>
-          <button 
-            className={`ultimas-entradas-btn ${activeFilter === 'casos-exito' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('casos-exito')}
-          >
-            Casos de éxito
-          </button>
-          <button 
-            className={`ultimas-entradas-btn ${activeFilter === 'trabajo-remoto' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('trabajo-remoto')}
-          >
-            Soluciones Digitales
-          </button>
+        
+        <div 
+          className="ultimas-entradas-buttons"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="200"
+        >
+          {[
+            { id: 'all', label: 'Todos' },
+            { id: 'servicios', label: 'Servicios' },
+            { id: 'casos-exito', label: 'Casos de éxito' },
+            { id: 'trabajo-remoto', label: 'Soluciones Digitales' }
+          ].map((btn, index) => (
+            <button
+              key={btn.id}
+              className={`ultimas-entradas-btn ${activeFilter === btn.id ? 'active' : ''}`}
+              onClick={() => setActiveFilter(btn.id as FilterType)}
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay={`${200 + (index * 50)}`}
+              data-aos-once="true"
+            >
+              {btn.label}
+            </button>
+          ))}
         </div>
         <div className="ultimas-entradas-grid">
-          {[...filteredCards, ...filteredExtraCards].map((card, idx) => (
-            card.link.startsWith('/') ? (
-              <Link 
-                to={card.link} 
-                className="ultimas-entradas-card" 
+          {[...filteredCards, ...filteredExtraCards].map((card, idx) => {
+            const animationDelay = `${(idx % 3) * 100}ms`;
+            
+            // Contenido común de la tarjeta
+            const cardContent = (
+              <>
+                <div 
+                  className="ultimas-entradas-card-img-container"
+                  data-aos="zoom-in"
+                  data-aos-duration="600"
+                  data-aos-delay={animationDelay}
+                  data-aos-once="true"
+                >
+                  <img 
+                    src={card.img} 
+                    alt={card.alt} 
+                    className="ultimas-entradas-card-img" 
+                    loading="lazy"
+                  />
+                </div>
+                <div 
+                  className="ultimas-entradas-card-content"
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={`${parseInt(animationDelay) + 100}`}
+                  data-aos-once="true"
+                >
+                  <div className="ultimas-entradas-card-title">
+                    {card.title}{' '}
+                    <span className="ultimas-entradas-card-title-highlight">
+                      {card.highlight}
+                    </span>
+                  </div>
+                  <div className="ultimas-entradas-card-desc">
+                    {card.desc}
+                  </div>
+                </div>
+              </>
+            );
+            
+            // Renderizar el enlace apropiado basado en si es una ruta interna o externa
+            return card.link.startsWith('/') ? (
+              <Link
+                to={card.link}
+                className="ultimas-entradas-card"
                 key={`card-${idx}`}
                 aria-label={`Ver ${card.title} ${card.highlight}`}
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={animationDelay}
+                data-aos-once="true"
               >
-                <img 
-                  src={card.img} 
-                  alt={card.alt} 
-                  className="ultimas-entradas-card-img" 
-                  loading="lazy"
-                />
-                <div className="ultimas-entradas-card-content">
-                  <div className="ultimas-entradas-card-title">
-                    {card.title} <span className="ultimas-entradas-card-title-highlight">{card.highlight}</span>
-                  </div>
-                  <div className="ultimas-entradas-card-desc">{card.desc}</div>
-                </div>
+                {cardContent}
               </Link>
             ) : (
-              <a 
-                href={card.link} 
+              <a
+                href={card.link}
                 className="ultimas-entradas-card"
                 key={`card-${idx}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ver ${card.title} ${card.highlight}`}
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={animationDelay}
+                data-aos-once="true"
               >
-                <img 
-                  src={card.img} 
-                  alt={card.alt} 
-                  className="ultimas-entradas-card-img" 
-                  loading="lazy"
-                />
-                <div className="ultimas-entradas-card-content">
-                  <div className="ultimas-entradas-card-title">
-                    {card.title} <span className="ultimas-entradas-card-title-highlight">{card.highlight}</span>
-                  </div>
-                  <div className="ultimas-entradas-card-desc">{card.desc}</div>
-                </div>
+                {cardContent}
               </a>
-            )
-          ))}
+            );
+          })}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '24px 0' }}>
-          <button className="ultimas-entradas-btn" onClick={() => setShowMore(v => !v)}>
+        <div 
+          style={{ display: 'flex', justifyContent: 'center', margin: '24px 0' }}
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-once="true"
+        >
+          <button 
+            className="ultimas-entradas-btn" 
+            onClick={() => setShowMore(v => !v)}
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="100"
+            data-aos-once="true"
+          >
             {showMore ? 'Ver menos' : 'Explorar más'}
           </button>
         </div>
       </section>
-      <section className="recent-entries">
-        <h2>Ingresos recientes</h2>
-        <div className="carousel-container">
+      
+      <section 
+        className="recent-entries"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-once="true"
+      >
+        <h2 
+          className="recent-entries-title"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="100"
+          data-aos-once="true"
+        >
+          Ingresos <span className="highlight">recientes</span>
+        </h2>
+        <div 
+          className="carousel-container"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="200"
+          data-aos-once="true"
+        >
           <div className="carousel-track">
             {[...productImagesData.recentEntries, ...productImagesData.recentEntries].map((entry, index) => (
-              <div key={`entry-${index}`} className="carousel-slide">
+              <div 
+                key={`entry-${index}`} 
+                className="carousel-slide"
+                data-aos="zoom-in"
+                data-aos-duration="600"
+                data-aos-delay={`${(index % 5) * 100}`}
+                data-aos-once="true"
+              >
                 <img 
                   src={entry.url} 
                   alt={entry.alt} 
                   loading="lazy"
+                  className="carousel-image"
                 />
               </div>
             ))}

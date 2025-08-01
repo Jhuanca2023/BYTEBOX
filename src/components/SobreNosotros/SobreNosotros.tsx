@@ -1,3 +1,4 @@
+import { SEO } from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
@@ -6,6 +7,12 @@ import conectividadImg from '../../assets/images/conectividad.png';
 
 const SobreNosotros = () => (
   <>
+    <SEO 
+      title="Sobre Nosotros - ByteBOX | Conoce Nuestra Historia"
+      description="Conoce la historia, misión y valores de ByteBOX. Descubre cómo conectamos empresas y personas a través de soluciones tecnológicas innovadoras."
+      keywords="historia de ByteBOX, misión y valores, sobre nosotros, empresa tecnológica, innovación, tecnología, equipo de ByteBOX"
+      canonicalUrl="https://bytebox.com/sobre-nosotros"
+    />
     <Header />
     
     {/* HERO SECTION */}
