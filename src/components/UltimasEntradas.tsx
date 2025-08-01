@@ -7,21 +7,18 @@ import productImagesData from '../assets/data/productImages.json';
 import './UltimasEntradas.css';
 import './UltimasEntradas/Carousel.css';
 
-// Importar imágenes
-import imgiphone from '../assets/images/seller.png';
-import imgFalabella from '../assets/images/falabe.png';
-import imgPlataforma from '../assets/images/plataforma.png';
-import imgAccesorios from '../assets/images/accesorios.png';
-import imgEarth from '../assets/images/image.png';
-import imgDesk from '../assets/images/imagepapel.png';
+// Importar imágenes usando URL para compatibilidad con Vite en producción
+const getImageUrl = (imageName: string) => {
+  return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+};
 
 const imageMap: Record<string, string> = {
-  'seller.png': imgiphone,
-  'falabe.png': imgFalabella,
-  'plataforma.png': imgPlataforma,
-  'accesorios.png': imgAccesorios,
-  'image.png': imgEarth,
-  'imagepapel.png': imgDesk
+  'seller.png': getImageUrl('seller.png'),
+  'falabe.png': getImageUrl('falabe.png'),
+  'plataforma.png': getImageUrl('plataforma.png'),
+  'accesorios.png': getImageUrl('accesorios.png'),
+  'image.png': getImageUrl('image.png'),
+  'imagepapel.png': getImageUrl('imagepapel.png')
 };
 
 // Mapear las imágenes a los datos
