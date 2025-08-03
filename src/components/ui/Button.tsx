@@ -78,12 +78,63 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: 'px-6 py-3 text-base',
 };
 
-// Mapeo de icon sizes
-const iconSizeStyles: Record<ButtonSize, string> = {
-  xs: 'h-3.5 w-3.5',
-  sm: 'h-4 w-4',
-  md: 'h-5 w-5',
-  lg: 'h-5 w-5',
+const getFullWidthClass = (fullWidth: boolean) => {
+  if (fullWidth) {
+    return 'w-full';
+  }
+  return '';
+};
+
+const getHoverEffectClass = (hasHoverEffect: boolean) => {
+  if (hasHoverEffect) {
+    return 'hover:shadow-md';
+  }
+  return '';
+};
+
+const getScaleEffectClass = (hasScaleEffect: boolean) => {
+  if (hasScaleEffect) {
+    return 'transform hover:scale-105 active:scale-95';
+  }
+  return '';
+};
+
+const getDisabledClass = (isDisabled: boolean) => {
+  if (isDisabled) {
+    return 'pointer-events-none';
+  }
+  return '';
+};
+
+const getContainerFullWidthClass = (fullWidth: boolean) => {
+  if (fullWidth) {
+    return 'w-full';
+  }
+  return '';
+};
+
+const getButtonContent = (isLoading: boolean, loadingText: string, leftIcon: React.ReactNode, rightIcon: React.ReactNode, children: React.ReactNode) => {
+  if (isLoading) {
+    return (
+      <>
+        <span className="animate-spin -ml-1 mr-2 h-4 w-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </span>
+        {loadingText || 'Cargando...'}
+      </>
+    );
+  }
+  
+  return (
+    <>
+      {leftIcon && <span className="flex-shrink-0 h-5 w-5 mr-2">{leftIcon}</span>}
+      {children}
+      {rightIcon && <span className="flex-shrink-0 h-5 w-5 ml-2">{rightIcon}</span>}
+    </>
+  );
 };
 
 /**
@@ -116,49 +167,22 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     'disabled:opacity-60 disabled:cursor-not-allowed',
     variantStyles[variant],
     sizeStyles[size],
-    fullWidth ? 'w-full' : '',
-    hasHoverEffect ? 'hover:shadow-md' : '',
-    hasScaleEffect ? 'transform hover:scale-105 active:scale-95' : '',
-    isDisabled ? 'pointer-events-none' : '',
+    getFullWidthClass(fullWidth),
+    getHoverEffectClass(hasHoverEffect),
+    getScaleEffectClass(hasScaleEffect),
+    getDisabledClass(isDisabled),
     className,
   ].filter(Boolean).join(' ');
   
   // Clases para el contenedor del botón
   const containerClasses = [
     'inline-flex',
-    fullWidth ? 'w-full' : '',
+    getContainerFullWidthClass(fullWidth),
     containerClassName,
   ].filter(Boolean).join(' ');
   
-  // Clases para los iconos
-  const iconClasses = [
-    'flex-shrink-0',
-    children ? (leftIcon ? 'mr-2' : 'ml-2') : '',
-    iconSizeStyles[size],
-  ].filter(Boolean).join(' ');
-  
   // Contenido del botón
-  const buttonContent = (
-    <>
-      {isLoading ? (
-        <>
-          <span className="animate-spin -ml-1 mr-2 h-4 w-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-          </span>
-          {loadingText || 'Cargando...'}
-        </>
-      ) : (
-        <>
-          {leftIcon && <span className={iconClasses}>{leftIcon}</span>}
-          {children}
-          {rightIcon && <span className={iconClasses}>{rightIcon}</span>}
-        </>
-      )}
-    </>
-  );
+  const buttonContent = getButtonContent(isLoading, loadingText || '', leftIcon, rightIcon, children);
   
   return (
     <div className={containerClasses}>

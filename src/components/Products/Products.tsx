@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { SEO } from '../SEO';
+import SeoComponent from '../SEO';
 import productsData from '../../assets/data/products.json';
 import type { Review, Product } from '../../interfaces';
 import './Products.css';
@@ -296,7 +296,7 @@ const Products: React.FC = () => {
 
   return (
     <div className="products-section">
-      <SEO 
+      <SeoComponent 
         title="Productos - ByteBOX | Soluciones Tecnológicas Innovadoras"
         description="Descubre nuestra gama de productos tecnológicos en ByteBOX. Ofrecemos las mejores soluciones en accesorios y equipos tecnológicos de última generación."
         keywords="productos tecnológicos, accesorios de tecnología, equipos electrónicos, tecnología de punta, ofertas de tecnología, dispositivos electrónicos"

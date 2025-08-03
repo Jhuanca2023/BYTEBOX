@@ -7,7 +7,7 @@ interface SEOProps {
   canonicalUrl?: string;
 }
 
-export const SEO: React.FC<SEOProps> = ({
+export const SeoComponent: React.FC<SEOProps> = ({
   title = 'ByteBOX - Accesorios y equipos tecnológicos',
   description = 'Descubre los mejores accesorios y equipos tecnológicos en ByteBOX. Calidad y estilo en un solo lugar.',
   keywords = 'tecnología, accesorios, equipos tecnológicos, ByteBOX, gadgets',
@@ -59,4 +59,4 @@ export const SEO: React.FC<SEOProps> = ({
   return null; // Este componente no renderiza nada en el DOM
 };
 
-export default SEO;
+export default SeoComponent;

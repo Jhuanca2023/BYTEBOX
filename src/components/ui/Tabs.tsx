@@ -2,8 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
 interface TabProps {
-  id: string;
-  title: string;
   children: ReactNode;
   className?: string;
 }
@@ -16,9 +14,9 @@ interface TabsProps {
   tabPanelClassName?: string;
 }
 
-export const Tab = ({ children, className = '' }: TabProps) => {
-  return <div className={`tab-panel ${className}`}>{children}</div>;
-};
+export const Tab = ({ children, className = '' }: TabProps) => (
+  <div className={`tab-panel ${className}`}>{children}</div>
+);
 
 export const Tabs = ({
   children,
@@ -30,12 +28,16 @@ export const Tabs = ({
   const [activeTab, setActiveTab] = useState<string>('');
   const tabListRef = useRef<HTMLDivElement>(null);
   const tabs = Array.isArray(children) ? children : [children];
-  const validTabs = tabs.filter((tab) => tab && tab.props && tab.props.id);
+  const validTabs = tabs.filter(tab => tab?.props?.id);
 
   // Establecer la pestaña activa inicial
   useEffect(() => {
     if (validTabs.length > 0) {
-      setActiveTab(defaultActiveId || validTabs[0].props.id);
+      if (defaultActiveId) {
+        setActiveTab(defaultActiveId);
+      } else {
+        setActiveTab(validTabs[0].props.id);
+      }
     }
   }, [defaultActiveId, validTabs]);
 
@@ -46,13 +48,13 @@ export const Tabs = ({
       setActiveTab(tabId);
     } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault();
-      const currentIndex = validTabs.findIndex((tab) => tab.props.id === tabId);
+      const currentIndex = validTabs.findIndex(tab => tab.props.id === tabId);
       const nextIndex = (currentIndex + 1) % validTabs.length;
       setActiveTab(validTabs[nextIndex].props.id);
       focusTab(validTabs[nextIndex].props.id);
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault();
-      const currentIndex = validTabs.findIndex((tab) => tab.props.id === tabId);
+      const currentIndex = validTabs.findIndex(tab => tab.props.id === tabId);
       const prevIndex = (currentIndex - 1 + validTabs.length) % validTabs.length;
       setActiveTab(validTabs[prevIndex].props.id);
       focusTab(validTabs[prevIndex].props.id);
@@ -75,7 +77,37 @@ export const Tabs = ({
     }
   };
 
-  if (validTabs.length === 0) return null;
+  const getActiveTabClass = (isActive: boolean) => {
+    if (isActive) {
+      return 'active';
+    }
+    return '';
+  };
+
+  const getTabIndex = (isActive: boolean) => {
+    if (isActive) {
+      return 0;
+    }
+    return -1;
+  };
+
+  const getPanelClass = (isActive: boolean) => {
+    if (isActive) {
+      return 'tab-panel active';
+    }
+    return 'tab-panel';
+  };
+
+  const getPanelHidden = (isActive: boolean) => {
+    if (isActive) {
+      return false;
+    }
+    return true;
+  };
+
+  if (validTabs.length === 0) {
+    return null;
+  }
 
   return (
     <div className={`tabs ${className}`}>
@@ -85,19 +117,19 @@ export const Tabs = ({
         role="tablist"
         aria-label="Navegación por pestañas"
       >
-        {validTabs.map((tab) => {
+        {validTabs.map(tab => {
           const isActive = activeTab === tab.props.id;
           return (
             <button
               key={tab.props.id}
               id={`tab-${tab.props.id}`}
-              className={`tab ${isActive ? 'active' : ''}`}
+              className={`tab ${getActiveTabClass(isActive)}`}
               role="tab"
               aria-selected={isActive}
               aria-controls={`panel-${tab.props.id}`}
-              tabIndex={isActive ? 0 : -1}
+              tabIndex={getTabIndex(isActive)}
               onClick={() => setActiveTab(tab.props.id)}
-              onKeyDown={(e) => handleKeyDown(e, tab.props.id)}
+              onKeyDown={e => handleKeyDown(e, tab.props.id)}
             >
               {tab.props.title}
             </button>
@@ -106,19 +138,22 @@ export const Tabs = ({
       </div>
 
       <div className={`tab-panels ${tabPanelClassName}`}>
-        {validTabs.map((tab) => (
-          <div
-            key={tab.props.id}
-            id={`panel-${tab.props.id}`}
-            className={`tab-panel ${activeTab === tab.props.id ? 'active' : ''}`}
-            role="tabpanel"
-            tabIndex={0}
-            aria-labelledby={`tab-${tab.props.id}`}
-            hidden={activeTab !== tab.props.id}
-          >
-            {tab.props.children}
-          </div>
-        ))}
+        {validTabs.map(tab => {
+          const isActive = activeTab === tab.props.id;
+          return (
+            <div
+              key={tab.props.id}
+              id={`panel-${tab.props.id}`}
+              className={getPanelClass(isActive)}
+              role="tabpanel"
+              tabIndex={0}
+              aria-labelledby={`tab-${tab.props.id}`}
+              hidden={getPanelHidden(isActive)}
+            >
+              {tab.props.children}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

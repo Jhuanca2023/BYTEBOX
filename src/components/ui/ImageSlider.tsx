@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Swiper as SwiperType } from 'swiper';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Importación de estilos de Swiper
-import 'swiper/swiper-bundle.css'; // Importa todos los estilos de Swiper
 
 interface ImageSliderProps {
   images: {
@@ -14,10 +12,10 @@ interface ImageSliderProps {
   className?: string;
   slideClassName?: string;
   navigation?: boolean;
-  pagination?: boolean | 'bullets' | 'fraction' | 'progressbar' | 'custom';
+  pagination?: boolean | 'bullets' | 'fraction';
   autoplay?: boolean | { delay: number; disableOnInteraction: boolean };
   loop?: boolean;
-  effect?: 'slide' | 'fade' | 'cube' | 'coverflow' | 'flip' | 'creative' | 'cards';
+  effect?: 'slide' | 'fade' | 'cube';
   slidesPerView?: number | 'auto';
   spaceBetween?: number;
   breakpoints?: {
@@ -45,6 +43,52 @@ const ImageSlider = ({
   onSlideChange,
   onSwiper,
 }: ImageSliderProps) => {
+  const getLoadingType = (index: number) => {
+    if (index > 1) {
+      return 'lazy';
+    }
+    return 'eager';
+  };
+  
+  const getNavigationConfig = () => {
+    if (!navigation) {
+      return false;
+    }
+    return {
+      prevEl: prevRef.current,
+      nextEl: nextRef.current,
+      disabledClass: 'opacity-30 cursor-not-allowed',
+    };
+  };
+  
+  const getPaginationType = () => {
+    if (typeof pagination === 'boolean') {
+      return 'bullets';
+    }
+    return pagination;
+  };
+  
+  const getPaginationConfig = () => {
+    if (!pagination) {
+      return false;
+    }
+    return {
+      clickable: true,
+      type: getPaginationType(),
+      bulletClass: 'swiper-pagination-bullet bg-gray-400 opacity-100',
+      bulletActiveClass: 'swiper-pagination-bullet-active !bg-blue-600',
+    };
+  };
+  
+  const handleSwiper = useCallback((swiperInstance: SwiperType) => {
+    setSwiper(swiperInstance);
+    onSwiper?.(swiperInstance);
+  }, [onSwiper]);
+  
+  const handleSlideChange = useCallback((swiperInstance: SwiperType) => {
+    onSlideChange?.(swiperInstance);
+  }, [onSlideChange]);
+  
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const [isMounted, setIsMounted] = useState(false);
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -57,19 +101,23 @@ const ImageSlider = ({
 
   // Inicializar navegación personalizada
   useEffect(() => {
-    if (!swiper || !isMounted) return;
+    if (!swiper || !isMounted) {
+      return;
+    }
     
     if (navigation && prevRef.current && nextRef.current) {
-      // @ts-ignore - Los tipos de Swiper no incluyen correctamente las propiedades de navegación personalizada
+      // @ts-expect-error - Los tipos de Swiper no incluyen correctamente las propiedades de navegación personalizada
       swiper.params.navigation.prevEl = prevRef.current;
-      // @ts-ignore
+      // @ts-expect-error - Los tipos de Swiper no incluyen correctamente las propiedades de navegación personalizada
       swiper.params.navigation.nextEl = nextRef.current;
       swiper.navigation.init();
       swiper.navigation.update();
     }
   }, [swiper, isMounted, navigation]);
 
-  if (!images || images.length === 0) return null;
+  if (!images || images.length === 0) {
+    return null;
+  }
 
   return (
     <div className={`relative ${className}`}>
@@ -79,26 +127,12 @@ const ImageSlider = ({
         slidesPerView={slidesPerView}
         effect={effect}
         loop={loop}
-        navigation={navigation ? {
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-          disabledClass: 'opacity-30 cursor-not-allowed',
-        } : false}
-        pagination={pagination ? {
-          clickable: true,
-          type: typeof pagination === 'boolean' ? 'bullets' : pagination,
-          bulletClass: 'swiper-pagination-bullet bg-gray-400 opacity-100',
-          bulletActiveClass: 'swiper-pagination-bullet-active !bg-blue-600',
-        } : false}
+        navigation={getNavigationConfig()}
+        pagination={getPaginationConfig()}
         autoplay={autoplay}
         breakpoints={breakpoints}
-        onSwiper={(swiperInstance) => {
-          setSwiper(swiperInstance);
-          onSwiper?.(swiperInstance);
-        }}
-        onSlideChange={(swiperInstance) => {
-          onSlideChange?.(swiperInstance);
-        }}
+        onSwiper={handleSwiper}
+        onSlideChange={handleSlideChange}
         a11y={{
           prevSlideMessage: 'Diapositiva anterior',
           nextSlideMessage: 'Siguiente diapositiva',
@@ -108,25 +142,28 @@ const ImageSlider = ({
         }}
         className="w-full h-full"
       >
-        {images.map((image, index) => (
-          <SwiperSlide key={index} className={slideClassName}>
-            <div className="relative w-full h-full">
-              <img 
-                src={image.src} 
-                alt={image.alt} 
-                className="w-full h-full object-cover"
-                loading={index > 1 ? 'lazy' : 'eager'}
-                width="1200"
-                height="675"
-              />
-              {image.caption && (
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                  <p className="text-sm sm:text-base">{image.caption}</p>
-                </div>
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
+        {images.map((image, index) => {
+          const slideKey = `slide-${index}-${image.src}`;
+          return (
+            <SwiperSlide key={slideKey} className={slideClassName}>
+              <div className="relative w-full h-full">
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-full object-cover"
+                  loading={getLoadingType(index)}
+                  width="1200"
+                  height="675"
+                />
+                {image.caption && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                    <p className="text-sm sm:text-base">{image.caption}</p>
+                  </div>
+                )}
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
 
       {/* Navegación personalizada */}

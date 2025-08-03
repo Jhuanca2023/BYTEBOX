@@ -19,16 +19,22 @@ const getImageUrl = (imagePath: string) => {
     // En desarrollo, usa la ruta relativa
     return imagePath;
   } catch (e) {
-    console.error('Error al cargar la imagen:', e);
+    console.info('Error al cargar la imagen:', e);
     return '';
   }
 };
 
 // Procesar los pasos para incluir las URLs correctas de las imágenes
-const processedSteps = platformSteps.steps.map(step => ({
-  ...step,
-  image: getImageUrl(step.image)
-}));
+const processedSteps = platformSteps.steps.map(step => {
+  if (step.image) {
+    return {
+      ...step,
+      image: getImageUrl(step.image)
+    };
+  } else {
+    return step;
+  }
+});
 
 const steps = processedSteps as StepData[];
 
@@ -71,6 +77,8 @@ const PlatformSection = () => {
 
   // Efecto para animar la sección al hacer scroll
   useEffect(() => {
+    const currentSectionRef = sectionRef.current;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -81,22 +89,30 @@ const PlatformSection = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
+
+  const getSectionClassName = (): string => {
+    if (isVisible) {
+      return `${styles.platformSection} ${styles.visible}`;
+    } else {
+      return styles.platformSection;
+    }
+  };
 
   return (
     <section 
       ref={sectionRef} 
       id="OUR_PLATFORM" 
-      className={`${styles.platformSection} ${isVisible ? styles.visible : ''}`}
+      className={getSectionClassName()}
     >
       <h2 className={styles.bgTitle}>OUR PLATFORM</h2>
       
@@ -108,8 +124,6 @@ const PlatformSection = () => {
             totalSteps={steps.length}
             onStepUp={goToPrevStep}
             onStepDown={goToNextStep}
-            canGoUp={canGoUp}
-            canGoDown={canGoDown}
           />
           
           <div className={styles.stepText}>

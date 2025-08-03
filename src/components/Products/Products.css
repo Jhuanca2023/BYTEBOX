@@ -10,7 +10,7 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background: linear-gradient(90deg, #000 50%, #46d1f0 50%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -176,7 +176,7 @@
   font-weight: 600;
   color: #333;
   margin-bottom: 0.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .product-description {
