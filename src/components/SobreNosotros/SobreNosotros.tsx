@@ -2,7 +2,7 @@ import { SEO } from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
-import conectividadImg from '../../assets/images/conectividad.png';
+import nosotros3Img from '../../assets/images/nosotros3.png';
 
 
 const SobreNosotros = () => (
@@ -172,7 +172,7 @@ const SobreNosotros = () => (
         <section className="feature-card">
           <div className="card-content-wrapper">
             <div className="card-image">
-              <img src={conectividadImg} alt="Conectividad" className="feature-img" />
+              <img src={nosotros3Img} alt="Conectividad" className="feature-img" />
 
               <div className="card-badge curious">
                 <span className="badge-icon">🔍</span>
