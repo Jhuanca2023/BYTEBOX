@@ -11,8 +11,26 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(42, 193, 219, 0.2);
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
 }
-.buyback-cta-btn:hover {
+
+.buyback-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(90deg, #22a0b8 0%, #2ad1df 100%);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+.buyback-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 193, 219, 0.3);
+}
+
+.buyback-cta-btn:hover::before {
+  opacity: 1;
 } 

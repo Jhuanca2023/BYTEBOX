@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SEO } from '../SEO';
+import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import Products from '../Products/Products';
@@ -14,17 +14,20 @@ const NuestraMarca = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Constante para el intervalo de cambio de imagen
+  const IMAGE_CHANGE_INTERVAL = 3000;
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % productImages.length);
-    }, 3000);
+      setCurrentImageIndex(prevIndex => (prevIndex + 1) % productImages.length);
+    }, IMAGE_CHANGE_INTERVAL);
     
     return () => clearInterval(interval);
   }, [productImages]);
 
   return (
     <>
-      <SEO 
+      <SeoComponent 
         title="Nuestra Marca - ByteBOX | Innovación y Calidad en Tecnología"
         description="Descubre la esencia de ByteBOX: innovación, calidad y compromiso. Conoce nuestra misión, visión y valores que nos impulsan a ofrecerte la mejor tecnología."
         keywords="marca ByteBOX, innovación tecnológica, calidad en tecnología, misión y visión, valores corporativos, historia de la empresa"
@@ -134,14 +137,21 @@ const NuestraMarca = () => {
                 <div className="floating-circle circle-3"></div>
               </div>
               <div className="headphone-container">
-                {productImages.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image.url}
-                    alt={image.alt}
-                    className={`floating-headphone ${index === currentImageIndex ? 'active' : ''}`}
-                  />
-                ))}
+                {productImages.map((image, index) => {
+                  const isActive = index === currentImageIndex;
+                  let className = 'floating-headphone';
+                  if (isActive) {
+                    className = 'floating-headphone active';
+                  }
+                  return (
+                    <img
+                      key={`headphone-${index}-${image.alt}`}
+                      src={image.url}
+                      alt={image.alt}
+                      className={className}
+                    />
+                  );
+                })}
               </div>
             </div>
             
@@ -212,7 +222,7 @@ const NuestraMarca = () => {
                   { number: '24/7', label: 'Soporte Premium' }
                 ].map((stat, index) => (
                   <div 
-                    key={index}
+                    key={`stat-${index}-${stat.label}`}
                     className="stat-item"
                     data-aos="zoom-in"
                     data-aos-duration="600"

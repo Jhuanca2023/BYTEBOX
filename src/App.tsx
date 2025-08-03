@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// Bootstrap is imported in main.tsx
 import SobreNosotros from './components/SobreNosotros/SobreNosotros';
 import NuestraMarca from './components/NuestraMarca/NuestraMarca';
 import Alianzas from './components/Alianzas';
 import UltimasEntradas from './components/UltimasEntradas';
 import HomePage from './components/HomePage';
-
 
 function App() {
   return (

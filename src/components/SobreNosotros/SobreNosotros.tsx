@@ -1,9 +1,8 @@
-import { SEO } from '../SEO';
+import SEO from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
 import nosotros3Img from '../../assets/images/nosotros3.png';
-
 
 const SobreNosotros = () => (
   <>
@@ -94,7 +93,6 @@ const SobreNosotros = () => (
       </div>
     </section>
   
-
     {/* SECCIONES PRINCIPALES - DISEÑO ALTERNADO MODERNO */}
     <main className="main-content">
       <div className="container">
