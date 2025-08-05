@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import locationData from '../../assets/data/location.json';
 import './Contact.css';
 
@@ -35,7 +36,6 @@ const Contact = () => {
   const [provincias, setProvincias] = useState<Provincia[]>([]);
   const [distritos, setDistritos] = useState<Distrito[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{success: boolean | null, message: string}>({success: null, message: ''});
 
   // Estado para el formulario
   const [formData, setFormData] = useState({
@@ -115,13 +115,19 @@ const Contact = () => {
     }));
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({success: null, message: ''});
-
+    
     try {
-      const response = await fetch('http://localhost/BACKEND-PHP/backend/api/submit_contact.php', {
+      const response = await fetch('http://localhost/bytebox-web/api/submit_contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -132,7 +138,11 @@ const Contact = () => {
       const data = await response.json();
       
       if (response.ok) {
-        setSubmitStatus({success: true, message: '¡Mensaje enviado con éxito!'});
+        // Hacer scroll al inicio y luego mostrar la notificación
+        scrollToTop();
+        
+        toast.success('✅ ¡Mensaje enviado con éxito! Pronto nos pondremos en contacto contigo.');
+        
         // Resetear el formulario
         setFormData({
           nombre: '',
@@ -153,21 +163,20 @@ const Contact = () => {
         setProvincias([]);
         setDistritos([]);
       } else {
-        throw new Error(data.message || 'Error al enviar el mensaje');
+        throw new Error(data.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
       }
     } catch (error) {
       console.error('Error:', error);
-      setSubmitStatus({
-        success: false, 
-        message: error instanceof Error ? error.message : 'Error al enviar el mensaje'
-      });
+      const errorMessage = error instanceof Error ? error.message : 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      toast.error('❌ ' + errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contacto" className="contact-section">
+    <>
+      <section id="contacto" className="contact-section">
       <div className="contact-container">
         <h2>Contáctanos</h2>
         <div className="contact-content">
@@ -274,16 +283,6 @@ const Contact = () => {
                   required
                 />
               </div>
-
-              {/* Mensaje de estado */}
-              {submitStatus.message && (
-                <div 
-                  className={`alert ${submitStatus.success ? 'alert-success' : 'alert-error'}`}
-                  style={{ gridColumn: '1 / 3' }}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
             </div>
             <div className="button-wrapper">
               <button 
@@ -302,7 +301,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -1,0 +1,48 @@
+/* Estilos personalizados para las notificaciones */
+.Toastify__toast-container {
+  margin-top: 20px;
+  z-index: 9999;
+  width: auto;
+  max-width: 90%;
+}
+
+.Toastify__toast {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #46d1f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  padding: 12px 20px !important;
+  font-family: var(--font-main, system-ui, -apple-system, sans-serif) !important;
+  font-size: 14px !important;
+  min-height: auto !important;
+}
+
+.Toastify__progress-bar {
+  background: #46d1f0 !important;
+  height: 3px !important;
+}
+
+.Toastify__close-button {
+  color: #46d1f0 !important;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Color del ícono de verificación */
+.Toastify__toast-icon svg {
+  fill: #46d1f0 !important;
+}
+
+/* Color del check de éxito */
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #46d1f0 !important;
+}
+
+/* Color del ícono de error (X) */
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: #ff4444 !important;
+}
