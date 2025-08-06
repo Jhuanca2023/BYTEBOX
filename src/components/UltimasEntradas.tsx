@@ -8,9 +8,7 @@ import './UltimasEntradas.css';
 import './UltimasEntradas/Carousel.css';
 
 // Importar imágenes usando URL para compatibilidad con Vite en producción
-const getImageUrl = (imageName: string) => {
-  return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-};
+const getImageUrl = (imageName: string) => new URL(`../assets/images/${imageName}`, import.meta.url).href;
 
 const imageMap: Record<string, string> = {
   'seller.png': getImageUrl('seller.png'),
@@ -18,23 +16,45 @@ const imageMap: Record<string, string> = {
   'plataforma.png': getImageUrl('plataforma.png'),
   'accesorios.png': getImageUrl('accesorios.png'),
   'image.png': getImageUrl('image.png'),
-  'imagepapel.png': getImageUrl('imagepapel.png')
+  'imagepapel.png': getImageUrl('imagepapel.png'),
+  'hardware sostenible.jpg': new URL(`../assets/images/ultimasEntradas/hardware sostenible.jpg`, import.meta.url).href
+};
+
+// Función para obtener la URL de imagen (local o externa)
+const getImageSrc = (imageName: string): string => {
+  // Si es una URL externa (comienza con http/https)
+  if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
+    console.log('🔗 URL externa detectada:', imageName);
+    return imageName;
+  }
+  // Si es una imagen local, usar imageMap
+  const localUrl = imageMap[imageName] || '';
+  console.log('📁 Imagen local:', imageName, '→', localUrl);
+  return localUrl;
 };
 
 // Mapear las imágenes a los datos
 const mappedCards = cards.map(card => ({
   ...card,
-  img: imageMap[card.img] || ''
+  img: getImageSrc(card.img)
 }));
 
 const mappedExtraCards = extraCards.map(card => ({
   ...card,
-  img: imageMap[card.img] || ''
+  img: getImageSrc(card.img)
 }));
 
 const UltimasEntradas = () => {
   const [showMore, setShowMore] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  
+  // Helper function para obtener el texto del botón
+  const getButtonText = (isShowingMore: boolean): string => {
+    if (isShowingMore) {
+      return 'Ver menos';
+    }
+    return 'Explorar más';
+  };
   
   // Filtrar tarjetas basado en el filtro activo
   const filteredCards = mappedCards.filter(
@@ -42,11 +62,12 @@ const UltimasEntradas = () => {
   );
   
   // Filtrar tarjetas extra si se muestran
-  const filteredExtraCards = showMore 
-    ? mappedExtraCards.filter(
-        card => activeFilter === 'all' || card.category === activeFilter
-      )
-    : [];
+  let filteredExtraCards: typeof mappedExtraCards = [];
+  if (showMore) {
+    filteredExtraCards = mappedExtraCards.filter(
+      card => activeFilter === 'all' || card.category === activeFilter
+    );
+  }
 
   // Animation is now handled by CSS
   return (
@@ -99,23 +120,30 @@ const UltimasEntradas = () => {
             { id: 'servicios', label: 'Servicios' },
             { id: 'casos-exito', label: 'Casos de éxito' },
             { id: 'trabajo-remoto', label: 'Soluciones Digitales' }
-          ].map((btn, index) => (
-            <button
-              key={btn.id}
-              className={`ultimas-entradas-btn ${activeFilter === btn.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(btn.id as FilterType)}
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay={`${200 + (index * 50)}`}
-              data-aos-once="true"
-            >
-              {btn.label}
-            </button>
-          ))}
+                     ].map((btn, index) => {
+             const isActive = activeFilter === btn.id;
+             let buttonClassName = 'ultimas-entradas-btn';
+             if (isActive) {
+               buttonClassName = 'ultimas-entradas-btn active';
+             }
+             return (
+               <button
+                 key={btn.id}
+                 className={buttonClassName}
+                 onClick={() => setActiveFilter(btn.id as FilterType)}
+                 data-aos="fade-up"
+                 data-aos-duration="600"
+                 data-aos-delay={`${200 + (index * 50)}`}
+                 data-aos-once="true"
+               >
+                 {btn.label}
+               </button>
+             );
+           })}
         </div>
         <div className="ultimas-entradas-grid">
           {[...filteredCards, ...filteredExtraCards].map((card, idx) => {
-            const animationDelay = `${(idx % 3) * 100}ms`;
+            const animationDelay = `${(idx % 3) * 100}`;
             
             // Contenido común de la tarjeta
             const cardContent = (
@@ -138,7 +166,7 @@ const UltimasEntradas = () => {
                   className="ultimas-entradas-card-content"
                   data-aos="fade-up"
                   data-aos-duration="600"
-                  data-aos-delay={`${parseInt(animationDelay) + 100}`}
+                  data-aos-delay={`${parseInt(animationDelay, 10) + 100}`}
                   data-aos-once="true"
                 >
                   <div className="ultimas-entradas-card-title">
@@ -155,24 +183,30 @@ const UltimasEntradas = () => {
             );
             
             // Renderizar el enlace apropiado basado en si es una ruta interna o externa
-            return card.link.startsWith('/') ? (
-              <Link
-                to={card.link}
-                className="ultimas-entradas-card"
-                key={`card-${idx}`}
-                aria-label={`Ver ${card.title} ${card.highlight}`}
-                data-aos="fade-up"
-                data-aos-duration="600"
-                data-aos-delay={animationDelay}
-                data-aos-once="true"
-              >
-                {cardContent}
-              </Link>
-            ) : (
+            const isInternalLink = card.link.startsWith('/');
+            
+            if (isInternalLink) {
+              return (
+                <Link
+                  to={card.link}
+                  className="ultimas-entradas-card"
+                  key={`card-${idx}-${card.title}`}
+                  aria-label={`Ver ${card.title} ${card.highlight}`}
+                  data-aos="fade-up"
+                  data-aos-duration="600"
+                  data-aos-delay={animationDelay}
+                  data-aos-once="true"
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+            
+            return (
               <a
                 href={card.link}
                 className="ultimas-entradas-card"
-                key={`card-${idx}`}
+                key={`card-${idx}-${card.title}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ver ${card.title} ${card.highlight}`}
@@ -200,7 +234,7 @@ const UltimasEntradas = () => {
             data-aos-delay="100"
             data-aos-once="true"
           >
-            {showMore ? 'Ver menos' : 'Explorar más'}
+            {getButtonText(showMore)}
           </button>
         </div>
       </section>
@@ -230,7 +264,7 @@ const UltimasEntradas = () => {
           <div className="carousel-track">
             {[...productImagesData.recentEntries, ...productImagesData.recentEntries].map((entry, index) => (
               <div 
-                key={`entry-${index}`} 
+                key={`entry-${index}-${entry.alt}`} 
                 className="carousel-slide"
                 data-aos="zoom-in"
                 data-aos-duration="600"

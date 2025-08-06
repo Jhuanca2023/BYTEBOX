@@ -44,14 +44,14 @@ export const smoothScrollTo = (
   }
 
   // Calcular la posición de destino
-  const startPosition = window.pageYOffset;
-  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+  const startPosition = window.scrollY;
+  const elementPosition = element.getBoundingClientRect().top + window.scrollY;
   const distance = elementPosition - startPosition - offset;
   let startTime: number | null = null;
 
   // Función de animación
   const animation = (currentTime: number) => {
-    if (startTime === null) startTime = currentTime;
+    startTime ??= currentTime;
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
     

@@ -29,6 +29,30 @@ interface Departamento {
 }
 
 const Contact = () => {
+  // Helper function para obtener mensaje de error
+  const getErrorMessage = (error: unknown): string => {
+    if (error instanceof Error) {
+      return error.message;
+    }
+    return 'Error al enviar el mensaje';
+  };
+  
+  // Helper function para obtener clase de alerta
+  const getAlertClassName = (success: boolean | null): string => {
+    if (success === true) {
+      return 'alert-success';
+    }
+    return 'alert-error';
+  };
+  
+  // Helper function para obtener texto del botón de envío
+  const getSubmitButtonText = (submitting: boolean): string => {
+    if (submitting) {
+      return 'Enviando...';
+    }
+    return 'Enviar';
+  };
+  
   // Estados para los selects
   const [selectedDepartamento, setSelectedDepartamento] = useState<string>('');
   const [selectedProvincia, setSelectedProvincia] = useState<string>('');
@@ -43,6 +67,7 @@ const Contact = () => {
     apellido: '',
     email: '',
     empresa: '',
+    ruc: '',
     departamento_id: '',
     departamento_nombre: '',
     provincia_id: '',
@@ -149,6 +174,7 @@ const Contact = () => {
           apellido: '',
           email: '',
           empresa: '',
+          ruc: '',
           departamento_id: '',
           departamento_nombre: '',
           provincia_id: '',
@@ -206,8 +232,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email de trabajo" 
-                className="form-input"
-                style={{ gridColumn: '1 / 3' }}
+                className="form-input full-width"
                 required 
               />
               <input 
@@ -217,9 +242,19 @@ const Contact = () => {
                 onChange={handleInputChange}
                 placeholder="Empresa" 
                 className="form-input"
-                style={{ gridColumn: '1 / 3' }}
               />
-              <div className="location-section" style={{ gridColumn: '1 / 3' }}>
+              <input 
+                type="text" 
+                name="ruc"
+                value={formData.ruc}
+                onChange={handleInputChange}
+                placeholder="RUC (opcional)" 
+                className="form-input"
+                maxLength={11}
+                pattern="[0-9]{11}"
+                title="El RUC debe tener 11 dígitos numéricos"
+              />
+              <div className="location-section full-width">
                 <h4>Ubicación de la empresa</h4>
                 <div className="location-row">
                   <select 
@@ -270,7 +305,7 @@ const Contact = () => {
                   </select>
                 </div>
               </div>
-              <div className="form-group" style={{ gridColumn: '1 / 3' }}>
+              <div className="form-group full-width">
                 <label htmlFor="objetivo">¿Cuál es tu objetivo?</label>
                 <textarea 
                   id="objetivo"
@@ -283,6 +318,18 @@ const Contact = () => {
                   required
                 />
               </div>
+<<<<<<< HEAD
+=======
+
+              {/* Mensaje de estado */}
+              {submitStatus.message && (
+                <div 
+                  className={`alert ${getAlertClassName(submitStatus.success)} full-width`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+>>>>>>> 673e1459d974073317059335ba0b314eeaa35f39
             </div>
             <div className="button-wrapper">
               <button 
@@ -290,7 +337,7 @@ const Contact = () => {
                 className="submit-btn"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar'}
+                {getSubmitButtonText(isSubmitting)}
                 <span className="btn-arrow">&rarr;</span>
               </button>
             </div>

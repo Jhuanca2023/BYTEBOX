@@ -1,5 +1,5 @@
 import React from 'react';
-import { SEO } from './SEO';
+import SeoComponent from './SEO';
 import Header from './common/Header';
 import Footer from './common/Footer';
 import styles from './Alianzas.module.css';
@@ -23,6 +23,17 @@ const partners = partnersData.map(partner => ({
 
 const Alianzas = () => {
   // Configuración de SEO para la página de Alianzas
+  
+  // Helper function para obtener el texto alternativo del partner
+  const getPartnerAltText = (name: string | React.ReactElement): string => {
+    return typeof name === 'string' ? name : 'Logo partner';
+  };
+  
+  // Helper function para obtener el nombre del partner para aria-label
+  const getPartnerNameText = (name: string | React.ReactElement): string => {
+    return typeof name === 'string' ? name : '';
+  };
+  
   // Handler para scroll suave al formulario de contacto
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -33,7 +44,7 @@ const Alianzas = () => {
   };
   return (
     <>
-      <SEO 
+      <SeoComponent 
         title="Alianzas Estratégicas - ByteBOX | Socios y Colaboradores"
         description="Descubre nuestras alianzas estratégicas en ByteBOX. Trabajamos con los mejores socios y colaboradores para ofrecerte soluciones tecnológicas de vanguardia."
         keywords="alianzas estratégicas, socios tecnológicos, colaboradores ByteBOX, partners tecnológicos, soluciones empresariales, tecnología de punta"
@@ -82,7 +93,7 @@ const Alianzas = () => {
         <div className={styles.alianzasCards}>
           {cards.map((card, i) => (
             <div
-              key={i}
+              key={`card-${i}-${card.title}`}
               className={styles.alianzasCard}
               style={{ backgroundImage: `url(${card.img})` }}
               data-aos="fade-up"
@@ -133,7 +144,7 @@ const Alianzas = () => {
           {partners.map((p, i) => (
             <div 
               className={styles.partnerCard} 
-              key={i}
+              key={`partner-${i}-${getPartnerNameText(p.name)}`}
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay={`${(i % 3) * 100}`}
@@ -142,7 +153,7 @@ const Alianzas = () => {
               <div className={styles.partnerLogoBox}>
                 <img 
                   src={p.logo} 
-                  alt={typeof p.name === 'string' ? p.name : 'Logo partner'} 
+                  alt={getPartnerAltText(p.name)} 
                   className={styles.partnerLogo}
                   data-aos="zoom-in"
                   data-aos-duration="600"
@@ -161,7 +172,7 @@ const Alianzas = () => {
                 className={styles.partnerBtn}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Ir a la plataforma de ${typeof p.name === 'string' ? p.name : ''}`}
+                aria-label={`Ir a la plataforma de ${getPartnerNameText(p.name)}`}
                 data-aos="fade-in"
                 data-aos-duration="600"
                 data-aos-delay="300"

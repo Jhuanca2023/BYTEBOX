@@ -20,7 +20,7 @@ export const cards: CardProps[] = [
     desc: '¿Sabés cómo proteger datos y recuperar equipos al despedir a un colaborador?',
     category: 'servicios',
     link: 'https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAac4vS63Y-4vl3B6AqbR049XVi4mC3PId9hPZ3gfGvti5RNNPuJAkrPeXORCDw_aem_aqFptyHHMUbiukqg1Bz58g&e=AT07G0uE5MtMMqKDNmWeYXIRpBGA8IdReSVDaaFZFeHixukdjXnEo3WCbHlvsSiG5EvBVcAAoEp69quWCqX3m2BuEQDZkKy3q5msUObIFBASM8camqQ6DFo'
-  },
+  }, 
   {
     img: 'image.png',
     alt: 'Perú',
@@ -49,7 +49,7 @@ export const cards: CardProps[] = [
     link: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.coolbox.pe%2Fbytebox%3Fmap%3DsellerName%26fbclid%3DPAZXh0bgNhZW0CMTEAAafdAaCy6uDOW7rkwpSGGJG8Tdx0i3c4EmxSzC7rgw8yEjRPBTpqEa984RYEAg_aem_nRAZR6DiZG9TKB7VYQicPQ&e=AT1sOqRwrdi1O8zwxDRgA6ZAaeXamIrnUSbaztz2KpIJxrYhfmaTsIA1_D16Wjf7_xrJHQnjJ08gAkwHp8GdM8UeDpwFKesEuZYsT63XbT_uWcjosungOAA'
   },
   {
-    img: 'plataforma.png',
+    img: 'hardware sostenible.jpg',
     alt: 'Hardware sostenible',
     title: 'El futuro del',
     highlight: 'hardware sostenible',

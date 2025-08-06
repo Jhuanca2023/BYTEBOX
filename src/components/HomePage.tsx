@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { SEO } from './SEO';
+import SeoComponent from './SEO';
 import Header from './common/Header';
 import Hero from './common/Hero';
 import Onboarding from './Onboarding/Onboarding';
@@ -39,7 +39,7 @@ const HomePage = () => {
 
   return (
     <>
-      <SEO 
+      <SeoComponent 
         title="ByteBOX - Soluciones Tecnológicas Integrales"
         description="Descubre soluciones tecnológicas innovadoras en ByteBOX. Ofrecemos servicios de almacenamiento, plataformas tecnológicas, recompra de equipos y más para potenciar tu negocio."
         keywords="soluciones tecnológicas, almacenamiento en la nube, recompra de equipos, plataforma tecnológica, hardware sostenible, transformación digital, tecnología empresarial, innovación tecnológica"

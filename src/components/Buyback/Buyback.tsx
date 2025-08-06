@@ -1,6 +1,5 @@
 import './Buyback.css';
 
-
 const Buyback = () => (
   <section id="recompra" className="solution-card" style={{ position: 'relative' }}>
     <h3>Recompra</h3>

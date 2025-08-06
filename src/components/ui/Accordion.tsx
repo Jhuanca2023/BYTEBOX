@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
 interface AccordionItemProps {
@@ -32,20 +32,52 @@ export const AccordionItem = ({
 }: AccordionItemProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Actualizar la altura cuando el contenido cambie
-  useEffect(() => {
-    if (isOpen && contentRef.current) {
+  // Métodos separados para abrir y cerrar el acordeón
+  const openAccordion = useCallback(() => {
+    if (contentRef.current) {
       contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
-    } else if (contentRef.current) {
+    }
+  }, []);
+
+  const closeAccordion = useCallback(() => {
+    if (contentRef.current) {
       contentRef.current.style.maxHeight = '0';
     }
-  }, [isOpen, children]);
+  }, []);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  // Actualizar la altura cuando el contenido cambie
+  useEffect(() => {
+    if (isOpen) {
+      openAccordion();
+    } else {
+      closeAccordion();
+    }
+  }, [isOpen, children, openAccordion, closeAccordion]);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       onToggle?.(id);
     }
+  }, [onToggle, id]);
+
+  const handleToggle = useCallback(() => {
+    onToggle?.(id);
+  }, [onToggle, id]);
+
+  const getButtonClassName = () => {
+    let classes = `accordion-button ${buttonClassName}`;
+    if (isOpen) {
+      classes += ' active';
+    }
+    return classes;
+  };
+
+  const getAriaHidden = () => {
+    if (isOpen) {
+      return false;
+    }
+    return true;
   };
 
   return (
@@ -53,8 +85,8 @@ export const AccordionItem = ({
       <h3 className="accordion-heading">
         <button
           id={`accordion-button-${id}`}
-          className={`accordion-button ${buttonClassName} ${isOpen ? 'active' : ''}`}
-          onClick={() => onToggle?.(id)}
+          className={getButtonClassName()}
+          onClick={handleToggle}
           onKeyDown={handleKeyDown}
           aria-expanded={isOpen}
           aria-controls={`accordion-content-${id}`}
@@ -67,7 +99,7 @@ export const AccordionItem = ({
           </span>
         </button>
       </h3>
-      <motion.div
+      <motion.section
         id={`accordion-content-${id}`}
         ref={contentRef}
         className={`accordion-content ${contentClassName}`}
@@ -75,14 +107,13 @@ export const AccordionItem = ({
         animate={{ height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         style={{ overflow: 'hidden' }}
-        role="region"
         aria-labelledby={`accordion-button-${id}`}
-        aria-hidden={!isOpen}
+        aria-hidden={getAriaHidden()}
       >
         <div className="accordion-content-inner">
           {children}
         </div>
-      </motion.div>
+      </motion.section>
     </div>
   );
 };
@@ -95,37 +126,54 @@ export const Accordion = ({
 }: AccordionProps) => {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
-  const handleToggle = (id: string) => {
+  const handleToggle = useCallback((id: string) => {
     setOpenItems(prev => {
       const newOpenItems = new Set(prev);
       if (newOpenItems.has(id)) {
         newOpenItems.delete(id);
       } else {
-        if (!allowMultiple) newOpenItems.clear();
+        if (!allowMultiple) {
+          newOpenItems.clear();
+        }
         newOpenItems.add(id);
       }
       return newOpenItems;
     });
-  };
+  }, [allowMultiple]);
 
   // Clonar los hijos para inyectarles las props necesarias
   const childrenWithProps = Array.isArray(children) ? children : [children];
   
+  const renderAccordionItem = useCallback((child: ReactNode, index: number) => {
+    // Verificar si es un ReactElement válido
+    if (!child || typeof child !== 'object' || !('type' in child) || !('props' in child)) {
+      return null;
+    }
+    
+    const childElement = child as ReactElement<AccordionItemProps>;
+    const { id: childId, title, children: childChildren, className: childClassName, ...otherProps } = childElement.props;
+    
+    if (!childId || !title) {
+      return null;
+    }
+    
+    return (
+      <AccordionItem
+        key={childId || index}
+        id={childId}
+        title={title}
+        children={childChildren}
+        className={`${childClassName || ''} ${itemClassName}`}
+        isOpen={openItems.has(childId)}
+        onToggle={handleToggle}
+        {...otherProps}
+      />
+    );
+  }, [openItems, handleToggle, itemClassName]);
+  
   return (
     <div className={`accordion ${className}`}>
-      {childrenWithProps.map((child, index) => {
-        if (!child || !child.props) return null;
-        
-        return (
-          <AccordionItem
-            key={child.props.id || index}
-            {...child.props}
-            className={`${child.props.className || ''} ${itemClassName}`}
-            isOpen={openItems.has(child.props.id)}
-            onToggle={handleToggle}
-          />
-        );
-      })}
+      {childrenWithProps.map(renderAccordionItem)}
     </div>
   );
 };
