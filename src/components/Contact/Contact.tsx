@@ -318,18 +318,7 @@ const Contact = () => {
                   required
                 />
               </div>
-<<<<<<< HEAD
-=======
-
-              {/* Mensaje de estado */}
-              {submitStatus.message && (
-                <div 
-                  className={`alert ${getAlertClassName(submitStatus.success)} full-width`}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
->>>>>>> 673e1459d974073317059335ba0b314eeaa35f39
+              {/* Sección de mensajes de estado se maneja con toastify */}
             </div>
             <div className="button-wrapper">
               <button 
