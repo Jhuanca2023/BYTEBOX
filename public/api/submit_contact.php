@@ -33,6 +33,7 @@ $mensaje = "Nuevo mensaje de contacto\n\n";
 $mensaje .= "Nombre: " . htmlspecialchars($datos['nombre'] ?? '') . " " . htmlspecialchars($datos['apellido'] ?? '') . "\n";
 $mensaje .= "Email: " . htmlspecialchars($datos['email'] ?? '') . "\n";
 $mensaje .= "Empresa: " . htmlspecialchars($datos['empresa'] ?? '') . "\n";
+$mensaje .= "RUC: " . htmlspecialchars($datos['ruc'] ?? 'No especificado') . "\n";
 $mensaje .= "Ubicación: " . 
             htmlspecialchars($datos['departamento_nombre'] ?? '') . 
             ", " . htmlspecialchars($datos['provincia_nombre'] ?? '') . 

@@ -1,20 +1,49 @@
 /* Estilos personalizados para las notificaciones */
 .Toastify__toast-container {
-  margin-top: 20px;
-  z-index: 9999;
-  width: auto;
-  max-width: 90%;
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: auto !important;
+  max-width: 350px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  pointer-events: none !important;
 }
 
+/* Estilo para el contenedor de notificaciones en la esquina superior derecha */
+.Toastify__toast-container--top-right {
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+  left: auto !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+/* Ocultar el contenedor cuando no hay notificaciones */
+.Toastify__toast-container:empty {
+  display: none !important;
+}
+
+/* Estilo para el toast individual */
 .Toastify__toast {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 0 10px 0 !important;
+  padding: 12px 20px !important;
   background: rgba(0, 0, 0, 0.8) !important;
   color: #46d1f0 !important;
   border-radius: 8px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  padding: 12px 20px !important;
   font-family: var(--font-main, system-ui, -apple-system, sans-serif) !important;
   font-size: 14px !important;
   min-height: auto !important;
+  pointer-events: auto !important;
+  box-sizing: border-box !important;
 }
 
 .Toastify__progress-bar {

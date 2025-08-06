@@ -53,14 +53,51 @@ button {
 }
 
 button:hover {
+  filter: brightness(1.1);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 180, 216, 0.3);
 }
 
 button:focus,
 button:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.5);
+}
+
+/* Estilos para el contenedor de Toastify */
+.Toastify__toast-container {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
+
+.Toastify__toast-container--top-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 20px 0 0 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Asegurar que el contenedor no ocupe espacio cuando está vacío */
+.Toastify__toast-container:empty {
+  display: none !important;
 }
 
 @media (prefers-color-scheme: light) {

@@ -29,22 +29,6 @@ interface Departamento {
 }
 
 const Contact = () => {
-  // Helper function para obtener mensaje de error
-  const getErrorMessage = (error: unknown): string => {
-    if (error instanceof Error) {
-      return error.message;
-    }
-    return 'Error al enviar el mensaje';
-  };
-  
-  // Helper function para obtener clase de alerta
-  const getAlertClassName = (success: boolean | null): string => {
-    if (success === true) {
-      return 'alert-success';
-    }
-    return 'alert-error';
-  };
-  
   // Helper function para obtener texto del botón de envío
   const getSubmitButtonText = (submitting: boolean): string => {
     if (submitting) {
