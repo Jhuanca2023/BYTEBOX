@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import locationData from '../../assets/data/location.json';
 import './Contact.css';
 
@@ -28,22 +29,6 @@ interface Departamento {
 }
 
 const Contact = () => {
-  // Helper function para obtener mensaje de error
-  const getErrorMessage = (error: unknown): string => {
-    if (error instanceof Error) {
-      return error.message;
-    }
-    return 'Error al enviar el mensaje';
-  };
-  
-  // Helper function para obtener clase de alerta
-  const getAlertClassName = (success: boolean | null): string => {
-    if (success === true) {
-      return 'alert-success';
-    }
-    return 'alert-error';
-  };
-  
   // Helper function para obtener texto del botón de envío
   const getSubmitButtonText = (submitting: boolean): string => {
     if (submitting) {
@@ -59,7 +44,6 @@ const Contact = () => {
   const [provincias, setProvincias] = useState<Provincia[]>([]);
   const [distritos, setDistritos] = useState<Distrito[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{success: boolean | null, message: string}>({success: null, message: ''});
 
   // Estado para el formulario
   const [formData, setFormData] = useState({
@@ -140,13 +124,19 @@ const Contact = () => {
     }));
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({success: null, message: ''});
-
+    
     try {
-      const response = await fetch('http://localhost/BACKEND-PHP/backend/api/submit_contact.php', {
+      const response = await fetch('http://localhost/bytebox-web/api/submit_contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -157,7 +147,11 @@ const Contact = () => {
       const data = await response.json();
       
       if (response.ok) {
-        setSubmitStatus({success: true, message: '¡Mensaje enviado con éxito!'});
+        // Hacer scroll al inicio y luego mostrar la notificación
+        scrollToTop();
+        
+        toast.success('✅ ¡Mensaje enviado con éxito! Pronto nos pondremos en contacto contigo.');
+        
         // Resetear el formulario
         setFormData({
           nombre: '',
@@ -179,22 +173,20 @@ const Contact = () => {
         setProvincias([]);
         setDistritos([]);
       } else {
-        throw new Error(data.message || 'Error al enviar el mensaje');
+        throw new Error(data.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
       }
     } catch (error) {
-      // Log error for debugging purposes
-      const errorMessage = getErrorMessage(error);
-      setSubmitStatus({
-        success: false, 
-        message: errorMessage
-      });
+      console.error('Error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      toast.error('❌ ' + errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contacto" className="contact-section">
+    <>
+      <section id="contacto" className="contact-section">
       <div className="contact-container">
         <h2>Contáctanos</h2>
         <div className="contact-content">
@@ -310,15 +302,7 @@ const Contact = () => {
                   required
                 />
               </div>
-
-              {/* Mensaje de estado */}
-              {submitStatus.message && (
-                <div 
-                  className={`alert ${getAlertClassName(submitStatus.success)} full-width`}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
+              {/* Sección de mensajes de estado se maneja con toastify */}
             </div>
             <div className="button-wrapper">
               <button 
@@ -337,7 +321,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
