@@ -1,6 +1,25 @@
 const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
+// Habilitar CORS
+const allowCors = (handler) => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-V, Authorization'
+  );
+  
+  // Manejar solicitudes OPTIONS
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  
+  return await handler(req, res);
+};
+
+const handler = async (req, res) => {
   // Solo permitir método POST
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Método no permitido' });
@@ -24,14 +43,14 @@ export default async function handler(req, res) {
       port: process.env.SMTP_PORT || 465,
       secure: true,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD
+        user: process.env.SMTP_USER || 'tucorreo@gmail.com',
+        pass: process.env.SMTP_PASSWORD || 'tu_contraseña'
       }
     });
 
     // Configurar el correo
     const mailOptions = {
-      from: `"BYTEBOX Contacto" <${process.env.SMTP_FROM || 'noreply@bytebox.com'}>`,
+      from: `"BYTEBOX Contacto" <${process.env.SMTP_USER || 'tucorreo@gmail.com'}>`,
       to: process.env.TO_EMAIL || 'josehuanca612@gmail.com',
       subject: 'Nuevo mensaje de contacto de BYTEBOX',
       text: `
@@ -50,16 +69,20 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailOptions);
 
     // Responder con éxito
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       message: '¡Gracias por contactarnos! Hemos recibido tu mensaje correctamente.'
     });
 
   } catch (error) {
     console.error('Error al enviar el correo:', error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
-      message: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.'
+      message: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
-}
+};
+
+// Aplicar el middleware CORS al manejador
+export default allowCors(handler);
