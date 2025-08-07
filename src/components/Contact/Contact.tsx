@@ -135,10 +135,10 @@ const Contact = () => {
   const getApiBaseUrl = () => {
     // Si estamos en desarrollo, usamos la URL local
     if (process.env.NODE_ENV === 'development') {
-      return 'http://localhost/bytebox-web/api';
+      return '/api';
     }
-    // En producción, usamos la URL de la API en Vercel
-    return 'https://bytebox-api.vercel.app/api';
+    // En producción, usamos la ruta relativa a la API
+    return '/api';
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -146,7 +146,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(`${getApiBaseUrl()}/submit_contact.php`, {
+      const response = await fetch(`${getApiBaseUrl()}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

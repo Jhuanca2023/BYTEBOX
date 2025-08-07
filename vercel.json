@@ -9,8 +9,8 @@
       }
     },
     {
-      "src": "api/submit_contact.php",
-      "use": "@vercel/php@canary"
+      "src": "api/submit.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
