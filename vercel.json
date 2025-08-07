@@ -10,7 +10,7 @@
     },
     {
       "src": "api/submit_contact.php",
-      "use": "@vercel/php@canary"
+      "use": "@vercel/php"
     }
   ],
   "routes": [
