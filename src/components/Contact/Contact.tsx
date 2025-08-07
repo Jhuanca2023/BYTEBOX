@@ -146,17 +146,24 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      console.log('Enviando datos:', formData);
       const response = await fetch(`${getApiBaseUrl()}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(formData)
       });
 
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || 'Error al enviar el formulario');
+      }
+      
       const data = await response.json();
       
-      if (response.ok) {
+      if (data.success) {
         // Hacer scroll al inicio y luego mostrar la notificación
         scrollToTop();
         
