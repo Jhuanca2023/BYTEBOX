@@ -7,9 +7,17 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "api/submit_contact.php",
+      "use": "@vercel/php@canary"
     }
   ],
   "routes": [
+    {
+      "src": "^/api/(.*)",
+      "dest": "/api/submit_contact.php"
+    },
     {
       "src": "^/static/(.*)",
       "dest": "/static/$1"
