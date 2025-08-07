@@ -131,12 +131,22 @@ const Contact = () => {
     });
   };
 
+  // Función para obtener la URL base de la API según el entorno
+  const getApiBaseUrl = () => {
+    // Si estamos en desarrollo, usamos la URL local
+    if (process.env.NODE_ENV === 'development') {
+      return 'http://localhost/bytebox-web/api';
+    }
+    // En producción, usamos la URL de la API en Vercel
+    return 'https://bytebox-api.vercel.app/api';
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost/bytebox-web/api/submit_contact.php', {
+      const response = await fetch(`${getApiBaseUrl()}/submit_contact.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,19 +2,17 @@
 // Configuración de CORS para producción
 $allowedOrigins = [
     'http://localhost:3000',
-    'http://localhost:5173', // Puerto por defecto de Vite
+    'http://localhost:5173',
     'https://bytebox-virid.vercel.app',
     'https://bytebox-api.vercel.app'
 ];
 
-$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
 // Verificar si el origen está permitido
 if (in_array($origin, $allowedOrigins)) {
     header("Access-Control-Allow-Origin: " . $origin);
 } else {
-    // Opcional: Permitir cualquier origen en desarrollo
-    // header("Access-Control-Allow-Origin: *");
     http_response_code(403);
     echo json_encode(['success' => false, 'message' => 'Origen no permitido']);
     exit();
@@ -23,6 +21,7 @@ if (in_array($origin, $allowedOrigins)) {
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
+header('Content-Type: application/json');
 
 // Si es una solicitud OPTIONS, terminar la ejecución
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -30,14 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-header('Content-Type: application/json');
-
 // Configuración
-$destinatario = 'josehuanca612@gmail.com'; // Reemplaza con el correo de destino final
+$destinatario = 'josehuanca612@gmail.com';
 $asunto = 'Nuevo mensaje de contacto de BYTEBOX';
-
-// Configuración de email para producción
-ini_set('sendmail_from', 'noreply@tudominio.com'); // Reemplaza con tu dominio
 
 // Obtener los datos del formulario
 $input = file_get_contents('php://input');
@@ -54,7 +48,7 @@ if (empty($datos)) {
 $mensaje = "Nuevo mensaje de contacto\n\n";
 $mensaje .= "Nombre: " . htmlspecialchars($datos['nombre'] ?? '') . " " . htmlspecialchars($datos['apellido'] ?? '') . "\n";
 $mensaje .= "Email: " . htmlspecialchars($datos['email'] ?? '') . "\n";
-$mensaje .= "Empresa: " . htmlspecialchars($datos['empresa'] ?? '') . "\n";
+$mensaje .= "Empresa: " . htmlspecialchars($datos['empresa'] ?? 'No especificada') . "\n";
 $mensaje .= "RUC: " . htmlspecialchars($datos['ruc'] ?? 'No especificado') . "\n";
 $mensaje .= "Ubicación: " . 
             htmlspecialchars($datos['departamento_nombre'] ?? '') . 
@@ -63,50 +57,22 @@ $mensaje .= "Ubicación: " .
 $mensaje .= "Mensaje:\n" . htmlspecialchars($datos['objetivo'] ?? '');
 
 // Cabeceras del correo
-$headers = "From: " . ($datos['email'] ?? 'noreply@bytebox.com') . "\r\n";
-$headers .= "Reply-To: " . ($datos['email'] ?? '') . "\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers = [
+    'From' => 'noreply@bytebox.com',
+    'Reply-To' => $datos['email'] ?? 'noreply@bytebox.com',
+    'X-Mailer' => 'PHP/' . phpversion(),
+    'Content-Type' => 'text/plain; charset=UTF-8'
+];
 
 // Función para enviar email con manejo de errores
 function enviarEmail($destinatario, $asunto, $mensaje, $headers) {
-    // Opción 1: Usar la función mail() básica (puede no ser confiable en todos los servidores)
-    $enviado = @mail($destinatario, $asunto, $mensaje, $headers);
-    
-    // Opción 2: Usar PHPMailer (recomendado para producción)
-    // Descomenta el siguiente bloque y asegúrate de tener PHPMailer instalado
-    /*
-    require 'vendor/autoload.php';
-    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-    try {
-        // Configuración del servidor
-        $mail->isSMTP();
-        $mail->Host = 'smtp.tudominio.com'; // Reemplaza con tu servidor SMTP
-        $mail->SMTPAuth = true;
-        $mail->Username = 'tu@email.com'; // SMTP username
-        $mail->Password = 'tu_contraseña'; // SMTP password
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
-
-        // Remitente y destinatario
-        $mail->setFrom('noreply@tudominio.com', 'BYTEBOX Contacto');
-        $mail->addAddress($destinatario);
-        $mail->addReplyTo($datos['email'] ?? 'noreply@tudominio.com', $datos['nombre'] ?? '');
-
-        // Contenido
-        $mail->isHTML(false);
-        $mail->Subject = $asunto;
-        $mail->Body = $mensaje;
-
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log("Error al enviar correo: " . $mail->ErrorInfo);
-        return false;
+    // Usar la función mail() básica
+    $headerString = '';
+    foreach ($headers as $key => $value) {
+        $headerString .= "$key: $value\r\n";
     }
-    */
     
-    return $enviado;
+    return mail($destinatario, $asunto, $mensaje, $headerString);
 }
 
 // Intentar enviar el correo
@@ -124,7 +90,7 @@ if ($enviado) {
     echo json_encode([
         'success' => false, 
         'message' => 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.',
-        'error' => $error ? $error['message'] : 'Error desconocido'
+        'error' => $error ? $error['message'] : 'Error desconocido al enviar el correo.'
     ]);
 }
 ?>
