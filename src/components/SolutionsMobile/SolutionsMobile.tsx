@@ -31,9 +31,9 @@ const SolutionsMobile = () => {
       number: '03'
     },
     {
-      id: 'platform',
-      title: 'Plataforma',
-      description: 'Nuestra plataforma integral te permite gestionar todo el ciclo de vida de tus activos tecnológicos desde un solo lugar. Monitorea, gestiona y optimiza el uso de tus equipos con herramientas avanzadas de análisis y reportes en tiempo real.',
+      id: 'servicios',
+      title: 'Servicios',
+      description: 'Ofrecemos una gama completa de servicios tecnológicos para optimizar tu operación. Incluye soporte técnico especializado, mantenimiento preventivo, gestión de activos TI y soluciones personalizadas para garantizar el máximo rendimiento de tu infraestructura tecnológica.',
       number: '04'
     },
     {

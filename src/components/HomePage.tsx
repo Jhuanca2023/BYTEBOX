@@ -7,15 +7,14 @@ import Hero from './common/Hero';
 import Onboarding from './Onboarding/Onboarding';
 import Offboarding from './Offboarding/Offboarding';
 import Storage from './Storage/Storage';
-import Platform from './Platform/Platform';
-import Buyback from './Buyback/Buyback';
 import Hardware from './Hardware/Hardware';
-import PlatformSection from './Platform/PlatformSection';
-import WorldStats from './Platform/WorldStats';
+import Servicios from './Servicios/Servicios';
+import Buyback from './Buyback/Buyback';
 import Testimonials from './Testimonials/Testimonials';
 import Contact from './Contact/Contact';
 import Footer from './common/Footer';
 import SolutionsMobile from './SolutionsMobile/SolutionsMobile';
+import TechAccessories from './TechAccessories/TechAccessories';
 import './HomePage.css';
 
 type LocationState = {
@@ -63,22 +62,16 @@ const HomePage = () => {
             <Onboarding />
             <Offboarding />
             <Storage />
-            <Platform />
+            <Servicios />
             <Buyback />
+          </div>
+          
+          <div className="hardware-section-container" data-aos="fade-up" data-aos-delay="300">
+            <Hardware />
           </div>
         </section>
         
-        <div data-aos="fade-up">
-          <Hardware />
-        </div>
-        
-        <div data-aos="fade-up">
-          <PlatformSection />
-        </div>
-        
-        <div data-aos="fade-up">
-          <WorldStats />
-        </div>
+        <TechAccessories />
         
         <div data-aos="fade-up">
           <Testimonials />

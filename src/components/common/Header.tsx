@@ -14,10 +14,10 @@ const menuItems = [
     ],
   },
   {
-    label: 'Plataforma',
-    anchor: '#plataforma',
+    label: 'Servicios',
+    anchor: '#servicios',
     dropdown: [
-      { label: 'Plataforma centralizada', icon: <FaServer />, anchor: '#OUR_PLATFORM', external: false },
+      { label: 'Accesorios', icon: <FaServer />, anchor: '#accesorios', external: false },
       { label: 'Alianzas', icon: <FaHandshake />, anchor: '/alianzas', external: false },
     ],
   },

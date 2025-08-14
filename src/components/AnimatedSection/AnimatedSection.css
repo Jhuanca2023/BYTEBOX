@@ -1,0 +1,173 @@
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones de salida */
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+/* Efectos especiales */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animated-section {
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  animation-fill-mode: both;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: var(--animation-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.animated-section.animate {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.animated-section.animate-out {
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+/* Clases de animación de entrada */
+.animate.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animate.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.animate.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+/* Clases de animación de salida */
+.animate-out.fadeInUp {
+  animation-name: fadeOutDown;
+}
+
+.animate-out.fadeInLeft {
+  animation-name: fadeOutLeft;
+}
+
+.animate-out.fadeInRight {
+  animation-name: fadeOutRight;
+}
+
+/* Efectos especiales */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Efecto de brillo al hacer hover */
+.hover-glow {
+  transition: filter 0.3s ease;
+}
+
+.hover-glow:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+}
+
+/* Efecto de hover para elementos interactivos */
+.animated-section .hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.animated-section .hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Retrasos escalonados para elementos en lista */
+.animated-section .staggered-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-section.animate .staggered-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Aplicar retrasos escalonados */
+.animated-section.animate .staggered-item:nth-child(1) { transition-delay: 100ms; }
+.animated-section.animate .staggered-item:nth-child(2) { transition-delay: 200ms; }
+.animated-section.animate .staggered-item:nth-child(3) { transition-delay: 300ms; }
+.animated-section.animate .staggered-item:nth-child(4) { transition-delay: 400ms; }
+.animated-section.animate .staggered-item:nth-child(5) { transition-delay: 500ms; }
