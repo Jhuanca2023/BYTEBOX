@@ -16,9 +16,9 @@ const EnvioGarantia = () => {
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>ENVIOS GRATIS</span>
+                <span>ENVIOS DIARIOS</span>
               </p>
-              <p className="elementor-icon-box-description">A España Peninsular</p>
+              <p className="elementor-icon-box-description">A Nivel Nacional</p>
             </div>
           </div>
         </div>
