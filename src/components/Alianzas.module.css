@@ -31,6 +31,87 @@
   font-family: 'DM Sans', sans-serif;
 }
 
+/* Hero Section Styles */
+.heroSection {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../public/images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: left;
+  height: 100vh; /* Full viewport height */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto 0 0; /* Remove right auto margin and set left to 0 */
+  padding: 0 40px 0 10%; /* More padding on the left */
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.heroHighlight {
+  color: #46d1f0;
+  font-weight: 700;
+}
+
+.heroSection p {
+  font-size: 1.3rem;
+  margin: 20px 0 30px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+.hero-cta:hover::before {
+  opacity: 1;
+}
+
 .alianzasCards {
   display: flex;
   gap: 32px;
@@ -266,21 +347,53 @@
   background: linear-gradient(135deg, #46d1f0 0%, #0088A8 100%);
 }
 
-@media (max-width: 900px) {
-  .partnersGrid {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+@media (max-width: 992px) {
+  /* Ajustes generales para móviles y tablets */
+  .heroContent {
+    padding: 0 20px !important;
+    text-align: center !important;
+    align-items: center !important;
   }
-  .partnerCard {
-    width: 95vw;
-    min-width: 0;
-    max-width: 420px;
+
+  .heroTitle {
+    font-size: 2.8rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
   }
-  .partnerBtn {
-    right: 24px;
+
+  .heroSection p {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    margin: 0 auto 30px !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;
   }
-} 
+
+  .hero-cta {
+    margin: 0 auto !important;
+  }
+
+  .alianzasTitle, 
+  .partnersTitle {
+    font-size: 2rem !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+  }
+
+  .alianzasDesc,
+  .partnersDesc {
+    font-size: 1rem !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+  }
+  
+  /* Mantener el diseño original de las tarjetas */
+  .partnerDesc {
+    text-align: left !important;
+  }
+}
 
 .alianzas-hero-bg {
   background-image: url('/src/assets/images/alianzas.png');

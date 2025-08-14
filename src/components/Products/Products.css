@@ -185,22 +185,32 @@
   font-size: 0.9rem;
 }
 
-/* View Product Button */
-.btn-view-product {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
-  width: fit-content;
+/* View Product Button - Estilo específico para el botón de la sección de productos */
+.products-section .btn-view-product {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 1rem !important;
+  width: fit-content !important;
+  backdrop-filter: blur(5px) !important;
+  /* Sobrescribir cualquier otro estilo que pueda estar afectando */
+  background-image: none !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  box-shadow: none !important;
 }
 
-.btn-view-product:hover {
-  background-color: #5a6268;
+.products-section .btn-view-product:hover {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: none !important;
 }
 
 /* Product Reviews */

@@ -76,7 +76,7 @@ export const extraCards: CardProps[] = [
     highlight: 'Tecnológicos',
     desc: 'Soluciones IT personalizadas para potenciar tu negocio y mejorar la productividad de tu equipo.',
     category: 'servicios',
-    link: 'https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAac4vS63Y-4vl3B6AqbR049XVi4mC3PId9hPZ3gfGvti5RNNPuJAkrPeXORCDw_aem_aqFptyHHMUbiukqg1Bz58g&e=AT07G0uE5MtMMqKDNmWeYXIRpBGA8IdReSVDaaFZFeHixukdjXnEo3WCbHlvsSiG5EvBVcAAoEp69quWCqX3m2BuEQDZkKy3q5msUObIFBASM8camqQ6DFo'
+    link: '/servicios-it'
   },
   {
     img: 'image.png',
