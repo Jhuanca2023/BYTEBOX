@@ -11,6 +11,7 @@ const menuItems = [
       { label: 'Gestión de activos IT', icon: <FaLaptop />, anchor: '#onboarding', external: false },
       { label: 'Adquisicion de TI y Onboarding', icon: <FaLaptopCode />, anchor: '#onboarding', external: false },
       { label: 'Offboarding y retiro de equipos', icon: <FaLaptopHouse />, anchor: '#offboarding', external: false },
+      { label: 'Buyback de equipos', icon: <FaLaptop />, anchor: '/buyback', external: false },
     ],
   },
   {

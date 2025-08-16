@@ -1,0 +1,1571 @@
+.buyback-page {
+  padding-top: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.buyback-page .hero-section {
+  background: transparent;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  margin-top: -70px;
+}
+
+.buyback-page .hero-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.buyback-page .hero-text {
+  max-width: 500px;
+}
+
+.buyback-page .hero-badge {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.buyback-page .hero-badge i {
+  font-size: 1rem;
+}
+
+.buyback-page .hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+  color: #2c3e50;
+}
+
+.buyback-page .hero-description {
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  color: #6c757d;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.buyback-page .hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyback-page .hero-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.buyback-page .hero-image:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Services Cards Section */
+.buyback-page .services-cards {
+  padding: 6rem 0;
+  background: transparent;
+}
+
+.buyback-page .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .service-card {
+  background: #ececec;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.buyback-page .service-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.buyback-page .service-card .service-icon {
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.buyback-page .service-card .service-icon i {
+  color: #4ecdc4;
+  transition: color 0.3s ease;
+}
+
+.buyback-page .service-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+/* Efectos al hacer hover o estar activo */
+.buyback-page .service-card:hover,
+.buyback-page .service-card.active {
+  background: linear-gradient(135deg, #5a7db8 0%, #4a6ba3 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(90, 125, 184, 0.2);
+}
+
+.buyback-page .service-card:hover h3,
+.buyback-page .service-card.active h3 {
+  color: white;
+}
+
+.buyback-page .service-card:hover .service-icon,
+.buyback-page .service-card.active .service-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.buyback-page .service-card:hover .service-icon i,
+.buyback-page .service-card.active .service-icon i {
+  color: white;
+}
+
+.buyback-page .service-card:hover p,
+.buyback-page .service-card.active p {
+  max-height: 100px;
+  opacity: 1;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.buyback-page .service-card-primary:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.buyback-page .service-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.buyback-page .service-icon i {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.buyback-page .service-card-primary .service-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.buyback-page .service-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.buyback-page .service-card-primary h3 {
+  color: white;
+}
+
+.buyback-page .service-card p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.buyback-page .service-card:hover p,
+.buyback-page .service-card.active p {
+  max-height: 100px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.buyback-page .service-card-primary p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Resale Section */
+.buyback-page .resale-section {
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.buyback-page .resale-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .section-badge {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.buyback-page .resale-section h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+  text-shadow: none;
+}
+
+.buyback-page .resale-section h2::after {
+  display: none;
+}
+
+.buyback-page .section-description {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.buyback-page .faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buyback-page .resale-section .faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buyback-page .resale-section .faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.buyback-page .resale-section .faq-question {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buyback-page .resale-section .faq-item h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+/* Estilos para los iconos del FAQ */
+.buyback-page .faq-icon {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 10px;
+  line-height: 1;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.buyback-page .resale-section .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.buyback-page .resale-section .faq-answer p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.buyback-page .resale-section .faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+/* Rotación unificada para iconos activos */
+.buyback-page .faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.buyback-page .resale-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyback-page .main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease, opacity 0.3s ease;
+}
+
+.buyback-page .main-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Data Wiping Section */
+.buyback-page .data-wiping-section {
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.buyback-page .data-wiping-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .data-wiping-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyback-page .wiping-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease, opacity 0.3s ease;
+}
+
+.buyback-page .wiping-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.buyback-page .data-wiping-section .section-badge {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.buyback-page .data-wiping-section h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+  text-shadow: none;
+}
+
+.buyback-page .data-wiping-section h2::after {
+  display: none;
+}
+
+.buyback-page .data-wiping-section .section-description {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.buyback-page .data-wiping-section .faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buyback-page .data-wiping-section .faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buyback-page .data-wiping-section .faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.buyback-page .data-wiping-section .faq-question {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buyback-page .data-wiping-section .faq-item h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+/* Estilos de iconos unificados en .buyback-page .faq-icon */
+
+.buyback-page .data-wiping-section .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.buyback-page .data-wiping-section .faq-answer p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.buyback-page .data-wiping-section .faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+/* Rotación manejada por .buyback-page .faq-item.active .faq-icon */
+
+/* Recycling Section */
+.buyback-page .recycling-section {
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.buyback-page .recycling-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .recycling-section .section-badge {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.buyback-page .recycling-section h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  margin-left: 0;
+  transform: none;
+  text-shadow: none;
+}
+
+.buyback-page .recycling-section h2::after {
+  display: none;
+}
+
+.buyback-page .recycling-section .section-description {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.buyback-page .recycling-section .faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buyback-page .recycling-section .faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buyback-page .recycling-section .faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.buyback-page .recycling-section .faq-question {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buyback-page .recycling-section .faq-item h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+/* Estilos de iconos unificados en .buyback-page .faq-icon */
+
+.buyback-page .recycling-section .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.buyback-page .recycling-section .faq-answer p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.buyback-page .recycling-section .faq-item.active .faq-answer {
+  max-height: 250px;
+}
+
+/* Rotación manejada por .buyback-page .faq-item.active .faq-icon */
+
+.buyback-page .recycling-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyback-page .hero-cta-button {
+  background: #2c3e50;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+}
+
+.buyback-page .hero-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(44, 62, 80, 0.4);
+  background: #34495e;
+}
+
+.buyback-page .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.buyback-page .floating-devices {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.buyback-page .floating-device {
+  position: absolute;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.buyback-page .device-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  transform: rotate(-15deg);
+}
+
+.buyback-page .device-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+  transform: rotate(10deg);
+}
+
+.buyback-page .device-3 {
+  top: 40%;
+  left: 70%;
+  animation-delay: 4s;
+  transform: rotate(-5deg);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-20px) rotate(var(--rotation, 0deg)); }
+}
+
+.buyback-page .hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+  opacity: 0.4;
+}
+
+.buyback-page .hero-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.buyback-page h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+  font-size: 2.75rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.buyback-page h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  border-radius: 2px;
+}
+
+.buyback-page .benefits h2,
+.buyback-page .equipment-types h2,
+.buyback-page .faq-section h2 {
+  color: #2c3e50;
+  text-shadow: none;
+}
+
+.buyback-page .benefits h2::after,
+.buyback-page .equipment-types h2::after,
+.buyback-page .faq-section h2::after {
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}
+
+.buyback-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.buyback-page .step {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4ecdc4, #44a08d);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buyback-page .step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.buyback-page .step:hover::before {
+  opacity: 1;
+}
+
+.buyback-page .step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+  position: relative;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.6; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.buyback-page .step h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.buyback-page .step p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.buyback-page .step-icon {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.buyback-page .step-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.buyback-page .step:hover .step-image {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+/* Benefits Section */
+.buyback-page .benefits {
+  padding: 8rem 0;
+  background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .benefits .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .benefits-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8rem 0 4rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.buyback-page .benefits-content {
+  position: sticky;
+  top: 8rem;
+  max-width: 500px;
+  margin: 0;
+  padding: 0;
+  padding-right: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .buyback-page .benefits-content h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .buyback-page .benefits-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .buyback-page .benefits-content {
+    position: static;
+    max-width: 100%;
+    padding: 0 2rem;
+    margin: 0;
+  }
+  
+  .buyback-page .benefits-content h2 {
+    text-align: center;
+    padding-left: 0;
+    font-size: 2.5rem;
+  }
+  
+  .buyback-page .benefits-content h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    top: auto;
+    bottom: -15px;
+  }
+}
+
+.buyback-page .benefits-content {
+  position: sticky;
+  top: 8rem;
+  max-width: 500px;
+  margin: 0;
+  padding: 0;
+  padding-right: 2rem;
+}
+
+.buyback-page .benefits-content h2 {
+  font-size: 3.5rem;
+  color: #2c3e50;
+  margin: 0 0 0 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: left;
+  padding-left: 2.5rem;
+  position: relative;
+  letter-spacing: -0.5px;
+  max-width: 500px;
+}
+
+.buyback-page .benefits-content h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #4ecdc4, #ff6b6b);
+  border-radius: 2px;
+}
+
+.buyback-page .benefits-accordion {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.buyback-page .accordion-item {
+  border-bottom: 1px solid #eee;
+}
+
+.buyback-page .accordion-item:last-child {
+  border-bottom: none;
+}
+
+.buyback-page .accordion-header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buyback-page .accordion-header:hover {
+  background: #f8f9fa;
+}
+
+.buyback-page .accordion-icon {
+  font-size: 1.5rem;
+  color: #4ecdc4;
+  transition: transform 0.3s ease;
+}
+
+.buyback-page .accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+  color: #ff6b6b;
+}
+
+.buyback-page .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #fff;
+}
+
+.buyback-page .accordion-body {
+  padding: 0 2rem 1.5rem;
+  color: #6c757d;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.buyback-page .accordion-item.active .accordion-content {
+  max-height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .buyback-page .benefits-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .buyback-page .benefits-content {
+    position: static;
+    text-align: center;
+  }
+  
+  .buyback-page .benefits-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .buyback-page .benefits {
+    padding: 5rem 0;
+  }
+  
+  .buyback-page .benefits-content h2 {
+    font-size: 2rem;
+  }
+  
+  .buyback-page .accordion-header {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .buyback-page .accordion-body {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Equipment Types Section */
+.buyback-page .equipment-types {
+  padding: 8rem 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .equipment-types::before {
+  display: none;
+}
+
+.buyback-page .equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.buyback-page .equipment-category {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .equipment-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.buyback-page .category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.buyback-page .category-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(69, 183, 209, 0.3);
+  transition: all 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+.buyback-page .equipment-category:hover .category-image {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(69, 183, 209, 0.5);
+}
+
+.buyback-page .equipment-category h3 {
+  color: #1a237e;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buyback-page .equipment-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.buyback-page .equipment-category li {
+  padding: 0.75rem 0;
+  color: #555;
+  font-size: 1.05rem;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.buyback-page .equipment-category li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.buyback-page .equipment-category li:hover::before {
+  transform: translateX(5px);
+}
+
+/* Animaciones de scroll */
+.buyback-page .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.buyback-page .animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.buyback-page .step.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.buyback-page .step.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.buyback-page .step.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.buyback-page .step.animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+
+.buyback-page .benefit.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.buyback-page .benefit.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.buyback-page .benefit.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.buyback-page .benefit.animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+
+.buyback-page .equipment-category.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.buyback-page .equipment-category.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.buyback-page .equipment-category.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .buyback-page .hero-content {
+    margin-left: 2rem;
+    gap: 2rem;
+  }
+  
+  .buyback-page .hero-section h1 {
+    font-size: 2.3rem;
+  }
+  
+  .buyback-page .hero-image {
+    max-width: 480px;
+  }
+  
+  .buyback-page .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .buyback-page .service-card-primary {
+    transform: none;
+  }
+  
+  .buyback-page .resale-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .buyback-page .resale-image {
+    order: -1;
+  }
+  
+  .buyback-page .data-wiping-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .buyback-page .recycling-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .buyback-page .steps-grid,
+  .buyback-page .benefits-grid,
+  .buyback-page .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .buyback-page .hero-section {
+    padding: 2rem 0;
+    margin-top: -30px;
+  }
+  
+  .buyback-page .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  .buyback-page .hero-text {
+    order: 1;
+    max-width: 100%;
+  }
+  
+  .buyback-page .hero-visual {
+    order: 2;
+  }
+  
+  .buyback-page .hero-section h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .buyback-page .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .buyback-page .hero-image {
+    max-width: 90%;
+  }
+  
+  .buyback-page h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* CTA Section */
+.buyback-page .cta-section {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  opacity: 0.3;
+}
+
+.buyback-page .cta-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .cta-section h2 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.buyback-page .cta-section h2::after {
+  display: none;
+}
+
+.buyback-page .cta-section p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.buyback-page .cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.buyback-page .btn {
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.buyback-page .btn-primary {
+  background: white;
+  color: #4ecdc4;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.buyback-page .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+  color: #44a08d;
+}
+
+.buyback-page .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.buyback-page .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: white;
+}
+
+.buyback-page .trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.buyback-page .badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.buyback-page .badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* FAQ Section */
+.buyback-page .faq-section {
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.buyback-page .faq-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.buyback-page .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.buyback-page .faq-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buyback-page .faq-question {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.buyback-page .faq-item h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+/* Estilos de .faq-icon ya definidos arriba */
+
+.buyback-page .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 2rem;
+}
+
+.buyback-page .faq-answer p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.buyback-page .faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.buyback-page .faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .buyback-page .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .buyback-page .cta-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .buyback-page .cta-section p {
+    font-size: 1.2rem;
+  }
+  
+  .buyback-page .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buyback-page .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .buyback-page .trust-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .buyback-page .hero-section {
+    padding: 1rem 0;
+    margin-top: -20px;
+  }
+  
+  .buyback-page .hero-content {
+    gap: 1.5rem;
+    margin-left: 0;
+  }
+  
+  .buyback-page .hero-section h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .buyback-page .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .buyback-page .hero-badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .buyback-page .hero-image {
+    max-width: 95%;
+  }
+  
+  .buyback-page .hero-cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .buyback-page .steps-grid,
+  .buyback-page .benefits-grid,
+  .buyback-page .equipment-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+  
+  .buyback-page h2 {
+    font-size: 2rem;
+  }
+  
+  .buyback-page .step,
+  .buyback-page .benefit,
+  .buyback-page .equipment-category {
+    padding: 2rem 1.5rem;
+  }
+  
+  .buyback-page .cta-section {
+    padding: 6rem 0;
+  }
+  
+  .buyback-page .cta-section h2 {
+    font-size: 2.25rem;
+  }
+  
+  .buyback-page .faq-grid {
+    gap: 1.5rem;
+  }
+  
+  .buyback-page .faq-item {
+    padding: 2rem 1.5rem;
+  }
+}
