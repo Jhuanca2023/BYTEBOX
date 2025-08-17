@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import womanImage from '../../assets/images/mujer.png';
+import womanImage from '../../assets/images/hero-woman.png';
 
 const Bubbles = () => {
   return (
