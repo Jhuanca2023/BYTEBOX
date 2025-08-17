@@ -984,20 +984,6 @@ footer {
     margin-left: 0;
     gap: 8px;
   }
-  .menu-toggle {
-    display: block;
-    position: relative;
-    top: auto;
-    right: auto;
-    z-index: 300;
-  }
-  .main-nav.open ~ .menu-toggle,
-  .menu-toggle.menu-toggle-fixed {
-    position: fixed;
-    top: 32px;
-    right: 32px;
-    z-index: 999;
-  }
 }
 @media (max-width: 600px) {
   .bubble-header {
@@ -1812,37 +1798,6 @@ main section {
   margin-top: -8px;
 }
 
-/* Botón hamburguesa */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 12px;
-  z-index: 300;
-}
-.menu-icon {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  display: block;
-  position: relative;
-  border-radius: 2px;
-}
-.menu-icon::before,
-.menu-icon::after {
-  content: '';
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  position: absolute;
-  left: 0;
-  border-radius: 2px;
-  transition: 0.2s;
-}
-.menu-icon::before { top: -9px; }
-.menu-icon::after { top: 9px; }
-
 /* Responsive menú */
 @media (max-width: 900px) {
   .bubble-header-inner {
@@ -1858,20 +1813,6 @@ main section {
   .bubble-header .header-actions {
     margin-left: 0;
     gap: 8px;
-  }
-  .menu-toggle {
-    display: block;
-    position: relative;
-    top: auto;
-    right: auto;
-    z-index: 300;
-  }
-  .main-nav.open ~ .menu-toggle,
-  .menu-toggle.menu-toggle-fixed {
-    position: fixed;
-    top: 32px;
-    right: 32px;
-    z-index: 999;
   }
   .main-nav {
     position: fixed;
@@ -1889,9 +1830,6 @@ main section {
     flex-direction: column;
     padding: 100px 0 40px 0;
     overflow-y: auto;
-  }
-  .main-nav.open {
-    right: 0;
   }
   .main-nav ul {
     flex-direction: column;
@@ -1954,7 +1892,4 @@ main section {
     margin-left: 8px;
   }
   
-  .has-dropdown.open .arrow .arrow-icon {
-    transform: rotate(180deg);
-  }
 }

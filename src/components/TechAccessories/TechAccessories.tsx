@@ -1,10 +1,23 @@
+import { useEffect } from 'react';
 import AnimatedSection from '../AnimatedSection/AnimatedSection';
 import './TechAccessories.css';
 import techImage from '../../assets/images/lapto-.png';
 
 const TechAccessories = () => {
+  // Efecto para manejar el scroll cuando se carga desde otra ruta
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#accesorios') {
+      const element = document.getElementById('accesorios');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
-    <AnimatedSection className="tech-accessories-section" animationType="fadeInUp">
+    <div id="accesorios">
+      <AnimatedSection className="tech-accessories-section" animationType="fadeInUp">
       <h2 className="tech-accessories-title">
         <span style={{ color: '#000' }}>TECH</span>{' '}
         <span style={{ color: '#46d1f0' }}>ACCESSORIES</span>
@@ -41,7 +54,8 @@ const TechAccessories = () => {
           </div>
         </AnimatedSection>
       </div>
-    </AnimatedSection>
+      </AnimatedSection>
+    </div>
   );
 };
 
