@@ -101,25 +101,24 @@ const SobreNosotros = () => (
     <main className="main-content">
       <div className="container">
         {/* Nuestra Historia */}
-        <section className="feature-card">
+        <section className="feature-card" data-aos="fade-up" data-aos-delay="50">
           <div className="card-content-wrapper">
-            <div className="card-image">
-
+            <div className="card-image" data-aos="fade-up" data-aos-delay="100">
               <img src="https://imgs.search.brave.com/LEunqW-oXi2Pcsy-l0KlF3JbVkJTh0lfUpsS_bJFQ4g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdDUu/ZGVwb3NpdHBob3Rv/cy5jb20vMTI5ODIz/NzgvNjcxNDEvaS80/NTAvZGVwb3NpdHBo/b3Rvc182NzE0MTQ4/Mjgtc3RvY2stcGhv/dG8tYW1hemVkLWlu/dGVycmFjaWFsLWNv/dXBsZS1vcGVuLW1v/dXRoLmpwZw" alt="Personas" className="person-img" />
-              <div className="card-badge">
+              <div className="card-badge" data-aos="fade-up" data-aos-delay="150">
                 <span className="badge-icon">📈</span>
                 <span className="badge-text">WELCOMING</span>
               </div>
             </div>
-            <div className="card-text">
+            <div className="card-text" data-aos="fade-up" data-aos-delay="200">
               <div className="card-header">
-                <h3 className="card-subtitle">El día que...</h3>
-                <h2 className="card-title">encontraste tu lugar en nuestro equipo.</h2>
+                <h3 className="card-subtitle" data-aos="fade-up" data-aos-delay="250">El día que...</h3>
+                <h2 className="card-title" data-aos="fade-up" data-aos-delay="300">encontraste tu lugar en nuestro equipo.</h2>
               </div>
-              <p className="card-description">
+              <p className="card-description" data-aos="fade-up" data-aos-delay="350">
                 Bytebox nació con la visión de transformar la manera en que las empresas acceden a tecnología de calidad. Desde 2018, hemos crecido hasta operar en más de 120 países, construyendo relaciones sólidas y duraderas.
               </p>
-              <div className="card-quote">
+              <div className="card-quote" data-aos="fade-up" data-aos-delay="400">
                 <blockquote>
                   "El viernes de mi primera semana, le dije a mi esposa que en mis 20+ años de carrera, nunca me sentí tan bienvenido en un nuevo trabajo."
                 </blockquote>
@@ -136,17 +135,17 @@ const SobreNosotros = () => (
         </section>
 
         {/* Nuestra Misión */}
-        <section className="feature-card reverse">
+        <section className="feature-card reverse" data-aos="fade-up" data-aos-delay="50">
           <div className="card-content-wrapper">
-            <div className="card-text">
+            <div className="card-text" data-aos="fade-up" data-aos-delay="100">
               <div className="card-header">
-                <h3 className="card-subtitle">El día que...</h3>
-                <h2 className="card-title">sales de tu zona de confort.</h2>
+                <h3 className="card-subtitle" data-aos="fade-up" data-aos-delay="150">El día que...</h3>
+                <h2 className="card-title" data-aos="fade-up" data-aos-delay="200">sales de tu zona de confort.</h2>
               </div>
-              <p className="card-description">
+              <p className="card-description" data-aos="fade-up" data-aos-delay="250">
                 Nuestra misión es brindar productos tecnológicos de vanguardia que potencien la conectividad y productividad. No podemos construir algo excepcional jugando a lo seguro. Desafiamos nuestras suposiciones.
               </p>
-              <div className="card-quote">
+              <div className="card-quote" data-aos="fade-up" data-aos-delay="300">
                 <blockquote>
                   "La mayoría de las empresas hablan sobre cómo resuelven problemas interesantes. Escribo un blog sobre las soluciones que usamos para resolver esos problemas."
                 </blockquote>
@@ -159,10 +158,9 @@ const SobreNosotros = () => (
                 </div>
               </div>
             </div>
-            <div className="card-image">
-
+            <div className="card-image" data-aos="fade-up" data-aos-delay="100">
               <img src="https://cdn.create.vista.com/api/media/medium/687613252/stock-photo-cheerful-young-multicultural-women-using-smartphones-standing-orange-background?token=" alt="Personas" className="person-img" />
-              <div className="card-badge empowering">
+              <div className="card-badge empowering" data-aos="fade-up" data-aos-delay="150">
                 <span className="badge-icon">⚡</span>
                 <span className="badge-text">EMPOWERING</span>
               </div>
@@ -171,25 +169,24 @@ const SobreNosotros = () => (
         </section>
 
         {/* Conectividad Global */}
-        <section className="feature-card">
+        <section className="feature-card" data-aos="fade-up" data-aos-delay="50">
           <div className="card-content-wrapper">
-            <div className="card-image">
+            <div className="card-image" data-aos="fade-up" data-aos-delay="100">
               <img src={nosotros3Img} alt="Conectividad" className="feature-img" />
-
-              <div className="card-badge curious">
+              <div className="card-badge curious" data-aos="fade-up" data-aos-delay="150">
                 <span className="badge-icon">🔍</span>
                 <span className="badge-text">CURIOUS</span>
               </div>
             </div>
-            <div className="card-text">
+            <div className="card-text" data-aos="fade-up" data-aos-delay="200">
               <div className="card-header">
-                <h3 className="card-subtitle">El día que...</h3>
-                <h2 className="card-title">alcanzas el siguiente nivel.</h2>
+                <h3 className="card-subtitle" data-aos="fade-up" data-aos-delay="250">El día que...</h3>
+                <h2 className="card-title" data-aos="fade-up" data-aos-delay="300">alcanzas el siguiente nivel.</h2>
               </div>
-              <p className="card-description">
+              <p className="card-description" data-aos="fade-up" data-aos-delay="350">
                 Conectividad Global significa que los equipos tecnológicos son habilitadores de la conectividad mundial. No solo vendemos productos; creamos oportunidades. Estamos listos para llevarte al siguiente nivel.
               </p>
-              <div className="card-quote">
+              <div className="card-quote" data-aos="fade-up" data-aos-delay="400">
                 <blockquote>
                   "ByteBox ha sido fundamental para apoyar mis objetivos profesionales y cultivar las habilidades que traje. Ser un stakeholder me permite abogar por el futuro aquí."
                 </blockquote>
