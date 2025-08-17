@@ -4,6 +4,14 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   base: './',
+  resolve: {
+    alias: [
+      {
+        find: /^@\/assets\/(.*)/,
+        replacement: '/src/assets/$1',
+      },
+    ],
+  },
   server: {
     port: 3000
   },
