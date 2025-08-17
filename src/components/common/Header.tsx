@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaLaptop, FaLaptopCode, FaLaptopHouse, FaServer, FaHandshake, FaInfoCircle, FaPaintBrush, FaChartLine, FaFileAlt } from 'react-icons/fa';
@@ -59,6 +59,8 @@ const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -111,60 +113,82 @@ const Header: React.FC = () => {
   const navItemStyle: React.CSSProperties = {
     position: 'relative',
     listStyle: 'none',
-    padding: '5px 0'
+    padding: '0',
+    margin: '0 5px'
   };
   
   const navLinkStyle: React.CSSProperties = {
     color: '#fff',
     textDecoration: 'none',
-    fontSize: '16px',
+    fontSize: '15px',
     fontWeight: 500,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '8px 15px',
+    padding: '10px 12px',
     borderRadius: '4px',
-    transition: 'all 0.3s ease'
+    transition: 'all 0.2s ease',
+    whiteSpace: 'nowrap'
+  };
+
+  // Add a small invisible area above the dropdown to prevent it from closing
+  const dropdownContainerStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: '100%',
+    left: '0',
+    paddingTop: '10px', // This creates a gap between menu and dropdown
+    zIndex: 1000,
+    pointerEvents: 'none' // Allow clicks to pass through to elements below
   };
 
   const dropdownStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '100%',
-    left: '50%',
-    transform: 'translateX(-50%)',
+    position: 'relative',
     backgroundColor: '#fff',
     borderRadius: '8px',
     padding: '8px 0',
-    minWidth: '220px',
-    zIndex: 1000,
-    marginTop: '10px',
+    minWidth: '240px',
     listStyle: 'none',
-    animation: 'fadeIn 0.2s ease-out forwards',
+    animation: 'fadeIn 0.15s ease-out forwards',
     opacity: 0,
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-    border: '1px solid #f0f0f0'
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    border: '1px solid #e0e0e0',
+    pointerEvents: 'auto',
+    textAlign: 'left'
   };
   
-  const dropdownItemStyle: React.CSSProperties = {
+  const dropdownItemStyle: React.CSSProperties & {
+    '&:hover'?: React.CSSProperties;
+  } = {
     display: 'flex',
     alignItems: 'center',
-    padding: '12px 20px',
+    padding: '10px 16px',
     color: '#333',
     textDecoration: 'none',
     transition: 'all 0.2s ease',
     gap: '12px',
-    backgroundColor: '#fff'
+    backgroundColor: 'transparent',
+    border: 'none',
+    width: '100%',
+    textAlign: 'left',
+    fontSize: '14px',
+    fontWeight: '500',
+    cursor: 'pointer',
+    borderRadius: '0'
   };
 
   const iconStyle = {
-    color: '#6c757d', // Color plomo/gris
-    fontSize: '18px',
+    color: '#46d1f0',
+    fontSize: '14px',
     minWidth: '24px',
+    height: '24px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    transition: 'color 0.2s ease'
+    backgroundColor: 'rgba(70, 209, 240, 0.1)',
+    borderRadius: '6px',
+    transition: 'all 0.2s ease',
+    marginRight: '8px'
   };
 
   useEffect(() => {
@@ -198,11 +222,35 @@ setOpenDropdown(null);
   };
 
   const handleMouseEnter = (label: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
     setOpenDropdown(label);
+    setIsHovering(true);
   };
 
   const handleMouseLeave = () => {
-    setOpenDropdown(null);
+    dropdownTimeoutRef.current = setTimeout(() => {
+      if (!isHovering) {
+        setOpenDropdown(null);
+      }
+    }, 500); // Increased to 500ms for better usability
+  };
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setIsHovering(true);
+  };
+
+  const handleDropdownLeave = () => {
+    setIsHovering(false);
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 500); // Increased to 500ms for better usability
   };
 
 
@@ -225,6 +273,7 @@ setOpenDropdown(null);
                 style={navItemStyle}
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
+                onFocus={() => handleMouseEnter(item.label)}
               >
                 <a 
                   href={item.anchor}
@@ -266,7 +315,16 @@ setOpenDropdown(null);
                   )}
                 </a>
                 {item.dropdown && openDropdown === item.label && (
-                  <ul style={dropdownStyle}>
+                  <div 
+                    style={dropdownContainerStyle}
+                    onMouseEnter={handleDropdownEnter}
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    <ul 
+                      style={dropdownStyle}
+                      onMouseEnter={handleDropdownEnter}
+                      onMouseLeave={handleDropdownLeave}
+                    >
                     {item.dropdown.map(subItem => (
                       <li key={subItem.label} style={{ padding: 0 }}>
                         <a
@@ -282,17 +340,14 @@ setOpenDropdown(null);
                             }
                           }}
                           style={dropdownItemStyle}
+                          className="dropdown-item"
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = '#f8f9fa';
-                            // Cambiar el color del ícono a verde al hacer hover
                             const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
                             if (icon) {
                               icon.style.color = '#46d1f0';
                             }
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = '#fff';
-                            // Restaurar el color del ícono a plomo al salir
                             const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
                             if (icon) {
                               icon.style.color = '#6c757d';
@@ -304,7 +359,8 @@ setOpenDropdown(null);
                         </a>
                       </li>
                     ))}
-                  </ul>
+                    </ul>
+                  </div>
                 )}
               </li>
             ))}
