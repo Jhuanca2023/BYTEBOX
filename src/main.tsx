@@ -1,4 +1,9 @@
 import { createRoot } from 'react-dom/client';
+
+// Importar estilos base
+import './styles/normalize.css';
+import './styles/variables.css';
+import './styles/grid.css';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
