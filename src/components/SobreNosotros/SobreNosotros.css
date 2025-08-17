@@ -275,6 +275,7 @@
   box-shadow: none;
   transition: none;
   width: 100%;
+  padding: 2rem; /* Agregado padding para separar la sombra azul del borde */
 }
 
 .feature-card:hover {
@@ -298,28 +299,29 @@
 .card-image {
   position: relative;
   height: 400px;
-  overflow: visible;
+  overflow: hidden; /* Cambiado de visible a hidden para controlar mejor */
   background: rgba(0, 162, 200, 0.15); /* celeste claro */
   border-radius: 30px;
   display: flex;
-  align-items: flex-end;
+  align-items: center; /* Cambiado de flex-end a center */
   justify-content: center;
-  padding-bottom: 0;
+  padding: 1px;
   width: 100%;
 }
 
 .person-img {
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  position: relative; /* Cambiado de absolute a relative */
+  height: 90%; /* Cambiado de 100% a 90% */
+  max-width: 90%; /* Agregado max-width para control */
+  object-fit: cover; /* Cambiado de contain a cover */
+  border-radius: 20px; /* Agregado border-radius para mejor apariencia */
 }
 
 .feature-img {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
+  width: 90%; /* Cambiado de auto a 90% */
+  height: 90%; /* Cambiado de 100% a 90% */
+  object-fit: cover; /* Cambiado de contain a cover */
+  border-radius: 20px; /* Agregado border-radius para mejor apariencia */
 }
 
 .card-badge {
@@ -349,6 +351,21 @@
 
 .badge-icon {
   font-size: 1rem;
+  color: white;
+}
+
+.quote-icon {
+  font-size: 1.5rem;
+  color: #6366f1;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+.author-icon {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-right: 0.5rem;
+  opacity: 0.6;
 }
 
 .card-text {
@@ -439,6 +456,7 @@
   
   .feature-card {
     margin: 2rem 0;
+    padding: 1.5rem; /* Reducido para móviles pero manteniendo separación */
   }
   
   .card-content-wrapper {
@@ -461,6 +479,13 @@
   
   .card-image {
     height: 250px;
+    padding: 1px;
+  }
+  
+  .person-img,
+  .feature-img {
+    height: 85%; /* Ajustado para móviles */
+    max-width: 85%;
   }
   
   .card-text {
@@ -495,10 +520,18 @@
   .feature-card {
     margin: 1.5rem 0;
     border-radius: 15px;
+    padding: 1rem; /* Reducido para pantallas muy pequeñas pero manteniendo separación */
   }
   
   .card-image {
     height: 200px;
+    padding: 1px; 
+  }
+  
+  .person-img,
+  .feature-img {
+    height: 80%; /* Ajustado para pantallas muy pequeñas */
+    max-width: 80%;
   }
   
   .card-text {
