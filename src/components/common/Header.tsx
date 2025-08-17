@@ -1,9 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
+import { useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaLaptop, FaLaptopCode, FaLaptopHouse, FaServer, FaHandshake, FaInfoCircle, FaPaintBrush, FaChartLine, FaFileAlt } from 'react-icons/fa';
+import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
 
-const menuItems = [
+interface DropdownItem {
+  label: string;
+  icon: ReactNode;
+  anchor: string;
+  external?: boolean;
+}
+
+interface MenuItem {
+  label: string;
+  anchor: string;
+  dropdown?: DropdownItem[];
+}
+
+const menuItems: MenuItem[] = [
   {
     label: 'Soluciones',
     anchor: '#soluciones',
@@ -43,21 +57,104 @@ const menuItems = [
 
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const location = useLocation();
+  
+  // Moved styles outside to avoid recreation on every render
+  const headerStyle: React.CSSProperties = {
+    backgroundColor: 'transparent',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1000,
+    padding: '20px 0',
+    transition: 'all 0.3s ease',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+  };
+  
+  const containerStyle: React.CSSProperties = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  };
+  
+  const navListStyle: React.CSSProperties = {
+    display: 'flex',
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+    gap: '30px'
+  };
+  
+  const navItemStyle: React.CSSProperties = {
+    position: 'relative',
+    listStyle: 'none',
+    padding: '5px 0'
+  };
+  
+  const navLinkStyle: React.CSSProperties = {
+    color: '#fff',
+    textDecoration: 'none',
+    fontSize: '16px',
+    fontWeight: 500,
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    padding: '8px 15px',
+    borderRadius: '4px',
+    transition: 'all 0.3s ease'
+  };
+
+  const dropdownStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: '100%',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    padding: '8px 0',
+    minWidth: '220px',
+    zIndex: 1000,
+    marginTop: '10px',
+    listStyle: 'none',
+    animation: 'fadeIn 0.2s ease-out forwards',
+    opacity: 0,
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+    border: '1px solid #f0f0f0'
+  };
+  
+  const dropdownItemStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '12px 20px',
+    color: '#333',
+    textDecoration: 'none',
+    transition: 'all 0.2s ease',
+    gap: '12px',
+    backgroundColor: '#fff'
+  };
+
+  const iconStyle = {
+    color: '#6c757d', // Color plomo/gris
+    fontSize: '18px',
+    minWidth: '24px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    transition: 'color 0.2s ease'
+  };
 
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setOpenDropdown(null);
+setOpenDropdown(null);
   }, [location.pathname]);
 
   const handleDropdownClick = (label: string) => {
-    if (openDropdown === label) {
-      setOpenDropdown(null);
-    } else {
-      setOpenDropdown(label);
-    }
+    setOpenDropdown(current => current === label ? null : label);
   };
 
   const handleAnchorNavigation = (path: string) => {
@@ -71,170 +168,121 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleExternalNavigation = (path: string) => {
-    window.open(path, '_blank');
-  };
 
   const handleInternalNavigation = (path: string) => {
-    navigate(path);
-  };
-
-  const handleAnchorNavigationWithEvent = (_e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    _e.preventDefault();
-    handleAnchorNavigation(path);
-  };
-
-  const handleRegularNavigation = (_e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     if (path.startsWith('http')) {
-      handleExternalNavigation(path);
+      window.open(path, '_blank', 'noopener,noreferrer');
+    } else if (path.startsWith('#')) {
+      handleAnchorNavigation(path);
     } else {
-      handleInternalNavigation(path);
-    }
-  };
-
-  const getArrowClassName = (itemLabel: string) => {
-    if (openDropdown === itemLabel) {
-      return 'arrow arrow-active';
-    }
-    return 'arrow';
-  };
-
-  const getTargetAttribute = (isExternal: boolean) => {
-    if (isExternal) {
-      return '_blank';
-    }
-    return '_self';
-  };
-
-  const getRelAttribute = (isExternal: boolean) => {
-    if (isExternal) {
-      return 'noopener noreferrer';
-    }
-    return '';
-  };
-
-  const handleMenuToggle = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const handleMobileDropdownClick = (label: string) => {
-    if (mobileMenuOpen) {
-      handleDropdownClick(label);
+      navigate(path);
     }
   };
 
   const handleMouseEnter = (label: string) => {
-    if (!mobileMenuOpen) {
-      setOpenDropdown(label);
-    }
+    setOpenDropdown(label);
   };
 
   const handleMouseLeave = () => {
-    if (!mobileMenuOpen) {
-      setOpenDropdown(null);
-    }
+    setOpenDropdown(null);
   };
 
-  const getMenuToggleClassName = () => {
-    if (mobileMenuOpen) {
-      return 'menu-toggle menu-toggle-fixed';
-    }
-    return 'menu-toggle';
-  };
 
-  const getMainNavClassName = () => {
-    if (mobileMenuOpen) {
-      return 'main-nav open';
-    }
-    return 'main-nav';
-  };
-
-  const getHasDropdownClassName = (hasDropdown: boolean) => {
-    if (hasDropdown) {
-      return 'has-dropdown';
-    }
-    return '';
-  };
 
   return (
-    <header className="main-header bubble-header">
-      <div className="bubble-header-inner">
-        <div className="logo">
-          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <img
-              src={logo}
-              alt="Logo Bytebox"
-              className="logo-img-header"
-            />
-          </a>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', gap: 12 }}>
-          <button
-            className={getMenuToggleClassName()}
-            aria-label="Abrir menú"
-            onClick={handleMenuToggle}
-          >
-            <span className="menu-icon" />
-          </button>
-        </div>
-        <nav className={getMainNavClassName()}>
-          <ul>
+    <header style={headerStyle}>
+      <div style={containerStyle}>
+        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <img
+            src={logo}
+            alt="Logo Bytebox"
+            style={{ height: '40px', width: 'auto' }}
+          />
+        </a>
+        <nav>
+          <ul style={navListStyle}>
             {menuItems.map(item => (
               <li
                 key={item.label}
-                className={getHasDropdownClassName(!!item.dropdown)}
+                style={navItemStyle}
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleMobileDropdownClick(item.label)}
               >
                 <a 
-                  href="#" 
-                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                  href={item.anchor}
+                  onClick={(e) => {
                     e.preventDefault();
-                    handleDropdownClick(item.label);
+                    if (item.dropdown) {
+                      handleDropdownClick(item.label);
+                    } else if (item.anchor.startsWith('#')) {
+                      handleAnchorNavigation(item.anchor);
+                    } else {
+                      handleInternalNavigation(item.anchor);
+                    }
                   }}
-                  className="nav-item-link"
+                  style={navLinkStyle}
+                  onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    const target = e.currentTarget;
+                    target.style.color = '#46d1f0';
+                  }}
+                  onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                    const target = e.currentTarget;
+                    target.style.color = '#fff';
+                  }}
                 >
-                  {item.label} {item.dropdown && (
-                    <span className={getArrowClassName(item.label)}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="arrow-icon">
-                        <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
-                      </svg>
-                    </span>
+                  {item.label}
+                  {item.dropdown && (
+                    <span style={{
+                      display: 'inline-flex',
+                      transition: 'transform 0.2s ease',
+                      transform: openDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
+                      marginLeft: '8px',
+                      width: '0',
+                      height: '0',
+                      borderLeft: '5px solid transparent',
+                      borderRight: '5px solid transparent',
+                      borderTop: '5px solid #fff',
+                      position: 'relative',
+                      top: '2px'
+                    }}></span>
                   )}
                 </a>
                 {item.dropdown && openDropdown === item.label && (
-                  <ul className="submenu-simple">
-                    <div className="dropdown-arrow" />
+                  <ul style={dropdownStyle}>
                     {item.dropdown.map(subItem => (
-                      <li key={subItem.label}>
+                      <li key={subItem.label} style={{ padding: 0 }}>
                         <a
                           href={subItem.anchor}
-                          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                          onClick={(e) => {
+                            e.preventDefault();
                             if (subItem.external) {
-                              return;
-                            }
-                            const isAnchor = subItem.anchor.startsWith('#');
-                            if (isAnchor) {
-                              handleAnchorNavigationWithEvent(e, subItem.anchor);
+                              window.open(subItem.anchor, '_blank', 'noopener,noreferrer');
+                            } else if (subItem.anchor.startsWith('#')) {
+                              handleAnchorNavigation(subItem.anchor);
                             } else {
-                              handleRegularNavigation(e, subItem.anchor);
+                              handleInternalNavigation(subItem.anchor);
                             }
                           }}
-                          target={getTargetAttribute(subItem.external)}
-                          rel={getRelAttribute(subItem.external)}
-                          className="dropdown-item"
+                          style={dropdownItemStyle}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#f8f9fa';
+                            // Cambiar el color del ícono a verde al hacer hover
+                            const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
+                            if (icon) {
+                              icon.style.color = '#46d1f0';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = '#fff';
+                            // Restaurar el color del ícono a plomo al salir
+                            const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
+                            if (icon) {
+                              icon.style.color = '#6c757d';
+                            }
+                          }}
                         >
-                          <span className="dropdown-icon">{subItem.icon}</span>
-                          <span className="dropdown-text">{subItem.label}</span>
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            viewBox="0 0 20 20" 
-                            fill="currentColor" 
-                            className="submenu-arrow"
-                          >
-                            <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
-                          </svg>
+                          <span style={iconStyle}>{subItem.icon}</span>
+                          <span>{subItem.label}</span>
                         </a>
                       </li>
                     ))}
@@ -245,6 +293,14 @@ const Header: React.FC = () => {
           </ul>
         </nav>
       </div>
+      <style>{
+        `
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `
+      }</style>
     </header>
   );
 };
