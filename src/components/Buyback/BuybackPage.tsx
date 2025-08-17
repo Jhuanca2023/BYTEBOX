@@ -6,11 +6,6 @@ import './BuybackPage.css';
 
 const BuybackPage: React.FC = () => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
-  const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
 
   useEffect(() => {
     // Intersection Observer para animaciones al hacer scroll
@@ -360,64 +355,57 @@ const BuybackPage: React.FC = () => {
 
         <section className="benefits">
           <div className="container">
-            <div className="benefits-wrapper">
-              <div className="benefits-content">
-                <h2>¿Por qué elegir nuestro programa de recompra?</h2>
+            <div className="row align-items-center">
+              <div className="col-lg-5 mb-4 mb-lg-0">
+                <h2 className="display-5 fw-bold mb-0 text-start">¿Por qué elegir<br />nuestro programa<br />de recompra?</h2>
               </div>
-              <div className="benefits-accordion">
-                <div className={`accordion-item ${activeAccordion === 0 ? 'active' : ''}`}>
-                  <button 
-                    className="accordion-header"
-                    onClick={() => toggleAccordion(0)}
-                  >
-                    Valor Justo Garantizado
-                    <span className="accordion-icon">+</span>
-                  </button>
-                  <div className="accordion-content">
-                    <div className="accordion-body">
-                      Ofrecemos precios competitivos basados en el mercado actual, asegurando que recibas el mejor valor por tu equipo.
+              <div className="col-lg-7">
+                <div className="row g-4">
+                  <div className="col-md-6">
+                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
+                          <i className="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h4 className="mb-0 ms-3">Valoración justa</h4>
+                      </div>
+                      <p className="mb-0 text-muted">Precios competitivos basados en el valor real de mercado de tu equipo.</p>
                     </div>
                   </div>
-                </div>
-                <div className={`accordion-item ${activeAccordion === 1 ? 'active' : ''}`}>
-                  <button 
-                    className="accordion-header"
-                    onClick={() => toggleAccordion(1)}
-                  >
-                    Impacto Ambiental Positivo
-                    <span className="accordion-icon">+</span>
-                  </button>
-                  <div className="accordion-content">
-                    <div className="accordion-body">
-                      Al vender tu equipo usado, contribuyes a reducir la basura electrónica y su impacto ambiental.
+                  
+                  <div className="col-md-6">
+                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
+                          <i className="fas fa-bolt"></i>
+                        </div>
+                        <h4 className="mb-0 ms-3">Proceso rápido</h4>
+                      </div>
+                      <p className="mb-0 text-muted">Desde la cotización hasta el pago en tiempo récord.</p>
                     </div>
                   </div>
-                </div>
-                <div className={`accordion-item ${activeAccordion === 2 ? 'active' : ''}`}>
-                  <button 
-                    className="accordion-header"
-                    onClick={() => toggleAccordion(2)}
-                  >
-                    Proceso Rápido
-                    <span className="accordion-icon">+</span>
-                  </button>
-                  <div className="accordion-content">
-                    <div className="accordion-body">
-                      Desde la cotización hasta el pago, todo en menos de 48 horas hábiles.
+                  
+                  <div className="col-md-6">
+                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
+                          <i className="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 className="mb-0 ms-3">Seguridad garantizada</h4>
+                      </div>
+                      <p className="mb-0 text-muted">Eliminación segura de todos tus datos personales.</p>
                     </div>
                   </div>
-                </div>
-                <div className={`accordion-item ${activeAccordion === 3 ? 'active' : ''}`}>
-                  <button 
-                    className="accordion-header"
-                    onClick={() => toggleAccordion(3)}
-                  >
-                    Seguridad Garantizada
-                    <span className="accordion-icon">+</span>
-                  </button>
-                  <div className="accordion-content">
-                    <div className="accordion-body">
-                      Borrado seguro de datos y manejo confidencial de tu información personal.
+                  
+                  <div className="col-md-6">
+                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
+                      <div className="d-flex align-items-center mb-3">
+                        <div className="bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
+                          <i className="fas fa-recycle"></i>
+                        </div>
+                        <h4 className="mb-0 ms-3">Impacto positivo</h4>
+                      </div>
+                      <p className="mb-0 text-muted">Contribuye a reducir los desechos electrónicos.</p>
                     </div>
                   </div>
                 </div>
@@ -426,45 +414,75 @@ const BuybackPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="equipment-types">
+        <section className="equipment-types py-5">
           <div className="container">
-            <h2>¿Qué equipos aceptamos?</h2>
-            <div className="equipment-grid">
-              <div className="equipment-category animate-on-scroll">
-                <div className="category-header">
-                  <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=150&h=150&fit=crop&crop=center" alt="Dispositivos Móviles" className="category-image" />
-                  <h3><i className="bi bi-phone"></i> Dispositivos Móviles</h3>
+            <div className="text-center mb-5">
+              <h2 className="display-5 fw-bold mb-3">¿Qué equipos aceptamos?</h2>
+              <p className="lead text-muted">En BYTEBOX recompramos una amplia variedad de dispositivos electrónicos en excelente estado</p>
+            </div>
+            
+            <div className="row g-4">
+              {/* Tarjeta de Dispositivos Móviles */}
+              <div className="col-md-4">
+                <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
+                  <div className="position-absolute top-0 end-0 bg-primary text-white px-3 py-1 rounded-bl-lg">
+                    <i className="fas fa-mobile-alt me-2"></i>Móviles
+                  </div>
+                  <div className="text-center mb-4 pt-4">
+                    <div className="icon-wrapper bg-soft-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
+                      <i className="fas fa-mobile-alt fa-2x text-primary"></i>
+                    </div>
+                    <h3 className="h4 mb-4">Dispositivos Móviles</h3>
+                  </div>
+                  <ul className="list-unstyled">
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Smartphones</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Tablets</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Relojes inteligentes</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Accesorios originales</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>Smartphones</li>
-                  <li>Tablets</li>
-                  <li>Relojes inteligentes</li>
-                  <li>Accesorios originales</li>
-                </ul>
               </div>
-              <div className="equipment-category animate-on-scroll">
-                <div className="category-header">
-                  <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=150&h=150&fit=crop&crop=center" alt="Computación" className="category-image" />
-                  <h3><i className="bi bi-laptop"></i> Computación</h3>
+
+              {/* Tarjeta de Computación */}
+              <div className="col-md-4">
+                <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
+                  <div className="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 rounded-bl-lg">
+                    <i className="fas fa-laptop me-2"></i>Computación
+                  </div>
+                  <div className="text-center mb-4 pt-4">
+                    <div className="icon-wrapper bg-soft-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
+                      <i className="fas fa-laptop fa-2x text-warning"></i>
+                    </div>
+                    <h3 className="h4 mb-4">Computación</h3>
+                  </div>
+                  <ul className="list-unstyled">
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Laptops y Notebooks</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Computadoras de escritorio</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Monitores</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Impresoras</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>Laptops y Notebooks</li>
-                  <li>Computadoras de escritorio</li>
-                  <li>Monitores</li>
-                  <li>Impresoras</li>
-                </ul>
               </div>
-              <div className="equipment-category animate-on-scroll">
-                <div className="category-header">
-                  <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=150&h=150&fit=crop&crop=center" alt="Electrónica" className="category-image" />
-                  <h3><i className="bi bi-controller"></i> Electrónica</h3>
+
+              {/* Tarjeta de Electrónica */}
+              <div className="col-md-4">
+                <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
+                  <div className="position-absolute top-0 end-0 bg-danger text-white px-3 py-1 rounded-bl-lg">
+                    <i className="fas fa-gamepad me-2"></i>Electrónica
+                  </div>
+                  <div className="text-center mb-4 pt-4">
+                    <div className="icon-wrapper bg-soft-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
+                      <i className="fas fa-gamepad fa-2x text-danger"></i>
+                    </div>
+                    <h3 className="h4 mb-4">Electrónica</h3>
+                  </div>
+                  <ul className="list-unstyled">
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Consolas de videojuegos</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Cámaras digitales</li>
+                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Auriculares y parlantes</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Dispositivos de streaming</li>
+                  </ul>
                 </div>
-                <ul>
-                  <li>Consolas de videojuegos</li>
-                  <li>Cámaras digitales</li>
-                  <li>Auriculares y parlantes</li>
-                  <li>Dispositivos de streaming</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -475,8 +493,20 @@ const BuybackPage: React.FC = () => {
             <h2>¿Listo para vender tu equipo?</h2>
             <p>Obtén una valoración instantánea en menos de 2 minutos.</p>
             <div className="cta-buttons">
-              <a href="#evaluar-ahora" className="btn btn-primary">Evaluar mi equipo ahora</a>
-              <a href="#contacto" className="btn btn-secondary">Hablar con un asesor</a>
+              <a 
+                href="/#contacto" 
+                className="btn btn-primary"
+              >
+                Evaluar mi equipo ahora
+              </a>
+              <a 
+                href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaeMR85t0GiJtTnV-ysst1arzgw6eODtKKGcLmg67R9c95xXv_cIvTDaVfHTrg_aem_0uboe3y38-yvUzFqvYXy5w&e=AT1vOYynzH8LOwdv1kPixdKR6cs9Tr0mD1LENvickxMY3iiiZakhNqwZwneJ9us7TFX18_eNq6XGk2JnDDljZ5Uo_2QPpdsCdM0xYbnglAoiOYxym8xX6Sg" 
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hablar con un asesor
+              </a>
             </div>
             <div className="trust-badges">
               <div className="badge">✔ Pago garantizado</div>

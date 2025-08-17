@@ -5,7 +5,10 @@ import techImage from '../../assets/images/lapto-.png';
 const TechAccessories = () => {
   return (
     <AnimatedSection className="tech-accessories-section" animationType="fadeInUp">
-      <h2 className="tech-accessories-title">TECH ACCESSORIES</h2>
+      <h2 className="tech-accessories-title">
+        <span style={{ color: '#000' }}>TECH</span>{' '}
+        <span style={{ color: '#46d1f0' }}>ACCESSORIES</span>
+      </h2>
       <div className="tech-accessories-container">
         <AnimatedSection 
           className="tech-accessories-image" 
@@ -27,15 +30,13 @@ const TechAccessories = () => {
           delay={400}
         >
           <div className="staggered-item">
-            <p className="tech-accessories-subtitle">
+            <h2 className="tech-accessories-subtitle">
               Accesorios de alta calidad para todos tus dispositivos
-            </p>
+            </h2>
           </div>
           <div className="staggered-item">
             <p className="tech-accessories-description">
-              Explora nuestra amplia selección de accesorios tecnológicos de última generación 
-              diseñados para potenciar tu experiencia digital. Desde auriculares inalámbricos hasta 
-              cargadores portátiles, encuentra todo lo que necesitas en un solo lugar.
+              Explora nuestra amplia selección de accesorios tecnológicos de última generación diseñados para potenciar tu experiencia digital. Desde auriculares inalámbricos hasta cargadores portátiles, encuentra todo lo que necesitas en un solo lugar.
             </p>
           </div>
         </AnimatedSection>

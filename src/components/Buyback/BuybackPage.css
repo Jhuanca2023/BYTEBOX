@@ -636,7 +636,7 @@
 }
 
 .buyback-page .hero-cta-button {
-  background: #2c3e50;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
   color: white;
   padding: 1.2rem 2.5rem;
   border: none;
@@ -646,13 +646,13 @@
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
 }
 
 .buyback-page .hero-cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(44, 62, 80, 0.4);
-  background: #34495e;
+  box-shadow: 0 12px 35px rgba(78, 205, 196, 0.4);
+  background: linear-gradient(45deg, #44a08d, #4ecdc4);
 }
 
 .buyback-page .hero-background {
@@ -743,7 +743,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  background: transparent;
   border-radius: 2px;
 }
 
@@ -754,11 +754,7 @@
   text-shadow: none;
 }
 
-.buyback-page .benefits h2::after,
-.buyback-page .equipment-types h2::after,
-.buyback-page .faq-section h2::after {
-  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-}
+/* Se eliminó el gradiente que causaba la línea debajo del título */
 
 .buyback-page .steps-grid {
   display: grid;
@@ -1064,6 +1060,91 @@
 }
 
 /* Equipment Types Section */
+.equipment-types {
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.equipment-types .icon-wrapper {
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.equipment-types .card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.equipment-types .card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.equipment-types .card-hover:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Estilos de títulos */
+h1, h2 {
+  font-family: 'Rozha One', serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+/* Colores de fondo suaves para los íconos */
+.bg-soft-primary {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+.bg-soft-warning {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+}
+
+.bg-soft-danger {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Estilos para las etiquetas de categoría */
+.position-absolute.top-0.end-0 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .equipment-types .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .equipment-types h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-on-scroll:nth-child(1) { animation-delay: 0.1s; }
+.animate-on-scroll:nth-child(2) { animation-delay: 0.2s; }
+.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
 .buyback-page .equipment-types {
   padding: 8rem 0;
   background: transparent;

@@ -1,16 +1,51 @@
 import './EnvioGarantia.css';
 
+import { useEffect, useRef, useState } from 'react';
+
 const EnvioGarantia = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Desconecta el observer después de que se haya activado una vez
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="elementor-element ct-frosted-glass e-con-full e-flex e-con e-child">
+    <div 
+      ref={sectionRef}
+      className={`elementor-element ct-frosted-glass e-con-full e-flex e-con e-child ${isVisible ? 'visible' : ''}`}
+    >
       {/* Envíos Gratis */}
       <div className="elementor-element elementor-widget-icon-box">
         <div className="elementor-widget-container">
           <div className="elementor-icon-box-wrapper">
             <div className="elementor-icon-box-icon">
               <span className="elementor-icon">
-                <svg aria-hidden="true" className="e-font-icon-svg e-fas-shipping-fast" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H112C85.5 0 64 21.5 64 48v48H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h272c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H64v128c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
+                  <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5-8.5H6V9h5v1zm5 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-9.5h-2.12l-1.09-1.09c-.32-.32-.74-.49-1.16-.49H12V6h4v3z"/>
                 </svg>
               </span>
             </div>
@@ -18,7 +53,7 @@ const EnvioGarantia = () => {
               <p className="elementor-icon-box-title">
                 <span>ENVIOS DIARIOS</span>
               </p>
-              <p className="elementor-icon-box-description">A Nivel Nacional</p>
+              <p className="elementor-icon-box-description">A NIVEL NACIONAL</p>
             </div>
           </div>
         </div>
@@ -30,14 +65,14 @@ const EnvioGarantia = () => {
           <div className="elementor-icon-box-wrapper">
             <div className="elementor-icon-box-icon">
               <span className="elementor-icon">
-                <svg aria-hidden="true" className="e-font-icon-svg e-fas-award" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M97.12 362.63c-8.69-8.69-4.16-6.24-25.12-11.85-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32-21.07 5.64-16.45 3.18-25.12 11.85-13.79 13.78-32.12 21.37-51.62 21.37-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
                 </svg>
               </span>
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>Garantia 3 años</span>
+                <span>GARANTIA 3 AÑOS</span>
               </p>
             </div>
           </div>
@@ -50,16 +85,16 @@ const EnvioGarantia = () => {
           <div className="elementor-icon-box-wrapper">
             <div className="elementor-icon-box-icon">
               <span className="elementor-icon">
-                <svg aria-hidden="true" className="e-font-icon-svg e-far-share-square" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M561.938 158.06L417.94 14.092C387.926-15.922 336 5.097 336 48.032v57.198c-42.45 1.88-84.03 6.55-120.76 17.99-35.17 10.95-63.07 27.58-82.91 49.42C108.22 199.2 96 232.6 96 271.94c0 61.697 33.178 112.455 84.87 144.76 37.546 23.508 85.248-12.651 71.02-55.74-15.515-47.119-17.156-70.923 84.11-78.76V336c0 42.993 51.968 63.913 81.94 33.94l143.998-144c18.75-18.74 18.75-49.14 0-67.88z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
+                  <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 15l-5-5h3V9h4v4h3l-5 5z"/>
                 </svg>
               </span>
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>Devoluciones</span>
+                <span>DEVOLUCIONES</span>
               </p>
-              <p className="elementor-icon-box-description">30 Días</p>
+              <p className="elementor-icon-box-description">30 DÍAS</p>
             </div>
           </div>
         </div>
@@ -70,17 +105,18 @@ const EnvioGarantia = () => {
         <div className="elementor-widget-container">
           <div className="elementor-icon-box-wrapper">
             <div className="elementor-icon-box-icon">
-              <a href="#" className="elementor-icon">
-                <svg aria-hidden="true" className="e-font-icon-svg e-fas-truck" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"></path>
+              <span className="elementor-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
                 </svg>
-              </a>
+              </span>
             </div>
             <div className="elementor-icon-box-content">
-              <p className="elementor-icon-box-title">
-                <a href="#">Entrega *</a>
+              <p className="elementor-icon-box-description">
+                <span>ENTREGA *</span>
+                <br />
+                <span>24/48H</span>
               </p>
-              <p className="elementor-icon-box-description">24/48h</p>
             </div>
           </div>
         </div>
