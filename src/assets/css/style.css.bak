@@ -130,7 +130,6 @@ footer {
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
-  position: relative;
 }
 
 /* Burbujas animadas */
@@ -324,101 +323,13 @@ footer {
 
 /* Hero Text Section - Ajustar para ocupar la mitad izquierda */
 .hero-text {
-  flex: 0 0 65%;
-  max-width: 700px;
-  color: white;
+  flex: 0 0 55%;
+  max-width: 600px;
+  color: #000;
   position: relative;
-  left: -160px;
   z-index: 2;
-  padding: 20px 40px 20px 0;
-  margin: 180px 0 20px 0;
-  margin-left: -80px; /* Mueve el texto aún más a la izquierda */
-}
-
-.hero-text h1 {
-  font-size: 4.5rem;
-  font-weight: 900;
-  line-height: 1;
-  margin: 0 0 40px 0;
-  padding: 0;
-  color: white;
-  letter-spacing: -1px;
-  white-space: nowrap;
-}
-
-.hero-text .hero-highlight {
-  color: #2B6CB0;
+  padding-right: 40px;
   position: relative;
-  display: inline-block;
-}
-
-.hero-text p {
-  font-size: 1.3rem;
-  line-height: 1.4;
-  color: white;
-  margin: 0 0 30px 0;
-  max-width: 90%;
-  font-weight: 400;
-  letter-spacing: 0.3px;
-}
-
-.hero-cta {
-  display: inline-block;
-  background-color: #2B6CB0;
-  color: white !important;
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.hero-cta:hover {
-  background-color: #2C5282;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image-container {
-  position: absolute;
-  right: -4%; /* Ajuste final a -4% */
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  z-index: 2;
-  overflow: visible;
-  padding: 0;
-  margin: 0;
-}
-
-.hero-woman {
-  height: 70%;
-  max-height: 85vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: right bottom;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
-  animation: float 6s ease-in-out infinite;
-  transform: scale(1);
-  transform-origin: right bottom;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  right: -4%; /* Ajuste final a -4% */
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
 }
 
 /* Hero Content */
@@ -467,66 +378,21 @@ footer {
   }
 }
 
-/* Móvil - Ajustes específicos para pantallas pequeñas */
+/* Tablet - Cambiar a diseño vertical */
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column !important;
-    padding: 40px 10px 20px !important;
-    min-height: auto !important;
+    padding: 80px 20px 60px;
+    min-height: auto;
     text-align: center;
-    align-items: center;
-    justify-content: flex-start;
-    height: auto !important;
-    margin: 0 !important;
   }
   
   .hero-text {
-    flex: 0 0 auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 15px 20px !important;
-    margin: -260px 0 0 0 !important;
-    text-align: center !important;
-    order: 1 !important;
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    transform: none !important;
-    box-sizing: border-box;
-  }
-  
-  .hero-text h1 {
-    font-size: 2rem !important;
-    line-height: 1.1 !important;
-    margin: 0 auto 10px !important;
-    padding: 0 5px !important;
-    color: #333 !important;
-    white-space: normal !important;
-    max-width: 100% !important;
-    word-wrap: break-word !important;
-    text-align: center !important;
-    display: block !important;
-    position: static !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.5px !important;
-  }
-  
-  .hero-image-container {
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .hero-woman {
-    max-height: 40vh !important;
-    width: auto !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
-    display: block !important;
-    order: 2 !important;
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    transform: none !important;
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 40px;
+    text-align: center;
   }
   
   .hero-animation {
@@ -983,6 +849,20 @@ footer {
   .bubble-header .header-actions {
     margin-left: 0;
     gap: 8px;
+  }
+  .menu-toggle {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: 300;
+  }
+  .main-nav.open ~ .menu-toggle,
+  .menu-toggle.menu-toggle-fixed {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999;
   }
 }
 @media (max-width: 600px) {
@@ -1798,6 +1678,37 @@ main section {
   margin-top: -8px;
 }
 
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 12px;
+  z-index: 300;
+}
+.menu-icon {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  position: relative;
+  border-radius: 2px;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+.menu-icon::before { top: -9px; }
+.menu-icon::after { top: 9px; }
+
 /* Responsive menú */
 @media (max-width: 900px) {
   .bubble-header-inner {
@@ -1813,6 +1724,20 @@ main section {
   .bubble-header .header-actions {
     margin-left: 0;
     gap: 8px;
+  }
+  .menu-toggle {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: 300;
+  }
+  .main-nav.open ~ .menu-toggle,
+  .menu-toggle.menu-toggle-fixed {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999;
   }
   .main-nav {
     position: fixed;
@@ -1830,6 +1755,9 @@ main section {
     flex-direction: column;
     padding: 100px 0 40px 0;
     overflow-y: auto;
+  }
+  .main-nav.open {
+    right: 0;
   }
   .main-nav ul {
     flex-direction: column;
@@ -1892,4 +1820,7 @@ main section {
     margin-left: 8px;
   }
   
+  .has-dropdown.open .arrow .arrow-icon {
+    transform: rotate(180deg);
+  }
 }

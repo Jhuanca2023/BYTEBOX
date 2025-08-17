@@ -15,14 +15,18 @@ const SobreNosotros = () => (
     <Header />
     
     {/* HERO SECTION */}
-    <section className="hero-section sobre-nosotros-hero-bg">
-      <div className="hero-content">
-        <h1 data-aos="fade-up" data-aos-duration="800">
-          Conoce <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">nuestra historia</span>
-        </h1>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-          Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
-        </p>
+    <section className="hero-section sobre-nosotros-hero-bg d-flex align-items-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-8">
+            <h1 className="display-4 fw-bold text-white mb-4" data-aos="fade-up">
+              Conoce <span style={{ color: '#46d1f0' }}>nuestra historia</span>
+            </h1>
+            <p className="lead text-white mb-0" data-aos="fade-up" data-aos-delay="100">
+              Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 

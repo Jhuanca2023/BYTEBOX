@@ -37,13 +37,17 @@ const NuestraMarca = () => {
     
     {/* HERO SECTION */}
     <section className="hero-section nuestra-marca-hero-bg">
-      <div className="hero-content">
-        <h1 data-aos="fade-up" data-aos-duration="800">
-          Descubre <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">nuestra esencia</span>
-        </h1>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-          Innovación, confianza y tecnología para potenciar tu crecimiento.
-        </p>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-8">
+            <h1 className="display-4 fw-bold text-white mb-4" data-aos="fade-up">
+              Descubre <span style={{ color: '#46d1f0' }}>nuestra esencia</span>
+            </h1>
+            <p className="lead text-white mb-0" data-aos="fade-up" data-aos-delay="100">
+              Innovación, confianza y tecnología para potenciar tu crecimiento, éxito y futuro.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 

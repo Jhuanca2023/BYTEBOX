@@ -36,9 +36,8 @@ const Footer = () => (
                 <a href="#almacenaje">Almacenaje</a>
               </div>
               <div>
-                <a href="#plataforma">Plataforma</a>
-                <a href="#recompra">Recompra</a>
-                <a href="#hardware">Hardware</a>
+                <a href="#accesorios">Accesorios</a>
+                <a href="#alianzas">Alianzas</a>
               </div>
             </div>
           </div>

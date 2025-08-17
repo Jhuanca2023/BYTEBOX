@@ -51,11 +51,10 @@ const Alianzas = () => {
         canonicalUrl="https://bytebox.com/alianzas"
       />
       <Header />
-      <section className={`hero-section ${styles['alianzas-hero-bg']}`}>
-        <div className="hero-content">
-          <h1 data-aos="fade-up" data-aos-duration="800">
-            Alianzas<br />
-            <span className="hero-highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">estratégicas</span>
+      <section className={`${styles.heroSection} ${styles['alianzas-hero-bg']}`}>
+        <div className={styles.heroContent}>
+          <h1 data-aos="fade-up" data-aos-duration="800" className={styles.heroTitle}>
+            Alianzas <span className={styles.heroHighlight}>estratégicas</span>
           </h1>
           <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
             Conecta tu empresa con los mejores partners y expande tu alcance global.

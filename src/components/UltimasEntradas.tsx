@@ -17,6 +17,7 @@ const imageMap: Record<string, string> = {
   'accesorios.png': getImageUrl('accesorios.png'),
   'image.png': getImageUrl('image.png'),
   'imagepapel.png': getImageUrl('imagepapel.png'),
+  'imageLap.png': getImageUrl('imageLap.png'),
   'hardware sostenible.jpg': new URL(`../assets/images/ultimasEntradas/hardware sostenible.jpg`, import.meta.url).href
 };
 
@@ -74,21 +75,6 @@ const UltimasEntradas = () => {
     <>
       <Header />
       <section className="hero-section ultimas-entradas-hero-bg">
-        <div className="hero-content">
-          <h1 data-aos="fade-up" data-aos-duration="800">
-            Explora <span 
-              className="hero-highlight" 
-              data-aos="fade-up" 
-              data-aos-duration="800" 
-              data-aos-delay="200"
-            >
-              nuestra marca
-            </span>
-          </h1>
-          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-            Explora las novedades, casos de éxito y tendencias de Bytebox.
-          </p>
-        </div>
       </section>
       {/* Sección de temas/empresas */}
       <section className="ultimas-entradas-section">

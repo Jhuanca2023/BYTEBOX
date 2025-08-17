@@ -4,38 +4,27 @@
 .hero-section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   background: linear-gradient(180deg, #e3ecf3 0%, #b6c9d8 100%);
   padding: 0 6vw;
   border-radius: 0;
   overflow: hidden;
+  padding-top: 25vh; /* Mueve todo el contenido hacia abajo */
 }
+
 .hero-section.sobre-nosotros-hero-bg {
   background: url('/src/assets/images/image1.png') center center/cover no-repeat;
-}
-
-.hero-content {
-  max-width: 700px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  gap: 2.5rem;
-  margin-left: 7vw;
+  padding-top: 25vh; /* Mueve el contenido hacia abajo */
 }
 
-.hero-title {
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: #2ad1df;
-  margin-bottom: 0;
-}
-
-.hero-description {
-  font-size: 1.25rem;
-  color: #232323;
-  line-height: 1.5;
+/* Asegurando que el contenedor del contenido no se salga de la pantalla */
+.hero-section .container {
+  padding-top: 0;
+  padding-bottom: 2rem;
 }
 
 .hero-features {

@@ -1,0 +1,37 @@
+.solution-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.solution-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.solution-number {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  line-height: 1;
+  z-index: 0;
+}

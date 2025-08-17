@@ -1,4 +1,20 @@
 import React, { useEffect, useRef } from 'react';
+import womanImage from '../../../src/assets/images/mujer.png';
+
+const Bubbles = () => {
+  return (
+    <>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+      <div className="bubble"></div>
+    </>
+  );
+};
 
 const scrollToContact = (e: React.MouseEvent) => {
   e.preventDefault();
@@ -63,41 +79,51 @@ const Hero = () => {
 
   return (
     <section className="hero-section home-hero">
+      <Bubbles />
       <div className="hero-content">
-        <h1 ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          Impulsa tu Frontera'<br />
-          <span 
-            ref={highlightRef}
-            className="hero-highlight"
+        <div className="hero-text">
+          <h1 ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
+            Impulsa tu Frontera'<br />
+            <span 
+              ref={highlightRef}
+              className="hero-highlight"
+              style={{
+                display: 'inline-block',
+                opacity: 0,
+                transform: 'translateY(20px)'
+              }}
+            >
+              Equipa tu talento global
+            </span>
+          </h1>
+          <p 
+            ref={paragraphRef}
             style={{
-              display: 'inline-block',
               opacity: 0,
               transform: 'translateY(20px)'
             }}
           >
-            Equipa tu talento global
-          </span>
-        </h1>
-        <p 
-          ref={paragraphRef}
-          style={{
-            opacity: 0,
-            transform: 'translateY(20px)'
-          }}
-        >
-          Gestiona y equipa tu talento global de forma simple y eficiente en más de 120 países.
-        </p>
-        <button 
-          ref={ctaRef}
-          className="hero-cta" 
-          onClick={scrollToContact}
-          style={{
-            opacity: 0,
-            transform: 'translateY(20px)'
-          }}
-        >
-          Cotiza
-        </button>
+            Gestiona y equipa tu talento global de forma simple y eficiente en más de 120 países.
+          </p>
+          <button 
+            ref={ctaRef}
+            className="hero-cta" 
+            onClick={scrollToContact}
+            style={{
+              opacity: 0,
+              transform: 'translateY(20px)'
+            }}
+          >
+            Cotiza
+          </button>
+        </div>
+        <div className="hero-image-container">
+          <img 
+            src={womanImage} 
+            alt="Mujer" 
+            className="hero-woman"
+          />
+        </div>
       </div>
     </section>
   );
