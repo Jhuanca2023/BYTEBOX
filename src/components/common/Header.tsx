@@ -57,11 +57,30 @@ const menuItems: MenuItem[] = [
 
 const Header: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const navigate = useNavigate();
   const location = useLocation();
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      
+      // Mostrar header si estamos en la parte superior, ocultar si hacemos scroll hacia abajo
+      const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+      
+      setIsVisible(visible);
+      setPrevScrollPos(currentScrollPos);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
   
   // Moved styles outside to avoid recreation on every render
   const headerStyle: React.CSSProperties = {
+    transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+    transition: 'transform 0.3s ease-in-out, all 0.3s ease',
     backgroundColor: 'transparent',
     position: 'fixed',
     top: 0,
@@ -69,7 +88,6 @@ const navigate = useNavigate();
     right: 0,
     zIndex: 1000,
     padding: '20px 0',
-    transition: 'all 0.3s ease',
     borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
   };
   
