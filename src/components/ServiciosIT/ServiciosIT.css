@@ -1,0 +1,56 @@
+.servicios-it-hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0d0f1a 0%, #0a2a3a 100%);
+  color: #fff;
+}
+
+.servicios-it-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.servicios-it-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.servicios-it-title .highlight {
+  color: #46d1f0;
+}
+
+.servicios-it-main {
+  padding: 48px 0 80px;
+  background-color: #f7f9fb;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.servicio-card {
+  grid-column: span 6;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 991px) {
+  .servicio-card {
+    grid-column: span 12;
+  }
+}
+
+.servicio-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.servicio-card-desc {
+  color: #4a5568;
+  line-height: 1.6;
+}

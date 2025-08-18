@@ -76,7 +76,7 @@ export const extraCards: CardProps[] = [
     highlight: 'Tecnológicos',
     desc: 'Soluciones IT personalizadas para potenciar tu negocio y mejorar la productividad de tu equipo.',
     category: 'servicios',
-    link: '/servicios-it'
+    link: '/nuestra-marca#productos-destacados'
   },
   {
     img: 'image.png',

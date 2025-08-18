@@ -16,6 +16,7 @@ import Footer from './common/Footer';
 import SolutionsMobile from './SolutionsMobile/SolutionsMobile';
 import TechAccessories from './TechAccessories/TechAccessories';
 import EnvioGarantia from './EnvioGarantia/EnvioGarantia';
+import WorldStats from './WorldStats/WorldStats';
 import './HomePage.css';
 
 type LocationState = {
@@ -75,6 +76,8 @@ const HomePage = () => {
         <TechAccessories />
         
         <EnvioGarantia />
+        
+        <WorldStats />
         
         <div data-aos="fade-up">
           <Testimonials />
