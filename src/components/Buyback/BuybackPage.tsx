@@ -96,10 +96,10 @@ const BuybackPage: React.FC = () => {
         }
       } else if (sectionClass.includes('recycling-section')) {
         if (questionText.includes('¿Qué hacemos?')) {
-          imageElement.src = 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&h=400&fit=crop&crop=center';
-          imageElement.alt = 'Reciclaje responsable de equipos electrónicos';
+          imageElement.src = 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&crop=center';
+          imageElement.alt = 'Procesamiento de equipos tecnológicos con responsabilidad ambiental';
         } else if (questionText.includes('¿Cómo funciona?')) {
-          imageElement.src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center';
+          imageElement.src = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop&crop=center';
           imageElement.alt = 'Proceso de gestión de residuos electrónicos';
         }
       }
@@ -425,9 +425,6 @@ const BuybackPage: React.FC = () => {
               {/* Tarjeta de Dispositivos Móviles */}
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
-                  <div className="position-absolute top-0 end-0 bg-primary text-white px-3 py-1 rounded-bl-lg">
-                    <i className="fas fa-mobile-alt me-2"></i>Móviles
-                  </div>
                   <div className="text-center mb-4 pt-4">
                     <div className="icon-wrapper bg-soft-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
                       <i className="fas fa-mobile-alt fa-2x text-primary"></i>
@@ -446,9 +443,6 @@ const BuybackPage: React.FC = () => {
               {/* Tarjeta de Computación */}
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
-                  <div className="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 rounded-bl-lg">
-                    <i className="fas fa-laptop me-2"></i>Computación
-                  </div>
                   <div className="text-center mb-4 pt-4">
                     <div className="icon-wrapper bg-soft-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
                       <i className="fas fa-laptop fa-2x text-warning"></i>
@@ -467,9 +461,6 @@ const BuybackPage: React.FC = () => {
               {/* Tarjeta de Electrónica */}
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
-                  <div className="position-absolute top-0 end-0 bg-danger text-white px-3 py-1 rounded-bl-lg">
-                    <i className="fas fa-gamepad me-2"></i>Electrónica
-                  </div>
                   <div className="text-center mb-4 pt-4">
                     <div className="icon-wrapper bg-soft-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
                       <i className="fas fa-gamepad fa-2x text-danger"></i>
