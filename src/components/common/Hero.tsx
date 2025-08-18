@@ -120,7 +120,7 @@ const Hero = () => {
         <div className="hero-image-container">
           <img 
             src={womanImage} 
-            alt="Mujer" 
+            alt="woman" 
             className="hero-woman"
           />
         </div>
