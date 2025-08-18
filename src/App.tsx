@@ -9,6 +9,7 @@ import Alianzas from './components/Alianzas';
 import UltimasEntradas from './components/UltimasEntradas';
 import HomePage from './components/HomePage';
 import BuybackPage from './components/Buyback/BuybackPage';
+import ServiciosIT from './components/ServiciosIT/ServiciosIT';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/alianzas" element={<Alianzas />} />
           <Route path="/ultimas-entradas" element={<UltimasEntradas />} />
           <Route path="/buyback" element={<BuybackPage />} />
+          <Route path="/servicios-it" element={<ServiciosIT />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>

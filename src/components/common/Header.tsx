@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaLaptop, FaLaptopCode, FaLaptopHouse, FaServer, FaHandshake, FaInfoCircle, FaPaintBrush, FaChartLine, FaFileAlt } from 'react-icons/fa';
 import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
+import './Header.css';
 
 interface DropdownItem {
   label: string;
@@ -79,117 +80,17 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
   
-  // Moved styles outside to avoid recreation on every render
-  const headerStyle: React.CSSProperties = {
-    transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
-    transition: 'transform 0.3s ease-in-out, all 0.3s ease',
-    backgroundColor: 'transparent',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    padding: '20px 0',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
-  };
-  
-  const containerStyle: React.CSSProperties = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  };
-  
-  const navListStyle: React.CSSProperties = {
-    display: 'flex',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-    gap: '30px'
-  };
-  
-  const navItemStyle: React.CSSProperties = {
-    position: 'relative',
-    listStyle: 'none',
-    padding: '0',
-    margin: '0 5px'
-  };
-  
-  const navLinkStyle: React.CSSProperties = {
-    color: '#fff',
-    textDecoration: 'none',
-    fontSize: '15px',
-    fontWeight: 500,
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '10px 12px',
-    borderRadius: '4px',
-    transition: 'all 0.2s ease',
-    whiteSpace: 'nowrap'
-  };
+  // UI state
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Add a small invisible area above the dropdown to prevent it from closing
-  const dropdownContainerStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '100%',
-    left: '0',
-    paddingTop: '10px', // This creates a gap between menu and dropdown
-    zIndex: 1000,
-    pointerEvents: 'none' // Allow clicks to pass through to elements below
-  };
-
-  const dropdownStyle: React.CSSProperties = {
-    position: 'relative',
-    backgroundColor: '#fff',
-    borderRadius: '8px',
-    padding: '8px 0',
-    minWidth: '240px',
-    listStyle: 'none',
-    animation: 'fadeIn 0.15s ease-out forwards',
-    opacity: 0,
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    border: '1px solid #e0e0e0',
-    pointerEvents: 'auto',
-    textAlign: 'left'
-  };
-  
-  const dropdownItemStyle: React.CSSProperties & {
-    '&:hover'?: React.CSSProperties;
-  } = {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '10px 16px',
-    color: '#333',
-    textDecoration: 'none',
-    transition: 'all 0.2s ease',
-    gap: '12px',
-    backgroundColor: 'transparent',
-    border: 'none',
-    width: '100%',
-    textAlign: 'left',
-    fontSize: '14px',
-    fontWeight: '500',
-    cursor: 'pointer',
-    borderRadius: '0'
-  };
-
-  const iconStyle = {
-    color: '#46d1f0',
-    fontSize: '14px',
-    minWidth: '24px',
-    height: '24px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(70, 209, 240, 0.1)',
-    borderRadius: '6px',
-    transition: 'all 0.2s ease',
-    marginRight: '8px'
-  };
+  // Detect mobile to disable hover behavior and adapt interactions
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 992);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   useEffect(() => {
 setOpenDropdown(null);
@@ -210,7 +111,6 @@ setOpenDropdown(null);
     }
   };
 
-
   const handleInternalNavigation = (path: string) => {
     if (path.startsWith('http')) {
       window.open(path, '_blank', 'noopener,noreferrer');
@@ -219,6 +119,7 @@ setOpenDropdown(null);
     } else {
       navigate(path);
     }
+    setIsMobileOpen(false);
   };
 
   const handleMouseEnter = (label: string) => {
@@ -253,27 +154,41 @@ setOpenDropdown(null);
     }, 500); // Increased to 500ms for better usability
   };
 
-
+  const headerClassName = isVisible ? 'header' : 'header header--hidden';
 
   return (
-    <header style={headerStyle}>
-      <div style={containerStyle}>
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img
-            src={logo}
-            alt="Logo Bytebox"
-            style={{ height: '40px', width: 'auto' }}
-          />
+    <header className={headerClassName}>
+      <div className="header__container">
+        <a href="/" className="header__logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <img src={logo} alt="Logo Bytebox" />
         </a>
-        <nav>
-          <ul style={navListStyle}>
+        <div className="header__actions" aria-hidden={isMobileOpen}>
+          <button className="header__cta" onClick={() => handleInternalNavigation('/ultimas-entradas')}>
+            Explorar
+          </button>
+        </div>
+        <button
+          className={`header__hamburger${isMobileOpen ? ' is-active' : ''}`}
+          aria-label="Abrir menú"
+          onClick={() => {
+            setIsMobileOpen(v => !v);
+            // Cerrar cualquier dropdown abierto al abrir/cerrar el menú móvil
+            setOpenDropdown(null);
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={`header__nav${isMobileOpen ? ' is-open' : ''}`}>
+          <ul className="header__nav-list">
             {menuItems.map(item => (
               <li
                 key={item.label}
-                style={navItemStyle}
-                onMouseEnter={() => handleMouseEnter(item.label)}
-                onMouseLeave={handleMouseLeave}
-                onFocus={() => handleMouseEnter(item.label)}
+                className={`header__nav-item${openDropdown === item.label ? ' is-open' : ''}`}
+                onMouseEnter={!isMobile ? () => handleMouseEnter(item.label) : undefined}
+                onMouseLeave={!isMobile ? handleMouseLeave : undefined}
+                onFocus={!isMobile ? () => handleMouseEnter(item.label) : undefined}
               >
                 <a 
                   href={item.anchor}
@@ -287,46 +202,24 @@ setOpenDropdown(null);
                       handleInternalNavigation(item.anchor);
                     }
                   }}
-                  style={navLinkStyle}
-                  onMouseOver={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                    const target = e.currentTarget;
-                    target.style.color = '#46d1f0';
-                  }}
-                  onMouseOut={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                    const target = e.currentTarget;
-                    target.style.color = '#fff';
-                  }}
+                  className="header__nav-link"
                 >
                   {item.label}
-                  {item.dropdown && (
-                    <span style={{
-                      display: 'inline-flex',
-                      transition: 'transform 0.2s ease',
-                      transform: openDropdown === item.label ? 'rotate(180deg)' : 'rotate(0deg)',
-                      marginLeft: '8px',
-                      width: '0',
-                      height: '0',
-                      borderLeft: '5px solid transparent',
-                      borderRight: '5px solid transparent',
-                      borderTop: '5px solid #fff',
-                      position: 'relative',
-                      top: '2px'
-                    }}></span>
-                  )}
+                  {item.dropdown && <span className="header__caret" />}
                 </a>
                 {item.dropdown && openDropdown === item.label && (
                   <div 
-                    style={dropdownContainerStyle}
-                    onMouseEnter={handleDropdownEnter}
-                    onMouseLeave={handleDropdownLeave}
+                    className="header__dropdown-container"
+                    onMouseEnter={!isMobile ? handleDropdownEnter : undefined}
+                    onMouseLeave={!isMobile ? handleDropdownLeave : undefined}
                   >
                     <ul 
-                      style={dropdownStyle}
-                      onMouseEnter={handleDropdownEnter}
-                      onMouseLeave={handleDropdownLeave}
+                      className="header__dropdown"
+                      onMouseEnter={!isMobile ? handleDropdownEnter : undefined}
+                      onMouseLeave={!isMobile ? handleDropdownLeave : undefined}
                     >
                     {item.dropdown.map(subItem => (
-                      <li key={subItem.label} style={{ padding: 0 }}>
+                      <li key={subItem.label} className="header__dropdown-item">
                         <a
                           href={subItem.anchor}
                           onClick={(e) => {
@@ -338,23 +231,13 @@ setOpenDropdown(null);
                             } else {
                               handleInternalNavigation(subItem.anchor);
                             }
+                            // Close menu after navigating on mobile
+                            setOpenDropdown(null);
+                            setIsMobileOpen(false);
                           }}
-                          style={dropdownItemStyle}
-                          className="dropdown-item"
-                          onMouseEnter={(e) => {
-                            const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
-                            if (icon) {
-                              icon.style.color = '#46d1f0';
-                            }
-                          }}
-                          onMouseLeave={(e) => {
-                            const icon = e.currentTarget.querySelector('span:first-child') as HTMLElement;
-                            if (icon) {
-                              icon.style.color = '#6c757d';
-                            }
-                          }}
+                          className="header__dropdown-link"
                         >
-                          <span style={iconStyle}>{subItem.icon}</span>
+                          <span className="header__dropdown-icon">{subItem.icon}</span>
                           <span>{subItem.label}</span>
                         </a>
                       </li>
@@ -367,14 +250,6 @@ setOpenDropdown(null);
           </ul>
         </nav>
       </div>
-      <style>{
-        `
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `
-      }</style>
     </header>
   );
 };

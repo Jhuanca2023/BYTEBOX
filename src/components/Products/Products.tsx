@@ -295,7 +295,7 @@ const Products: React.FC = () => {
   }, []);
 
   return (
-    <div className="products-section">
+    <div className="products-section" id="productos-destacados">
       <SeoComponent 
         title="Productos - ByteBOX | Soluciones Tecnológicas Innovadoras"
         description="Descubre nuestra gama de productos tecnológicos en ByteBOX. Ofrecemos las mejores soluciones en accesorios y equipos tecnológicos de última generación."

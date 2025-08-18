@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
@@ -6,6 +7,7 @@ import Products from '../Products/Products';
 import productImagesData from '../../assets/data/productImages.json';
 import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';
+import { smoothScrollTo } from '../../utils/smoothScroll';
 
 const NuestraMarca = () => {
   // Configuración de SEO para la página Nuestra Marca
@@ -24,6 +26,20 @@ const NuestraMarca = () => {
     
     return () => clearInterval(interval);
   }, [productImages]);
+
+  // Hacer scroll al ancla cuando la URL contenga hash (por navegación interna)
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      // pequeño retraso para asegurar render del DOM
+      setTimeout(() => {
+        smoothScrollTo(location.hash, {
+          offset: (document.querySelector('.header') as HTMLElement)?.clientHeight || 0,
+          duration: 600,
+        });
+      }, 100);
+    }
+  }, [location.hash]);
 
   return (
     <>
