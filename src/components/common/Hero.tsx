@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import womanImage from '../../assets/images/hero-woman.png';
+import womanImage from '../../../src/assets/images/mujer.png';
 
 const Bubbles = () => {
   return (
@@ -120,7 +120,7 @@ const Hero = () => {
         <div className="hero-image-container">
           <img 
             src={womanImage} 
-            alt="woman" 
+            alt="mujer" 
             className="hero-woman"
           />
         </div>
