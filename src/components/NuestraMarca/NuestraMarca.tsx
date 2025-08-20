@@ -59,8 +59,9 @@ const NuestraMarca = () => {
             <h1 className="display-4 fw-bold text-white mb-4" data-aos="fade-up">
               Descubre <span style={{ color: '#46d1f0' }}>nuestra esencia</span>
             </h1>
+            <br />
             <p className="lead text-white mb-0" data-aos="fade-up" data-aos-delay="100">
-              Innovación, confianza y tecnología para potenciar tu crecimiento, éxito y futuro.
+              Innovación, confianza y tecnología de vanguardia para potenciar tu crecimiento, éxito y futuro. En ByteBOX, combinamos lo último en avances tecnológicos con un compromiso inquebrantable de calidad, ofreciendo soluciones que transforman la manera en que las empresas y personas se conectan con el futuro digital.
             </p>
           </div>
         </div>
@@ -263,7 +264,10 @@ const NuestraMarca = () => {
                 ))}
               </div>
               
-              <button 
+              <a 
+                href="https://www.falabella.com.pe/falabella-pe/seller/Bytebox" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="cta-button"
                 data-aos="fade-up"
                 data-aos-duration="800"
@@ -274,7 +278,7 @@ const NuestraMarca = () => {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>

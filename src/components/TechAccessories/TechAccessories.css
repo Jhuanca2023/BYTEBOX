@@ -136,9 +136,9 @@
 }
 
 .tech-accessories-subtitle {
-  font-family: 'Rozha One', serif;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.1;
   margin: 0 0 1.5rem 0;
   color: #46d1f0;
