@@ -8,12 +8,12 @@
 }
 
 .alianzasTitle {
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 8px;
   text-align: center;
   color: #1B1B1B; /* dark primary text */
-  font-family: 'DM Sans', sans-serif;
 }
 
 .alianzasTitleHighlight {
@@ -38,78 +38,108 @@
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  text-align: left;
-  height: 100vh; /* Full viewport height */
   min-height: 100vh;
-  display: flex;
-  align-items: center;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .heroContent {
-  max-width: 1200px;
-  margin: 0 auto 0 0; /* Remove right auto margin and set left to 0 */
-  padding: 0 40px 0 10%; /* More padding on the left */
+  max-width: 650px;
+  margin: 0 0 0 1%;
+  padding: 2rem 0 1rem 0;
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 95%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  justify-content: flex-start;
+  margin-top: 5%;
 }
 
 .heroTitle {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
-  white-space: nowrap;
+  color: #FFFFFF !important;
+  max-width: 800px;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: none;
 }
 
 .heroHighlight {
-  color: #46d1f0;
-  font-weight: 700;
+  color: #FFFFFF !important;
+  position: relative;
+  display: inline-block;
+  text-shadow: none;
+  font-family: var(--font-heading, 'Orbitron', sans-serif) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
 }
 
-.heroSection p {
-  font-size: 1.3rem;
-  margin: 20px 0 30px;
+/* Se eliminó el pseudo-elemento que creaba la línea celeste */
+
+.heroDescription {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
   max-width: 600px;
   line-height: 1.6;
+  color: #FFFFFF !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.3px;
+  text-shadow: none;
 }
 
-.hero-cta {
-  background: linear-gradient(90deg, #00B4D8 0%, #1B1B1B 100%);
+.ctaWrapper {
+  text-align: left;
+  margin: 1rem 0 0 0;
+  width: 100%;
+  z-index: 2;
+  padding-left: 0;
+  position: relative;
+  top: 20px; /* Ajustado a 20px como solicitado */
+}
+
+.heroCta {
+  background: #2e9cb8;
   color: white;
   border: none;
-  border-radius: 30px;
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
 }
 
-.hero-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
-}
-
-.hero-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #1B1B1B 0%, #00B4D8 100%);
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-  z-index: -1;
-}
-
-.hero-cta:hover::before {
-  opacity: 1;
+.heroCta:hover,
+.heroCta:active,
+.heroCta:focus {
+  background-color: #3bb9d6 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(70, 209, 240, 0.4) !important;
+  opacity: 1 !important;
+  outline: none !important;
 }
 
 .alianzasCards {

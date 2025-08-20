@@ -163,9 +163,7 @@ setOpenDropdown(null);
           <img src={logo} alt="Logo Bytebox" />
         </a>
         <div className="header__actions" aria-hidden={isMobileOpen}>
-          <button className="header__cta" onClick={() => handleInternalNavigation('/ultimas-entradas')}>
-            Explorar
-          </button>
+          {/* Explorar button moved to Hero component */}
         </div>
         <button
           className={`header__hamburger${isMobileOpen ? ' is-active' : ''}`}

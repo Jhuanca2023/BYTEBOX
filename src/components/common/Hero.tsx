@@ -1,38 +1,28 @@
-import React, { useEffect, useRef } from 'react';
-import womanImage from '../../../src/assets/images/mujer.png';
-
-const Bubbles = () => {
-  return (
-    <>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-      <div className="bubble"></div>
-    </>
-  );
-};
-
-const scrollToContact = (e: React.MouseEvent) => {
-  e.preventDefault();
-  const contactSection = document.getElementById('contacto');
-  if (contactSection) {
-    // Desplazamiento suave al hacer clic en el botón Cotiza
-    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
+import { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleInternalNavigation = (path: string) => {
+    try {
+      if (navigate) {
+        navigate(path);
+      } else {
+        window.location.href = path;
+      }
+    } catch (error) {
+      console.error('Error al navegar:', error);
+      window.location.href = path;
+    }
+  };
+
   const titleRef = useRef<HTMLHeadingElement>(null);
   const highlightRef = useRef<HTMLSpanElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // Función para animar elementos al hacer scroll
     const animateOnScroll = () => {
       const elements = [
         titleRef.current,
@@ -79,50 +69,28 @@ const Hero = () => {
 
   return (
     <section className="hero-section home-hero">
-      <Bubbles />
       <div className="hero-content">
         <div className="hero-text">
           <h1 ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-            Impulsa tu Frontera'<br />
+            Gestión de hardware empresarial
             <span 
               ref={highlightRef}
               className="hero-highlight"
-              style={{
-                display: 'inline-block',
-                opacity: 0,
-                transform: 'translateY(20px)'
-              }}
             >
-              Equipa tu talento global
+              alrededor del mundo
             </span>
           </h1>
-          <p 
-            ref={paragraphRef}
-            style={{
-              opacity: 0,
-              transform: 'translateY(20px)'
-            }}
-          >
-            Gestiona y equipa tu talento global de forma simple y eficiente en más de 120 países.
+          <br />
+          <p ref={paragraphRef}>
+            Optimiza la adquisición y gestión de PC para empresas en más de 130 países. Realice onboarding, offboarding, gestión y recompra con Bytebox.
           </p>
-          <button 
+          <button
             ref={ctaRef}
-            className="hero-cta" 
-            onClick={scrollToContact}
-            style={{
-              opacity: 0,
-              transform: 'translateY(20px)'
-            }}
+            className="cta-button"
+            onClick={() => handleInternalNavigation('/contacto')}
           >
-            Cotiza
+            Solicitar cotización
           </button>
-        </div>
-        <div className="hero-image-container">
-          <img 
-            src={womanImage} 
-            alt="mujer" 
-            className="hero-woman"
-          />
         </div>
       </div>
     </section>

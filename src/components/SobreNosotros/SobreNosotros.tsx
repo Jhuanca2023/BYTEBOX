@@ -16,15 +16,16 @@ const SobreNosotros = () => (
     <Header />
     
     {/* HERO SECTION */}
-    <section className="hero-section sobre-nosotros-hero-bg d-flex align-items-center">
+    <section className="sobre-nosotros-hero-bg">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-8">
-            <h1 className="display-4 fw-bold text-white mb-4" data-aos="fade-up">
-              Conoce <span style={{ color: '#46d1f0' }}>nuestra historia</span>
+          <div className="col-12 col-lg-5">
+            <h1 className="fw-bold text-white mb-4 mt-4" data-aos="fade-up" style={{ fontFamily: 'Orbitron, sans-serif', fontSize: '2.5rem' }}>
+              CONOCE MÁS <span style={{ color: '#46d1f0', fontFamily: 'Orbitron, sans-serif' }}>SOBRE NUESTRA HISTORIA Y VALORES</span>
             </h1>
+            <br />
             <p className="lead text-white mb-0" data-aos="fade-up" data-aos-delay="100">
-              Descubre la historia, misión y valores que nos impulsan a conectar empresas y personas a través de la tecnología.
+              Líder internacional en accesorios y equipos tecnológicos de alta calidad. Con presencia global, ofrecemos dispositivos móviles, periféricos y soluciones de conectividad innovadoras. Nuestro compromiso es impulsar la transformación digital con productos que mejoran la productividad y conectividad en el mundo actual.
             </p>
           </div>
         </div>

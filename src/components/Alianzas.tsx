@@ -52,22 +52,23 @@ const Alianzas = () => {
       />
       <Header />
       <section className={`${styles.heroSection} ${styles['alianzas-hero-bg']}`}>
-        <div className={styles.heroContent}>
-          <h1 data-aos="fade-up" data-aos-duration="800" className={styles.heroTitle}>
-            Alianzas <span className={styles.heroHighlight}>estratégicas</span>
-          </h1>
-          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-            Conecta tu empresa con los mejores partners y expande tu alcance global.
-          </p>
-          <button 
-            className="hero-cta" 
-            onClick={scrollToContact}
-            data-aos="fade-up" 
-            data-aos-duration="800" 
-            data-aos-delay="400"
-          >
-            Sé nuestro partner
-          </button>
+        <div className="container">
+          <div className={styles.heroContent}>
+            <h1 data-aos="fade-up" data-aos-duration="800" className={styles.heroTitle}>
+              Alianzas <span className={styles.heroHighlight}>estratégicas globales</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" className={styles.heroDescription}>
+              Conecta tu empresa con los mejores partners estratégicos y expande tu alcance global de manera efectiva. Juntos, construiremos relaciones comerciales duraderas que impulsen el crecimiento y la innovación de tu negocio en el mercado internacional.
+            </p>
+            <div className={styles.ctaWrapper} data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              <button 
+                className={styles.heroCta}
+                onClick={scrollToContact}
+              >
+                Sé nuestro partner
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <main className={styles.alianzasMain}>

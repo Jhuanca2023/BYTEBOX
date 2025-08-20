@@ -18,14 +18,14 @@
 .header__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 0 0; /* Removed left padding completely */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .header__logo img {
-  height: 40px;
+  height: 26px;
   width: auto;
 }
 
@@ -217,10 +217,10 @@
 @media (max-width: 991px) {
   .header {
     padding: 14px 0;
-    background: var(--background, #fff);
-    border-bottom: 2px solid var(--primary-color, #46d1f0);
-    backdrop-filter: saturate(140%) blur(6px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .header__hamburger {

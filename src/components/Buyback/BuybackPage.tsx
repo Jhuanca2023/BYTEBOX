@@ -161,16 +161,10 @@ const BuybackPage: React.FC = () => {
           <div className="container">
             <div className="hero-content">
               <div className="hero-text">
-                <div className="hero-badge">
-                  <i className="bi bi-arrow-clockwise"></i>
-                  <span>Recompra y reciclaje de activos TI</span>
-                </div>
                 <h1>Recupera valor, libera espacio<br/>y reduce tu huella<br/>de carbono</h1>
+                <br/>
                 <p className="hero-description">Optimiza todo el ciclo de vida de tus equipos y dispositivos TI, ahorrando tiempo, dinero y espacio.</p>
                 <a href="#evaluar" className="hero-cta-button">Solicita una cotización</a>
-              </div>
-              <div className="hero-visual">
-                <img src="/src/assets/images/reciclaje.png" alt="Reciclaje de equipos tecnológicos" className="hero-image" />
               </div>
             </div>
           </div>
