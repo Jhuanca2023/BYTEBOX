@@ -4,16 +4,13 @@ import { useNavigate } from 'react-router-dom';
 const Hero = () => {
   const navigate = useNavigate();
 
-  const handleInternalNavigation = (path: string) => {
-    try {
-      if (navigate) {
-        navigate(path);
-      } else {
-        window.location.href = path;
-      }
-    } catch (error) {
-      console.error('Error al navegar:', error);
-      window.location.href = path;
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contacto');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback to navigation if contact section is not found on current page
+      navigate('/contacto');
     }
   };
 
@@ -87,7 +84,7 @@ const Hero = () => {
           <button
             ref={ctaRef}
             className="cta-button"
-            onClick={() => handleInternalNavigation('/contacto')}
+            onClick={scrollToContact}
           >
             Solicitar cotización
           </button>
