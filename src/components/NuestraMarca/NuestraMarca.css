@@ -567,6 +567,55 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Mobile & Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .nuestra-marca-hero-bg {
+    background-image: url('/src/assets/images/image1movil.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero-section .display-4 {
+    font-size: 1.8rem !important; /* Increased from 1.6rem */
+    margin-bottom: 0.75rem !important;
+    text-align: left !important;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.1rem !important; /* Increased from 1rem */
+    line-height: 1.5;
+    max-width: 100%;
+    text-align: left !important;
+  }
+  
+  .hero-section .container {
+    padding-top: 30vh; /* Increased from 4rem to push content down */
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start */
+  }
+  
+  .hero-section .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .hero-section [class*='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .hero-section h1 {

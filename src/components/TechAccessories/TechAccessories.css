@@ -165,22 +165,38 @@
   .tech-accessories-container {
     flex-direction: column;
     gap: 30px;
+    padding: 20px 15px 60px;
   }
   
   .tech-accessories-image,
   .tech-accessories-content {
     padding: 0;
-    text-align: center;
+    text-align: left;
+    width: 100%;
   }
   
   .tech-accessories-title {
-    text-align: center;
+    text-align: left;
     font-size: 2.2rem;
+    padding: 0 15px 1.5rem;
+    letter-spacing: 4px;
+  }
+  
+  .tech-accessories-subtitle {
+    text-align: left;
+    padding: 0 15px;
+    margin: 0 0 1rem 0;
+  }
+  
+  .tech-accessories-description {
+    text-align: left;
+    padding: 0 15px;
+    margin: 0 0 1.5rem 0;
   }
   
   .tech-accessories-title::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 15px;
+    transform: none;
   }
 }
 

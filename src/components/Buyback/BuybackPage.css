@@ -25,6 +25,34 @@
   overflow: hidden;
 }
 
+/* Mobile Hero Section */
+@media (max-width: 768px) {
+  .buyback-page .hero-section {
+    background-image: url('../../assets/images/bgserviciomovil.png');
+    background-position: center center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  
+  .buyback-page .hero-section .container {
+    padding: 100px 1.5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .buyback-page .hero-content {
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+
 .buyback-page .hero-section::before {
   content: none;
 }
