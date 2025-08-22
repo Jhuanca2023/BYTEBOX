@@ -1,5 +1,107 @@
 /* Estilos para UltimasEntradas */
 
+.banner-title-container {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: left;
+  width: 80%;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+.banner-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  max-width: 450px; /* Ajustado para coincidir con el párrafo */
+  text-align: left;
+  display: block;
+}
+
+.banner-title .highlight {
+  color: #46d1f0;
+  margin: 0 3px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Asegurando que el texto se ajuste en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .banner-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-title-container {
+    top: 70%; /* Bajamos el contenedor un 20% más */
+    padding-top: 1.5rem; /* Aumentado el espacio superior */
+  }
+  
+  .banner-title {
+    font-size: 1.2rem !important; /* Tamaño más pequeño para móviles */
+    white-space: normal;
+    line-height: 1.3;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left !important; /* Asegura la alineación a la izquierda */
+  }
+  
+  .banner-subtitle {
+    font-size: 0.8rem !important; /* Tamaño más pequeño para el subtítulo en móviles */
+    line-height: 1.4;
+    margin-top: 0.5rem !important;
+  }
+  
+  .banner-title .highlight {
+    white-space: normal;
+  }
+}
+
+.banner-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  max-width: 400px; /* Reducido para mejor equilibrio */
+  margin-top: 1.2rem;
+}
+
+.banner-subtitle p {
+  margin-bottom: 1rem;
+}
+
+.banner-subtitle p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-section.ultimas-entradas-hero-bg {
+  position: relative;
+}
+
 .ultimas-entradas-section {
   width: 100vw;
   margin: 48px 0 0 0;

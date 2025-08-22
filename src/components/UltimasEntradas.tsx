@@ -75,6 +75,15 @@ const UltimasEntradas = () => {
     <>
       <Header />
       <section className="hero-section ultimas-entradas-hero-bg">
+        <div className="banner-title-container">
+          <h1 className="banner-title">
+            TECNOLOGÍA <span className="highlight">QUE</span> INSPIRA <span className="highlight">INNOVA</span> Y <span className="highlight">TRANSFORMA</span>
+          </h1>
+          <div className="banner-subtitle">
+            <p>Descubre nuestra exclusiva selección de tecnología de vanguardia diseñada para transformar tu experiencia digital. En ByteBOX, fusionamos innovación y diseño para ofrecerte lo mejor del mercado.</p>
+            <p>Explora nuestras últimas entradas y mantente a la vanguardia con las soluciones tecnológicas más avanzadas del mercado peruano.</p>
+          </div>
+        </div>
       </section>
       {/* Sección de temas/empresas */}
       <section className="ultimas-entradas-section">
