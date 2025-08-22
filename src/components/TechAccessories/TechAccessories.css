@@ -49,6 +49,47 @@
   opacity: 1;
 }
 
+/* Falabella Button Styles */
+.falabella-button {
+  display: inline-block;
+  background-color: #2e9cb8;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  border: 2px solid #2e9cb8;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.falabella-button:hover {
+  background-color: #248ba3;
+  color: white !important; /* Forzar color blanco */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.falabella-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .falabella-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto 0;
+    display: block;
+  }
+}
+
 .tech-accessories-section.visible .tech-accessories-title {
   animation: fadeInUp 1s ease-out forwards;
 }

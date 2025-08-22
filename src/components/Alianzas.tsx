@@ -5,6 +5,7 @@ import Footer from './common/Footer';
 import styles from './Alianzas.module.css';
 import Contact from './Contact/Contact';
 import productImagesData from '../assets/data/productImages.json';
+import EnvioGarantia from './EnvioGarantia/EnvioGarantia';
 
 // Datos de las tarjetas y partners importados desde el archivo JSON
 const { cards: cardsData, partners: partnersData, alianzasImages } = productImagesData;
@@ -187,6 +188,7 @@ const Alianzas = () => {
         </div>
       </section>
       <div id="contacto-alianzas">
+        <EnvioGarantia />
         <Contact />
       </div>
       <Footer />

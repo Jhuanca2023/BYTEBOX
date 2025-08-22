@@ -37,15 +37,15 @@ const Footer = () => (
               </div>
               <div>
                 <a href="#accesorios">Accesorios</a>
-                <a href="#alianzas">Alianzas</a>
+                <a href="/alianzas">Alianzas</a>
               </div>
             </div>
           </div>
           <div className="footer-col discover-col">
             <h4>Descubre</h4>
-            <a href="#">Sobre Bytebox</a><br />
-            <a href="#testimonios">Testimonios</a><br />
-            <a href="#">Blog</a>
+            <a href="/sobre-nosotros">Sobre Bytebox</a><br />
+            <a href="/#testimonios">Testimonios</a><br />
+            <a href="/ultimas-entradas">Blog</a>
           </div>
           <div className="footer-col contact-col">
             <h4>Contacto</h4>

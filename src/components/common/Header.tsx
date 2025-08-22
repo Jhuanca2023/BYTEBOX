@@ -166,17 +166,20 @@ setOpenDropdown(null);
           {/* Explorar button moved to Hero component */}
         </div>
         <button
-          className={`header__hamburger${isMobileOpen ? ' is-active' : ''}`}
-          aria-label="Abrir menú"
+          className={`header__menu-button${isMobileOpen ? ' is-active' : ''}`}
+          aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú'}
           onClick={() => {
             setIsMobileOpen(v => !v);
             // Cerrar cualquier dropdown abierto al abrir/cerrar el menú móvil
             setOpenDropdown(null);
           }}
+          aria-expanded={isMobileOpen}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className="header__menu-icon">
+            <span className="header__menu-line"></span>
+            <span className="header__menu-line"></span>
+            <span className="header__menu-line"></span>
+          </span>
         </button>
         <nav className={`header__nav${isMobileOpen ? ' is-open' : ''}`}>
           <ul className="header__nav-list">
