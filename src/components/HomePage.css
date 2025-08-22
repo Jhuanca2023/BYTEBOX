@@ -48,6 +48,17 @@
   .solutions-desktop {
     display: none;
   }
+  
+  .solutions-section h2 {
+    text-align: left;
+    padding: 0 15px;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  
+  .solutions-section h2 br {
+    display: none;
+  }
 }
 
 /* Estilos para el botón de WhatsApp */
