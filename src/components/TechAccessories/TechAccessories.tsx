@@ -51,6 +51,14 @@ const TechAccessories = () => {
             <p className="tech-accessories-description">
               Explora nuestra amplia selección de accesorios tecnológicos de última generación diseñados para potenciar tu experiencia digital. Desde auriculares inalámbricos hasta cargadores portátiles, encuentra todo lo que necesitas en un solo lugar.
             </p>
+            <a 
+              href="https://www.falabella.com.pe/falabella-pe/seller/Bytebox" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="falabella-button"
+            >
+              Comprar en Falabella
+            </a>
           </div>
         </AnimatedSection>
       </div>
