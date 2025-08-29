@@ -356,17 +356,17 @@ const Products: React.FC = () => {
                                     onClick={() => previousReview(product.id, getReviews(product).length)}
                                     aria-label="Review anterior"
                                   >
-                                    ‹
+                                    &lt;
                                   </button>
                                   <span className="review-counter">
-                                    {((selectedReview[product.id] || 0) + 1)} / {getReviews(product).length}
+                                    {((selectedReview[product.id] || 0) + 1)}/{getReviews(product).length}
                                   </span>
                                   <button
                                     className="review-nav-btn"
                                     onClick={() => nextReview(product.id, getReviews(product).length)}
                                     aria-label="Siguiente review"
                                   >
-                                    ›
+                                    &gt;
                                   </button>
                                 </div>
                               )}
