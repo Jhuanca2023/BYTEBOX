@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './WorldStats.module.css';
 
 type CountsType = {
@@ -114,15 +115,15 @@ const WorldStats = () => {
               <p className={styles.talentsText}>4500+ Talentos creciendo con Bytebox</p>
               <div className={styles.avatarsContainer}>
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Person 1" className={styles.avatar} />
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Person 2" className={styles.avatar} />
+                <img src="https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F300x300%2Fc12bc7f13d%2Felipse1.png&w=64&q=75&dpl=dpl_2rkxqqjFrF1P8s1bVgNTCmJ2saRV" alt="Person 2" className={styles.avatar} />
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Person 3" className={styles.avatar} />
                 <img src="https://a-us.storyblok.com/f/1018731/300x300/65a91e228a/elipse3.png" alt="Person 4" className={styles.avatar} />
                 <span className={styles.moreCount}>+</span>
               </div>
-              <button className={styles.experienceBtn}>
+              <Link to="/sobre-nosotros" className={styles.experienceBtn}>
                 Conoce su experiencia
                 <span className={styles.arrow}>→</span>
-              </button>
+              </Link>
             </div>
 
             {/* Texto "Elevando equipos" en la parte inferior izquierda */}

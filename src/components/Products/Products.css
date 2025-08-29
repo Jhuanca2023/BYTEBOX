@@ -79,24 +79,34 @@
 }
 
 /* Flechas de navegación */
-.carousel-arrow {
+.carousel-arrow,
+.carousel-arrow:focus,
+.carousel-arrow:active,
+.carousel-arrow:focus-visible {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background: rgba(255,255,255,0.9);
-  border: none;
+  background: rgba(255,255,255,0.9) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
   color: #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  -webkit-tap-highlight-color: transparent !important;
   transition: background 0.2s, transform 0.2s;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .carousel-arrow:focus {
   outline: 2px solid #2ad1df;
@@ -242,32 +252,51 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Ensure no borders or outlines on review navigation */
+.review-navigation button,
+.review-navigation button:focus,
+.review-navigation button:active,
+.review-navigation button:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .review-nav-btn {
-  width: 1.5rem;
-  height: 1.5rem;
+  background: none;
   border: none;
-  background: #f8f9fa;
-  color: #333;
-  border-radius: 50%;
+  outline: none;
+  color: inherit;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .review-nav-btn:hover {
-  background: #e9ecef;
-  transform: scale(1.1);
+  background: none;
+  transform: none;
+  color: #000;
 }
 
 .review-counter {
-  font-size: 0.8rem;
-  color: #666;
-  font-weight: 500;
+  font-size: 0.9rem;
+  color: inherit;
+  font-weight: inherit;
+  padding: 0 2px;
 }
 
 .review-carousel {
@@ -462,6 +491,8 @@
     width: 1.25rem;
     height: 1.25rem;
     font-size: 0.7rem;
+    border: none !important;
+    outline: none !important;
   }
 }
 
