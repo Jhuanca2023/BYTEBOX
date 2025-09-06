@@ -30,7 +30,7 @@ const WorldStats = () => {
   const stats: StatItem[] = [
     { id: 1, number: 5500, label: 'onboardings', displayLabel: 'Onboardings exitosos', suffix: '+' },
     { id: 2, number: 200, label: 'clients', displayLabel: 'Clientes satisfechos', suffix: '+' },
-    { id: 3, number: 130, label: 'countries', displayLabel: 'Países operativos' },
+    { id: 3, number: 130, label: 'countries', displayLabel: 'Países operativos', suffix: '+' },
   ];
 
   const statsRef = useRef<HTMLDivElement>(null);

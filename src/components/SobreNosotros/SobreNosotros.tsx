@@ -3,7 +3,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import './SobreNosotros.css';
 import nosotros3Img from '../../assets/images/nosotros3.png';
-import { FaChartLine, FaBolt, FaSearch, FaUsers, FaQuoteLeft } from 'react-icons/fa';
+import { FaChartLine, FaBolt, FaSearch, FaUsers } from 'react-icons/fa';
 
 const SobreNosotros = () => (
   <>
@@ -44,55 +44,124 @@ const SobreNosotros = () => (
         
         <div className="logos-carousel">
           <div className="logos-track">
-            {/* Marcas específicas de ByteBox con logos reales */}
+            {/* Primera ronda de logos */}
             <div className="logo-card">
-              <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/apple-11.svg" alt="Apple" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#E2231A', 
+                fontWeight: '700', 
+                fontSize: '20px',
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+                fontFamily: 'Arial, sans-serif'
+              }}>Lenovo</span>
             </div>
             <div className="logo-card">
-              <img src="https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg" alt="Falabella" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/dell-2.svg" alt="Dell" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src="https://www.logo.wine/a/logo/Hewlett-Packard/Hewlett-Packard-Logo.wine.svg" alt="HP" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#000000', 
+                fontWeight: '900', 
+                fontSize: '22px',
+                letterSpacing: '1px',
+                fontFamily: 'Arial, sans-serif',
+                textTransform: 'uppercase'
+              }}>ASUS</span>
             </div>
             <div className="logo-card">
-              <img src="https://coolboxpe.vtexassets.com/assets/vtex/assets-builder/coolboxpe.store-theme/0.0.84/logo___6539742abaf840cb31bc3e646607adf5.svg" alt="Coolbox" className="logo-img coolbox-logo" />
+              <img src="https://cdn.worldvectorlogo.com/logos/msi-5.svg" alt="MSI" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card oem-card">
-              <span className="logo-text oem-text">OEM</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/logitech-2.svg" alt="Logitech" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card generic-card">
-              <span className="logo-text generic-text">GENERICO</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/jbl-1.svg" alt="JBL" className="logo-img" style={{ height: '30px' }} />
             </div>
             
-            {/* Duplicar para efecto infinito */}
+            {/* Segunda ronda (duplicado para efecto continuo) */}
             <div className="logo-card">
-              <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/apple-11.svg" alt="Apple" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#E2231A', 
+                fontWeight: '700', 
+                fontSize: '20px',
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+                fontFamily: 'Arial, sans-serif'
+              }}>Lenovo</span>
             </div>
             <div className="logo-card">
-              <img src="https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg" alt="Falabella" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/dell-2.svg" alt="Dell" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src="https://www.logo.wine/a/logo/Hewlett-Packard/Hewlett-Packard-Logo.wine.svg" alt="HP" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#000000', 
+                fontWeight: '900', 
+                fontSize: '22px',
+                letterSpacing: '1px',
+                fontFamily: 'Arial, sans-serif',
+                textTransform: 'uppercase'
+              }}>ASUS</span>
             </div>
             <div className="logo-card">
-              <img src="https://coolboxpe.vtexassets.com/assets/vtex/assets-builder/coolboxpe.store-theme/0.0.84/logo___6539742abaf840cb31bc3e646607adf5.svg" alt="Coolbox" className="logo-img coolbox-logo" />
+              <img src="https://cdn.worldvectorlogo.com/logos/msi-5.svg" alt="MSI" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card oem-card">
-              <span className="logo-text oem-text">OEM</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/logitech-2.svg" alt="Logitech" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card generic-card">
-              <span className="logo-text generic-text">GENERICO</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/jbl-1.svg" alt="JBL" className="logo-img" style={{ height: '30px' }} />
             </div>
             
-            {/* Tercera repetición para carrusel más fluido */}
+            {/* Tercera ronda (para efecto continuo) */}
             <div className="logo-card">
-              <img src="https://logos-world.net/wp-content/uploads/2020/04/Apple-Logo.png" alt="Apple" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/apple-11.svg" alt="Apple" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#E2231A', 
+                fontWeight: '700', 
+                fontSize: '20px',
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+                fontFamily: 'Arial, sans-serif'
+              }}>Lenovo</span>
             </div>
             <div className="logo-card">
-              <img src="https://images.falabella.com/v3/assets/bltf4ed0b9a176c126e/blt77c24f32eba61d8c/65e85341504e0303f4f1bb2c/falabella.com_green_icon_mobile.svg" alt="Falabella" className="logo-img" />
+              <img src="https://cdn.worldvectorlogo.com/logos/dell-2.svg" alt="Dell" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src="https://www.logo.wine/a/logo/Hewlett-Packard/Hewlett-Packard-Logo.wine.svg" alt="HP" className="logo-img" style={{ height: '30px' }} />
+            </div>
+            <div className="logo-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa', borderRadius: '8px', padding: '10px 15px' }}>
+              <span style={{ 
+                color: '#000000', 
+                fontWeight: '900', 
+                fontSize: '22px',
+                letterSpacing: '1px',
+                fontFamily: 'Arial, sans-serif',
+                textTransform: 'uppercase'
+              }}>ASUS</span>
             </div>
             <div className="logo-card">
-              <img src="https://coolboxpe.vtexassets.com/assets/vtex/assets-builder/coolboxpe.store-theme/0.0.84/logo___6539742abaf840cb31bc3e646607adf5.svg" alt="Coolbox" className="logo-img coolbox-logo" />
+              <img src="https://cdn.worldvectorlogo.com/logos/msi-5.svg" alt="MSI" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card oem-card">
-              <span className="logo-text oem-text">OEM</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/logitech-2.svg" alt="Logitech" className="logo-img" style={{ height: '30px' }} />
             </div>
-            <div className="logo-card generic-card">
-              <span className="logo-text generic-text">GENERICO</span>
+            <div className="logo-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/jbl-1.svg" alt="JBL" className="logo-img" style={{ height: '30px' }} />
             </div>
           </div>
         </div>
@@ -122,7 +191,6 @@ const SobreNosotros = () => (
               </p>
               <div className="card-quote" data-aos="fade-up" data-aos-delay="400">
                 <blockquote>
-                  <FaQuoteLeft className="quote-icon" />
                   "El viernes de mi primera semana, le dije a mi esposa que en mis 20+ años de carrera, nunca me sentí tan bienvenido en un nuevo trabajo."
                 </blockquote>
                 <div className="quote-author">
@@ -151,11 +219,10 @@ const SobreNosotros = () => (
               </p>
               <div className="card-quote" data-aos="fade-up" data-aos-delay="300">
                 <blockquote>
-                  <FaQuoteLeft className="quote-icon" />
                   "La mayoría de las empresas hablan sobre cómo resuelven problemas interesantes. Escribo un blog sobre las soluciones que usamos para resolver esos problemas."
                 </blockquote>
                 <div className="quote-author">
-                  <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Team" className="author-img" />
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team" className="author-img" />
                   <div className="author-info">
                     <span className="author-name">Ana L.</span>
                     <span className="author-role">Patrocinadora</span>
@@ -193,7 +260,6 @@ const SobreNosotros = () => (
               </p>
               <div className="card-quote" data-aos="fade-up" data-aos-delay="400">
                 <blockquote>
-                  <FaQuoteLeft className="quote-icon" />
                   "ByteBox ha sido fundamental para apoyar mis objetivos profesionales y cultivar las habilidades que traje. Ser un stakeholder me permite abogar por el futuro aquí."
                 </blockquote>
                 <div className="quote-author">

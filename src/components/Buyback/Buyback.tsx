@@ -11,19 +11,8 @@ const Buyback = () => (
         filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15))'
       }}
     >
-      05
+      01
     </span>
-    <button
-      className="buyback-cta-btn"
-      onClick={() => {
-        const contacto = document.getElementById('contacto');
-        if (contacto) {
-          contacto.scrollIntoView({ behavior: 'smooth' });
-        }
-      }}
-    >
-      Cotiza
-    </button>
   </section>
 );
 

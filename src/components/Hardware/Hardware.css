@@ -7,8 +7,9 @@
   box-sizing: border-box;
 }
 .hardware-title {
+  font-family: 'Orbitron', sans-serif;
   font-size: 2.9rem;
-  font-weight: 800;
+  font-weight: 400;
   margin: 30px 0 20px 0;
   letter-spacing: -1px;
   line-height: 1.1;
@@ -16,16 +17,15 @@
 .hardware-title .light {
   color: #7a8ca8;
   font-weight: 400;
+  font-family: 'Orbitron', sans-serif;
 }
 .hardware-title .bold {
   color: #46d1f0;
-  font-weight: 900;
-}
-.hardware-title::first-line {
-  font-weight: 900;
-  letter-spacing: -1.5px;
+  font-weight: 400;
+  font-family: 'Orbitron', sans-serif;
 }
 .hardware-subtitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.15rem;
   color: #232323;
   margin-bottom: 24px;

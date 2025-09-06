@@ -7,7 +7,7 @@ const Hardware = () => (
     BYTEBOX<span className="light">Tecnología que une</span> <span className="bold">sin límites</span>
     </h2>
     <p className="hardware-subtitle">
-    Llevamos accesorios y equipos tecnológicos de alta calidad a más personas. Diseñamos soluciones que potencian conectividad, productividad y entretenimiento — con foco en las necesidades de América Latina
+      Llevamos equipos y accesorios tecnológicos de alta calidad a más personas. Diseñamos soluciones que potencian conectividad, productividad y calidad con foco en las necesidades de cada país.
     </p>
     <div className="hardware-grid">
       {hardwareItems.map((item) => (

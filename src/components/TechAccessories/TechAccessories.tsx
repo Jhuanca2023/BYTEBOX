@@ -44,21 +44,19 @@ const TechAccessories = () => {
         >
           <div className="staggered-item">
             <h2 className="tech-accessories-subtitle">
-              Accesorios de alta calidad para todos tus dispositivos
+              Equipos tecnológicos de alto rendimiento
             </h2>
           </div>
           <div className="staggered-item">
             <p className="tech-accessories-description">
-              Explora nuestra amplia selección de accesorios tecnológicos de última generación diseñados para potenciar tu experiencia digital. Desde auriculares inalámbricos hasta cargadores portátiles, encuentra todo lo que necesitas en un solo lugar.
+              Descubre nuestra selección de equipos tecnológicos diseñados para potenciar la productividad de tu negocio. Ofrecemos soluciones integrales que se adaptan a las necesidades específicas de cada empresa.
             </p>
-            <a 
-              href="https://www.falabella.com.pe/falabella-pe/seller/Bytebox" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
               className="falabella-button"
+              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Comprar en Falabella
-            </a>
+              Cotiza con nosotros
+            </button>
           </div>
         </AnimatedSection>
       </div>

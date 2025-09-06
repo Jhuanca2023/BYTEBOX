@@ -79,7 +79,7 @@ const Hero = () => {
           </h1>
           <br />
           <p ref={paragraphRef}>
-            Optimiza la adquisición y gestión de PC para empresas en más de 130 países. Realice onboarding, offboarding, gestión y recompra con Bytebox.
+            Optimiza la adquisición y almacenaje de PC para empresas en más de 130 países. Realice onboarding, offboarding, almacenaje y recompra con Bytebox.
           </p>
           <button
             ref={ctaRef}
