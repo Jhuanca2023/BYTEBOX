@@ -50,8 +50,8 @@ const HomePage = () => {
       <main>
         <Hero />
         <section className="solutions-section py-5" data-aos="fade-up">
-          <h2 className="mb-4" data-aos="fade-up" data-aos-delay="100">
-            Soluciones eficientes<br />para <strong>productividad global</strong>
+          <h2 className="mb-4 orbitron-regular" data-aos="fade-up" data-aos-delay="100" style={{fontFamily: 'Orbitron, sans-serif', fontWeight: 400}}>
+            Soluciones eficientes<br />para <strong style={{fontFamily: 'Orbitron, sans-serif', fontWeight: 600}}>productividad global</strong>
           </h2>
           
           {/* Mobile Version */}
@@ -61,11 +61,11 @@ const HomePage = () => {
           
           {/* Desktop Version */}
           <div className="solutions-desktop" data-aos="fade-up" data-aos-delay="200">
-            <Onboarding />
+            <Buyback />
             <Offboarding />
             <Storage />
             <Servicios />
-            <Buyback />
+            <Onboarding />
           </div>
           
           <div className="hardware-section-container" data-aos="fade-up" data-aos-delay="300">

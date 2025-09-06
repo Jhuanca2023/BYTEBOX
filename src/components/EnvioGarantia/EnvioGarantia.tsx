@@ -51,9 +51,9 @@ const EnvioGarantia = () => {
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>ENVIOS DIARIOS</span>
+                <span>ENVIOS A NIVEL GLOBAL</span>
               </p>
-              <p className="elementor-icon-box-description">A NIVEL NACIONAL</p>
+              <p className="elementor-icon-box-description">ENTREGAMOS EN +130 PAÍSES</p>
             </div>
           </div>
         </div>
@@ -72,51 +72,31 @@ const EnvioGarantia = () => {
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>GARANTIA 3 AÑOS</span>
+                <span>GARANTÍA EN TUS EQUIPOS</span>
               </p>
+              <p className="elementor-icon-box-description">HASTA 5 AÑOS</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Devoluciones */}
+      {/* Entregas Express */}
       <div className="elementor-element elementor-widget-icon-box">
         <div className="elementor-widget-container">
           <div className="elementor-icon-box-wrapper">
             <div className="elementor-icon-box-icon">
               <span className="elementor-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
-                  <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 15l-5-5h3V9h4v4h3l-5 5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="40" height="40">
+                  <path d="M22 16v-2l-8.5-5V3.5c0-.83-.67-1.5-1.5-1.5S10.5 2.67 10.5 3.5V9L2 14v2l8.5-2.5V19l-2 1.5V23l3.5-1 3.5 1v-2.5L13.5 19v-5.5L22 16z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
               </span>
             </div>
             <div className="elementor-icon-box-content">
               <p className="elementor-icon-box-title">
-                <span>DEVOLUCIONES</span>
+                <span>ENTREGAS EXPRESS</span>
               </p>
-              <p className="elementor-icon-box-description">30 DÍAS</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Entrega */}
-      <div className="elementor-element elementor-widget-icon-box">
-        <div className="elementor-widget-container">
-          <div className="elementor-icon-box-wrapper">
-            <div className="elementor-icon-box-icon">
-              <span className="elementor-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000" width="28" height="28">
-                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-                </svg>
-              </span>
-            </div>
-            <div className="elementor-icon-box-content">
-              <p className="elementor-icon-box-description">
-                <span>ENTREGA *</span>
-                <br />
-                <span>24/48H</span>
-              </p>
+              <p className="elementor-icon-box-description">PRIORIZAMOS EL TIEMPO DE ENTREGA</p>
             </div>
           </div>
         </div>

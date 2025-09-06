@@ -190,18 +190,8 @@ const BuybackPage: React.FC = () => {
                 <div className="service-icon">
                   <i className="bi bi-shield-check"></i>
                 </div>
-                <h3>Borrado de disco duro</h3>
-                <p>Ofrecemos un borrado seguro de datos sensibles, con la opción de entregar certificación.</p>
-              </div>
-              <div 
-                className={`service-card animate-on-scroll ${activeCard === 'reciclaje' ? 'active' : ''}`} 
-                onClick={() => handleServiceCardClick('reciclaje')}
-              >
-                <div className="service-icon">
-                  <i className="bi bi-recycle"></i>
-                </div>
-                <h3>Reciclaje de residuos electrónicos</h3>
-                <p>Gestión ambiental responsable de residuos electrónicos, garantizando el cumplimiento de normativas ambientales.</p>
+                <h3>Formateo de Equipos</h3>
+                <p>Ofrecemos formateo de equipos en tiempo record.</p>
               </div>
             </div>
           </div>
@@ -271,10 +261,10 @@ const BuybackPage: React.FC = () => {
                 <div className="section-badge">
                   <span>Mantén tus datos seguros</span>
                 </div>
-                <h2>Borrado de disco duro</h2>
+                <h2>Formateo de Equipos</h2>
                 <p className="section-description">
-                  Ya sea para reventa o reciclaje, puedes contar con nosotros para un 
-                  borrado de datos sensibles seguro y en cumplimiento con las normas.
+                  Ya sea para reventa o reciclaje, puedes contar con nosotros para un
+                  formateo de equipos seguro y en cumplimiento con las normas.
                 </p>
                 
                 <div className="faq-items">
@@ -284,7 +274,7 @@ const BuybackPage: React.FC = () => {
                       <span className="faq-icon">+</span>
                     </div>
                     <div className="faq-answer">
-                      <p>El disco duro de tus equipos se limpia de forma segura con software reconocido a nivel global, y puedes recibir un certificado que lo avale.</p>
+                      <p>El disco duro de tus equipos se limpia de forma segura con software reconocido a nivel global.</p>
                     </div>
                   </div>
                   
@@ -303,105 +293,47 @@ const BuybackPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="recycling-section">
+        <section className="benefits">
           <div className="container">
-            <div className="recycling-content">
-              <div className="recycling-text">
-                <div className="section-badge">
-                  <span>Reutiliza y reduce</span>
-                </div>
-                <h2>Reciclaje de residuos electrónicos</h2>
-                <p className="section-description">
-                  Cuando se trata de equipos obsoletos que ya no pueden usarse o 
-                  repararse, ofrecemos soluciones de reciclaje responsables con el 
-                  medio ambiente.
-                </p>
-                
-                <div className="faq-items">
-                  <div className="faq-item" onClick={handleFAQClick}>
-                    <div className="faq-question">
-                      <h4>¿Qué hacemos?</h4>
-                      <span className="faq-icon">+</span>
-                    </div>
-                    <div className="faq-answer">
-                      <p>Procesamos de manera responsable todos los equipos que no pueden ser reutilizados, siguiendo protocolos ambientales estrictos para minimizar el impacto ecológico.</p>
-                    </div>
+            <h2 className="text-center mb-5">¿Por qué elegir nuestro programa de recompra?</h2>
+            <div className="row g-4">
+              <div className="col-md-6 col-lg-3">
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <i className="fas fa-hand-holding-usd"></i>
                   </div>
-                  
-                  <div className="faq-item active" onClick={handleFAQClick}>
-                    <div className="faq-question">
-                      <h4>¿Cómo funciona?</h4>
-                      <span className="faq-icon">+</span>
-                    </div>
-                    <div className="faq-answer">
-                      <p>1: Retiramos sus equipos y evaluamos su estado. 2: Le ofrecemos distintas opciones de gestión de residuos electrónicos para que elija. 3: Una vez reciclados o destruidos los equipos, podemos emitir los certificados correspondientes por prácticas sostenibles en su región.</p>
-                    </div>
-                  </div>
+                  <h4>Valoración justa</h4>
+                  <p>Precios competitivos basados en el valor real de mercado de tu equipo.</p>
                 </div>
               </div>
               
-              <div className="recycling-image">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center" alt="Mujer trabajando en oficina sostenible" className="main-image" />
+              <div className="col-md-6 col-lg-3">
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <i className="fas fa-bolt"></i>
+                  </div>
+                  <h4>Proceso rápido</h4>
+                  <p>Desde la cotización hasta el pago en tiempo récord.</p>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="benefits">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-5 mb-4 mb-lg-0">
-                <h2 className="display-5 fw-bold mb-0 text-start">¿Por qué elegir<br />nuestro programa<br />de recompra?</h2>
+              
+              <div className="col-md-6 col-lg-3">
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <i className="fas fa-shield-alt"></i>
+                  </div>
+                  <h4>Seguridad garantizada</h4>
+                  <p>Eliminación segura de todos tus datos personales.</p>
+                </div>
               </div>
-              <div className="col-lg-7">
-                <div className="row g-4">
-                  <div className="col-md-6">
-                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
-                      <div className="d-flex align-items-center mb-3">
-                        <div className="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
-                          <i className="fas fa-hand-holding-usd"></i>
-                        </div>
-                        <h4 className="mb-0 ms-3">Valoración justa</h4>
-                      </div>
-                      <p className="mb-0 text-muted">Precios competitivos basados en el valor real de mercado de tu equipo.</p>
-                    </div>
+              
+              <div className="col-md-6 col-lg-3">
+                <div className="benefit-card">
+                  <div className="benefit-icon">
+                    <i className="fas fa-recycle"></i>
                   </div>
-                  
-                  <div className="col-md-6">
-                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
-                      <div className="d-flex align-items-center mb-3">
-                        <div className="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
-                          <i className="fas fa-bolt"></i>
-                        </div>
-                        <h4 className="mb-0 ms-3">Proceso rápido</h4>
-                      </div>
-                      <p className="mb-0 text-muted">Desde la cotización hasta el pago en tiempo récord.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="col-md-6">
-                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
-                      <div className="d-flex align-items-center mb-3">
-                        <div className="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
-                          <i className="fas fa-shield-alt"></i>
-                        </div>
-                        <h4 className="mb-0 ms-3">Seguridad garantizada</h4>
-                      </div>
-                      <p className="mb-0 text-muted">Eliminación segura de todos tus datos personales.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="col-md-6">
-                    <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0">
-                      <div className="d-flex align-items-center mb-3">
-                        <div className="bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center" style={{width: '50px', height: '50px', fontSize: '1.5rem'}}>
-                          <i className="fas fa-recycle"></i>
-                        </div>
-                        <h4 className="mb-0 ms-3">Impacto positivo</h4>
-                      </div>
-                      <p className="mb-0 text-muted">Contribuye a reducir los desechos electrónicos.</p>
-                    </div>
-                  </div>
+                  <h4>Impacto positivo</h4>
+                  <p>Contribuye a reducir los desechos electrónicos.</p>
                 </div>
               </div>
             </div>
@@ -412,7 +344,7 @@ const BuybackPage: React.FC = () => {
           <div className="container">
             <div className="text-center mb-5">
               <h2 className="display-5 fw-bold mb-3">¿Qué equipos aceptamos?</h2>
-              <p className="lead text-muted">En BYTEBOX recompramos una amplia variedad de dispositivos electrónicos en excelente estado</p>
+              <p className="lead text-muted">En BYTEBOX recompramos una amplia variedad de dispositivos electrónicos en optimas condiciones.</p>
             </div>
             
             <div className="row g-4">
@@ -428,8 +360,7 @@ const BuybackPage: React.FC = () => {
                   <ul className="list-unstyled">
                     <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Smartphones</li>
                     <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Tablets</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Relojes inteligentes</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Accesorios originales</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Relojes inteligentes</li>
                   </ul>
                 </div>
               </div>
@@ -446,8 +377,7 @@ const BuybackPage: React.FC = () => {
                   <ul className="list-unstyled">
                     <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Laptops y Notebooks</li>
                     <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Computadoras de escritorio</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Monitores</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Impresoras</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Monitores</li>
                   </ul>
                 </div>
               </div>
@@ -463,9 +393,7 @@ const BuybackPage: React.FC = () => {
                   </div>
                   <ul className="list-unstyled">
                     <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Consolas de videojuegos</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Cámaras digitales</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Auriculares y parlantes</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Dispositivos de streaming</li>
+                    <li><i className="fas fa-check-circle text-success me-2"></i>Auriculares y parlantes</li>
                   </ul>
                 </div>
               </div>
@@ -474,26 +402,20 @@ const BuybackPage: React.FC = () => {
         </section>
 
         <section className="cta-section" id="evaluar">
-          <div className="container">
+          <div className="container text-center">
             <h2>¿Listo para vender tu equipo?</h2>
-            <p>Obtén una valoración instantánea en menos de 2 minutos.</p>
-            <div className="cta-buttons">
+            <p className="mb-4">Obtén una valoración instantánea en menos de 2 minutos.</p>
+            <div className="d-flex justify-content-center">
               <a 
-                href="/#contacto" 
-                className="btn btn-primary"
-              >
-                Evaluar mi equipo ahora
-              </a>
-              <a 
-                href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAaeMR85t0GiJtTnV-ysst1arzgw6eODtKKGcLmg67R9c95xXv_cIvTDaVfHTrg_aem_0uboe3y38-yvUzFqvYXy5w&e=AT1vOYynzH8LOwdv1kPixdKR6cs9Tr0mD1LENvickxMY3iiiZakhNqwZwneJ9us7TFX18_eNq6XGk2JnDDljZ5Uo_2QPpdsCdM0xYbnglAoiOYxym8xX6Sg" 
-                className="btn btn-secondary"
+                href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAac9yEwg-RWdew0651Pf5LeEh9AOlT077JgmYR6cvev_v2a4zTAh55qYfINjig_aem_sJGO_Q2GhYfPU3vqS8pnrQ&e=AT29tLm3I_YZzZE_BN7fbOQh_Xo_XTWLmh-fMGZkRze6jhssEr_D4RvIxh5qk1zQVWr8RTlciWtT-0Tn264DLWl1nsDezw3iXqDOvq4DST5v9dHSTMi7YKHIJg" 
+                className="btn btn-primary btn-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hablar con un asesor
+                <i className="fab fa-whatsapp me-2"></i> Hablar con un asesor
               </a>
             </div>
-            <div className="trust-badges">
+            <div className="trust-badges mt-4">
               <div className="badge">✔ Pago garantizado</div>
               <div className="badge">✔ Sin compromiso</div>
               <div className="badge">✔ Proceso seguro</div>
@@ -511,7 +433,7 @@ const BuybackPage: React.FC = () => {
                   <span className="faq-icon">+</span>
                 </div>
                 <div className="faq-answer">
-                  <p>Aceptamos equipos en cualquier estado: nuevos, usados, con daños leves o incluso que no enciendan. Cada condición afectará el valor final de la oferta.</p>
+                  <p>Aceptamos equipos en cualquier estado: nuevos, usados o con daños leves. Cada condición afectará el valor final de la oferta.</p>
                 </div>
               </div>
               <div className="faq-item" onClick={handleFAQClick}>
@@ -538,7 +460,7 @@ const BuybackPage: React.FC = () => {
                   <span className="faq-icon">+</span>
                 </div>
                 <div className="faq-answer">
-                  <p>Desde la cotización hasta el pago, el proceso suele completarse en 24-48 horas hábiles, dependiendo de tu ubicación.</p>
+                  <p>Desde la cotización hasta el pago, el proceso suele completarse en 24 hasta 72 horas hábiles, dependiendo de tu ubicación.</p>
                 </div>
               </div>
             </div>
