@@ -180,14 +180,6 @@ const WorldStats = () => {
               </div>
             </div>
 
-            {/* Botón "Países" en la parte inferior derecha */}
-            <div className={`${styles.countriesBtn} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(4)}>
-              <button className={styles.countriesButton}>
-                Países
-                <span className={styles.arrowIcon}>↗</span>
-              </button>
-            </div>
-
             {/* Líneas decorativas como imágenes */}
             <img
               src="https://www.tecspal.com/_next/static/media/Vector1.647ae1b9.png"

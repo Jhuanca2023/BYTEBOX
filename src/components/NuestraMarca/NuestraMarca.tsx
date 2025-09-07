@@ -3,17 +3,50 @@ import { useLocation } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import { AnimatedCounter } from '../ui';
 import productImagesData from '../../assets/data/productImages.json';
 import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';
 import { smoothScrollTo } from '../../utils/smoothScroll';
 
+interface ValueIcon {
+  id: string;
+  title: string;
+  imageUrl: string;
+}
+
+interface ValueIconsData {
+  icons: ValueIcon[];
+}
+
+interface EsenciaCard extends ValueIcon {
+  description: string;
+  color: string;
+}
+
 const NuestraMarca = () => {
   // Configuración de SEO para la página Nuestra Marca
   const { images: productImages } = productImagesData;
-  const { icons: valueIcons } = valueIconsData;
+  const { icons: valueIcons } = valueIconsData as ValueIconsData;
 
+  // Mapear los íconos a las tarjetas de esencia
+  const esenciaCards: EsenciaCard[] = valueIcons.map((icon: ValueIcon, index: number) => {
+    const descriptions = {
+      "Innovación Constante": "Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas",
+      "Compromiso Total": "Cada proyecto es único, cada cliente es prioritario, cada solución es perfecta",
+      "Alcance Global": "Presencia mundial con enfoque local, conectando culturas y mercados",
+      "Calidad Garantizada": "Excelencia en cada detalle, calidad que se ve y se siente en cada producto"
+    };
+
+    const colors = ["#6C63FF", "#4ECDC4", "#FF6B6B", "#FFD166"];
+    
+    return {
+      id: icon.id,
+      title: icon.title,
+      description: descriptions[icon.title as keyof typeof descriptions] || "",
+      imageUrl: icon.imageUrl,
+      color: colors[index % colors.length]
+    };
+  });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Constante para el intervalo de cambio de imagen
@@ -26,6 +59,25 @@ const NuestraMarca = () => {
     
     return () => clearInterval(interval);
   }, [productImages]);
+
+  // Función para oscurecer un color
+  const getDarkerColor = (color: string, percent: number) => {
+    // Convertir color hexadecimal a RGB
+    const r = parseInt(color.slice(1, 3), 16);
+    const g = parseInt(color.slice(3, 5), 16);
+    const b = parseInt(color.slice(5, 7), 16);
+    
+    // Oscurecer el color
+    const darken = (c: number) => Math.max(0, Math.floor(c * (100 - percent) / 100));
+    
+    // Convertir de nuevo a hexadecimal
+    const toHex = (c: number) => {
+      const hex = c.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+    
+    return `#${toHex(darken(r))}${toHex(darken(g))}${toHex(darken(b))}`;
+  };
 
   // Hacer scroll al ancla cuando la URL contenga hash (por navegación interna)
   const location = useLocation();
@@ -42,7 +94,7 @@ const NuestraMarca = () => {
   }, [location.hash]);
 
   return (
-    <>
+    <div className="nuestra-marca-container">
       <SeoComponent 
         title="Nuestra Marca - ByteBOX | Innovación y Calidad en Tecnología"
         description="Descubre la esencia de ByteBOX: innovación, calidad y compromiso. Conoce nuestra misión, visión y valores que nos impulsan a ofrecerte la mejor tecnología."
@@ -84,63 +136,29 @@ const NuestraMarca = () => {
             </p>
           </div>
           
-          <div className="values-grid">
-            {valueIcons.map((icon, index) => (
+          <div className="essence-cards-container">
+            {esenciaCards.map((card: EsenciaCard, index: number) => (
               <div 
-                key={icon.id}
-                className={`value-card card-${index + 1}`}
+                key={card.id} 
+                className={`essence-card card-${index + 1}`}
                 data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={`${index * 100}`}
-                data-aos-once="true"
+                data-aos-delay={index * 100}
               >
                 <div 
-                  className="card-icon"
-                  data-aos="zoom-in"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 200}`}
-                  data-aos-once="true"
+                  className="card-image"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${card.color}, ${getDarkerColor(card.color, 20)})`,
+                    backgroundImage: `url(${card.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundBlendMode: 'overlay'
+                  }}
                 >
-                  <div className="icon-circle">
-                    <img 
-                      src={icon.imageUrl} 
-                      alt={icon.title}
-                      className="product-image"
-                      data-aos="zoom-in"
-                      data-aos-duration="600"
-                      data-aos-delay={`${index * 100 + 300}`}
-                      data-aos-once="true"
-                    />
-                  </div>
                 </div>
-                <h3 
-                  className="card-title"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 100}`}
-                  data-aos-once="true"
-                >
-                  {icon.title}
-                </h3>
-                <p 
-                  className="card-description"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 150}`}
-                  data-aos-once="true"
-                >
-                  {icon.title === 'Innovación Constante' && 'Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas'}
-                  {icon.title === 'Compromiso Total' && 'Cada proyecto es único, cada cliente es prioritario, cada solución es perfecta'}
-                  {icon.title === 'Alcance Global' && 'Presencia mundial con enfoque local, conectando culturas y mercados'}
-                  {icon.title === 'Calidad Garantizada' && 'Excelencia en cada detalle, calidad que se ve y se siente en cada producto'}
-                </p>
-                <div 
-                  className="card-glow"
-                  data-aos="fade-in"
-                  data-aos-duration="800"
-                  data-aos-delay={`${index * 100 + 200}`}
-                  data-aos-once="true"
-                ></div>
+                <div className="card-content">
+                  <h3 className="card-title">{card.title}</h3>
+                  <p className="card-description">{card.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -224,7 +242,7 @@ const NuestraMarca = () => {
                 data-aos-delay="200"
                 data-aos-once="true"
               >
-                En ByteBox, somos líderes en la distribución de equipos tecnológicos y accesorios 
+                En ByteBox, somos líderes en la distribución de productos tecnológicos y accesorios 
                 de vanguardia. Cada producto que ofrecemos está cuidadosamente seleccionado para 
                 brindar la mejor calidad, innovación y rendimiento que impulse el éxito de 
                 nuestros clientes.
@@ -238,9 +256,9 @@ const NuestraMarca = () => {
                 data-aos-once="true"
               >
                 {[
-                  { number: 5000, suffix: '+', label: 'Productos Vendidos' },
-                  { number: 98, suffix: '%', label: 'Satisfacción Cliente' },
-                  { number: 24, suffix: '/7', label: 'Soporte Premium' }
+                  { number: '5000+', label: 'Productos Vendidos' },
+                  { number: '98%', label: 'Satisfacción Cliente' },
+                  { number: '24/7', label: 'Soporte Premium' }
                 ].map((stat, index) => (
                   <div 
                     key={`stat-${index}-${stat.label}`}
@@ -250,15 +268,15 @@ const NuestraMarca = () => {
                     data-aos-delay={`${300 + (index * 100)}`}
                     data-aos-once="true"
                   >
-                    <AnimatedCounter
-                      end={stat.number}
-                      suffix={stat.suffix}
+                    <span 
                       className="stat-number"
-                      data-aos="fade-up"
+                      data-aos="count-up"
                       data-aos-duration="1000"
                       data-aos-delay={`${400 + (index * 100)}`}
                       data-aos-once="true"
-                    />
+                    >
+                      {stat.number}
+                    </span>
                     <span className="stat-label">{stat.label}</span>
                   </div>
                 ))}
@@ -284,9 +302,9 @@ const NuestraMarca = () => {
         </div>
       </section>
     </main>
-
+    
     <Footer />
-  </>
+    </div>
   );
 };
 
