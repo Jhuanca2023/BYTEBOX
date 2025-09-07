@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import Products from '../Products/Products';
+import { AnimatedCounter } from '../ui';
 import productImagesData from '../../assets/data/productImages.json';
 import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';
@@ -224,7 +224,7 @@ const NuestraMarca = () => {
                 data-aos-delay="200"
                 data-aos-once="true"
               >
-                En ByteBox, somos líderes en la distribución de productos tecnológicos y accesorios 
+                En ByteBox, somos líderes en la distribución de equipos tecnológicos y accesorios 
                 de vanguardia. Cada producto que ofrecemos está cuidadosamente seleccionado para 
                 brindar la mejor calidad, innovación y rendimiento que impulse el éxito de 
                 nuestros clientes.
@@ -238,9 +238,9 @@ const NuestraMarca = () => {
                 data-aos-once="true"
               >
                 {[
-                  { number: '5000+', label: 'Productos Vendidos' },
-                  { number: '98%', label: 'Satisfacción Cliente' },
-                  { number: '24/7', label: 'Soporte Premium' }
+                  { number: 5000, suffix: '+', label: 'Productos Vendidos' },
+                  { number: 98, suffix: '%', label: 'Satisfacción Cliente' },
+                  { number: 24, suffix: '/7', label: 'Soporte Premium' }
                 ].map((stat, index) => (
                   <div 
                     key={`stat-${index}-${stat.label}`}
@@ -250,15 +250,15 @@ const NuestraMarca = () => {
                     data-aos-delay={`${300 + (index * 100)}`}
                     data-aos-once="true"
                   >
-                    <span 
+                    <AnimatedCounter
+                      end={stat.number}
+                      suffix={stat.suffix}
                       className="stat-number"
-                      data-aos="count-up"
+                      data-aos="fade-up"
                       data-aos-duration="1000"
                       data-aos-delay={`${400 + (index * 100)}`}
                       data-aos-once="true"
-                    >
-                      {stat.number}
-                    </span>
+                    />
                     <span className="stat-label">{stat.label}</span>
                   </div>
                 ))}
@@ -285,9 +285,6 @@ const NuestraMarca = () => {
       </section>
     </main>
 
-    {/* PRODUCTOS DESTACADOS */}
-    <Products />
-    
     <Footer />
   </>
   );

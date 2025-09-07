@@ -11,3 +11,6 @@ export { default as Tabs } from './Tabs';
 // Exportar Tooltip
 export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';
+
+// Exportar AnimatedCounter
+export { default as AnimatedCounter } from './AnimatedCounter';

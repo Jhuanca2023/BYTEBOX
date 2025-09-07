@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AnimatedCounter } from '../ui';
 import styles from './WorldStats.module.css';
 
 type CountsType = {
@@ -17,15 +18,9 @@ type StatItem = {
 };
 
 const WorldStats = () => {
-  const [animated, setAnimated] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const [counts, setCounts] = useState<CountsType>({
-    onboardings: 0,
-    clients: 0,
-    countries: 0
-  });
 
   const stats: StatItem[] = [
     { id: 1, number: 5500, label: 'onboardings', displayLabel: 'Onboardings exitosos', suffix: '+' },
@@ -33,63 +28,43 @@ const WorldStats = () => {
     { id: 3, number: 130, label: 'countries', displayLabel: 'Países operativos', suffix: '+' },
   ];
 
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  // Función para animar los contadores
-  const animateCounters = () => {
-    if (animated) return;
-    
-    setAnimated(true);
-    
-    const duration = 2000; // Duración de la animación en ms
-    const startTime = performance.now();
-    
-    const animate = (currentTime: number) => {
-      const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1);
-      
-      setCounts({
-        onboardings: Math.floor(progress * 5500),
-        clients: Math.floor(progress * 200),
-        countries: Math.floor(progress * 130)
-      });
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+  // Efecto para detectar el tamaño de pantalla
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
     };
-    
-    requestAnimationFrame(animate);
-  };
 
-  // Efecto para animar cuando la sección es visible
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
+  // Efecto para detectar cuando la sección es visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          animateCounters();
           observer.unobserve(entry.target);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
-
-  // Función para formatear números con separadores de miles
-  const formatNumber = (num: number): string => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
 
   // Función para obtener el retraso de animación basado en el índice
   const getAnimationDelay = (index: number) => ({
@@ -133,14 +108,26 @@ const WorldStats = () => {
             </div>
 
             {/* Estadísticas en la parte inferior */}
-            <div className={styles.statsContainer} ref={statsRef}>
-              {stats.map((stat) => (
+            <div className={styles.statsContainer}>
+              {stats.map((stat, index) => (
                 <div key={stat.id} className={`stat-item ${styles.statItem}`}>
                   <div className="stat-content">
-                    <h4 className="stat-number">
-                      {formatNumber(counts[stat.label])}
-                      {stat.suffix || ''}
-                    </h4>
+                    {isMobile ? (
+                      <span className="stat-number">
+                        {stat.number}{stat.suffix || ''}
+                      </span>
+                    ) : (
+                      <AnimatedCounter
+                        end={stat.number}
+                        suffix={stat.suffix || ''}
+                        className="stat-number"
+                        duration={2.5}
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-delay={`${400 + (index * 200)}`}
+                        data-aos-once="true"
+                      />
+                    )}
                     <p className="stat-label">{stat.displayLabel}</p>
                   </div>
                 </div>
