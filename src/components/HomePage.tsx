@@ -29,11 +29,43 @@ const HomePage = () => {
   // Configuración de SEO para la página de inicio
 
   useEffect(() => {
-    const state = location.state as LocationState;
-    if (state && state.scrollTo) {
-      const el = document.querySelector(state.scrollTo);
-      if (el) {
-        (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+    // Handle scroll to specific section from location state
+    const state = location.state as LocationState | { scrollToContact?: boolean };
+    
+    if (state) {
+      if ('scrollToContact' in state && state.scrollToContact) {
+        // Function to handle the scroll
+        const scrollToContact = () => {
+          const contactSection = document.getElementById('contacto');
+          if (contactSection) {
+            const headerOffset = 100; // Adjust based on your header height
+            const elementPosition = contactSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          } else {
+            // If contact section not found, try again after a short delay
+            setTimeout(scrollToContact, 300);
+          }
+        };
+        
+        // Initial scroll attempt
+        const timer = setTimeout(scrollToContact, 100);
+        
+        // Cleanup function
+        return () => {
+          clearTimeout(timer);
+          // Clear the state to prevent scrolling again if user navigates back
+          window.history.replaceState({ ...location.state, scrollToContact: false }, '');
+        };
+      } else if ('scrollTo' in state && state.scrollTo) {
+        const el = document.querySelector(state.scrollTo);
+        if (el) {
+          (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   }, [location]);

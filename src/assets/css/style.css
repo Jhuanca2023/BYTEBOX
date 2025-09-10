@@ -39,13 +39,6 @@ section {
   border-bottom: 1px solid #eee;
 }
 
-footer {
-  background: var(--color-black);
-  color: var(--color-white);
-  text-align: center;
-  padding: var(--spacing-md) 0;
-}
-
 /* ESTILOS DE BOTONES */
 .cta-button {
   display: inline-flex;
@@ -1378,53 +1371,8 @@ main section {
   flex-direction: column;
   gap: 6px;
 }
-.footer-links-grid a,
-.footer-col.discover-col a,
-.footer-col.contact-col a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  transition: color 0.2s;
-  margin-bottom: 2px;
-}
-.footer-links-grid a:hover,
-.footer-col.discover-col a:hover,
-.footer-col.contact-col a:hover {
-  color: #2ad1df;
-}
-.footer-tecspal {
-  position: relative;
-  /* Other existing styles */
-}
-
-.footer-socials {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px;
-  z-index: 10;
-}
-.footer-socials a svg {
-  display: block;
-  transition: opacity 0.2s;
-}
-.footer-socials a:hover svg {
-  opacity: 0.7;
-}
-.newsletter-col {
-  flex: 1 1 340px;
-  min-width: 260px;
-  max-width: 400px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 0;
-  margin-left: 0;
-}
+/* Footer styles have been moved to Footer.css */
 .newsletter-box {
-  background: linear-gradient(135deg, #232323 80%, #232b33 120%);
   border-radius: 36px;
   padding: 36px 28px 28px 28px;
   box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);

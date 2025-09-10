@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
@@ -79,8 +79,15 @@ const NuestraMarca = () => {
     return `#${toHex(darken(r))}${toHex(darken(g))}${toHex(darken(b))}`;
   };
 
-  // Hacer scroll al ancla cuando la URL contenga hash (por navegación interna)
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Función para manejar el clic en el botón de cotización
+  const handleCotizaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Navegar al home con el hash de contacto
+    navigate('/', { state: { scrollToContact: true } });
+  };
   useEffect(() => {
     if (location.hash) {
       // pequeño retraso para asegurar render del DOM
@@ -282,21 +289,19 @@ const NuestraMarca = () => {
                 ))}
               </div>
               
-              <a 
-                href="https://www.falabella.com.pe/falabella-pe/seller/Bytebox" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={handleCotizaClick}
                 className="cta-button"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay="600"
                 data-aos-once="true"
               >
-                <span>Explora Nuestros Productos</span>
+                <span>Cotiza tus Productos</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>

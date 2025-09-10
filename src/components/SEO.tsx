@@ -14,10 +14,10 @@ export const SeoComponent: React.FC<SEOProps> = ({
   canonicalUrl
 }) => {
   useEffect(() => {
-    // Actualizar título
+
     document.title = title;
     
-    // Crear o actualizar meta descripción
+
     let metaDescription = document.querySelector('meta[name="description"]') as HTMLMetaElement;
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -26,7 +26,7 @@ export const SeoComponent: React.FC<SEOProps> = ({
     }
     metaDescription.content = description;
     
-    // Crear o actualizar meta keywords
+ 
     let metaKeywords = document.querySelector('meta[name="keywords"]') as HTMLMetaElement;
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta');
@@ -35,7 +35,7 @@ export const SeoComponent: React.FC<SEOProps> = ({
     }
     metaKeywords.content = keywords;
     
-    // Añadir URL canónica si se proporciona
+    
     let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (canonicalUrl) {
       if (!linkCanonical) {
@@ -45,18 +45,17 @@ export const SeoComponent: React.FC<SEOProps> = ({
       }
       linkCanonical.href = canonicalUrl;
     } else if (linkCanonical) {
-      // Si existe pero no debería, eliminarlo
+  
       linkCanonical.remove();
     }
     
-    // Limpieza al desmontar
+
     return () => {
-      // No revertimos los cambios al desmontar para mantener el SEO consistente
-      // durante la navegación del cliente
+     
     };
   }, [title, description, keywords, canonicalUrl]);
 
-  return null; // Este componente no renderiza nada en el DOM
+  return null; 
 };
 
 export default SeoComponent;
