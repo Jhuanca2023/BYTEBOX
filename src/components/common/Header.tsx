@@ -44,7 +44,7 @@ const menuItems: MenuItem[] = [
       { label: 'Sobre nosotros', icon: <FaInfoCircle />, anchor: '/sobre-nosotros', external: false },
       { label: 'Nuestra Marca', icon: <FaPaintBrush />, anchor: '/nuestra-marca', external: false },
       { label: 'Casos de éxito', icon: <FaChartLine />, anchor: '#testimonios', external: false },
-      { label: 'Únete como socio', icon: <FaHandshake />, anchor: '#contacto', external: false },
+      { label: 'Únete como socio', icon: <FaHandshake />, anchor: 'mailto:alex.c@bytebox.pe?subject=Quiero unirme como socio', external: true },
     ],
   },
   {

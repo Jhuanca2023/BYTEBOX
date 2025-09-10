@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logoFooter from '../../assets/images/logo/Blanco/Logo_Horizontal_Blanco.png';
 import './Footer.css';
 
@@ -77,9 +78,9 @@ const Footer = () => (
         &copy; {new Date().getFullYear()} Bytebox. Todos los derechos reservados.
       </div>
       <div className="legal-links">
-        <a href="/politica-privacidad">Política de Privacidad</a>
-        <a href="/terminos-servicio">Términos de Servicio</a>
-        <a href="/politica-cookies">Cookies</a>
+        <Link to="/politica-privacidad" className="legal-link">Política de Privacidad</Link>
+        <Link to="/terminos-servicio" className="legal-link">Términos de Servicio</Link>
+        <Link to="/politica-cookies" className="legal-link">Política de Cookies</Link>
       </div>
     </div>
   </footer>

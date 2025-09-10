@@ -1,19 +1,52 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
-import Products from '../Products/Products';
 import productImagesData from '../../assets/data/productImages.json';
 import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';
 import { smoothScrollTo } from '../../utils/smoothScroll';
 
+interface ValueIcon {
+  id: string;
+  title: string;
+  imageUrl: string;
+}
+
+interface ValueIconsData {
+  icons: ValueIcon[];
+}
+
+interface EsenciaCard extends ValueIcon {
+  description: string;
+  color: string;
+}
+
 const NuestraMarca = () => {
   // Configuración de SEO para la página Nuestra Marca
   const { images: productImages } = productImagesData;
-  const { icons: valueIcons } = valueIconsData;
+  const { icons: valueIcons } = valueIconsData as ValueIconsData;
 
+  // Mapear los íconos a las tarjetas de esencia
+  const esenciaCards: EsenciaCard[] = valueIcons.map((icon: ValueIcon, index: number) => {
+    const descriptions = {
+      "Innovación Constante": "Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas",
+      "Compromiso Total": "Cada proyecto es único, cada cliente es prioritario, cada solución es perfecta",
+      "Alcance Global": "Presencia mundial con enfoque local, conectando culturas y mercados",
+      "Calidad Garantizada": "Excelencia en cada detalle, calidad que se ve y se siente en cada producto"
+    };
+
+    const colors = ["#6C63FF", "#4ECDC4", "#FF6B6B", "#FFD166"];
+    
+    return {
+      id: icon.id,
+      title: icon.title,
+      description: descriptions[icon.title as keyof typeof descriptions] || "",
+      imageUrl: icon.imageUrl,
+      color: colors[index % colors.length]
+    };
+  });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Constante para el intervalo de cambio de imagen
@@ -27,8 +60,34 @@ const NuestraMarca = () => {
     return () => clearInterval(interval);
   }, [productImages]);
 
-  // Hacer scroll al ancla cuando la URL contenga hash (por navegación interna)
+  // Función para oscurecer un color
+  const getDarkerColor = (color: string, percent: number) => {
+    // Convertir color hexadecimal a RGB
+    const r = parseInt(color.slice(1, 3), 16);
+    const g = parseInt(color.slice(3, 5), 16);
+    const b = parseInt(color.slice(5, 7), 16);
+    
+    // Oscurecer el color
+    const darken = (c: number) => Math.max(0, Math.floor(c * (100 - percent) / 100));
+    
+    // Convertir de nuevo a hexadecimal
+    const toHex = (c: number) => {
+      const hex = c.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+    
+    return `#${toHex(darken(r))}${toHex(darken(g))}${toHex(darken(b))}`;
+  };
+
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Función para manejar el clic en el botón de cotización
+  const handleCotizaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Navegar al home con el hash de contacto
+    navigate('/', { state: { scrollToContact: true } });
+  };
   useEffect(() => {
     if (location.hash) {
       // pequeño retraso para asegurar render del DOM
@@ -42,7 +101,7 @@ const NuestraMarca = () => {
   }, [location.hash]);
 
   return (
-    <>
+    <div className="nuestra-marca-container">
       <SeoComponent 
         title="Nuestra Marca - ByteBOX | Innovación y Calidad en Tecnología"
         description="Descubre la esencia de ByteBOX: innovación, calidad y compromiso. Conoce nuestra misión, visión y valores que nos impulsan a ofrecerte la mejor tecnología."
@@ -84,63 +143,29 @@ const NuestraMarca = () => {
             </p>
           </div>
           
-          <div className="values-grid">
-            {valueIcons.map((icon, index) => (
+          <div className="essence-cards-container">
+            {esenciaCards.map((card: EsenciaCard, index: number) => (
               <div 
-                key={icon.id}
-                className={`value-card card-${index + 1}`}
+                key={card.id} 
+                className={`essence-card card-${index + 1}`}
                 data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={`${index * 100}`}
-                data-aos-once="true"
+                data-aos-delay={index * 100}
               >
                 <div 
-                  className="card-icon"
-                  data-aos="zoom-in"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 200}`}
-                  data-aos-once="true"
+                  className="card-image"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${card.color}, ${getDarkerColor(card.color, 20)})`,
+                    backgroundImage: `url(${card.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundBlendMode: 'overlay'
+                  }}
                 >
-                  <div className="icon-circle">
-                    <img 
-                      src={icon.imageUrl} 
-                      alt={icon.title}
-                      className="product-image"
-                      data-aos="zoom-in"
-                      data-aos-duration="600"
-                      data-aos-delay={`${index * 100 + 300}`}
-                      data-aos-once="true"
-                    />
-                  </div>
                 </div>
-                <h3 
-                  className="card-title"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 100}`}
-                  data-aos-once="true"
-                >
-                  {icon.title}
-                </h3>
-                <p 
-                  className="card-description"
-                  data-aos="fade-up"
-                  data-aos-duration="600"
-                  data-aos-delay={`${index * 100 + 150}`}
-                  data-aos-once="true"
-                >
-                  {icon.title === 'Innovación Constante' && 'Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas'}
-                  {icon.title === 'Compromiso Total' && 'Cada proyecto es único, cada cliente es prioritario, cada solución es perfecta'}
-                  {icon.title === 'Alcance Global' && 'Presencia mundial con enfoque local, conectando culturas y mercados'}
-                  {icon.title === 'Calidad Garantizada' && 'Excelencia en cada detalle, calidad que se ve y se siente en cada producto'}
-                </p>
-                <div 
-                  className="card-glow"
-                  data-aos="fade-in"
-                  data-aos-duration="800"
-                  data-aos-delay={`${index * 100 + 200}`}
-                  data-aos-once="true"
-                ></div>
+                <div className="card-content">
+                  <h3 className="card-title">{card.title}</h3>
+                  <p className="card-description">{card.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -264,32 +289,27 @@ const NuestraMarca = () => {
                 ))}
               </div>
               
-              <a 
-                href="https://www.falabella.com.pe/falabella-pe/seller/Bytebox" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={handleCotizaClick}
                 className="cta-button"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay="600"
                 data-aos-once="true"
               >
-                <span>Explora Nuestros Productos</span>
+                <span>Cotiza tus Productos</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </section>
     </main>
-
-    {/* PRODUCTOS DESTACADOS */}
-    <Products />
     
     <Footer />
-  </>
+    </div>
   );
 };
 

@@ -10,6 +10,9 @@ import UltimasEntradas from './components/UltimasEntradas';
 import HomePage from './components/HomePage';
 import BuybackPage from './components/Buyback/BuybackPage';
 import ServiciosIT from './components/ServiciosIT/ServiciosIT';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiesPolicy from './pages/CookiesPolicy';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Route path="/ultimas-entradas" element={<UltimasEntradas />} />
           <Route path="/buyback" element={<BuybackPage />} />
           <Route path="/servicios-it" element={<ServiciosIT />} />
+          <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
+          <Route path="/terminos-servicio" element={<TermsOfService />} />
+          <Route path="/politica-cookies" element={<CookiesPolicy />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>

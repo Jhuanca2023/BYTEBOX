@@ -18,6 +18,8 @@ const imageMap: Record<string, string> = {
   'image.png': getImageUrl('image.png'),
   'imagepapel.png': getImageUrl('imagepapel.png'),
   'imageLap.png': getImageUrl('imageLap.png'),
+  'platfor1.png': getImageUrl('platfor1.png'),
+  'platfor2.png': getImageUrl('platfor2.png'),
   'hardware sostenible.jpg': new URL(`../assets/images/ultimasEntradas/hardware sostenible.jpg`, import.meta.url).href
 };
 

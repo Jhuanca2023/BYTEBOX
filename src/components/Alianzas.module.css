@@ -286,6 +286,18 @@
   opacity: 1;
 }
 
+.alianzasBtnLink {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alianzasBtnLink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .partnersSection {
   margin-top: 64px;
   display: flex;

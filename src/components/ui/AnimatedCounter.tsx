@@ -1,81 +1,54 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { CountUp } from 'countup.js';
 
 interface AnimatedCounterProps {
   end: number;
   duration?: number;
-  prefix?: string;
   suffix?: string;
+  prefix?: string;
   className?: string;
-  decimals?: number;
+  'data-aos'?: string;
+  'data-aos-duration'?: string;
+  'data-aos-delay'?: string;
+  'data-aos-once'?: string;
 }
 
-export const AnimatedCounter = ({
-  end,
-  duration = 2.5,
-  prefix = '',
-  suffix = '',
+const AnimatedCounter = ({ 
+  end, 
+  duration = 2, 
+  suffix = '', 
+  prefix = '', 
   className = '',
-  decimals = 0,
+  ...aosProps 
 }: AnimatedCounterProps) => {
   const countUpRef = useRef<HTMLSpanElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const countUp = useRef<CountUp | null>(null);
+  const countUpInstance = useRef<CountUp | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (countUpRef.current) {
-      observer.observe(countUpRef.current);
-    }
-
-    return () => {
-      if (countUpRef.current) {
-        observer.unobserve(countUpRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible && countUpRef.current) {
-      countUp.current = new CountUp(countUpRef.current, end, {
-        startVal: 0,
-        duration,
-        decimal: '.',
-        decimalPlaces: decimals,
+    if (countUpRef.current && !countUpInstance.current) {
+      countUpInstance.current = new CountUp(countUpRef.current, end, {
+        duration: duration,
+        suffix: suffix,
+        prefix: prefix,
         separator: ',',
-        prefix,
-        suffix,
+        decimal: '.',
+        enableScrollSpy: true,
+        scrollSpyOnce: true,
       });
-
-      if (!countUp.current.error) {
-        countUp.current.start();
-      } else {
-        console.error(countUp.current.error);
-      }
     }
 
     return () => {
-      if (countUp.current) {
-        countUp.current.reset();
+      if (countUpInstance.current) {
+        countUpInstance.current = null;
       }
     };
-  }, [isVisible, end, duration, prefix, suffix, decimals]);
+  }, [end, duration, suffix, prefix]);
 
   return (
     <span 
       ref={countUpRef} 
-      className={`inline-block ${className}`}
-      aria-live="polite"
-      aria-atomic="true"
+      className={className}
+      {...aosProps}
     >
       {prefix}0{suffix}
     </span>

@@ -41,12 +41,12 @@ export const cards: CardProps[] = [
   },
   {
     img: 'accesorios.png',
-    alt: 'Coolbox',
-    title: 'Coolbox:',
-    highlight: 'Líder en Tecnología y Gadgets',
-    desc: 'Coolbox es líder en tecnología y gadgets, brindando productos de última generación y experiencias únicas para empresas y consumidores en toda la región.',
-    category: 'casos-exito',
-    link: 'https://l.instagram.com/?u=https%3A%2F%2Fwww.coolbox.pe%2Fbytebox%3Fmap%3DsellerName%26fbclid%3DPAZXh0bgNhZW0CMTEAAafdAaCy6uDOW7rkwpSGGJG8Tdx0i3c4EmxSzC7rgw8yEjRPBTpqEa984RYEAg_aem_nRAZR6DiZG9TKB7VYQicPQ&e=AT1sOqRwrdi1O8zwxDRgA6ZAaeXamIrnUSbaztz2KpIJxrYhfmaTsIA1_D16Wjf7_xrJHQnjJ08gAkwHp8GdM8UeDpwFKesEuZYsT63XbT_uWcjosungOAA'
+    alt: 'Equipos Tecnológicos',
+    title: 'Nuestros',
+    highlight: 'Equipos',
+    desc: 'Descubre nuestra selección de equipos tecnológicos de última generación para potenciar tu negocio y productividad.',
+    category: 'servicios',
+    link: '/'
   },
   {
     img: 'hardware sostenible.jpg',
@@ -70,8 +70,8 @@ export const cards: CardProps[] = [
 
 export const extraCards: CardProps[] = [
   {
-    img: 'imageLap.png',
-    alt: 'Servicios IT',
+    img: 'platfor1.png',
+    alt: 'Servicios Tecnológicos',
     title: 'Servicios',
     highlight: 'Tecnológicos',
     desc: 'Soluciones IT personalizadas para potenciar tu negocio y mejorar la productividad de tu equipo.',
@@ -97,7 +97,7 @@ export const extraCards: CardProps[] = [
     link: '//'
   },
   {
-    img: 'imagepapel.png',
+    img: 'platfor2.png',
     alt: 'Transformación Empresarial',
     title: 'Transformación Empresarial:',
     highlight: 'Casos de Éxito',

@@ -109,9 +109,12 @@ const Alianzas = () => {
             </div>
           ))}
         </div>
-        <button className={styles.alianzasBtn} onClick={scrollToContact}>
+        <a 
+          href="mailto:alex.c@bytebox.pe" 
+          className={`${styles.alianzasBtn} ${styles.alianzasBtnLink}`}
+        >
           Crezcamos juntos &rarr;
-        </button>
+        </a>
       </main>
       {/* Sección de partners */}
       <section className={styles.partnersSection}>
