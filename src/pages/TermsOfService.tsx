@@ -1,22 +1,14 @@
 import React from 'react';
 import LegalPage from '../components/legal/LegalPage';
 
-// Test component to check if basic rendering works
-const TestComponent = () => (
-  <div style={{ padding: '20px', background: '#f0f0f0', margin: '20px 0', borderRadius: '8px' }}>
-    <h2>Test Component</h2>
-    <p>If you can see this, the component is rendering correctly.</p>
-  </div>
-);
-
 const TermsOfService: React.FC = () => {
   return (
-    <>
-      <TestComponent />
-      <LegalPage title="Términos de Servicio">
-        <section>
-          <p>Bienvenido a Bytebox. Al acceder y utilizar nuestro sitio web, aceptas cumplir con estos Términos de Servicio, todas las leyes y regulaciones aplicables. Te recomendamos leer detenidamente estos términos antes de utilizar nuestros servicios. Si no estás de acuerdo con alguno de los términos establecidos, te rogamos que no utilices nuestro sitio.</p>
-        </section>
+    <LegalPage 
+      title="Términos de Servicio"
+    >
+      <section>
+        <p>Bienvenido a Bytebox. Al acceder y utilizar nuestro sitio web, aceptas cumplir con estos Términos de Servicio, todas las leyes y regulaciones aplicables. Te recomendamos leer detenidamente estos términos antes de utilizar nuestros servicios. Si no estás de acuerdo con alguno de los términos establecidos, te rogamos que no utilices nuestro sitio.</p>
+      </section>
 
       <section>
         <h2>1. Definiciones</h2>
@@ -141,8 +133,7 @@ const TermsOfService: React.FC = () => {
           Teléfono: +51 942 507 022
         </address>
       </section>
-      </LegalPage>
-    </>
+    </LegalPage>
   );
 };
 

@@ -1,10 +1,10 @@
-// Importar Swiper
+
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 
-// Inicialización de Swiper
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicialización de carruseles Swiper
+  
   const carruseles = document.querySelectorAll('.swiper-container');
   
   carruseles.forEach(carrusel => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Animaciones personalizadas para elementos al hacer scroll
+ l
   const animarAlScroll = () => {
     const elementos = document.querySelectorAll('[data-aos]');
     
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Escuchar el evento de scroll
+  
   window.addEventListener('scroll', animarAlScroll);
   
-  // Ejecutar una vez al cargar la página
+
   animarAlScroll();
 });
