@@ -298,6 +298,126 @@
   text-decoration: none;
 }
 
+/* Technology Showcase Section */
+.techShowcase {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .techShowcase {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .techShowcase {
+    padding: 6rem 8rem;
+  }
+}
+
+.techContent {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .techContent {
+    width: 45%;
+    text-align: left;
+    margin-bottom: 0;
+    padding-right: 2rem;
+  }
+}
+
+.techTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1B1B1B;
+  line-height: 1.2;
+}
+
+.techDescription {
+  color: #4B5563;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.techButton {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #1B1B1B;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #1B1B1B;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.techButton:hover {
+  background-color: #1B1B1B;
+  color: #fff;
+}
+
+.techImageContainer {
+  width: 100%;
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .techImageContainer {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+
+.techImage {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.statsBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #10B981;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-top-right-radius: 0.5rem;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
 .partnersSection {
   margin-top: 64px;
   display: flex;

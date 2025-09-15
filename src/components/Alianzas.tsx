@@ -7,35 +7,14 @@ import Contact from './Contact/Contact';
 import productImagesData from '../assets/data/productImages.json';
 import EnvioGarantia from './EnvioGarantia/EnvioGarantia';
 
-// Datos de las tarjetas y partners importados desde el archivo JSON
-const { cards: cardsData, partners: partnersData, alianzasImages } = productImagesData;
+const { cards: cardsData, alianzasImages } = productImagesData;
 
-// Combinar los datos de las tarjetas con las imágenes correspondientes
 const cards = cardsData.map((card, index) => ({
   ...card,
   img: alianzasImages[index].url
 }));
 
-// Mapear los datos de los partners para incluir el JSX del nombre resaltado
-const partners = partnersData.map(partner => ({
-  ...partner,
-  name: <>{partner.name.replace(partner.nameHighlight, '')}<span className={styles.partnerNameHighlight}>{partner.nameHighlight}</span></>
-}));
-
 const Alianzas = () => {
-  // Configuración de SEO para la página de Alianzas
-  
-  // Helper function para obtener el texto alternativo del partner
-  const getPartnerAltText = (name: string | React.ReactElement): string => {
-    return typeof name === 'string' ? name : 'Logo partner';
-  };
-  
-  // Helper function para obtener el nombre del partner para aria-label
-  const getPartnerNameText = (name: string | React.ReactElement): string => {
-    return typeof name === 'string' ? name : '';
-  };
-  
-  // Handler para scroll suave al formulario de contacto
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contacto-alianzas');
@@ -43,6 +22,7 @@ const Alianzas = () => {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   return (
     <>
       <SeoComponent 
@@ -72,6 +52,8 @@ const Alianzas = () => {
           </div>
         </div>
       </section>
+ 
+      
       <main className={styles.alianzasMain}>
         <h2 className={styles.alianzasTitle} data-aos="fade-up" data-aos-duration="800">
           ¿Por qué asociarse con <span 
@@ -103,8 +85,12 @@ const Alianzas = () => {
               data-aos-once="true"
             >
               <div className={styles.alianzasOverlay}>
-                <h3 className={styles.alianzasCardTitle} data-aos="fade-up" data-aos-delay="300" data-aos-once="true">{card.title}</h3>
-                <p className={styles.alianzasCardDesc} data-aos="fade-up" data-aos-delay="400" data-aos-once="true">{card.desc}</p>
+                <h3 className={styles.alianzasCardTitle} data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+                  {card.title}
+                </h3>
+                <p className={styles.alianzasCardDesc} data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+                  {card.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -116,80 +102,48 @@ const Alianzas = () => {
           Crezcamos juntos &rarr;
         </a>
       </main>
-      {/* Sección de partners */}
-      <section className={styles.partnersSection}>
-        <h2 
-          className={styles.partnersTitle}
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-once="true"
-        >
-          Conozca a nuestros <span 
-            className={styles.partnersTitleHighlight}
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="100"
-            data-aos-once="true"
+      
+
+       
+      {/* Technology Showcase Section */}
+      <section className={styles.techShowcase}>
+        <div className={styles.techContent}>
+          <h1 className={styles.techTitle}>
+            Tecnología de vanguardia para todos
+          </h1>
+          <p className={styles.techDescription}>
+            En Sistemas & Tecnología, ofrecemos soluciones innovadoras y productos
+            de última generación para potenciar tu rendimiento en el hogar y en los
+            negocios.
+          </p>
+          <button 
+            className={styles.techButton}
+            onClick={scrollToContact}
           >
-            Partners
-          </span>
-        </h2>
-        <p 
-          className={styles.partnersDesc}
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          data-aos-once="true"
-        >
-          Encuentre un Partner Bytebox con la solución o servicios que necesita.<br />
-          Trabaje con expertos especializados en resolver los problemas.
-        </p>
-        <div className={styles.partnersGrid}>
-          {partners.map((p, i) => (
-            <div 
-              className={styles.partnerCard} 
-              key={`partner-${i}-${getPartnerNameText(p.name)}`}
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay={`${(i % 3) * 100}`}
-              data-aos-once="true"
-            >
-              <div className={styles.partnerLogoBox}>
-                <img 
-                  src={p.logo} 
-                  alt={getPartnerAltText(p.name)} 
-                  className={styles.partnerLogo}
-                  data-aos="zoom-in"
-                  data-aos-duration="600"
-                  data-aos-delay="200"
-                  data-aos-once="true"
-                />
-              </div>
-              <div className={styles.partnerContent}>
-                <div className={styles.partnerName}>
-                  {p.name}
-                </div>
-                <div className={styles.partnerDesc}>{p.desc}</div>
-              </div>
-              <a
-                href={p.url}
-                className={styles.partnerBtn}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Ir a la plataforma de ${getPartnerNameText(p.name)}`}
-                data-aos="fade-in"
-                data-aos-duration="600"
-                data-aos-delay="300"
-                data-aos-once="true"
-              >
-                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={styles.partnerBtnIcon}>
-                  <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clipRule="evenodd" />
-                </svg>
-              </a>
+            Cotiza
+          </button>
+        </div>
+
+        <div className={styles.techImageContainer}>
+          <img
+            src="https://images.unsplash.com/photo-1593642634367-d91a135587b5"
+            alt="Laptop tecnológica"
+            className={styles.techImage}
+          />
+          <div className={styles.statsBox}>
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>150+</p>
+              <p className={styles.statLabel}>Calidad garantizada</p>
             </div>
-          ))}
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>200+</p>
+              <p className={styles.statLabel}>Clientes satisfechos</p>
+            </div>
+          </div>
         </div>
       </section>
+      
+
       <div id="contacto-alianzas">
         <EnvioGarantia />
         <Contact />
@@ -199,4 +153,4 @@ const Alianzas = () => {
   );
 };
 
-export default Alianzas; 
+export default Alianzas;

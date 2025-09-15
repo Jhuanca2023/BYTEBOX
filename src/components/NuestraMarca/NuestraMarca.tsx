@@ -24,11 +24,11 @@ interface EsenciaCard extends ValueIcon {
 }
 
 const NuestraMarca = () => {
-  // Configuración de SEO para la página Nuestra Marca
+
   const { images: productImages } = productImagesData;
   const { icons: valueIcons } = valueIconsData as ValueIconsData;
 
-  // Mapear los íconos a las tarjetas de esencia
+
   const esenciaCards: EsenciaCard[] = valueIcons.map((icon: ValueIcon, index: number) => {
     const descriptions = {
       "Innovación Constante": "Pioneros en tecnología, siempre un paso adelante en soluciones disruptivas",
@@ -49,7 +49,7 @@ const NuestraMarca = () => {
   });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Constante para el intervalo de cambio de imagen
+ 
   const IMAGE_CHANGE_INTERVAL = 3000;
 
   useEffect(() => {
@@ -59,18 +59,16 @@ const NuestraMarca = () => {
     
     return () => clearInterval(interval);
   }, [productImages]);
-
-  // Función para oscurecer un color
   const getDarkerColor = (color: string, percent: number) => {
-    // Convertir color hexadecimal a RGB
+
     const r = parseInt(color.slice(1, 3), 16);
     const g = parseInt(color.slice(3, 5), 16);
     const b = parseInt(color.slice(5, 7), 16);
     
-    // Oscurecer el color
+ 
     const darken = (c: number) => Math.max(0, Math.floor(c * (100 - percent) / 100));
     
-    // Convertir de nuevo a hexadecimal
+  
     const toHex = (c: number) => {
       const hex = c.toString(16);
       return hex.length === 1 ? '0' + hex : hex;
@@ -82,15 +80,15 @@ const NuestraMarca = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Función para manejar el clic en el botón de cotización
+
   const handleCotizaClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Navegar al home con el hash de contacto
+   
     navigate('/', { state: { scrollToContact: true } });
   };
   useEffect(() => {
     if (location.hash) {
-      // pequeño retraso para asegurar render del DOM
+     
       setTimeout(() => {
         smoothScrollTo(location.hash, {
           offset: (document.querySelector('.header') as HTMLElement)?.clientHeight || 0,
@@ -249,10 +247,10 @@ const NuestraMarca = () => {
                 data-aos-delay="200"
                 data-aos-once="true"
               >
-                En ByteBox, somos líderes en la distribución de productos tecnológicos y accesorios 
-                de vanguardia. Cada producto que ofrecemos está cuidadosamente seleccionado para 
-                brindar la mejor calidad, innovación y rendimiento que impulse el éxito de 
-                nuestros clientes.
+                En ByteBox, somos líderes en la distribución de equipos tecnológicos 
+                y accesorios de vanguardia. Cada producto que ofrecemos está cuidadosamente 
+                seleccionado para brindar la mejor calidad, innovación y rendimiento que
+                 impulse el éxito de nuestros clientes.
               </p>
               
               <div 
