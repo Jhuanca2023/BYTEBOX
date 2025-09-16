@@ -46,15 +46,8 @@ const Contact = () => {
     });
   };
 
-  // Función para obtener la URL base de la API según el entorno
-  const getApiBaseUrl = () => {
-    // Si estamos en desarrollo, usamos la URL local
-    if (process.env.NODE_ENV === 'development') {
-      return '/api';
-    }
-    // En producción, usamos la ruta relativa a la API
-    return '/api';
-  };
+  // URL del endpoint de la API - Ruta en XAMPP
+  const API_URL = 'http://localhost/bytebox-web/public/api/submit_contact.php';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,12 +55,15 @@ const Contact = () => {
     
     try {
       console.log('Enviando datos:', formData);
-      const response = await fetch(`${getApiBaseUrl()}/submit`, {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
         },
-        credentials: 'include',
+        mode: 'cors',
+        credentials: 'same-origin',
         body: JSON.stringify(formData)
       });
 
