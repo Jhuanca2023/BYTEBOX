@@ -38,7 +38,7 @@ const TermsOfService: React.FC = () => {
         <p>Al crear una cuenta en nuestro sitio, aceptas que:</p>
         <ul>
           <li>Eres mayor de 18 años o tienes el consentimiento de tus padres/tutores</li>
-          <link>Proporcionarás información precisa y actualizada</link>
+          <li>Proporcionarás información precisa y actualizada</li>
           <li>Eres responsable de mantener la confidencialidad de tu cuenta y contraseña</li>
           <li>Aceptas notificaciones electrónicas como método de comunicación principal</li>
           <li>Eres responsable de toda la actividad que ocurra bajo tu cuenta</li>
@@ -84,7 +84,7 @@ const TermsOfService: React.FC = () => {
           <p style={{margin: '0.5rem 0', fontWeight: 600}}>Bytebox Perú</p>
           <p style={{margin: '0.5rem 0'}}><a href="mailto:alex.c@bytebox.pe" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>alex.c@bytebox.pe</a></p>
           <p style={{margin: '0.5rem 0'}}><a href="tel:+51942507022" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>+51 942 507 022</a></p>
-          <p style={{margin: '0.5rem 0'}}>Av. Ejemplo 123, Lima, Perú</p>
+          <p style={{margin: '0.5rem 0'}}>Lima, Perú</p>
         </div>
       </section>
 
