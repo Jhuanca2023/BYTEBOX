@@ -11,9 +11,12 @@ $allowedOrigins = [
     'http://localhost',
     'https://tecnovedadesweb.com',
     'https://bytebox.pe',
+    'http://byteboxinf.tecnovedadesweb.site',
     'https://byteboxinf.tecnovedadesweb.site',
     'https://*.tecnovedadesweb.site',
-    'https://www.byteboxinf.tecnovedadesweb.site'
+    'http://*.tecnovedadesweb.site',
+    'https://www.byteboxinf.tecnovedadesweb.site',
+    'http://www.byteboxinf.tecnovedadesweb.site'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -29,7 +32,12 @@ foreach ($allowedOrigins as $allowed) {
 if ($isAllowedOrigin) {
     header("Access-Control-Allow-Origin: $origin");
 } else {
-    header("Access-Control-Allow-Origin: https://byteboxinf.tecnovedadesweb.site");
+    // Fallback para permitir el dominio principal tanto en HTTP como HTTPS
+    $fallbackOrigin = 'https://byteboxinf.tecnovedadesweb.site';
+    if (strpos($origin, 'byteboxinf.tecnovedadesweb.site') !== false) {
+        $fallbackOrigin = $origin;
+    }
+    header("Access-Control-Allow-Origin: $fallbackOrigin");
 }
 
 header("Access-Control-Allow-Methods: POST, OPTIONS");
