@@ -1,65 +1,136 @@
 <?php
-// Configuración de CORS para producción
-header("Access-Control-Allow-Origin: https://tecnovedadesweb.com");
+// Habilitar visualización de errores
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Configuración de CORS
+$allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'http://localhost',
+    'https://tecnovedadesweb.com',
+    'https://bytebox.pe',
+    'https://byteboxinf.tecnovedadesweb.site',
+    'https://*.tecnovedadesweb.site',
+    'https://www.byteboxinf.tecnovedadesweb.site'
+];
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$isAllowedOrigin = false;
+
+foreach ($allowedOrigins as $allowed) {
+    if (fnmatch($allowed, $origin)) {
+        $isAllowedOrigin = true;
+        break;
+    }
+}
+
+if ($isAllowedOrigin) {
+    header("Access-Control-Allow-Origin: $origin");
+} else {
+    header("Access-Control-Allow-Origin: https://byteboxinf.tecnovedadesweb.site");
+}
+
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, X-Requested-With");
+header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application/json; charset=utf-8");
 
-// Manejo de preflight request
+// Manejar solicitud OPTIONS para CORS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
 
-// Habilitar reporte de errores para desarrollo
-ini_set('display_errors', 0);
-error_reporting(E_ALL);
+// Procesar solicitud POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        $data = json_decode(file_get_contents('php://input'), true);
+        
+        // Validar campos requeridos
+        $required = ['nombre', 'email', 'empresa', 'ruc', 'pais', 'objetivo', 'cantidad_unidades', 'pais_destino'];
+        foreach ($required as $field) {
+            if (empty($data[$field])) {
+                throw new Exception("El campo $field es requerido");
+            }
+        }
 
-// Cargar configuración
-$config = require __DIR__ . '/config.php';
+        // Validar formato de email
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            throw new Exception('El formato del correo electrónico no es válido');
+        }
 
-// Obtener datos del POST
-$json = file_get_contents('php://input');
-$data = json_decode($json, true);
+        // Validar RUC (ejemplo para Perú)
+        if (!preg_match('/^[0-9]{11}$/', $data['ruc'])) {
+            throw new Exception('El RUC debe tener 11 dígitos numéricos');
+        }
 
-// Verificar si hay datos
-if (empty($data)) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'No se recibieron datos']);
+        // Configuración del correo
+        $to = 'alex.c@bytebox.pe';
+        $subject = 'Nuevo mensaje de contacto de ' . $data['nombre'];
+
+        // Configuración del servidor de correo
+        ini_set('SMTP', 'mail.tecnovedadesweb.site');
+        ini_set('smtp_port', 465);
+        ini_set('sendmail_from', 'no-reply@tecnovedadesweb.site');
+
+        // Crear el cuerpo del mensaje HTML
+        $message = "
+        <html>
+        <head>
+            <title>Nuevo mensaje de contacto</title>
+        </head>
+        <body>
+            <h2>Nuevo mensaje de contacto</h2>
+            <p><strong>Nombre:</strong> " . htmlspecialchars($data['nombre']) . "</p>
+            <p><strong>Email:</strong> " . htmlspecialchars($data['email']) . "</p>
+            <p><strong>Empresa:</strong> " . htmlspecialchars($data['empresa']) . "</p>
+            <p><strong>RUC:</strong> " . htmlspecialchars($data['ruc']) . "</p>
+            <p><strong>País:</strong> " . htmlspecialchars($data['pais']) . "</p>
+            <p><strong>Objetivo:</strong> " . htmlspecialchars($data['objetivo']) . "</p>
+            <p><strong>Cantidad de unidades:</strong> " . htmlspecialchars($data['cantidad_unidades']) . "</p>
+            <p><strong>País de destino:</strong> " . htmlspecialchars($data['pais_destino']) . "</p>
+            <p><strong>Mensaje:</strong> " . (!empty($data['mensaje']) ? htmlspecialchars($data['mensaje']) : 'No especificado') . "</p>
+        </body>
+        </html>";
+
+        // Cabeceras del correo
+        $headers = [
+            'MIME-Version: 1.0',
+            'Content-type: text/html; charset=UTF-8',
+            'From: ByteBOX Web <no-reply@tecnovedadesweb.site>',
+            'Reply-To: ' . $data['nombre'] . ' <' . $data['email'] . '>',
+            'X-Mailer: PHP/' . phpversion(),
+            'X-Priority: 1',
+            'X-MSMail-Priority: High'
+        ];
+
+        $headersString = implode("\r\n", $headers);
+
+        // Enviar el correo
+        $mailSent = mail($to, $subject, $message, $headersString);
+        
+        if ($mailSent) {
+            echo json_encode([
+                'success' => true,
+                'message' => 'Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.'
+            ]);
+        } else {
+            $error = error_get_last();
+            throw new Exception('Error al enviar el correo: ' . ($error['message'] ?? 'Error desconocido'));
+        }
+
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo json_encode([
+            'success' => false,
+            'message' => $e->getMessage()
+        ]);
+    }
     exit();
 }
 
-try {
-    // Inicializar PHPMailer
-    require __DIR__ . '/mailer.php';
-    $mailer = new Mailer($config);
-    
-    // Enviar correo
-    $result = $mailer->sendContactForm($data);
-    
-    // Respuesta exitosa
-    http_response_code(200);
-    echo json_encode([
-        'success' => true,
-        'message' => '¡Gracias por contactarnos! Hemos recibido tu mensaje correctamente y nuestro equipo se pondrá en contacto contigo a la brevedad posible.'
-    ]);
-    
-} catch (Exception $e) {
-    // Error al enviar el correo
-    http_response_code(500);
-    
-    $mensajeError = 'Error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.';
-    
-    // Mostrar mensaje de error detallado solo en desarrollo
-    $origen = $_SERVER['HTTP_ORIGIN'] ?? '';
-    if (in_array($origen, ['http://localhost:3000', 'http://localhost:5173', 'https://tecnovedadesweb.com'])) {
-        $mensajeError = $e->getMessage();
-    }
-    
-    echo json_encode([
-        'success' => false,
-        'message' => $mensajeError
-    ]);
-}
-
-exit();
+// Si no es una solicitud POST
+http_response_code(405);
+echo json_encode(['success' => false, 'message' => 'Método no permitido']);

@@ -38,7 +38,7 @@ const TermsOfService: React.FC = () => {
         <p>Al crear una cuenta en nuestro sitio, aceptas que:</p>
         <ul>
           <li>Eres mayor de 18 años o tienes el consentimiento de tus padres/tutores</li>
-          <link>Proporcionarás información precisa y actualizada</link>
+          <li>Proporcionarás información precisa y actualizada</li>
           <li>Eres responsable de mantener la confidencialidad de tu cuenta y contraseña</li>
           <li>Aceptas notificaciones electrónicas como método de comunicación principal</li>
           <li>Eres responsable de toda la actividad que ocurra bajo tu cuenta</li>
