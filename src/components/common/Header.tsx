@@ -33,7 +33,7 @@ const menuItems: MenuItem[] = [
     label: 'Servicios',
     anchor: '#servicios',
     dropdown: [
-      { label: 'Accesorios', icon: <FaServer />, anchor: '#accesorios', external: false },
+      { label: 'Tech Hardware', icon: <FaServer />, anchor: '#accesorios', external: false },
       { label: 'Alianzas', icon: <FaHandshake />, anchor: '/alianzas', external: false },
     ],
   },

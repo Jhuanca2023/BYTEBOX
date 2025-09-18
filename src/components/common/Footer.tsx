@@ -20,7 +20,9 @@ const Footer = () => (
     <div className="footer-inner">
       <div className="footer-left">
         <div className="footer-logo">
-          <img src={logoFooter} alt="Bytebox - Soluciones Tecnológicas" style={{ height: '42px', width: 'auto' }} />
+          <Link to="/">
+            <img src={logoFooter} alt="Bytebox - Soluciones Tecnológicas" style={{ height: '42px', width: 'auto' }} />
+          </Link>
         </div>
         
         <div className="footer-links-row">
@@ -56,19 +58,11 @@ const Footer = () => (
       
       <div className="footer-col newsletter-col">
         <div className="newsletter-box">
-          <h5>¡Súmate a nuestro viaje!</h5>
-          <p>Suscríbete a nuestro boletín y recibe las últimas novedades y actualizaciones.</p>
-          <form className="newsletter-form" onSubmit={e => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Tu correo electrónico" 
-              required 
-              aria-label="Correo electrónico para boletín"
-            />
-            <button type="submit">
-              Suscríbete <span aria-hidden="true">→</span>
-            </button>
-          </form>
+          <h5>¡Sumate a nuestro viaje!</h5>
+          <p>En Bytebox impulsamos la innovación tecnológica con soluciones personalizadas, seguras y escalables para cada negocio.</p>
+          <Link to="/sobre-nosotros" className="btn btn-outline-light mt-3">
+            Conócenos <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </div>

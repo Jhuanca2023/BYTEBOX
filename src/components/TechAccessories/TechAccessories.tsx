@@ -20,7 +20,7 @@ const TechAccessories = () => {
       <AnimatedSection className="tech-accessories-section" animationType="fadeInUp">
       <h2 className="tech-accessories-title">
         <span style={{ color: '#000' }}>TECH</span>{' '}
-        <span style={{ color: '#46d1f0' }}>ACCESSORIES</span>
+        <span style={{ color: '#46d1f0' }}>HARDWARE</span>
       </h2>
       <div className="tech-accessories-container">
         <AnimatedSection 
