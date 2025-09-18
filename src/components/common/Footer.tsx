@@ -30,12 +30,12 @@ const Footer = () => (
             <h4>Soluciones</h4>
             <div className="footer-links-grid footer-links-grid-2col">
               <div>
-                <a href="/onboarding">Onboarding</a>
-                <a href="/offboarding">Offboarding</a>
-                <a href="/almacenaje">Almacenaje</a>
+                <a href="#onboarding">Onboarding</a>
+                <a href="#offboarding">Offboarding</a>
+                <a href="#almacenaje">Almacenaje</a>
               </div>
               <div>
-                <a href="/accesorios">Accesorios</a>
+                <a href="#accesorios">Tech Hardware</a>
                 <a href="/alianzas">Alianzas</a>
               </div>
             </div>
