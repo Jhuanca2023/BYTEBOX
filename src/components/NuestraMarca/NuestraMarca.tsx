@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SeoComponent from '../SEO';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import { Header, Footer } from '../layout';
 import productImagesData from '../../assets/data/productImages.json';
 import valueIconsData from '../../assets/data/valueIcons.json';
 import './NuestraMarca.css';

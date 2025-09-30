@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../SEO';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import { Header, Footer } from '../layout';
 import './SobreNosotros.css';
 import { FaChartLine, FaBolt, FaUsers } from 'react-icons/fa';
 import nosotrosData from '../../assets/data/nosotros.json';

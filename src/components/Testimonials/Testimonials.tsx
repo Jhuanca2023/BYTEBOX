@@ -1,15 +1,71 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import SeoComponent from '../SEO';
 import './Testimonials.css';
 import testimonials from '../../assets/data/testimonials.json';
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
-  const visible = [
-    testimonials[(index + 0) % testimonials.length],
-    testimonials[(index + 1) % testimonials.length],
-    testimonials[(index + 2) % testimonials.length],
-  ];
+  const [isMobile, setIsMobile] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Detectar si es móvil/tablet
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Scroll infinito para móviles/tablets
+  useEffect(() => {
+    if (!isMobile || !sliderRef.current) return;
+
+    const slider = sliderRef.current;
+    let isScrolling = false;
+
+    const handleScroll = () => {
+      if (isScrolling) return;
+      
+      const { scrollLeft, scrollWidth } = slider;
+      const singleSetWidth = scrollWidth / 5; // Cada set de testimonios (ahora son 5)
+      const tolerance = 20; // Tolerancia para evitar loops
+      
+      // Si llegó muy cerca del final (quinto set)
+      if (scrollLeft >= singleSetWidth * 4 - tolerance) {
+        isScrolling = true;
+        slider.scrollLeft = singleSetWidth * 2; // Saltar al tercer set
+        setTimeout(() => { isScrolling = false; }, 50);
+      }
+      // Si llegó muy cerca del inicio (primer set)
+      else if (scrollLeft <= singleSetWidth + tolerance) {
+        isScrolling = true;
+        slider.scrollLeft = singleSetWidth * 3; // Saltar al cuarto set
+        setTimeout(() => { isScrolling = false; }, 50);
+      }
+    };
+
+    slider.addEventListener('scroll', handleScroll);
+    
+    // Inicializar en el tercer set (medio) para permitir scroll en ambas direcciones
+    setTimeout(() => {
+      const singleSetWidth = slider.scrollWidth / 5;
+      slider.scrollLeft = singleSetWidth * 2; // Empezar en el tercer set
+    }, 100);
+
+    return () => slider.removeEventListener('scroll', handleScroll);
+  }, [isMobile]);
+
+  // Crear carrusel infinito para ambos casos
+  const visible = isMobile ? 
+    [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials] : // Quintuplicar para móvil
+    [
+      testimonials[(index + 0) % testimonials.length],
+      testimonials[(index + 1) % testimonials.length], 
+      testimonials[(index + 2) % testimonials.length],
+    ]; // En desktop mostrar 3 con flechas
 
   const prev = () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
@@ -28,12 +84,16 @@ const Testimonials = () => {
       <p className="testimonials-subtitle">
         En Bytebox, nuestro enfoque siempre está en el cliente. Queremos ser un socio de confianza en el proceso de expansión global de tu empresa.
       </p>
-      <div className="testimonials-slider">
-        <button className="slider-arrow left" onClick={prev} aria-label="Anterior">
-          <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="19" fill="#f5f7f9"/><path d="M22.5 27l-6-8 6-8" stroke="#b0bec5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
-        </button>
+      <div className="testimonials-slider" ref={sliderRef}>
+        {!isMobile && (
+          <button className="slider-arrow left" onClick={prev} aria-label="Anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
         {visible.map((t, i) => (
-          <div className="testimonial-card" key={i}>
+          <div className="testimonial-card" key={`testimonial-${i}-${t.name}`}>
             <p className="testimonial-text"><em>{t.text}</em></p>
             <div className="testimonial-user">
               <img src={t.logo} alt={t.name} className="testimonial-logo" />
@@ -44,9 +104,13 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
-        <button className="slider-arrow right" onClick={next} aria-label="Siguiente">
-          <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="19" fill="#f5f7f9"/><path d="M15.5 11l6 8-6 8" stroke="#b0bec5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
-        </button>
+        {!isMobile && (
+          <button className="slider-arrow right" onClick={next} aria-label="Siguiente">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
       </div>
     </section>
   );

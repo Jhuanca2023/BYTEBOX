@@ -6,6 +6,7 @@ type Solution = {
   title: string;
   description: string;
   number: string;
+  hasButton?: boolean;
 };
 
 const SolutionsMobile = () => {
@@ -13,21 +14,21 @@ const SolutionsMobile = () => {
 
   const solutions: Solution[] = [
     {
-      id: 'onboarding',
-      title: 'Onboarding',
-      description: 'Equipamos tu talento global sin complicaciones. Incorporar nuevos colaboradores nunca fue tan fácil. Gestionamos la compra y entrega de equipos tecnológicos en más de 120 países, en tiempo récord (solo 3.5 días) y al mejor precio. Con ByteBOX, tu equipo trabaja desde el primer día.',
+      id: 'buyback',
+      title: 'Recompra',
+      description: 'Recompramos tus equipos antiguos, ayudándote a recuperar parte de tu inversión y manteniendo tu infraestructura siempre al día.',
       number: '01'
     },
     {
       id: 'offboarding',
       title: 'Offboarding',
-      description: 'Gestionamos el proceso de salida de colaboradores de manera segura y eficiente. Recuperamos equipos, realizamos borrado seguro de datos y nos aseguramos de que todo el proceso cumpla con las normativas de protección de datos.',
+      description: 'Desvinculación sin fricciones. Cuando un miembro del equipo se va, nos aseguramos de que el hardware no sea un problema. Recuperamos, actualizamos y gestionamos el retiro de equipos de forma segura y ordenada, reduciendo riesgos y costos.',
       number: '02'
     },
     {
       id: 'storage',
       title: 'Almacenaje',
-      description: 'Almacenamiento seguro y gestión de inventario para tus equipos tecnológicos. Ofrecemos soluciones flexibles de almacenamiento que se adaptan a tus necesidades, con seguimiento en tiempo real y máxima seguridad para tus activos tecnológicos.',
+      description: 'Ofrecemos almacenamiento seguro y optimizado, protegiendo tus dispositivos y garantizando su disponibilidad para reutilización o actualización, reduciendo gastos innecesarios.',
       number: '03'
     },
     {
@@ -37,10 +38,11 @@ const SolutionsMobile = () => {
       number: '04'
     },
     {
-      id: 'buyback',
-      title: 'Recompra',
-      description: 'Ofrecemos soluciones de recompra de equipos usados, permitiéndote recuperar valor de tus activos tecnológicos obsoletos. Nos aseguramos de que los dispositivos sean reciclados de manera responsable o reacondicionados para extender su vida útil.',
-      number: '05'
+      id: 'onboarding',
+      title: 'Onboarding',
+      description: 'Equipamos tu talento global sin complicaciones. Incorporar nuevos colaboradores nunca fue tan fácil. Gestionamos la compra y entrega de equipos tecnológicos en más de 130 países y al mejor precio. Con ByteBOX, tu equipo trabaja desde el primer día.',
+      number: '05',
+      hasButton: true
     }
   ];
 
@@ -60,8 +62,28 @@ const SolutionsMobile = () => {
       <div className="solution-content">
         <div className="solution-card">
           <h3>{solutions[activeSolution].title}</h3>
-          <p>{solutions[activeSolution].description}</p>
+          {solutions[activeSolution].id === 'onboarding' ? (
+            <p>
+              Equipamos tu talento global sin complicaciones.
+              Incorporar nuevos colaboradores nunca fue tan fácil. Gestionamos la compra y entrega de equipos tecnológicos en más de <strong style={{ color: 'black' }}>130 países</strong> y al mejor precio. Con ByteBOX, tu equipo trabaja desde el primer día.
+            </p>
+          ) : (
+            <p>{solutions[activeSolution].description}</p>
+          )}
           <span className="solution-number">{solutions[activeSolution].number}</span>
+          {solutions[activeSolution].hasButton && (
+            <button
+              className="buyback-cta-btn"
+              onClick={() => {
+                const contacto = document.getElementById('contacto');
+                if (contacto) {
+                  contacto.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Cotiza
+            </button>
+          )}
         </div>
       </div>
     </div>

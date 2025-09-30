@@ -29,7 +29,7 @@
 .solution-number {
     position: absolute;
     bottom: 1.5rem;
-    right: 1.5rem;
+    left: 1.5rem;
     font-size: 3.5rem;
     font-weight: 800;
     color: #f8f9fa;
@@ -48,4 +48,22 @@
 .solution-card:hover .solution-number {
     transform: scale(1.1);
     color: #e9ecef;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .solution-number {
+        bottom: 1.5rem;
+        left: 2rem;
+        font-size: 3rem;
+    }
+}
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+    .solution-number {
+        bottom: 1.2rem;
+        left: 1.8rem;
+        font-size: 2.5rem;
+    }
 }

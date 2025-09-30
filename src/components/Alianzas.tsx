@@ -1,7 +1,6 @@
 import React from 'react';
 import SeoComponent from './SEO';
-import Header from './common/Header';
-import Footer from './common/Footer';
+import { Header, Footer } from './layout';
 import styles from './Alianzas.module.css';
 import Contact from './Contact/Contact';
 import productImagesData from '../assets/data/productImages.json';
@@ -71,7 +70,7 @@ const Alianzas = () => {
           data-aos-duration="800" 
           data-aos-delay="300"
         >
-          Asociarse con Bytebox significa formar parte de una red global que simplifica la adquisición, gestión y reutilización de hardware para empresas de más de 120 países. Como socio, usted puede:
+          Asociarse con Bytebox significa formar parte de una red global que simplifica la adquisición, gestión y reutilización de hardware para empresas de más de 130 países. Como socio, usted puede:
         </p>
         <div className={styles.alianzasCards}>
           {cards.map((card, i) => (
