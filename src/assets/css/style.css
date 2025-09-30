@@ -153,6 +153,10 @@ section {
   overflow: hidden;
   margin: 0;
   color: #fff;
+  /* Optimizaciones para mejor rendimiento */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Imagen para móviles */
@@ -453,7 +457,7 @@ section {
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column !important;
-    padding: 40px 10px 20px !important;
+    padding: 40px 10px 150px !important;
     min-height: auto !important;
     text-align: center;
     align-items: center;
@@ -466,7 +470,7 @@ section {
     flex: 0 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 20px 20px !important;
+    padding: 0 20px 150px !important;
     margin: -260px 0 0 0 !important;
     text-align: left !important; /* Alineación a la izquierda */
     padding-left: 20px !important; /* Asegurar espacio a la izquierda */
@@ -478,7 +482,7 @@ section {
     right: 0 !important;
     transform: translateY(0) !important;
     box-sizing: border-box;
-    padding: 0 20px 20px !important;
+    padding: 0 20px 150px !important;
     margin: 0 !important;
   }
   

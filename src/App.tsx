@@ -13,7 +13,6 @@ import ServiciosIT from './components/ServiciosIT/ServiciosIT';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiesPolicy from './pages/CookiesPolicy';
-
 function App() {
   return (
     <>

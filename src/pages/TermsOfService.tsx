@@ -82,7 +82,7 @@ const TermsOfService: React.FC = () => {
         
         <div className="contact-info" style={{marginTop: '1rem', padding: '1rem', background: 'rgba(42, 209, 223, 0.05)', borderRadius: '8px', borderLeft: '3px solid #2ad1df'}}>
           <p style={{margin: '0.5rem 0', fontWeight: 600}}>Bytebox Perú</p>
-          <p style={{margin: '0.5rem 0'}}><a href="mailto:alex.c@bytebox.pe" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>alex.c@bytebox.pe</a></p>
+          <p style={{margin: '0.5rem 0'}}><a href="mailto:contacto@bytebox.pe" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>contacto@bytebox.pe</a></p>
           <p style={{margin: '0.5rem 0'}}><a href="tel:+51942507022" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>+51 942 507 022</a></p>
           <p style={{margin: '0.5rem 0'}}>Lima, Perú</p>
         </div>
@@ -129,7 +129,7 @@ const TermsOfService: React.FC = () => {
         <p>Si tienes alguna pregunta sobre estos Términos de Servicio, contáctanos en:</p>
         <address>
           Bytebox Perú<br />
-          Email: alex.c@bytebox.pe<br />
+          Email: contacto@bytebox.pe<br />
           Teléfono: +51 942 507 022
         </address>
       </section>

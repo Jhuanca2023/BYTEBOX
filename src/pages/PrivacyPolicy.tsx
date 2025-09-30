@@ -65,10 +65,10 @@ const PrivacyPolicy: React.FC = () => {
 
       <section>
         <h2>Contacto</h2>
-        <p>Si tienes alguna pregunta sobre esta Política de Privacidad, no dudes en contactarnos a través de correo electrónico a alex.c@bytebox.pe o por correo postal a:</p>
+        <p>Si tienes alguna pregunta sobre esta Política de Privacidad, no dudes en contactarnos a través de correo electrónico a contacto@bytebox.pe o por correo postal a:</p>
         <address>
           Bytebox Perú<br />
-          alex.c@bytebox.pe<br />
+          contacto@bytebox.pe<br />
           +51 942 507 022<br />
           Lima, Perú
         </address>

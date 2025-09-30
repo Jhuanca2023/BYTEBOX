@@ -8,6 +8,7 @@ export type { ButtonProps } from './Button';
 export { default as ImageSlider } from './ImageSlider';
 export { default as Tabs } from './Tabs';
 
+
 // Exportar Tooltip
 export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';

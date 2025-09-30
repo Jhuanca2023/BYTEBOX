@@ -1,5 +1,4 @@
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import { Header, Footer } from '../layout';
 import SeoComponent from '../SEO';
 import { useEffect, useState } from 'react';
 import './BuybackPage.css';

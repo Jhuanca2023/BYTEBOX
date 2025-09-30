@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from './common/Header';
-import Footer from './common/Footer';
+import { Header, Footer } from './layout';
 import { cards, extraCards, type FilterType } from '../interfaces/ultimasEntradas.types';
 import productImagesData from '../assets/data/productImages.json';
 import './UltimasEntradas.css';
@@ -94,7 +93,7 @@ const UltimasEntradas = () => {
           data-aos="fade-up" 
           data-aos-duration="800"
         >
-          Explora nuestra{' '}
+          <span>Explora nuestra</span>
           <span 
             className="ultimas-entradas-title-highlight"
             data-aos="fade-up" 

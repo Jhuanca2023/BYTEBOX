@@ -74,6 +74,43 @@
   opacity: 0.7;
 }
 
+.buyback-cta-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 18px;
+  background: linear-gradient(90deg, #2ad1df 0%, #22a0b8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(42, 193, 219, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buyback-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #22a0b8 0%, #2ad1df 100%);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+
+.buyback-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 193, 219, 0.3);
+}
+
+.buyback-cta-btn:hover::before {
+  opacity: 1;
+}
+
 /* Desktop styles - hide this component */
 @media (min-width: 992px) {
   .solutions-mobile {
