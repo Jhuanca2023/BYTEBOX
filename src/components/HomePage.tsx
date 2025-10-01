@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import SeoComponent from './SEO';
 import { Header, Hero, Footer } from './layout';
+import { useBannerPreloader } from '../hooks/useImagePreloader';
 import Onboarding from './Onboarding/Onboarding';
 import Offboarding from './Offboarding/Offboarding';
 import Storage from './Storage/Storage';
@@ -23,6 +24,9 @@ type LocationState = {
 
 const HomePage = () => {
   const location = useLocation();
+  
+  // Precargar banners de la página home
+  useBannerPreloader('home');
   
   // Configuración de SEO para la página de inicio
 

@@ -68,14 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             throw new Exception('El formato del correo electrónico no es válido');
         }
-
         // Validar RUC (ejemplo para Perú)
         if (!preg_match('/^[0-9]{11}$/', $data['ruc'])) {
             throw new Exception('El RUC debe tener 11 dígitos numéricos');
         }
 
         // Configuración del correo
-        $to = 'alex.c@bytebox.pe';
+        $to = 'josehuanca612@gmail.com';
         $subject = 'Nuevo mensaje de contacto de ' . $data['nombre'];
 
         // Configuración del servidor de correo

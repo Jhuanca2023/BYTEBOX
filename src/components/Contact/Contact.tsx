@@ -175,14 +175,8 @@ const Contact = () => {
                   title="El RUC es obligatorio y debe tener 11 dígitos numéricos"
                 />
               </div>
-              <div className="form-section-title">Ubicación de la empresa</div>
+              <div className="form-section-title">Detalles de tu cotización</div>
               <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  value="Perú"
-                  disabled
-                />
                 <input type="hidden" name="pais" value="Perú" />
               </div>
               <div className="form-group full-width">
