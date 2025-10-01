@@ -35,9 +35,9 @@ const Footer = () => (
                 <a href="#almacenaje">Almacenaje</a>
               </div>
               <div>
-                 <a href="/buyback#">Buyback de equipos</a>
+                <Link to="/buyback">Buyback de equipos</Link>
                 <a href="#accesorios">Tech Hardware</a>
-                <a href="/alianzas">Alianzas</a>
+                <Link to="/alianzas">Alianzas</Link>
                
               </div>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => (
           
           <div className="footer-col discover-col">
             <h4>Descubre</h4>
-            <a href="/sobre-nosotros">Sobre Bytebox</a>
+            <Link to="/sobre-nosotros">Sobre Bytebox</Link>
             <a href="/#testimonios">Testimonios</a>
             <Link to="/ultimas-entradas">Blog</Link>
           </div>
