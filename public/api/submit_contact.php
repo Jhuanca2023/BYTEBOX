@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Configuración del correo
-        $to = 'josehuanca612@gmail.com';
+        $to = 'contacto@bytebox.pe';
         $subject = 'Nuevo mensaje de contacto de ' . $data['nombre'];
 
         // Configuración del servidor de correo

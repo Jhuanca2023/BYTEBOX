@@ -20,6 +20,7 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     assetsInlineLimit: 0, // Forzar que todas las imágenes se copien como archivos
+    chunkSizeWarningLimit: 1000, // Aumentar límite a 1MB para evitar warnings
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
