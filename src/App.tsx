@@ -13,10 +13,12 @@ import ServiciosIT from './components/ServiciosIT/ServiciosIT';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiesPolicy from './pages/CookiesPolicy';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/nuestra-marca" element={<NuestraMarca />} />
