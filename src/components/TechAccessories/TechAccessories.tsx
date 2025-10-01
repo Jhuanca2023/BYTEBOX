@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import AnimatedSection from '../AnimatedSection/AnimatedSection';
 import './TechAccessories.css';
-// import techImage from '../../assets/images/lapto-.png';
-const techImage = 'https://pngimg.com/uploads/laptop/laptop_PNG101774.png';
+ import techImage from '../../assets/images/lapto-.png';
+//const techImage = 'https://pngimg.com/uploads/laptop/laptop_PNG101774.png';
 
 const TechAccessories = () => {
   // Efecto para manejar el scroll cuando se carga desde otra ruta

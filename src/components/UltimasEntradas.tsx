@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header, Footer } from './layout';
 import { cards, extraCards, type FilterType } from '../interfaces/ultimasEntradas.types';
@@ -49,6 +49,11 @@ const mappedExtraCards = extraCards.map(card => ({
 const UltimasEntradas = () => {
   const [showMore, setShowMore] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  
+  // Efecto para desplazarse al inicio al cargar la página
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Helper function para obtener el texto del botón
   const getButtonText = (isShowingMore: boolean): string => {
