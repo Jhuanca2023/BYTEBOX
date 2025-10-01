@@ -77,7 +77,7 @@ const SobreNosotros: React.FC = () => {
             Marcas que <span className="brand" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">confían en nosotros</span>
           </h2>
           <p className="logos-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-            Distribuidores oficiales de las mejores marcas tecnológicas del mundo
+            Ofrecemos las mejores marcas tecnológicas del mundo
           </p>
           
           <div className="logos-carousel">

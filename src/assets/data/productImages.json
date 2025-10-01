@@ -1,20 +1,24 @@
 {
   "images": [
     {
-      "url": "https://www.infotec.com.pe/img/cms/Icono%20Principal/Agosto/AUDIFONO%20GAMER.png",
-      "alt": "Audífono Gamer"
+      "url": "https://p3-ofp.static.pub/ShareResource/560x450/SSNP/New_Legion_Logo_Update/GXD0T69864/GXD0T69864-560x450-01.png",
+      "alt": "Audífono Lenovo"
     },
     {
-      "url": "https://www.infotec.com.pe/img/cms/Icono%20Principal/Agosto/LAPTOP%20GAMER.png",
+      "url": "https://p4-ofp.static.pub//fes/cms/2023/10/04/rzpg782lodgzjkvabnm84oj9f0rg49912761.png",
+      "alt": "monirtor gamer"
+    },
+    {
+      "url": "https://p1-ofp.static.pub//fes/cms/2025/07/04/bfwsp488e56dxko2bd9jhindnynb2p906644.png",
       "alt": "Lapto Gamer"
     },
     {
-      "url": "https://www.infotec.com.pe/img/cms/Icono%20Principal/Agosto/MONITOR%20GAMER.png",
-      "alt": "Monitor Gamer"
+      "url": "https://p1-ofp.static.pub//fes/cms/2025/02/27/xt4br9b05n06wnzpeepoqos2ngdim5248577.png",
+      "alt": "My lenovo Laptop"
     },
     {
-      "url": "https://www.infotec.com.pe/img/cms/Icono%20Principal/JUNIO/TARJETA-DE-VIDEO-3.png",
-      "alt": "Tarjeta de Video"
+      "url": "https://p3-ofp.static.pub//fes/cms/2025/04/10/97f6zkv43untfm8ujz4rl7fzpiz9hq900643.png",
+      "alt": "Android Idea Tab Series Tablets"
     }
   ],
   "alianzasImages": [
@@ -63,40 +67,44 @@
   
   "recentEntries": [
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/702312636_0.jpg?v=1695914850&width=800",
-      "alt": "Producto 1"
+      "url": "https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/apple_mrw43ll_a_16_macbook_pro_m3_1698708650_1793621.jpg",
+      "alt": "MacBook Pro Apple"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/products/840056143043_1.jpg?v=1674753885&width=800",
-      "alt": "Producto 2"
+      "url": "https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/apple_mba13m306sg_13_macbook_air_m3_1709559100_1815041.jpg",
+      "alt": "MacBook Air Apple"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/6_2d783fef-d665-46d7-808a-aa27da01f68a.png?v=1690045683&width=800",
-      "alt": "Producto 3"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1690206335_IMG_2046257.jpg",
+      "alt": "Lenovo ThinkPad"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/764451680500_1.png?v=1708620702&width=800",
-      "alt": "Producto 4"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1734970067_IMG_2400286.jpg",
+      "alt": "Lenovo Laptop"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/840390313959_1.jpg?v=1742866555&width=800",
-      "alt": "Producto 5"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1741882425_IMG_2452140.jpg",
+      "alt": "HP Laptop"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/840390300003_2.jpg?v=1719507022&width=1200",
-      "alt": "Producto 6"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1722515159_IMG_2304126.jpg",
+      "alt": "HP Notebook"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/products/Cam_58876b07-d7a4-443b-b9d4-85d8bb1bbbc7.jpg?v=1663704264&width=800",
-      "alt": "Producto 7"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1750426268_IMG_2515155.jpg",
+      "alt": "Dell Laptop"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/products/840056154568_1.jpg?v=1658962182&width=800",
-      "alt": "Producto 8"
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1480356082_IMG_714638.jpg",
+      "alt": "Dell XPS"
     },
     {
-      "url": "https://vptrends.com.pe/cdn/shop/files/WhatsAppImage2024-09-20at11.53.13AM_5b24afc1-9543-4099-9d27-5a1b65c7e21c.jpg?v=1726851624&width=1000",
-      "alt": "Producto 9"
+      "url": "https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/msi_raider_a18_hx_a9wig_082us_18_raider_a18_hx_1740481538_1878908.jpg",
+      "alt": "MSI Gaming Laptop"
+    },
+    {
+      "url": "https://static.bhphoto.com/images/multiple_images/images500x500/1725574638_IMG_2330929.jpg",
+      "alt": "MSI Laptop"
     }
   ]
 }

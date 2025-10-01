@@ -351,15 +351,15 @@ const BuybackPage: React.FC = () => {
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
                   <div className="text-center mb-4 pt-4">
-                    <div className="icon-wrapper bg-soft-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <i className="fas fa-mobile-alt fa-2x text-primary"></i>
+                    <div className="icon-wrapper rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px', backgroundColor: '#0d6efd1a'}}>
+                      <i className="fas fa-mobile-alt fa-2x" style={{color: '#2AC1DB'}}></i>
                     </div>
                     <h3 className="h4 mb-4">Dispositivos Móviles</h3>
                   </div>
                   <ul className="list-unstyled">
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Smartphones</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Tablets</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Relojes inteligentes</li>
+                    <li className="mb-2"><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Smartphones</li>
+                    <li className="mb-2"><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Tablets</li>
+                    <li><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Relojes inteligentes</li>
                   </ul>
                 </div>
               </div>
@@ -368,15 +368,15 @@ const BuybackPage: React.FC = () => {
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
                   <div className="text-center mb-4 pt-4">
-                    <div className="icon-wrapper bg-soft-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <i className="fas fa-laptop fa-2x text-warning"></i>
+                    <div className="icon-wrapper rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px', backgroundColor: '#0d6efd1a'}}>
+                      <i className="fas fa-laptop fa-2x" style={{color: '#2AC1DB'}}></i>
                     </div>
                     <h3 className="h4 mb-4">Computación</h3>
                   </div>
                   <ul className="list-unstyled">
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Laptops y Notebooks</li>
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Computadoras de escritorio</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Monitores</li>
+                    <li className="mb-2"><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Laptops y Notebooks</li>
+                    <li className="mb-2"><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Computadoras de escritorio</li>
+                    <li><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Monitores</li>
                   </ul>
                 </div>
               </div>
@@ -385,14 +385,14 @@ const BuybackPage: React.FC = () => {
               <div className="col-md-4">
                 <div className="h-100 p-4 bg-white rounded-3 shadow-sm border-0 position-relative overflow-hidden">
                   <div className="text-center mb-4 pt-4">
-                    <div className="icon-wrapper bg-soft-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px'}}>
-                      <i className="fas fa-gamepad fa-2x text-danger"></i>
+                    <div className="icon-wrapper rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{width: '80px', height: '80px', backgroundColor: '#0d6efd1a'}}>
+                      <i className="fas fa-gamepad fa-2x" style={{color: '#2AC1DB'}}></i>
                     </div>
                     <h3 className="h4 mb-4">Electrónica</h3>
                   </div>
                   <ul className="list-unstyled">
-                    <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i>Consolas de videojuegos</li>
-                    <li><i className="fas fa-check-circle text-success me-2"></i>Auriculares y parlantes</li>
+                    <li className="mb-2"><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Consolas de videojuegos</li>
+                    <li><i className="fas fa-check-circle me-2" style={{color: '#2ac1db'}}></i>Auriculares y parlantes</li>
                   </ul>
                 </div>
               </div>

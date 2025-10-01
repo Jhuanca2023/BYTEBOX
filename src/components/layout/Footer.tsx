@@ -35,8 +35,10 @@ const Footer = () => (
                 <a href="#almacenaje">Almacenaje</a>
               </div>
               <div>
+                 <a href="/buyback#">Buyback de equipos</a>
                 <a href="#accesorios">Tech Hardware</a>
                 <a href="/alianzas">Alianzas</a>
+               
               </div>
             </div>
           </div>
@@ -45,7 +47,7 @@ const Footer = () => (
             <h4>Descubre</h4>
             <a href="/sobre-nosotros">Sobre Bytebox</a>
             <a href="/#testimonios">Testimonios</a>
-            <a href="/blog">Blog</a>
+            <Link to="/ultimas-entradas">Blog</Link>
           </div>
           
           <div className="footer-col contact-col">
