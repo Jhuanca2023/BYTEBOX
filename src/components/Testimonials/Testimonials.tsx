@@ -96,7 +96,11 @@ const Testimonials = () => {
           <div className="testimonial-card" key={`testimonial-${i}-${t.name}`}>
             <p className="testimonial-text"><em>{t.text}</em></p>
             <div className="testimonial-user">
-              <img src={t.logo} alt={t.name} className="testimonial-logo" />
+              <img 
+                src={`/src/assets/images/testimonials/${t.logo}`} 
+                alt={t.name} 
+                className="testimonial-logo" 
+              />
               <div>
                 <div className="testimonial-name">{t.name}</div>
                 <div className="testimonial-role">{t.role}</div>
