@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SeoComponent from '../SEO';
 import { Header, Footer } from '../layout';
@@ -23,6 +23,83 @@ interface EsenciaCard extends ValueIcon {
 }
 
 const NuestraMarca = () => {
+  // Estado para controlar la visibilidad de las estadísticas
+  const [statsVisible, setStatsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+  
+  // Estado para el conteo de los números
+  const [counts, setCounts] = useState({
+    products: 0,
+    satisfaction: 0,
+    support: 0
+  });
+  
+  // Valores finales para la animación
+  const targetCounts = {
+    products: 5000,
+    satisfaction: 98,
+    support: 24
+  };
+  
+  // Duración de la animación en milisegundos
+  const animationDuration = 2000;
+
+  // Efecto para activar la animación cuando las estadísticas son visibles
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+          startCounting();
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+  
+  // Función para iniciar la animación de conteo
+  const startCounting = () => {
+    const startTime = Date.now();
+    
+    const updateCounts = () => {
+      const currentTime = Date.now();
+      const progress = Math.min(1, (currentTime - startTime) / animationDuration);
+      
+      setCounts({
+        products: Math.floor(progress * targetCounts.products),
+        satisfaction: Math.floor(progress * targetCounts.satisfaction),
+        support: Math.floor(progress * targetCounts.support)
+      });
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounts);
+      } else {
+        // Asegurarse de que los valores finales sean exactos
+        setCounts({
+          products: targetCounts.products,
+          satisfaction: targetCounts.satisfaction,
+          support: targetCounts.support
+        });
+      }
+    };
+    
+    requestAnimationFrame(updateCounts);
+  };
 
   const { images: productImages } = productImagesData;
   const { icons: valueIcons } = valueIconsData as ValueIconsData;
@@ -254,30 +331,30 @@ const NuestraMarca = () => {
               
               <div 
                 className="stats-row"
+                ref={statsRef}
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay="300"
                 data-aos-once="true"
               >
                 {[
-                  { number: '5000+', label: 'Productos Vendidos' },
-                  { number: '98%', label: 'Satisfacción Cliente' },
-                  { number: '24/7', label: 'Soporte Premium' }
+                  { number: `${counts.products}+`, label: 'Productos Vendidos' },
+                  { number: `${counts.satisfaction}%`, label: 'Satisfacción Cliente' },
+                  { number: `${counts.support}/7`, label: 'Soporte Premium' }
                 ].map((stat, index) => (
                   <div 
                     key={`stat-${index}-${stat.label}`}
-                    className="stat-item"
+                    className={`stat-item ${statsVisible ? 'visible' : ''}`}
                     data-aos="zoom-in"
                     data-aos-duration="600"
                     data-aos-delay={`${300 + (index * 100)}`}
                     data-aos-once="true"
                   >
                     <span 
-                      className="stat-number"
-                      data-aos="count-up"
-                      data-aos-duration="1000"
-                      data-aos-delay={`${400 + (index * 100)}`}
-                      data-aos-once="true"
+                      className={`stat-number ${statsVisible ? 'animate' : ''}`}
+                      style={{ 
+                        transitionDelay: `${index * 0.2}s`
+                      }}
                     >
                       {stat.number}
                     </span>

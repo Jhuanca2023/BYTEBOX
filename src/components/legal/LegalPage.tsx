@@ -18,7 +18,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ title, children }) => {
         </div>
         
         <div className="legal-contact">
-          <p>Si tienes alguna pregunta sobre esta política, por favor contáctanos en <a href="mailto:alex.c@bytebox.pe">alex.c@bytebox.pe</a></p>
+          <p>Si tienes alguna pregunta sobre esta política, por favor contáctanos en <a href="mailto:contacto@bytebox.pe">contacto@bytebox.pe</a></p>
         </div>
         
         <div className="back-home">

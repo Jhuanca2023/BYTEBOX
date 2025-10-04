@@ -88,21 +88,21 @@ const Alianzas = () => {
                   {card.title}
                 </h3>
                 <p className={styles.alianzasCardDesc} data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
-                  {card.desc}
                 </p>
               </div>
             </div>
           ))}
         </div>
         <a 
-          href="mailto:alex.c@bytebox.pe" 
-          className={`${styles.alianzasBtn} ${styles.alianzasBtnLink}`}
+          href="mailto:contacto@bytebox.pe" 
+          className={`${styles.alianzasBtn} ${styles.alianzasBtnLink}`} 
+          target="_blank" 
+          rel="noopener noreferrer"
         >
           Crezcamos juntos &rarr;
         </a>
       </main>
       
-
        
       {/* Technology Showcase Section */}
       <section className={styles.techShowcase}>

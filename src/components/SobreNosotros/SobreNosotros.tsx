@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../SEO';
 import { Header, Footer } from '../layout';
+import { useBannerPreloader } from '../../hooks/useImagePreloader';
 import './SobreNosotros.css';
 import { FaChartLine, FaBolt, FaUsers } from 'react-icons/fa';
 import nosotrosData from '../../assets/data/nosotros.json';
@@ -12,6 +13,9 @@ interface NosotrosData {
 }
 
 const SobreNosotros: React.FC = () => {
+  // Precargar banners de la página sobre nosotros
+  useBannerPreloader('sobreNosotros');
+  
   // Estados para controlar los índices de los carruseles
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [currentCommitmentImageIndex, setCurrentCommitmentImageIndex] = useState<number>(0);

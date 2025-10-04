@@ -68,7 +68,7 @@ const CookiesPolicy: React.FC = () => {
           <p style={{margin: '0.5rem 0', fontWeight: 600}}>Bytebox Perú</p>
           <p style={{margin: '0.5rem 0'}}><a href="mailto:contacto@bytebox.pe" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>contacto@bytebox.pe</a></p>
           <p style={{margin: '0.5rem 0'}}><a href="tel:+51942507022" style={{color: '#2b6cb0', textDecoration: 'none', borderBottom: '1px dashed #2b6cb0', paddingBottom: '1px'}}>+51 942 507 022</a></p>
-          <p style={{margin: '0.5rem 0'}}>Av. Ejemplo 123, Lima, Perú</p>
+          <p style={{margin: '0.5rem 0'}}>Lima, Perú</p>
         </div>
       </section>
 
