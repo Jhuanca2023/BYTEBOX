@@ -28,15 +28,6 @@ const WorldStats = () => {
     { id: 3, number: 130, label: 'countries', displayLabel: 'Países operativos', suffix: '+' },
   ];
 
-  const flags = [
-    { code: 'pe', name: 'Perú' },
-    { code: 'cl', name: 'Chile' },
-    { code: 'bo', name: 'Bolivia' },
-    { code: 'es', name: 'España' },
-    { code: 'ar', name: 'Argentina' },
-    { code: 'br', name: 'Brasil' },
-  ];
-
   // Efecto para detectar el tamaño de pantalla
   useEffect(() => {
     const checkIsMobile = () => {
@@ -98,10 +89,26 @@ const WorldStats = () => {
             <div className={`${styles.talentsSection} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(1)}>
               <p className={styles.talentsText}>4500+ Talentos creciendo con Bytebox</p>
               <div className={styles.avatarsContainer}>
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Person 1" className={styles.avatar} />
-                <img src="https://www.tecspal.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1018731%2F300x300%2Fc12bc7f13d%2Felipse1.png&w=64&q=75&dpl=dpl_2rkxqqjFrF1P8s1bVgNTCmJ2saRV" alt="Person 2" className={styles.avatar} />
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Person 3" className={styles.avatar} />
-                <img src="https://a-us.storyblok.com/f/1018731/300x300/65a91e228a/elipse3.png" alt="Person 4" className={styles.avatar} />
+          <img 
+      src="https://randomuser.me/api/portraits/women/44.jpg" 
+      alt="Persona 1" 
+      className={styles.avatar} 
+    />
+    <img 
+      src="https://randomuser.me/api/portraits/men/32.jpg" 
+      alt="Persona 2" 
+      className={styles.avatar} 
+    />
+    <img 
+      src="https://randomuser.me/api/portraits/women/68.jpg" 
+      alt="Persona 3" 
+      className={styles.avatar} 
+    />
+    <img 
+      src="https://randomuser.me/api/portraits/men/75.jpg" 
+      alt="Persona 4" 
+      className={styles.avatar} 
+    />
                 <span className={styles.moreCount}>+</span>
               </div>
               <Link to="/sobre-nosotros" className={styles.experienceBtn}>
@@ -120,39 +127,72 @@ const WorldStats = () => {
             {!isMobile && (
               <div className={styles.statsContainer}>
                 {stats.map((stat, index) => (
-                  <div key={stat.id} className={`stat-item ${styles.statItem}`}>
-                    <div className="stat-content">
+                  <div key={stat.id} className={styles.statItem}>
+                    <div className={styles.statContent}>
                       <AnimatedCounter
                         end={stat.number}
                         suffix={stat.suffix || ''}
-                        className="stat-number"
+                        className={styles.statNumber}
                         duration={2.5}
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-delay={`${400 + (index * 200)}`}
                         data-aos-once="true"
                       />
-                      <p className="stat-label">{stat.displayLabel}</p>
+                      <p className={styles.statLabel}>{stat.displayLabel}</p>
                     </div>
                   </div>
                 ))}
               </div>
             )}
 
-             {/* Banderas de países en la parte derecha - Solo desktop */}
-             {!isMobile && (
-               <div className={`${styles.flagsContainer} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(3)}>
-                 {flags.map((flag) => (
-                   <div key={flag.code} className={styles.flag}>
-                     <img 
-                       src={`https://flagcdn.com/w40/${flag.code}.png`} 
-                       alt={flag.name} 
-                       className={styles.flagImg} 
-                     />
-                   </div>
-                 ))}
-               </div>
-             )}
+            {/* Banderas de países en la parte derecha - Solo desktop */}
+            {!isMobile && (
+              <div className={`${styles.flagsContainer} ${isVisible ? styles.animateIn : ''}`} style={getAnimationDelay(3)}>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/0d0a9c902a/chile.png" alt="Chile" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/01cb76790b/spain.png" alt="España" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/2a590ed63b/georgia.png" alt="Georgia" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/3f16fbf022/bolivia.png" alt="Bolivia" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/4c1ed6e906/south-korea.png" alt="Corea del Sur" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/5ca350d1c9/china.png" alt="China" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/85d811946f/peru.png" alt="Perú" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/93d785b50d/belize.png" alt="Belice" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/93f74ae2fa/azerbaijan.png" alt="Azerbaiyán" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/201f1a84fd/estonia.png" alt="Estonia" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/337b9f5241/portugal.png" alt="Portugal" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/0349c9e5b0/iceland.png" alt="Islandia" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/484bb14960/australia.png" alt="Australia" className={styles.flagImg} />
+              </div>
+              <div className={styles.flag}>
+                <img src="https://a-us.storyblok.com/f/1018731/512x512/787c8c679b/egypt.png" alt="Egipto" className={styles.flagImg} />
+              </div>
+            </div>
+            )}
 
             {/* Líneas decorativas como imágenes */}
             <img
@@ -176,7 +216,7 @@ const WorldStats = () => {
               src="https://a-us.storyblok.com/f/1018731/4096x2559/f58615e7c8/world-full.png"
               alt="Globo terráqueo"
               className={styles.globeImg}
-              style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}}
+              style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', transform: 'scale(1.08)'}}
             />
           </div>
         </div>
@@ -214,18 +254,42 @@ const WorldStats = () => {
             ))}
           </div>
 
-           {/* Carrusel de banderas móvil */}
-           <div className={styles.flagsContainerMobile}>
-             {flags.map((flag) => (
-               <div key={flag.code} className={styles.flagMobile}>
-                 <img 
-                   src={`https://flagcdn.com/w40/${flag.code}.png`} 
-                   alt={flag.name} 
-                   className={styles.flagImgMobile} 
-                 />
-               </div>
-             ))}
-           </div>
+          {/* Carrusel de banderas móvil */}
+          <div className={styles.flagsContainerMobile}>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/0d0a9c902a/chile.png" alt="Chile" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/01cb76790b/spain.png" alt="España" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/2a590ed63b/georgia.png" alt="Georgia" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/3f16fbf022/bolivia.png" alt="Bolivia" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/4c1ed6e906/south-korea.png" alt="Corea del Sur" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/5ca350d1c9/china.png" alt="China" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/85d811946f/peru.png" alt="Perú" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/93d785b50d/belize.png" alt="Belice" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/0349c9e5b0/iceland.png" alt="Islandia" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/484bb14960/australia.png" alt="Australia" className={styles.flagImgMobile} />
+            </div>
+            <div className={styles.flagMobile}>
+              <img src="https://a-us.storyblok.com/f/1018731/512x512/787c8c679b/egypt.png" alt="Egipto" className={styles.flagImgMobile} />
+            </div>
+          </div>
         </div>
       )}
     </section>

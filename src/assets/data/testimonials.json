@@ -16,5 +16,23 @@
     "name": "Sofía Torres",
     "role": "Especialista en Evaluación en N26",
     "logo": "sofiatorres.jpg"
+  },
+  {
+    "text": "La calidad de los equipos de Bytebox superó nuestras expectativas. Excelente relación calidad-precio y un servicio postventa impecable.",
+    "name": "Ana Lucía Mendoza",
+    "role": "Gerente de TI",
+    "logo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=faces"
+  },
+  {
+    "text": "Como startup, necesitábamos equipos confiables sin hacer una gran inversión inicial. Bytebox nos ofreció exactamente lo que necesitábamos.",
+    "name": "Ricardo Silva",
+    "role": "CEO",
+    "logo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=faces"
+  },
+  {
+    "text": "La rapidez en la entrega y la calidad de los equipos reacondicionados nos permitió mantener nuestra operación sin interrupciones. ¡Altamente recomendados!",
+    "name": "Valentina Rojas",
+    "role": "Directora de Operaciones",
+    "logo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=faces"
   }
 ]

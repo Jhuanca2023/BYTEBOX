@@ -201,7 +201,7 @@
 .elevatingText {
   position: absolute;
   bottom: 25%;
-  left: 8%;
+  left: -2%;
   z-index: 10;
   opacity: 0;
   transform: translateY(-30px);
@@ -235,7 +235,7 @@
 .statsContainer {
   position: absolute;
   bottom: 8%;
-  left: 8%;
+  left: -2%;
   display: flex;
   gap: 2rem;
   z-index: 10;
@@ -479,6 +479,7 @@
     line-height: 1;
     min-width: 80px;
     flex-shrink: 0;
+    font-family: 'Orbitron', monospace;
   }
 
   /* Asegurar que AnimatedCounter funcione en móviles */
@@ -493,6 +494,7 @@
     line-height: 1 !important;
     min-width: 80px !important;
     flex-shrink: 0 !important;
+    font-family: 'Orbitron', monospace !important;
   }
 
   .statLabelMobile {
@@ -631,19 +633,52 @@
   text-align: left;
 }
 
+/* Estilos para los números de estadísticas - Versión escritorio */
+.statsContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  z-index: 10;
+  gap: 3.5rem;
+  padding: 0;
+  margin: 0;
+  transform: translateX(-25px);
+}
+
+.statItem {
+  text-align: left;
+  padding: 0 0 0 1rem;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .statNumber {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #6E6C6A;
+  color: #6E6C6A; /* Color original */
   margin: 0;
   line-height: 1;
+  font-family: 'Orbitron', sans-serif !important;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  letter-spacing: -1px;
 }
 
 .statLabel {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin: 0.25rem 0 0 0;
-  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1b1b1b99;
+  margin: 0.5rem 0 0 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* Banderas - Parte derecha */
