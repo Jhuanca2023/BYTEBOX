@@ -97,7 +97,7 @@ const Testimonials = () => {
             <p className="testimonial-text"><em>{t.text}</em></p>
             <div className="testimonial-user">
               <img 
-                src={t.logo.startsWith('http') ? t.logo : `/src/assets/images/testimonials/${t.logo}`} 
+                src={t.logo.startsWith('http') ? t.logo : `/assets/images/testimonials/${t.logo}`} 
                 alt={t.name} 
                 className="testimonial-logo" 
                 onError={(e) => {
