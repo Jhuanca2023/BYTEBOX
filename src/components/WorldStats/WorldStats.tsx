@@ -133,10 +133,10 @@ const WorldStats = () => {
                         end={stat.number}
                         suffix={stat.suffix || ''}
                         className={styles.statNumber}
-                        duration={2.5}
+                        duration={1}
                         data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay={`${400 + (index * 200)}`}
+                        data-aos-duration="500"
+                        data-aos-delay={`${100 + (index * 100)}`}
                         data-aos-once="true"
                       />
                       <p className={styles.statLabel}>{stat.displayLabel}</p>
