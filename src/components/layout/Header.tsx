@@ -61,6 +61,8 @@ const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -79,6 +81,13 @@ const Header: React.FC = () => {
           
           setIsVisible(visible);
           setPrevScrollPos(currentScrollPos);
+          
+          // Cerrar el menú móvil cuando se hace scroll
+          if (isMobileOpen) {
+            setIsMobileOpen(false);
+            setOpenDropdown(null);
+          }
+          
           ticking = false;
         });
         ticking = true;
@@ -87,11 +96,7 @@ const Header: React.FC = () => {
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
-  
-  // UI state
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  }, [prevScrollPos, isMobileOpen]);
 
   // Detect mobile to disable hover behavior and adapt interactions
   useEffect(() => {
@@ -111,9 +116,45 @@ setOpenDropdown(null);
 
   const handleAnchorNavigation = (path: string) => {
     if (location.pathname === '/') {
-      const el = document.querySelector(path);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+      // Mapeo de anchors a IDs de soluciones en móvil
+      const solutionIdMap: Record<string, string> = {
+        '#onboarding': 'onboarding',
+        '#offboarding': 'offboarding',
+        '#servicios': 'servicios',
+        '#recompra': 'buyback',
+      };
+
+      // Detectar móvil en el momento del clic (más confiable)
+      const isCurrentlyMobile = window.innerWidth < 992;
+
+      // Si estamos en móvil y el path es una solución, activar la solución en móvil
+      if (isCurrentlyMobile && solutionIdMap[path]) {
+        // Cerrar el menú móvil primero
+        setIsMobileOpen(false);
+        setOpenDropdown(null);
+        
+        const solutionsSection = document.querySelector('#soluciones');
+        if (solutionsSection) {
+          // Pequeño delay para que el menú se cierre antes del scroll
+          setTimeout(() => {
+            // Hacer scroll a la sección de soluciones
+            solutionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Disparar evento personalizado para activar la solución en móvil
+            setTimeout(() => {
+              const event = new CustomEvent('activateSolution', { 
+                detail: { solutionId: solutionIdMap[path] } 
+              });
+              window.dispatchEvent(event);
+            }, 300); // Pequeño delay para que el scroll comience primero
+          }, 150);
+        }
+      } else {
+        // Comportamiento normal para desktop o si no es una solución
+        const el = document.querySelector(path);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
       navigate('/', { state: { scrollTo: path } });
@@ -126,6 +167,26 @@ setOpenDropdown(null);
     } else if (path.startsWith('#')) {
       handleAnchorNavigation(path);
     } else {
+      // Si es /buyback y estamos en home en móvil, activar solución buyback
+      if (path === '/buyback' && location.pathname === '/' && isMobile) {
+        // Cerrar el menú móvil primero
+        setIsMobileOpen(false);
+        
+        const solutionsSection = document.querySelector('#soluciones');
+        if (solutionsSection) {
+          // Pequeño delay para que el menú se cierre antes del scroll
+          setTimeout(() => {
+            solutionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+              const event = new CustomEvent('activateSolution', { 
+                detail: { solutionId: 'buyback' } 
+              });
+              window.dispatchEvent(event);
+            }, 300);
+          }, 100);
+          return;
+        }
+      }
       navigate(path);
     }
     setIsMobileOpen(false);
@@ -165,32 +226,68 @@ setOpenDropdown(null);
 
   const headerClassName = isVisible ? 'header' : 'header header--hidden';
 
+  // Cerrar menú al hacer clic fuera de él
+  useEffect(() => {
+    if (!isMobileOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const nav = document.querySelector('.header__nav');
+      const menuButton = document.querySelector('.header__menu-button');
+      
+      if (
+        nav &&
+        menuButton &&
+        !nav.contains(target) &&
+        !menuButton.contains(target)
+      ) {
+        setIsMobileOpen(false);
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileOpen]);
+
   return (
-    <header className={headerClassName}>
-      <div className="header__container">
-        <a href="/" className="header__logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img src={logo} alt="Logo Bytebox" />
-        </a>
-        <div className="header__actions" aria-hidden={isMobileOpen}>
-          {/* Explorar button moved to Hero component */}
-        </div>
-        <button
-          className={`header__menu-button${isMobileOpen ? ' is-active' : ''}`}
-          aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+    <>
+      {/* Overlay oscuro cuando el menú está abierto en móvil */}
+      {isMobileOpen && isMobile && (
+        <div 
+          className="header__overlay"
           onClick={() => {
-            setIsMobileOpen(v => !v);
-            // Cerrar cualquier dropdown abierto al abrir/cerrar el menú móvil
+            setIsMobileOpen(false);
             setOpenDropdown(null);
           }}
-          aria-expanded={isMobileOpen}
-        >
-          <span className="header__menu-icon">
-            <span className="header__menu-line"></span>
-            <span className="header__menu-line"></span>
-            <span className="header__menu-line"></span>
-          </span>
-        </button>
-        <nav className={`header__nav${isMobileOpen ? ' is-open' : ''}`}>
+          aria-hidden="true"
+        />
+      )}
+      <header className={headerClassName}>
+        <div className="header__container">
+          <a href="/" className="header__logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <img src={logo} alt="Logo Bytebox" />
+          </a>
+          <div className="header__actions" aria-hidden={isMobileOpen}>
+            {/* Explorar button moved to Hero component */}
+          </div>
+          <button
+            className={`header__menu-button${isMobileOpen ? ' is-active' : ''}`}
+            aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+            onClick={() => {
+              setIsMobileOpen(v => !v);
+              // Cerrar cualquier dropdown abierto al abrir/cerrar el menú móvil
+              setOpenDropdown(null);
+            }}
+            aria-expanded={isMobileOpen}
+          >
+            <span className="header__menu-icon">
+              <span className="header__menu-line"></span>
+              <span className="header__menu-line"></span>
+              <span className="header__menu-line"></span>
+            </span>
+          </button>
+          <nav className={`header__nav${isMobileOpen ? ' is-open' : ''}`}>
           <ul className="header__nav-list">
             {menuItems.map(item => (
               <li
@@ -201,12 +298,15 @@ setOpenDropdown(null);
                 onFocus={!isMobile ? () => handleMouseEnter(item.label) : undefined}
               >
                 <a 
-                  href={item.anchor}
+                  href={item.dropdown ? '#' : item.anchor}
                   onClick={(e) => {
                     e.preventDefault();
+                    e.stopPropagation();
                     if (item.dropdown) {
+                      // Solo abrir/cerrar dropdown, nunca hacer scroll en el item principal
                       handleDropdownClick(item.label);
                     } else if (item.anchor.startsWith('#')) {
+                      // Solo hacer scroll si NO es un item con dropdown
                       handleAnchorNavigation(item.anchor);
                     } else {
                       handleInternalNavigation(item.anchor);
@@ -234,16 +334,19 @@ setOpenDropdown(null);
                           href={subItem.anchor}
                           onClick={(e) => {
                             e.preventDefault();
+                            e.stopPropagation();
                             if (subItem.external) {
                               window.open(subItem.anchor, '_blank', 'noopener,noreferrer');
+                              setOpenDropdown(null);
+                              setIsMobileOpen(false);
                             } else if (subItem.anchor.startsWith('#')) {
+                              // Cerrar dropdown primero, pero no el menú móvil todavía
+                              setOpenDropdown(null);
+                              // El handleAnchorNavigation cerrará el menú móvil si es necesario
                               handleAnchorNavigation(subItem.anchor);
                             } else {
                               handleInternalNavigation(subItem.anchor);
                             }
-                            // Close menu after navigating on mobile
-                            setOpenDropdown(null);
-                            setIsMobileOpen(false);
                           }}
                           className="header__dropdown-link"
                         >
@@ -261,6 +364,7 @@ setOpenDropdown(null);
         </nav>
       </div>
     </header>
+    </>
   );
 };
 
