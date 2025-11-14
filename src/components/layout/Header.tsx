@@ -167,26 +167,7 @@ setOpenDropdown(null);
     } else if (path.startsWith('#')) {
       handleAnchorNavigation(path);
     } else {
-      // Si es /buyback y estamos en home en móvil, activar solución buyback
-      if (path === '/buyback' && location.pathname === '/' && isMobile) {
-        // Cerrar el menú móvil primero
-        setIsMobileOpen(false);
-        
-        const solutionsSection = document.querySelector('#soluciones');
-        if (solutionsSection) {
-          // Pequeño delay para que el menú se cierre antes del scroll
-          setTimeout(() => {
-            solutionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-              const event = new CustomEvent('activateSolution', { 
-                detail: { solutionId: 'buyback' } 
-              });
-              window.dispatchEvent(event);
-            }, 300);
-          }, 100);
-          return;
-        }
-      }
+      // Navegar a la página (funciona igual en móvil y desktop)
       navigate(path);
     }
     setIsMobileOpen(false);
