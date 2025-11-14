@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './SolutionsMobile.css';
 
 type Solution = {
@@ -45,6 +45,27 @@ const SolutionsMobile = () => {
       hasButton: true
     }
   ];
+
+  // Escuchar eventos personalizados para activar soluciones desde el menú
+  useEffect(() => {
+    const handleActivateSolution = (event: Event) => {
+      const customEvent = event as CustomEvent<{ solutionId: string }>;
+      const solutionId = customEvent.detail?.solutionId;
+      
+      if (solutionId) {
+        const solutionIndex = solutions.findIndex(s => s.id === solutionId);
+        if (solutionIndex !== -1) {
+          setActiveSolution(solutionIndex);
+        }
+      }
+    };
+
+    window.addEventListener('activateSolution', handleActivateSolution as EventListener);
+    
+    return () => {
+      window.removeEventListener('activateSolution', handleActivateSolution as EventListener);
+    };
+  }, []);
 
   return (
     <div className="solutions-mobile">

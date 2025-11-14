@@ -64,9 +64,37 @@ const HomePage = () => {
           window.history.replaceState({ ...location.state, scrollToContact: false }, '');
         };
       } else if ('scrollTo' in state && state.scrollTo) {
-        const el = document.querySelector(state.scrollTo);
-        if (el) {
-          (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+        const path = state.scrollTo;
+        const solutionIdMap: Record<string, string> = {
+          '#onboarding': 'onboarding',
+          '#offboarding': 'offboarding',
+          '#servicios': 'servicios',
+          '#recompra': 'buyback',
+        };
+
+        // Detectar si estamos en móvil
+        const isMobile = window.innerWidth < 992;
+
+        // Si estamos en móvil y el path es una solución, activar la solución en móvil
+        if (isMobile && solutionIdMap[path]) {
+          const solutionsSection = document.querySelector('#soluciones');
+          if (solutionsSection) {
+            setTimeout(() => {
+              solutionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              setTimeout(() => {
+                const event = new CustomEvent('activateSolution', { 
+                  detail: { solutionId: solutionIdMap[path] } 
+                });
+                window.dispatchEvent(event);
+              }, 300);
+            }, 100);
+          }
+        } else {
+          // Comportamiento normal para desktop
+          const el = document.querySelector(path);
+          if (el) {
+            (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+          }
         }
       }
     }
@@ -83,7 +111,7 @@ const HomePage = () => {
       <Header />
       <main>
         <Hero />
-        <section className="solutions-section py-5" data-aos="fade-up">
+        <section id="soluciones" className="solutions-section py-5" data-aos="fade-up">
           <h2 className="mb-4 orbitron-regular" data-aos="fade-up" data-aos-delay="100" style={{fontFamily: 'Orbitron, sans-serif', fontWeight: 400}}>
             Soluciones eficientes<br />para <strong style={{fontFamily: 'Orbitron, sans-serif', fontWeight: 600}}>productividad global</strong>
           </h2>
