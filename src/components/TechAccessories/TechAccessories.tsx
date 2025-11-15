@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import AnimatedSection from '../AnimatedSection/AnimatedSection';
 import './TechAccessories.css';
- import techImage from '../../assets/images/lapto-.png';
+ import techImage from '../../assets/images/lapto-.webp';
 //const techImage = 'https://pngimg.com/uploads/laptop/laptop_PNG101774.png';
 
 const TechAccessories = () => {

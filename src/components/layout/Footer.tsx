@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoFooter from '../../assets/images/logo/Blanco/Logo_Horizontal_Blanco.png';
+import logoFooter from '../../assets/images/logo/Blanco/Logo_Horizontal_Blanco.webp';
 import './Footer.css';
 
 const Footer = () => (

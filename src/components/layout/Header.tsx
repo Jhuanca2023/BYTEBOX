@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaLaptop, FaLaptopCode, FaLaptopHouse, FaServer, FaHandshake, FaInfoCircle, FaPaintBrush, FaChartLine, FaFileAlt } from 'react-icons/fa';
-import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.png';
+import logo from '../../assets/images/logo/version_principal/Logo_Horizontal_VersiónPrincipal.webp';
 import './Header.css';
 
 interface DropdownItem {

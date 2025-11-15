@@ -11,18 +11,16 @@ import './UltimasEntradas/Carousel.css';
 const getImageUrl = (imageName: string) => new URL(`../assets/images/${imageName}`, import.meta.url).href;
 
 const imageMap: Record<string, string> = {
-  'seller.png': getImageUrl('seller.png'),
-  'falabe.png': getImageUrl('falabe.png'),
-  'plataforma.png': getImageUrl('plataforma.png'),
-  'accesorios.png': getImageUrl('accesorios.png'),
+  'seller.png': getImageUrl('seller.webp'),
+  'falabe.png': getImageUrl('falabe.webp'),
+  'accesorios.png': getImageUrl('accesorios.webp'),
   'image.png': new URL(`../assets/images/web/image.webp`, import.meta.url).href,
-  'image32.png': getImageUrl('image32.png'),
-  'image33.png': getImageUrl('image33.png'),
-  'imagepapel.png': getImageUrl('imagepapel.png'),
-  'imageLap.png': getImageUrl('imageLap.png'),
-  'platfor1.png': getImageUrl('platfor1.png'),
-  'platfor2.png': getImageUrl('platfor2.png'),
-  'hardware sostenible.jpg': new URL(`../assets/images/ultimasEntradas/hardware sostenible.jpg`, import.meta.url).href
+  'image32.png': getImageUrl('image32.webp'),
+  'image33.png': getImageUrl('image33.webp'),
+  'imagepapel.png': getImageUrl('imagepapel.webp'),
+  'platfor1.png': getImageUrl('platfor1.webp'),
+  'platfor2.png': getImageUrl('platfor2.webp'),
+  'hardware sostenible.jpg': new URL(`../assets/images/ultimasEntradas/hardware sostenible.webp`, import.meta.url).href
 };
 
 // Función para obtener la URL de imagen (local o externa)
