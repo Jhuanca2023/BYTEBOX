@@ -76,7 +76,7 @@ const Testimonials = () => {
         title="Testimonios - ByteBOX | Opiniones de Nuestros Clientes"
         description="Descubre lo que dicen nuestros clientes sobre ByteBOX. Lee testimonios reales de personas que han confiado en nuestros productos y servicios tecnológicos."
         keywords="testimonios de clientes, opiniones de usuarios, reseñas de productos, experiencias con ByteBOX, clientes satisfechos, valoraciones"
-        canonicalUrl="https://bytebox.com/testimonios"
+        canonicalUrl="https://bytebox.com.pe/testimonios"
       />
       <h2 className="testimonials-title">
         <span className="bold">Testi</span><span className="light">monios</span> <span className="brand">de Bytebox</span>

@@ -72,10 +72,8 @@ const HomePage = () => {
           '#recompra': 'buyback',
         };
 
-        // Detectar si estamos en móvil
         const isMobile = window.innerWidth < 992;
 
-        // Si estamos en móvil y el path es una solución, activar la solución en móvil
         if (isMobile && solutionIdMap[path]) {
           const solutionsSection = document.querySelector('#soluciones');
           if (solutionsSection) {
@@ -90,7 +88,6 @@ const HomePage = () => {
             }, 100);
           }
         } else {
-          // Comportamiento normal para desktop
           const el = document.querySelector(path);
           if (el) {
             (el as HTMLElement).scrollIntoView({ behavior: 'smooth' });
@@ -106,7 +103,7 @@ const HomePage = () => {
         title="ByteBOX - Soluciones Tecnológicas Integrales"
         description="Descubre soluciones tecnológicas innovadoras en ByteBOX. Ofrecemos servicios de almacenamiento, plataformas tecnológicas, recompra de equipos y más para potenciar tu negocio."
         keywords="soluciones tecnológicas, almacenamiento en la nube, recompra de equipos, plataforma tecnológica, hardware sostenible, transformación digital, tecnología empresarial, innovación tecnológica"
-        canonicalUrl="https://bytebox.com"
+        canonicalUrl="https://bytebox.com.pe"
       />
       <Header />
       <main>

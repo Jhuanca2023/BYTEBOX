@@ -144,7 +144,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../images/home1.png') no-repeat center center;
+  background: url('../images/web/home1.webp') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   padding: 0;
@@ -163,7 +163,7 @@ section {
 @media (max-width: 767px) {
   .home-hero.hero-section,
   .hero-section.home-hero {
-    background-image: url('../images/home1movil.png');
+    background-image: url('../images/web/home1movil.webp');
     background-position: center top;
     background-size: cover;
     background-attachment: scroll;

@@ -9,14 +9,12 @@ $allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173',
     'http://localhost',
-    'https://tecnovedadesweb.com',
+    'https://bytebox.com.pe',
     'https://bytebox.pe',
-    'http://byteboxinf.tecnovedadesweb.site',
-    'https://byteboxinf.tecnovedadesweb.site',
-    'https://*.tecnovedadesweb.site',
-    'http://*.tecnovedadesweb.site',
-    'https://www.byteboxinf.tecnovedadesweb.site',
-    'http://www.byteboxinf.tecnovedadesweb.site'
+    'http://bytebox.com.pe',
+    'https://bytebox.com.pe',
+    'http://www.bytebox.com.pe',
+    'https://www.bytebox.com.pe'
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -33,8 +31,8 @@ if ($isAllowedOrigin) {
     header("Access-Control-Allow-Origin: $origin");
 } else {
     // Fallback para permitir el dominio principal tanto en HTTP como HTTPS
-    $fallbackOrigin = 'https://byteboxinf.tecnovedadesweb.site';
-    if (strpos($origin, 'byteboxinf.tecnovedadesweb.site') !== false) {
+    $fallbackOrigin = 'https://bytebox.com.pe';
+    if (strpos($origin, 'bytebox.com.pe') !== false) {
         $fallbackOrigin = $origin;
     }
     header("Access-Control-Allow-Origin: $fallbackOrigin");
@@ -78,9 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $subject = 'Nuevo mensaje de contacto de ' . $data['nombre'];
 
         // Configuración del servidor de correo
-        ini_set('SMTP', 'mail.tecnovedadesweb.site');
+        ini_set('SMTP', 'mail.bytebox.com.pe');
         ini_set('smtp_port', 465);
-        ini_set('sendmail_from', 'no-reply@tecnovedadesweb.site');
+        ini_set('sendmail_from', 'no-reply@bytebox.com.pe');
 
         // Crear el cuerpo del mensaje HTML
         $message = "
@@ -106,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $headers = [
             'MIME-Version: 1.0',
             'Content-type: text/html; charset=UTF-8',
-            'From: ByteBOX Web <no-reply@tecnovedadesweb.site>',
+            'From: ByteBOX Web <no-reply@bytebox.com.pe>',
             'Reply-To: ' . $data['nombre'] . ' <' . $data['email'] . '>',
             'X-Mailer: PHP/' . phpversion(),
             'X-Priority: 1',

@@ -152,7 +152,7 @@ const BuybackPage: React.FC = () => {
         title="Programa de Recompra de Equipos - ByteBOX"
         description="Vende tus equipos tecnológicos usados a ByteBOX. Obtén el mejor valor por tu tecnología y únete a nuestro compromiso con la sostenibilidad ambiental."
         keywords="recompra de equipos, vender tecnología usada, compra de dispositivos usados, reciclaje tecnológico, sostenibilidad, renovación de equipos, valor de reventa"
-        canonicalUrl="https://bytebox.com/buyback"
+        canonicalUrl="https://bytebox.com.pe/buyback"
       />
       <Header />
       <main className="buyback-page">

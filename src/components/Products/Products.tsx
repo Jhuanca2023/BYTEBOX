@@ -300,7 +300,7 @@ const Products: React.FC = () => {
         title="Productos - ByteBOX | Soluciones Tecnológicas Innovadoras"
         description="Descubre nuestra gama de productos tecnológicos en ByteBOX. Ofrecemos las mejores soluciones en accesorios y equipos tecnológicos de última generación."
         keywords="productos tecnológicos, accesorios de tecnología, equipos electrónicos, tecnología de punta, ofertas de tecnología, dispositivos electrónicos"
-        canonicalUrl="https://bytebox.com/productos"
+        canonicalUrl="https://bytebox.com.pe/productos"
       />
       <div className="container">
         <section className="top-products" aria-label="Productos destacados">

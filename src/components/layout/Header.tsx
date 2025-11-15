@@ -82,7 +82,6 @@ const Header: React.FC = () => {
           setIsVisible(visible);
           setPrevScrollPos(currentScrollPos);
           
-          // Cerrar el menú móvil cuando se hace scroll
           if (isMobileOpen) {
             setIsMobileOpen(false);
             setOpenDropdown(null);
@@ -116,7 +115,6 @@ setOpenDropdown(null);
 
   const handleAnchorNavigation = (path: string) => {
     if (location.pathname === '/') {
-      // Mapeo de anchors a IDs de soluciones en móvil
       const solutionIdMap: Record<string, string> = {
         '#onboarding': 'onboarding',
         '#offboarding': 'offboarding',
@@ -124,33 +122,26 @@ setOpenDropdown(null);
         '#recompra': 'buyback',
       };
 
-      // Detectar móvil en el momento del clic (más confiable)
       const isCurrentlyMobile = window.innerWidth < 992;
 
-      // Si estamos en móvil y el path es una solución, activar la solución en móvil
       if (isCurrentlyMobile && solutionIdMap[path]) {
-        // Cerrar el menú móvil primero
         setIsMobileOpen(false);
         setOpenDropdown(null);
         
         const solutionsSection = document.querySelector('#soluciones');
         if (solutionsSection) {
-          // Pequeño delay para que el menú se cierre antes del scroll
           setTimeout(() => {
-            // Hacer scroll a la sección de soluciones
             solutionsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             
-            // Disparar evento personalizado para activar la solución en móvil
             setTimeout(() => {
               const event = new CustomEvent('activateSolution', { 
                 detail: { solutionId: solutionIdMap[path] } 
               });
               window.dispatchEvent(event);
-            }, 300); // Pequeño delay para que el scroll comience primero
+            }, 300);
           }, 150);
         }
       } else {
-        // Comportamiento normal para desktop o si no es una solución
         const el = document.querySelector(path);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
@@ -167,7 +158,6 @@ setOpenDropdown(null);
     } else if (path.startsWith('#')) {
       handleAnchorNavigation(path);
     } else {
-      // Navegar a la página (funciona igual en móvil y desktop)
       navigate(path);
     }
     setIsMobileOpen(false);
@@ -187,7 +177,7 @@ setOpenDropdown(null);
       if (!isHovering) {
         setOpenDropdown(null);
       }
-    }, 500); // Increased to 500ms for better usability
+    }, 500); // Increased to 500ms f
   };
 
   const handleDropdownEnter = () => {
@@ -202,12 +192,11 @@ setOpenDropdown(null);
     setIsHovering(false);
     dropdownTimeoutRef.current = setTimeout(() => {
       setOpenDropdown(null);
-    }, 500); // Increased to 500ms for better usability
+    }, 500);
   };
 
   const headerClassName = isVisible ? 'header' : 'header header--hidden';
 
-  // Cerrar menú al hacer clic fuera de él
   useEffect(() => {
     if (!isMobileOpen) return;
 
@@ -233,7 +222,6 @@ setOpenDropdown(null);
 
   return (
     <>
-      {/* Overlay oscuro cuando el menú está abierto en móvil */}
       {isMobileOpen && isMobile && (
         <div 
           className="header__overlay"
@@ -257,7 +245,6 @@ setOpenDropdown(null);
             aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú'}
             onClick={() => {
               setIsMobileOpen(v => !v);
-              // Cerrar cualquier dropdown abierto al abrir/cerrar el menú móvil
               setOpenDropdown(null);
             }}
             aria-expanded={isMobileOpen}
@@ -284,10 +271,8 @@ setOpenDropdown(null);
                     e.preventDefault();
                     e.stopPropagation();
                     if (item.dropdown) {
-                      // Solo abrir/cerrar dropdown, nunca hacer scroll en el item principal
                       handleDropdownClick(item.label);
                     } else if (item.anchor.startsWith('#')) {
-                      // Solo hacer scroll si NO es un item con dropdown
                       handleAnchorNavigation(item.anchor);
                     } else {
                       handleInternalNavigation(item.anchor);
@@ -321,9 +306,7 @@ setOpenDropdown(null);
                               setOpenDropdown(null);
                               setIsMobileOpen(false);
                             } else if (subItem.anchor.startsWith('#')) {
-                              // Cerrar dropdown primero, pero no el menú móvil todavía
                               setOpenDropdown(null);
-                              // El handleAnchorNavigation cerrará el menú móvil si es necesario
                               handleAnchorNavigation(subItem.anchor);
                             } else {
                               handleInternalNavigation(subItem.anchor);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../SEO';
 import { Header, Footer } from '../layout';
 import { useBannerPreloader } from '../../hooks/useImagePreloader';
+import LazyImage from '../LazyImage/LazyImage';
 import './SobreNosotros.css';
 import { FaChartLine, FaBolt, FaUsers } from 'react-icons/fa';
 import nosotrosData from '../../assets/data/nosotros.json';
@@ -53,7 +54,7 @@ const SobreNosotros: React.FC = () => {
         title="Sobre Nosotros - ByteBOX | Conoce Nuestra Historia"
         description="Conoce la historia, misión y valores de ByteBOX. Descubre cómo conectamos empresas y personas a través de soluciones tecnológicas innovadoras."
         keywords="historia de ByteBOX, misión y valores, sobre nosotros, empresa tecnológica, innovación, tecnología, equipo de ByteBOX"
-        canonicalUrl="https://bytebox.com/sobre-nosotros"
+        canonicalUrl="https://bytebox.com.pe/sobre-nosotros"
       />
       <Header />
       
@@ -126,7 +127,7 @@ const SobreNosotros: React.FC = () => {
           <section className="feature-card" data-aos="fade-up" data-aos-delay="50">
             <div className="card-content-wrapper">
               <div className="card-image" data-aos="fade-up" data-aos-delay="100" style={{ position: 'relative', height: '700px', overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
-                <img 
+                <LazyImage 
                   src={heroImages[currentImageIndex]} 
                   alt="Nuestro equipo" 
                   className="person-img" 
@@ -140,6 +141,7 @@ const SobreNosotros: React.FC = () => {
                     left: 0,
                     borderRadius: '10px'
                   }}
+                  loading="eager"
                 />
                 <div className="card-badge" data-aos="fade-up" data-aos-delay="150">
                   <FaChartLine className="badge-icon" />

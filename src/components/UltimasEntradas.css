@@ -329,7 +329,7 @@
 }
 
 .ultimas-entradas-hero-bg {
-  background-image: url('/src/assets/images/image4.png');
+  background-image: url('/src/assets/images/web/image4.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -345,7 +345,7 @@
   }
   
   .ultimas-entradas-hero-bg {
-    background-image: url('/src/assets/images/image4movil.png');
+    background-image: url('/src/assets/images/web/image4movil.webp');
     background-position: top center;
   }
 }

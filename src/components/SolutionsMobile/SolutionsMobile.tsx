@@ -46,7 +46,6 @@ const SolutionsMobile = () => {
     }
   ];
 
-  // Escuchar eventos personalizados para activar soluciones desde el menú
   useEffect(() => {
     const handleActivateSolution = (event: Event) => {
       const customEvent = event as CustomEvent<{ solutionId: string }>;

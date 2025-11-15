@@ -4,28 +4,28 @@ import { useImageCache } from '../utils/imageCache';
 // Solo imágenes de banner/hero de cada página
 const bannerImages = {
   home: [
-    '/src/assets/images/home1.png',
-    '/src/assets/images/home1movil.png'
+    '/src/assets/images/web/home1.webp',
+    '/src/assets/images/web/home1movil.webp'
   ],
   sobreNosotros: [
-    '/src/assets/images/image1.png',
-    '/src/assets/images/imagemovil.png'
+    '/src/assets/images/web/image1.webp',
+    '/src/assets/images/web/imagemovil.webp'
   ],
   nuestraMarca: [
-    '/src/assets/images/image1.png',
-    '/src/assets/images/image1movil.png'
+    '/src/assets/images/web/image1.webp',
+    '/src/assets/images/web/image1movil.webp'
   ],
   alianzas: [
-    '/src/assets/images/alianzas.png',
-    '/src/assets/images/alianzasmovil.png'
+    '/src/assets/images/web/alianzas.webp',
+    '/src/assets/images/web/alianzasmovil.webp'
   ],
   ultimasEntradas: [
-    '/src/assets/images/image4.png',
-    '/src/assets/images/image4movil.png'
+    '/src/assets/images/web/image4.webp',
+    '/src/assets/images/web/image4movil.webp'
   ],
   buyback: [
-    '/src/assets/images/bgservicio.png',
-    '/src/assets/images/bgserviciomovil.png'
+    '/src/assets/images/web/bgservicio.webp',
+    '/src/assets/images/web/bgserviciomovil.webp'
   ]
 };
 

@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   // URL del endpoint de la API - Ruta en XAMPP
-  const API_URL = 'https://byteboxinf.tecnovedadesweb.site/api/submit_contact.php';
+  const API_URL = 'https://bytebox.com.pe/api/submit_contact.php';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

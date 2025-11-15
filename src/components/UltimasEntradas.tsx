@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header, Footer } from './layout';
+import LazyImage from './LazyImage/LazyImage';
 import { cards, extraCards, type FilterType } from '../interfaces/ultimasEntradas.types';
 import productImagesData from '../assets/data/productImages.json';
 import './UltimasEntradas.css';
@@ -14,7 +15,9 @@ const imageMap: Record<string, string> = {
   'falabe.png': getImageUrl('falabe.png'),
   'plataforma.png': getImageUrl('plataforma.png'),
   'accesorios.png': getImageUrl('accesorios.png'),
-  'image.png': getImageUrl('image.png'),
+  'image.png': new URL(`../assets/images/web/image.webp`, import.meta.url).href,
+  'image32.png': getImageUrl('image32.png'),
+  'image33.png': getImageUrl('image33.png'),
   'imagepapel.png': getImageUrl('imagepapel.png'),
   'imageLap.png': getImageUrl('imageLap.png'),
   'platfor1.png': getImageUrl('platfor1.png'),
@@ -156,7 +159,7 @@ const UltimasEntradas = () => {
                   data-aos-delay={animationDelay}
                   data-aos-once="true"
                 >
-                  <img 
+                  <LazyImage 
                     src={card.img} 
                     alt={card.alt} 
                     className="ultimas-entradas-card-img" 

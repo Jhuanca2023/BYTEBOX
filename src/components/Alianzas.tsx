@@ -28,7 +28,7 @@ const Alianzas = () => {
         title="Alianzas Estratégicas - ByteBOX | Socios y Colaboradores"
         description="Descubre nuestras alianzas estratégicas en ByteBOX. Trabajamos con los mejores socios y colaboradores para ofrecerte soluciones tecnológicas de vanguardia."
         keywords="alianzas estratégicas, socios tecnológicos, colaboradores ByteBOX, partners tecnológicos, soluciones empresariales, tecnología de punta"
-        canonicalUrl="https://bytebox.com/alianzas"
+        canonicalUrl="https://bytebox.com.pe/alianzas"
       />
       <Header />
       <section className={`${styles.heroSection} ${styles['alianzas-hero-bg']}`}>

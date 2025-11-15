@@ -7,7 +7,7 @@ const CookiesPolicy: React.FC = () => {
       title="Política de Cookies"
     >
       <section>
-        <p>Esta Política de Cookies explica qué son las cookies, cómo las utilizamos en el sitio web de Bytebox (https://bytebox.pe), los tipos de cookies que utilizamos y cómo puedes gestionarlas. Al utilizar nuestro sitio web, aceptas el uso de cookies de acuerdo con esta política.</p>
+        <p>Esta Política de Cookies explica qué son las cookies, cómo las utilizamos en el sitio web de Bytebox (https://bytebox.com.pe), los tipos de cookies que utilizamos y cómo puedes gestionarlas. Al utilizar nuestro sitio web, aceptas el uso de cookies de acuerdo con esta política.</p>
       </section>
 
       <section>

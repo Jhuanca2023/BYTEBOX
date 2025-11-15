@@ -19,21 +19,26 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    assetsInlineLimit: 0, // Forzar que todas las imágenes se copien como archivos
-    chunkSizeWarningLimit: 1000, // Aumentar límite a 1MB para evitar warnings
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['swiper', 'aos', 'framer-motion'],
+        },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.')
           const ext = info?.[info.length - 1]?.toLowerCase() || ''
           if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(ext)) {
-            return 'assets/images/[name][extname]' // Sin hash para facilitar la referencia
+            return 'assets/images/[name]-[hash][extname]'
           }
-          return 'assets/[ext]/[name][extname]'
+          return 'assets/[ext]/[name]-[hash][extname]'
         },
-        chunkFileNames: 'assets/js/[name].js',
-        entryFileNames: 'assets/js/[name].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
-    }
+    },
+    minify: 'esbuild',
   }
 })

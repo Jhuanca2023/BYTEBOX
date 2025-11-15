@@ -22,7 +22,7 @@ export const cards: CardProps[] = [
     link: 'https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fhso7p4%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAac4vS63Y-4vl3B6AqbR049XVi4mC3PId9hPZ3gfGvti5RNNPuJAkrPeXORCDw_aem_aqFptyHHMUbiukqg1Bz58g&e=AT07G0uE5MtMMqKDNmWeYXIRpBGA8IdReSVDaaFZFeHixukdjXnEo3WCbHlvsSiG5EvBVcAAoEp69quWCqX3m2BuEQDZkKy3q5msUObIFBASM8camqQ6DFo'
   }, 
   {
-    img: 'image.png',
+    img: 'image32.png',
     alt: 'Perú',
     title: 'BYTEBOX llega a Perú:',
     highlight: 'creciendo en Perú',
@@ -79,7 +79,7 @@ export const extraCards: CardProps[] = [
     link: '/nuestra-marca#productos-destacados'
   },
   {
-    img: 'image.png',
+    img: 'image33.png',
     alt: 'Sostenibilidad',
     title: 'Sostenibilidad:',
     highlight: 'Tecnología Verde',

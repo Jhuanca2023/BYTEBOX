@@ -180,7 +180,7 @@ const NuestraMarca = () => {
         title="Nuestra Marca - ByteBOX | Innovación y Calidad en Tecnología"
         description="Descubre la esencia de ByteBOX: innovación, calidad y compromiso. Conoce nuestra misión, visión y valores que nos impulsan a ofrecerte la mejor tecnología."
         keywords="marca ByteBOX, innovación tecnológica, calidad en tecnología, misión y visión, valores corporativos, historia de la empresa"
-        canonicalUrl="https://bytebox.com/nuestra-marca"
+        canonicalUrl="https://bytebox.com.pe/nuestra-marca"
       />
       <Header />
     
