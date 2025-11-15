@@ -235,7 +235,7 @@ setOpenDropdown(null);
       <header className={headerClassName}>
         <div className="header__container">
           <a href="/" className="header__logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <img src={logo} alt="Logo Bytebox" />
+            <img src={logo} alt="Logo Bytebox" width="180" height="50" loading="eager" fetchPriority="high" />
           </a>
           <div className="header__actions" aria-hidden={isMobileOpen}>
             {/* Explorar button moved to Hero component */}

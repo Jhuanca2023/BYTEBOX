@@ -27,12 +27,10 @@ const imageMap: Record<string, string> = {
 const getImageSrc = (imageName: string): string => {
   // Si es una URL externa (comienza con http/https)
   if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
-    console.log('🔗 URL externa detectada:', imageName);
     return imageName;
   }
   // Si es una imagen local, usar imageMap
   const localUrl = imageMap[imageName] || '';
-  console.log('📁 Imagen local:', imageName, '→', localUrl);
   return localUrl;
 };
 
@@ -277,6 +275,9 @@ const UltimasEntradas = () => {
                   src={entry.url} 
                   alt={entry.alt} 
                   loading="lazy"
+                  decoding="async"
+                  width="560"
+                  height="450"
                   className="carousel-image"
                 />
               </div>

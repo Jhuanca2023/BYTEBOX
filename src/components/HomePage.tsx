@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import SeoComponent from './SEO';
 import { Header, Hero, Footer } from './layout';
@@ -15,7 +15,7 @@ import Contact from './Contact/Contact';
 import SolutionsMobile from './SolutionsMobile/SolutionsMobile';
 import TechAccessories from './TechAccessories/TechAccessories';
 import EnvioGarantia from './EnvioGarantia/EnvioGarantia';
-import WorldStats from './WorldStats/WorldStats';
+const WorldStats = lazy(() => import('./WorldStats/WorldStats'));
 import './HomePage.css';
 
 type LocationState = {
@@ -136,7 +136,9 @@ const HomePage = () => {
         
         <EnvioGarantia />
         
-        <WorldStats />
+        <Suspense fallback={<div style={{minHeight: '400px'}} />}>
+          <WorldStats />
+        </Suspense>
         
         <div data-aos="fade-up">
           <Testimonials />

@@ -100,6 +100,10 @@ const Testimonials = () => {
                 src={t.logo.startsWith('http') ? t.logo : `/assets/images/testimonials/${t.logo}`} 
                 alt={t.name} 
                 className="testimonial-logo" 
+                width="100"
+                height="100"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = 'https://via.placeholder.com/100';

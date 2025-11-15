@@ -21,7 +21,7 @@ const Footer = () => (
       <div className="footer-left">
         <div className="footer-logo">
           <Link to="/">
-            <img src={logoFooter} alt="Bytebox - Soluciones Tecnológicas" style={{ height: '42px', width: 'auto' }} />
+            <img src={logoFooter} alt="Bytebox - Soluciones Tecnológicas" width="180" height="42" loading="lazy" decoding="async" style={{ height: '42px', width: 'auto' }} />
           </Link>
         </div>
         

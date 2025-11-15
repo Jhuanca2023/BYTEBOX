@@ -34,6 +34,10 @@ const TechAccessories = () => {
               src={techImage} 
               alt="Laptop con accesorios tecnológicos" 
               className="tech-accessories-img"
+              width="600"
+              height="400"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </AnimatedSection>

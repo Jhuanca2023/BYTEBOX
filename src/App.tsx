@@ -1,34 +1,36 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/toastStyles.css';
-import SobreNosotros from './components/SobreNosotros/SobreNosotros';
-import NuestraMarca from './components/NuestraMarca/NuestraMarca';
-import Alianzas from './components/Alianzas';
-import UltimasEntradas from './components/UltimasEntradas';
 import HomePage from './components/HomePage';
-import BuybackPage from './components/Buyback/BuybackPage';
-import ServiciosIT from './components/ServiciosIT/ServiciosIT';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import CookiesPolicy from './pages/CookiesPolicy';
 import ScrollToTop from './components/ScrollToTop';
+
+const SobreNosotros = lazy(() => import('./components/SobreNosotros/SobreNosotros'));
+const NuestraMarca = lazy(() => import('./components/NuestraMarca/NuestraMarca'));
+const Alianzas = lazy(() => import('./components/Alianzas'));
+const UltimasEntradas = lazy(() => import('./components/UltimasEntradas'));
+const BuybackPage = lazy(() => import('./components/Buyback/BuybackPage'));
+const ServiciosIT = lazy(() => import('./components/ServiciosIT/ServiciosIT'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const CookiesPolicy = lazy(() => import('./pages/CookiesPolicy'));
 function App() {
   return (
     <>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/sobre-nosotros" element={<SobreNosotros />} />
-          <Route path="/nuestra-marca" element={<NuestraMarca />} />
-          <Route path="/alianzas" element={<Alianzas />} />
-          <Route path="/ultimas-entradas" element={<UltimasEntradas />} />
-          <Route path="/buyback" element={<BuybackPage />} />
-          <Route path="/servicios-it" element={<ServiciosIT />} />
-          <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
-          <Route path="/terminos-servicio" element={<TermsOfService />} />
-          <Route path="/politica-cookies" element={<CookiesPolicy />} />
+          <Route path="/sobre-nosotros" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><SobreNosotros /></Suspense>} />
+          <Route path="/nuestra-marca" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><NuestraMarca /></Suspense>} />
+          <Route path="/alianzas" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><Alianzas /></Suspense>} />
+          <Route path="/ultimas-entradas" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><UltimasEntradas /></Suspense>} />
+          <Route path="/buyback" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><BuybackPage /></Suspense>} />
+          <Route path="/servicios-it" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><ServiciosIT /></Suspense>} />
+          <Route path="/politica-privacidad" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><PrivacyPolicy /></Suspense>} />
+          <Route path="/terminos-servicio" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><TermsOfService /></Suspense>} />
+          <Route path="/politica-cookies" element={<Suspense fallback={<div style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Cargando...</div>}><CookiesPolicy /></Suspense>} />
           <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>

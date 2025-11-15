@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/',
   resolve: {
     alias: [
       {
@@ -21,11 +21,25 @@ export default defineConfig({
     sourcemap: false,
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 500,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['swiper', 'aos', 'framer-motion'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-icons')) {
+              return 'icons-vendor';
+            }
+            if (id.includes('swiper') || id.includes('aos') || id.includes('framer-motion')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('react-toastify')) {
+              return 'toast-vendor';
+            }
+            return 'vendor';
+          }
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.')

@@ -54,7 +54,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Enviando datos:', formData);
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: {

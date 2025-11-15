@@ -17,7 +17,7 @@
   height: auto;
   margin: -90px 0 0 0;
   padding: 120px 0 80px;
-  background: url('../../assets/images/web/bgservicio.webp') no-repeat center center;
+  background: url('/assets/images/web/bgservicio.webp') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
 /* Mobile Hero Section */
 @media (max-width: 768px) {
   .buyback-page .hero-section {
-    background-image: url('../../assets/images/web/bgserviciomovil.webp');
+    background-image: url('/assets/images/web/bgserviciomovil.webp');
     background-position: center center;
     background-size: cover;
     padding: 0;

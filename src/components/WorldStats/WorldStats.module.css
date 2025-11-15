@@ -46,6 +46,7 @@
   width: 100%;
   max-width: 1100px;
   aspect-ratio: 1/1;
+  min-height: 400px;
   height: auto;
   border-radius: 50%;
   overflow: visible;
@@ -62,12 +63,15 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  display: block;
+  display: block !important;
   z-index: 1;
+  position: relative;
   /* Se eliminó la animación de rotación */
   transform-origin: center center;
   will-change: transform;
   transition: transform 0.3s ease;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Tiempo de entrega - Superior derecha */

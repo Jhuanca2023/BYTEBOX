@@ -34,7 +34,7 @@
 /* Hero Section Styles */
 .heroSection {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/images/web/alianzas.webp') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/web/alianzas.webp') no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@
 /* Mobile Hero Section */
 @media screen and (max-width: 768px) {
   .heroSection {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/src/assets/images/web/alianzasmovil.webp') no-repeat center/cover !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/web/alianzasmovil.webp') no-repeat center/cover !important;
     background-size: cover !important;
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
@@ -609,7 +609,7 @@
 }
 
 .alianzas-hero-bg {
-  background-image: url('/src/assets/images/web/alianzas.webp');
+  background-image: url('/assets/images/web/alianzas.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

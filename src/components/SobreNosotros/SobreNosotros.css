@@ -3,7 +3,7 @@
 /* HERO SECTION */
 /* Estilos específicos para la sección hero de Sobre Nosotros */
 .sobre-nosotros-hero-bg {
-  background: url('/src/assets/images/web/image1.webp') center center/cover no-repeat;
+  background: url('/assets/images/web/image1.webp') center center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -16,7 +16,7 @@
 /* Mobile & Tablet Styles */
 @media screen and (max-width: 1024px) {
   .sobre-nosotros-hero-bg {
-    background: url('/src/assets/images/web/imagemovil.webp') center center/cover no-repeat !important;
+    background: url('/assets/images/web/imagemovil.webp') center center/cover no-repeat !important;
     padding: 39vh 1rem 0;
     background-size: cover !important;
     -webkit-background-size: cover !important;
@@ -736,7 +736,7 @@
 } 
 
 .sobre-nosotros-hero-bg {
-  background-image: url('/src/assets/images/web/image.webp');
+  background-image: url('/assets/images/web/image.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

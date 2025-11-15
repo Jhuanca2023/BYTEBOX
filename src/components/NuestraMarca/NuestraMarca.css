@@ -701,7 +701,7 @@
 }
 
 .nuestra-marca-hero-bg {
-  background-image: url('/src/assets/images/web/image1.webp');
+  background-image: url('/assets/images/web/image1.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -711,7 +711,7 @@
 /* Mobile & Tablet Styles */
 @media screen and (max-width: 1024px) {
   .nuestra-marca-hero-bg {
-    background-image: url('/src/assets/images/web/image1movil.webp');
+    background-image: url('/assets/images/web/image1movil.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
